@@ -2,6 +2,10 @@
 
 This is a collection of analysis scripts that accompany the publication "HDLBP binds ER-targeted mRNAs by multivalent interactions to promote protein synthesis of transmembrane and secreted proteins." (under revision).
 
+Please contact milekm@gmail.com for further information and reasonable requests.
+
+
+
 Authors:
 Ulrike Zinnall1,<sup>3</sup><sup>,</sup><sup>+</sup>, Miha Milek1,2,+,#, Carlos H. Vieira-Vieira1,3, Simon Müller4, Guido Mastrobuoni1, Orsalia-Georgia Hazapis1, Igor Minia1, Simone del Guidice1, Nadine Bley4, Stefan Kempa1, Stefan Hüttelmaier4, Matthias Selbach1,5, Markus Landthaler1,6*
 
