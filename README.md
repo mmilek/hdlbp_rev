@@ -4,6 +4,8 @@ This is a collection of analysis scripts that accompany the publication "HDLBP b
 
 The scripts allow reproduction of key figures obtained from RNA-seq, PAR-CLIP, ribo-seq, BioID and pSILAC datasets.
 
+[Raw data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE148262) is available from GEO. 
+
 Please contact milekm@gmail.com for further information.
 
 Authors:
