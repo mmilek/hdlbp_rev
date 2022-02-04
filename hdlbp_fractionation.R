@@ -2,6 +2,10 @@ library(ggplot2)
 library(reshape2)
 library(corrplot)
 library(DESeq2)
+
+# dat<-read.delim("geo_processed_data/processed_data_rnaseq_fractionation.txt", header=T)
+
+
 setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/frac/")
 
 setwd("D:/landthaler/HDLBP/frac/")
