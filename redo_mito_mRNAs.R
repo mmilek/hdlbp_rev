@@ -1,4 +1,5 @@
-setwd("~/hdlbp_git/hdlbp-master/")
+library(ggplot2)
+
 
 dat<-read.delim("data/hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
 library(ggplot2)
@@ -39,7 +40,7 @@ dat$tsig_new<-ifelse(  (dat$mito_new=="MitoCarta" &
                              "SignalP-noTM-only", "other")))))))))
 
 ggplot(subset(dat, tpm_cutoff>=10),
-       aes(tsig_new,log2FoldChange.mem.cyt.293, fill=tsig_new))+geom_violin()+coord_flip()
+       aes(tsig_new,log2FoldChange.mem.cyt.293, fill=tsig_new))+geom_violin()
 
 nrow(subset(dat, mito=="MitoCarta"))
 nrow(subset(dat, tsig_new=="MitoCarta"))

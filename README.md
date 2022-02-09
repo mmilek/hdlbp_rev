@@ -18,3 +18,13 @@ Ulrike Zinnall<sup>1</sup><sup>,</sup><sup>3</sup><sup>,</sup><sup>+</sup>, Miha
 <sup>5</sup>Charite-Universitätsmedizin Berlin, Germany.
 <sup>6</sup>IRI Life Sciences, Institute of Biology, Humboldt-Universität zu Berlin, Germany
 
+
+For reproduction of key figures from processed data:
+Run scripts in the figures folder.
+
+
+For reproduction of processed data: 
+Run scripts in the 
+
+
+For the quantification of tRNAs from PAR-CLIP data, please see the scripts in the trna directory.
