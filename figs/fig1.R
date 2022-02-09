@@ -68,6 +68,7 @@ ggplot(subset(dat, tpm_cutoff>=10 & tsig_new!="other"& tsig_new!="MitoEncoded"),
   scale_fill_manual(values=c("dodgerblue4", "dodgerblue4","dodgerblue4","orange2", "darkred", "darkred","darkred"))+
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
+summary(subset(dat, tpm_cutoff>=10 & tsig_new!="other"& tsig_new!="MitoEncoded" & !is.na(tc_CDS_norm))$tsig_new)
 
 
 

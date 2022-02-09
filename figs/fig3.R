@@ -3,9 +3,26 @@ library(reshape2)
 library(corrplot)
 library(Biostrings)
 library(dplyr)
-# setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/all_clip_data/mapping_trans/")
-# setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/all_clip_data/reclip/mapping_trans/")
-# setwd("F:/landthaler/HDLBP/all_clip_data/reclip/mapping_trans/")
+library(ggseqlogo)
+library(ggpubr)
+
+
+#fig3i
+dat<-read.delim("data/kd.txt", header=T)
+
+mel<-melt(dat[,1:4])
+
+mel$RNA_oligo<-factor(mel$RNA_oligo, levels=c("H40", "H41", "H44", "H42", "H43"))
+
+ggbarplot(mel, x = "RNA_oligo", y = "value",
+          ylab= "Kd (nM)", xlab = "RNA_oligonucleotide", color = "RNA_oligo", fill = "RNA_oligo",
+          add = c("mean_sd"), palette = "jco",
+          position = position_dodge(.8)) +
+  geom_jitter(aes(RNA_oligo, value, fill = RNA_oligo), shape = 21, color = "black",  position = position_jitterdodge(jitter.height = -2, jitter.width = 1.5))
+
+
+
+
 len<-read.delim("data/transcript_cds_utr_lenght.txt", header=T)
 rownames(len)<-len$transcript
 len$cds_start<-len$l_utr5+1
@@ -13,20 +30,6 @@ len$cds_stop<-len$l_utr5+len$l_cds
 len$frame_start<-len$l_utr5
 len$frame_stop<-len$cds_start
 
-#make a bed file of all orfs for use in IGV
-# bed<-len[rep(row.names(len), round(len$l_cds/3, digits=0)),]
-# bed<-bed %>%
-#   group_by(transcript) %>%
-#   mutate(number = 1:n()) 
-# bed[543,]
-# bed$frame_start<-bed$frame_start+(bed$number-1)*3
-# bed$frame_stop<-bed$frame_start+1
-# bed$num<-1
-# bed$num<-as.integer(bed$num)
-# bed$strand<-"+"
-# bed$orf<-"orf"
-# bed<-bed[,c("transcript","frame_start","frame_stop","orf","num","strand")]
-# write.table(bed, "transcript_orf.bed", quote=F, sep="\t", row.names=F, col.names = F)
 
 #selecting highest expressed isoform
 rsem1<-read.delim("data/T_293_1.isoforms.results", header=T)
@@ -57,7 +60,7 @@ relevantBed<-relevantBed[order(relevantBed$transcript, relevantBed$start),]
 #write.table(relevantBed[,c(1, 12, 2, 10, 13,14)], "considered.transcripts.bed", quote=F, sep="\t", row.names = F, col.names = F)
 
 
-tc<-read.delim("reproducible.hdlbp.TCseq.bed", header=F)
+tc<-read.delim("data/reproducible.hdlbp.TCseq.bed", header=F)
 colnames(tc)<-c("transcript_id","tc_start","tc_stop","tc_num1","all_reads1","tc_num2","all_reads2","seq")
 library(DESeq2)
 fac<-estimateSizeFactorsForMatrix(tc[,c("all_reads1","all_reads2")])
@@ -67,7 +70,7 @@ tc<-subset(tc, tc_num1/all_reads1<0.95 & tc_num2/all_reads2<0.95) # here can be 
 
 dat<-merge(tc, ham, by.x="transcript_id", by.y="transcript")
 
-fastapath<-"hg19bt1.transcripts.fa"
+fastapath<-"~/hdlbp_git/hg19bt1.transcripts.fa" # here provide local transcript fasta file - e.g. from RSEM index, cannot include in github repo due to file size
 seqTrans <- Biostrings::readDNAStringSet(fastapath, format = "fasta", use.names = TRUE)
 
 sub<- seqTrans[ham$transcript]
@@ -77,26 +80,11 @@ seqUtr3<- Biostrings::subseq(sub, start = ham$cds_stop+1, end = ham$l_tr)
 seqUtr5<- Biostrings::subseq(sub, start = 1, end = ham$l_utr5)
 
 dat$tc_region<-ifelse(dat$tc_stop>=dat$cds_start & dat$tc_stop<=dat$cds_stop, "cds",
-                    ifelse(dat$tc_stop<dat$cds_start, "utr5", 
-                           ifelse(dat$tc_stop>dat$cds_stop, "utr3", NA)))
+                      ifelse(dat$tc_stop<dat$cds_start, "utr5", 
+                             ifelse(dat$tc_stop>dat$cds_stop, "utr3", NA)))
 dat$tc_region<-factor(dat$tc_region, levels=c("utr5", "cds", "utr3"))
-ggplot(subset(dat, tpm_cutoff>=10 & !is.na(localization_cat)),
-     aes(log2(norm_tc_num1), log2(norm_tc_num2)))+geom_point(shape=1, size=0.7)+facet_wrap(~tc_region)+geom_abline(lty=2, colour="grey")
-cor(subset(dat, tpm_cutoff>=10 & !is.na(localization_cat) & 
-          tc_region=="utr5" , 
-          select=c("norm_tc_num1", "norm_tc_num2")))
-cor(subset(dat, tpm_cutoff>=10 & !is.na(localization_cat) & 
-             tc_region=="cds" , 
-           select=c("norm_tc_num1", "norm_tc_num2")))
-cor(subset(dat, tpm_cutoff>=10 & !is.na(localization_cat) & 
-             tc_region=="utr3" , 
-           select=c("norm_tc_num1", "norm_tc_num2")))
 
-
-setwd("E:/Google Drive/hdlbp/")
-
-# mas<-read.delim("hdlbp_master_table_with_classes.txt", header=T)
-mas<-read.delim("hdlbp_master_table_with_classes_uniq.txt", header=T)
+mas<-read.delim("data/hdlbp_master_table_with_classes_uniq.txt", header=T)
 inf<-subset(mas, select=c("gene_id","Symbol",
                           "tpm_cutoff","tc_CDS_norm","localization_cat",
                           "mean_te_293","loc_tar_CDS","tc_CDS_norm_cat",
@@ -106,7 +94,20 @@ inf<-subset(mas, select=c("gene_id","Symbol",
                           "log2FoldChange.ribo.rna.KO.WT"))
 
 dat<-merge(dat, inf, by="gene_id")
-#write.table(dat, "E:/work/hdlbp/multivalency/dat_variable.txt", quote=F, sep="\t", row.names=F)
+
+#figS2a
+ggplot(subset(dat, tpm_cutoff>=10 & !is.na(localization_cat)),
+       aes(log2(norm_tc_num1), log2(norm_tc_num2)))+geom_point(shape=1, size=0.7)+facet_wrap(~tc_region)+geom_abline(lty=2, colour="grey")
+cor(subset(dat, tpm_cutoff>=10 & !is.na(localization_cat) & 
+             tc_region=="utr5" , 
+           select=c("norm_tc_num1", "norm_tc_num2")))
+cor(subset(dat, tpm_cutoff>=10 & !is.na(localization_cat) & 
+             tc_region=="cds" , 
+           select=c("norm_tc_num1", "norm_tc_num2")))
+cor(subset(dat, tpm_cutoff>=10 & !is.na(localization_cat) & 
+             tc_region=="utr3" , 
+           select=c("norm_tc_num1", "norm_tc_num2")))
+
 
 ##7mer crosslinked
 mer<-dat
@@ -160,29 +161,17 @@ rows<-which(countmers$seqs %in% agr)
 countmers_plot<-countmers[rows,]
 countmers_plot$seqs<-factor(countmers_plot$seqs, levels=rev(agr))
 countmers_plot$localization_cat<-factor(countmers_plot$localization_cat, levels=c("membrane", "cytosolic"))
+
+#fig3a
 ggplot(subset(countmers_plot, tc_region!="utr5"), aes(gsub("T","U",seqs), frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
   theme(text = element_text(size=8))+scale_fill_manual(values = c("dodgerblue3", "orange2"))
 
-library(ggseqlogo)
-ggplot(subset(countmers_plot, localization_cat=="cytosolic"))+geom_logo(gsub("T","U",as.character(countmers_plot$seqs)), method="bits", seq_type = "rna")+theme_logo()
-
-#write.table(countmers, "./kmers_mem_cyt/bound-7mers-freqs-01032020.txt", quote=F, sep="\t", row.names = F)
 
 ##redo 7mer enrichment in CDS/UTR3 mem/cyt
 #run until tcCds
 
 
-setwd("E:/Google Drive/hdlbp/")
-# mas<-read.delim("hdlbp_master_table_with_classes.txt", header=T)
-mas<-read.delim("hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
-inf<-subset(mas, select=c("gene_id","Symbol",
-                          "tpm_cutoff","tc_CDS_norm","localization_cat",
-                          "mean_te_293","loc_tar_CDS","tc_CDS_norm_cat",
-                          "tc_transcript_norm",
-                          "log2FoldChange.mem.cyt.293",
-                          "log2FoldChange.mem.cyt.KO.293",
-                          "log2FoldChange.ribo.rna.KO.WT"))
-
+mas<-read.delim("data/hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
 
 mem<-subset(mas, localization_cat=="membrane" & gene_biotype=="protein_coding" & tpm_cutoff>=10, select="transcript")[,1]
 cyt<-subset(mas, localization_cat=="cytosolic" & gene_biotype=="protein_coding" & tpm_cutoff>=10, select="transcript")[,1]
@@ -226,26 +215,14 @@ labs<-freqs[labs,]
 labs$labs<-labs$kmer
 freqs$labs<-NA
 freqs<-rbind(freqs, labs)
-ggplot(freqs, aes(freqCds_mem, freqCds_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_mem))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_mem, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt, colour=labs))+geom_point()+geom_abline()
 
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqUtr3_mem, freqUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-
-#write.table(freqs, "./kmers_mem_cyt/whole-7mers-freqs-01032020.txt", quote=F, sep="\t", row.names=F)
 mer_freq<-melt(freqs, measure.vars = colnames(freqs)[grepl("freq", colnames(freqs))], id.vars="kmer", value.name = "freq_whole", variable.name = "loc_reg")
 mer_freq$id<-paste0(mer_freq$kmer, "_", mer_freq$loc_reg)
 
 countmers$id<-ifelse(countmers$tc_region=="cds" & countmers$localization_cat=="cytosolic", paste0(countmers$seq, "_freqCds_cyt"),
                      ifelse(countmers$tc_region=="cds" & countmers$localization_cat=="membrane", paste0(countmers$seq, "_freqCds_mem"),
                             ifelse(countmers$tc_region=="utr3" & countmers$localization_cat=="cytosolic", paste0(countmers$seq, "_freqUtr3_cyt"),
-                            ifelse(countmers$tc_region=="utr3" & countmers$localization_cat=="membrane", paste0(countmers$seq, "_freqUtr3_mem"),NA))))
+                                   ifelse(countmers$tc_region=="utr3" & countmers$localization_cat=="membrane", paste0(countmers$seq, "_freqUtr3_mem"),NA))))
 
 mer_freq<-merge(mer_freq, countmers, by="id")
 
@@ -254,6 +231,8 @@ labs<-mer_freq[labs,]
 labs$labs<-labs$kmer
 mer_freq$labs<-NA
 mer_freq<-rbind(mer_freq, labs)
+
+#figS3B
 ggplot(mer_freq,aes(frac_tot, freq_whole))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_hline(yintercept=0.00015, lty=2, colour="grey")+theme(legend.position = "none")+
   facet_wrap(~localization_cat+tc_region)+coord_cartesian(ylim=c(0,0.001))
 
@@ -354,9 +333,9 @@ p1_cds<-melt(ag1_cds, measure.vars = colnames(ag1_cds)[3:(ncol(ag1_cds)-1)],
 p2_cds<-melt(ag2_cds, measure.vars = colnames(ag2_cds)[3:(ncol(ag2_cds)-1)], 
              id.vars = c("transcript_id", "localization_cat", "region"), value.name = "xl", variable.name = "kmer")
 p1_utr3<-melt(ag1_utr3, measure.vars = colnames(ag1_utr3)[3:(ncol(ag1_utr3)-1)], 
-             id.vars = c("transcript_id", "localization_cat", "region"), value.name = "xl", variable.name = "kmer")
+              id.vars = c("transcript_id", "localization_cat", "region"), value.name = "xl", variable.name = "kmer")
 p2_utr3<-melt(ag2_utr3, measure.vars = colnames(ag2_utr3)[3:(ncol(ag2_utr3)-1)], 
-             id.vars = c("transcript_id", "localization_cat", "region"), value.name = "xl", variable.name = "kmer")
+              id.vars = c("transcript_id", "localization_cat", "region"), value.name = "xl", variable.name = "kmer")
 
 plot<-rbind(p1_cds, p2_cds, p1_utr3, p2_utr3)
 plot<-subset(plot, xl>0)
@@ -380,6 +359,8 @@ plot_sub<-plot[plot_sub,]
 plot_sub$kmer<-factor(plot_sub$kmer, levels=rev(top40))
 plot_sub$kmer<-factor(plot_sub$kmer, levels=(top40))
 plot_sub$localization_cat<-factor(plot_sub$localization_cat, levels=c("membrane", "cytosolic"))
+
+#figS3a
 ggplot(plot_sub, aes(kmer, log2xl, fill=region))+geom_hline(yintercept = 5, lty=2, colour="grey")+
   geom_boxplot(outlier.shape = NA)+
   facet_wrap(~localization_cat, ncol=1)+ theme(axis.text.x = element_text(angle = 90, hjust = 1))+
@@ -390,10 +371,10 @@ ssr_sub<-ssr[ssr_sub,]
 ssr_sub$kmer.x<-factor(ssr_sub$kmer.x, levels=(top40))
 ssr_sub$localization_cat.x<-factor(ssr_sub$localization_cat.x, levels=c("membrane", "cytosolic"))
 
+#figS3a
 ggplot(ssr_sub, aes(kmer.x, count, fill=region.x))+geom_bar(stat = "identity", position = "dodge")+
   facet_wrap(~localization_cat.x, ncol=1)+ theme(axis.text.x = element_text(angle = 90, hjust = 1))+
   scale_fill_manual(values=c("dodgerblue4", "dodgerblue3", "orange2", "orange3"))
-
 
 
 
@@ -748,7 +729,7 @@ ggplot(subset(countmers_plot, localization_cat=="cytosolic"))+geom_logo(gsub("T"
 
 setwd("E:/Google Drive/hdlbp/")
 # mas<-read.delim("hdlbp_master_table_with_classes.txt", header=T)
-mas<-read.delim("hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
+mas<-read.delim("data/hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
 inf<-subset(mas, select=c("gene_id","Symbol",
                           "tpm_cutoff","tc_CDS_norm","localization_cat",
                           "mean_te_293","loc_tar_CDS","tc_CDS_norm_cat",
@@ -847,7 +828,7 @@ mer_freq$top40<-ifelse(is.na(mer_freq$labs), "other", "top40")
 ggplot(mer_freq,aes( freq_whole, colour=top40))+geom_density()+
   facet_wrap(~localization_cat+tc_region)+coord_cartesian(xlim=c(0,0.00005))
 ggplot(mer_freq,aes( freq_whole, colour=loc_reg))+stat_ecdf()+
-coord_cartesian(xlim=c(0,0.00005))+facet_wrap(~top40)
+  coord_cartesian(xlim=c(0,0.00005))+facet_wrap(~top40)
 ggplot(mer_freq,aes( frac_tot, colour=loc_reg))+stat_ecdf()+
   coord_cartesian(xlim=c(0,0.0005))+facet_wrap(~top40)
 
@@ -1178,16 +1159,16 @@ ggplot(ps, aes(factor(kmer2), factor(kmer)))+geom_tile(aes(fill=-log10(p)), na.r
 p_CdsMem_CdsCyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="freqCds_mem")[,1],
                                                     subset(x, !is.na(labs), select="freqCds_cyt")[,1] )$p.value)
 p_CdsMem_CdsCyt_other<-sapply(zs, function(x) wilcox.test(subset(x, is.na(labs), select="freqCds_mem")[,1],
-                                                    subset(x, is.na(labs), select="freqCds_cyt")[,1] )$p.value)
+                                                          subset(x, is.na(labs), select="freqCds_cyt")[,1] )$p.value)
 p_CdsUtr3Mem_CdsUtr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="freqCdsUtr3_mem")[,1],
-                                                    subset(x, !is.na(labs), select="freqCdsUtr3_cyt")[,1] )$p.value)
+                                                            subset(x, !is.na(labs), select="freqCdsUtr3_cyt")[,1] )$p.value)
 p_CdsUtr3Mem_CdsUtr3Cyt_other<-sapply(zs, function(x) wilcox.test(subset(x, is.na(labs), select="freqCdsUtr3_mem")[,1],
-                                                          subset(x, is.na(labs), select="freqCdsUtr3_cyt")[,1] )$p.value)
+                                                                  subset(x, is.na(labs), select="freqCdsUtr3_cyt")[,1] )$p.value)
 
 p_CdsMem_Utr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="freqCds_mem")[,1],
-                                   subset(x, is.na(labs), select="freqUtr3_cyt")[,1] )$p.value)
+                                                     subset(x, is.na(labs), select="freqUtr3_cyt")[,1] )$p.value)
 p_CdsMem_Utr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="diffs_CdsMem_Utr3Cyt")[,1],
-                                                    subset(x, is.na(labs), select="diffs_CdsMem_Utr3Cyt")[,1] )$p.value)
+                                                     subset(x, is.na(labs), select="diffs_CdsMem_Utr3Cyt")[,1] )$p.value)
 p_CdsUtr3Mem_CdsUtr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="diffs_CdsUtr3Mem_CdsUtr3Cyt")[,1],
                                                             subset(x, is.na(labs), select="diffs_CdsUtr3Mem_CdsUtr3Cyt")[,1] )$p.value)
 
@@ -1759,493 +1740,7 @@ ssr_sub$kmer.x<-factor(ssr_sub$kmer.x, levels=rev(top40))
 ggplot(ssr_sub, aes(kmer.x, count, fill=region.x))+geom_bar(stat = "identity", position = "dodge")+facet_wrap(~localization_cat.x)+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 
-##8mer crosslinked
-mer<-dat
 
-mer$count<-ifelse(is.na(mer$localization_cat), NA,
-                  ifelse(mer$norm_tc_num1>2 & mer$norm_tc_num2>2 & mer$TPM_transcript>=10 , 1, NA))
-mer<-subset(mer, !is.na(count))
-mer$tc_seq_pos1_start<-ifelse(mer$tc_start-6<1, NA, mer$tc_start-6)
-mer$tc_seq_pos1_stop<-ifelse(mer$tc_start+1>mer$l_tr, NA, mer$tc_start+1)
-mer$tc_seq_pos2_start<-ifelse(mer$tc_start-5<1, NA, mer$tc_start-5)
-mer$tc_seq_pos2_stop<-ifelse(mer$tc_start+2>mer$l_tr, NA, mer$tc_start+2)
-mer$tc_seq_pos3_start<-ifelse(mer$tc_start-4<1, NA, mer$tc_start-4)
-mer$tc_seq_pos3_stop<-ifelse(mer$tc_start+3>mer$l_tr, NA, mer$tc_start+3)
-mer$tc_seq_pos4_start<-ifelse(mer$tc_start-3<1, NA, mer$tc_start-3)
-mer$tc_seq_pos4_stop<-ifelse(mer$tc_start+4>mer$l_tr, NA, mer$tc_start+4)
-mer$tc_seq_pos5_start<-ifelse(mer$tc_start-2<1, NA, mer$tc_start-2)
-mer$tc_seq_pos5_stop<-ifelse(mer$tc_start+5>mer$l_tr, NA, mer$tc_start+5)
-mer$tc_seq_pos6_start<-ifelse(mer$tc_start-1<1, NA, mer$tc_start-1)
-mer$tc_seq_pos6_stop<-ifelse(mer$tc_start+6>mer$l_tr, NA, mer$tc_start+6)
-mer$tc_seq_pos7_start<-ifelse(mer$tc_start<1, NA, mer$tc_start)
-mer$tc_seq_pos7_stop<-ifelse(mer$tc_start+7>mer$l_tr, NA, mer$tc_start+7)
-mer$tc_seq_pos8_start<-ifelse(mer$tc_start+1<1, NA, mer$tc_start+1)
-mer$tc_seq_pos8_stop<-ifelse(mer$tc_start+8>mer$l_tr, NA, mer$tc_start+8)
-
-
-
-mer$tc_seq_pos1<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos1_start,end=mer$tc_seq_pos1_stop)))
-mer$tc_seq_pos2<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos2_start,end=mer$tc_seq_pos2_stop)))
-mer$tc_seq_pos3<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos3_start,end=mer$tc_seq_pos3_stop)))
-mer$tc_seq_pos4<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos4_start,end=mer$tc_seq_pos4_stop)))
-mer$tc_seq_pos5<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos5_start,end=mer$tc_seq_pos5_stop)))
-mer$tc_seq_pos6<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos6_start,end=mer$tc_seq_pos6_stop)))
-mer$tc_seq_pos7<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos7_start,end=mer$tc_seq_pos7_stop)))
-mer$tc_seq_pos8<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos8_start,end=mer$tc_seq_pos8_stop)))
-
-mer<-melt(mer, measure.vars = colnames(mer)[50:57], id.vars = colnames(mer)[1:33], value.name = "seqs", variable.name = "tc_seq_pos")
-
-
-# countmers_gene<-dcast(subset(mer, !is.na(count), select=c("transcript_id", "seq", "count")),transcript_id~seq,sum,value.var="count")
-
-countmers<-aggregate(count~seqs+tc_region+localization_cat, sum, data=mer)
-
-countmers$frac_tot<-countmers$count/sum(countmers$count)
-agr<-aggregate(frac_tot~seqs, sum, data=countmers)
-agr<-agr[order(agr$frac_tot, decreasing = T),]
-agr<-agr[1:40, "seqs"]
-rows<-which(countmers$seqs %in% agr)
-countmers_plot<-countmers[rows,]
-countmers_plot$seqs<-factor(countmers_plot$seqs, levels=rev(agr))
-ggplot(subset(countmers_plot, tc_region!="utr5"), aes(seqs, frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
-  theme(text = element_text(size=8))
-
-library(ggseqlogo)
-ggplot(subset(countmers_plot, localization_cat=="cytosolic"))+geom_logo(gsub("T","U",as.character(countmers_plot$seqs)), method="bits", seq_type = "rna")+theme_logo()
-
-#write.table(countmers, "./kmers_mem_cyt/bound-8mers-freqs-01032020.txt", quote=F, sep="\t", row.names = F)
-
-##redo 8mer enrichment in CDS/UTR3 mem/cyt
-#run until tcCds
-
-
-setwd("E:/Google Drive/hdlbp/")
-# mas<-read.delim("hdlbp_master_table_with_classes.txt", header=T)
-mas<-read.delim("hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
-inf<-subset(mas, select=c("gene_id","Symbol",
-                          "tpm_cutoff","tc_CDS_norm","localization_cat",
-                          "mean_te_293","loc_tar_CDS","tc_CDS_norm_cat",
-                          "tc_transcript_norm",
-                          "log2FoldChange.mem.cyt.293",
-                          "log2FoldChange.mem.cyt.KO.293",
-                          "log2FoldChange.ribo.rna.KO.WT"))
-
-
-mem<-subset(mas, localization_cat=="membrane" & gene_biotype=="protein_coding" & tpm_cutoff>=10, select="transcript")[,1]
-cyt<-subset(mas, localization_cat=="cytosolic" & gene_biotype=="protein_coding" & tpm_cutoff>=10, select="transcript")[,1]
-
-
-seqCds_mem<-which(names(seqCds) %in% mem)
-seqCds_mem<-seqCds[seqCds_mem]
-seqCds_cyt<-which(names(seqCds) %in% cyt)
-seqCds_cyt<-seqCds[seqCds_cyt]
-
-seqUtr3_mem<-which(names(seqUtr3) %in% mem)
-seqUtr3_mem<-seqUtr3[seqUtr3_mem]
-seqUtr3_cyt<-which(names(seqUtr3) %in% cyt)
-seqUtr3_cyt<-seqUtr3[seqUtr3_cyt]
-kmer<-8
-randsCds_mem <- (Biostrings::oligonucleotideFrequency(seqCds_mem, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqCds_mem<-randsCds_mem/sum(randsCds_mem)
-
-randsCds_cyt <- (Biostrings::oligonucleotideFrequency(seqCds_cyt, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqCds_cyt<-randsCds_cyt/sum(randsCds_cyt)
-
-randsUtr3_mem <- (Biostrings::oligonucleotideFrequency(seqUtr3_mem, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqUtr3_mem<-randsUtr3_mem/sum(randsUtr3_mem)
-
-randsUtr3_cyt <- (Biostrings::oligonucleotideFrequency(seqUtr3_cyt, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqUtr3_cyt<-randsUtr3_cyt/sum(randsUtr3_cyt)
-
-freqCdsUtr3_mem<-(randsCds_mem+randsUtr3_mem)/sum(randsCds_mem+randsUtr3_mem)
-freqCdsUtr3_cyt<-(randsCds_cyt+randsUtr3_cyt)/sum(randsCds_cyt+randsUtr3_cyt)
-
-
-freqs<-data.frame(kmer=names(randsCds_mem),
-                  freqCds_mem=freqCds_mem,
-                  freqCds_cyt=freqCds_cyt,
-                  freqUtr3_mem=freqUtr3_mem,
-                  freqUtr3_cyt=freqUtr3_cyt,
-                  freqCdsUtr3_mem=freqCdsUtr3_mem,
-                  freqCdsUtr3_cyt=freqCdsUtr3_cyt)
-labs<-which(freqs$kmer %in% agr)
-labs<-freqs[labs,]
-labs$labs<-labs$kmer
-freqs$labs<-NA
-freqs<-rbind(freqs, labs)
-ggplot(freqs, aes(freqCds_mem, freqCds_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_mem))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_mem, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqUtr3_mem, freqUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-
-#write.table(freqs, "./kmers_mem_cyt/whole-8mers-freqs-01032020.txt", quote=F, sep="\t", row.names=F)
-mer_freq<-melt(freqs, measure.vars = colnames(freqs)[grepl("freq", colnames(freqs))], id.vars="kmer", value.name = "freq_whole", variable.name = "loc_reg")
-mer_freq$id<-paste0(mer_freq$kmer, "_", mer_freq$loc_reg)
-
-countmers$id<-ifelse(countmers$tc_region=="cds" & countmers$localization_cat=="cytosolic", paste0(countmers$seq, "_freqCds_cyt"),
-                     ifelse(countmers$tc_region=="cds" & countmers$localization_cat=="membrane", paste0(countmers$seq, "_freqCds_mem"),
-                            ifelse(countmers$tc_region=="utr3" & countmers$localization_cat=="cytosolic", paste0(countmers$seq, "_freqUtr3_cyt"),
-                                   ifelse(countmers$tc_region=="utr3" & countmers$localization_cat=="membrane", paste0(countmers$seq, "_freqUtr3_mem"),NA))))
-
-mer_freq<-merge(mer_freq, countmers, by="id")
-
-labs<-which(mer_freq$kmer %in% agr)
-labs<-mer_freq[labs,]
-labs$labs<-labs$kmer
-mer_freq$labs<-NA
-mer_freq<-rbind(mer_freq, labs)
-ggplot(mer_freq,aes(frac_tot, freq_whole))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()+theme(legend.position = "none")+
-  facet_wrap(~localization_cat+tc_region)+coord_cartesian(ylim=c(0,0.001))
-
-ggplot(mer_freq,aes(frac_tot, freq_whole))+geom_point()+geom_abline()+theme(legend.position = "none")+
-  facet_wrap(~localization_cat+tc_region)+coord_cartesian(ylim=c(0,0.001))
-
-mer_freq$top40<-ifelse(is.na(mer_freq$labs), "other", "top40")
-ggplot(mer_freq,aes( freq_whole, colour=top40))+geom_density()+
-  facet_wrap(~localization_cat+tc_region)+coord_cartesian(xlim=c(0,0.0005))
-
-memCds<-subset(mer_freq, loc_reg=="freqCds_mem")
-cytCds<-subset(mer_freq, loc_reg=="freqCds_cyt")
-colnames(memCds)<-paste0(colnames(memCds), "_memCds")
-colnames(cytCds)<-paste0(colnames(cytCds), "_cytCds")
-
-smer<-merge(memCds, cytCds, by.x="kmer_memCds", by.y="kmer_cytCds")
-ggplot(smer, aes(freq_whole_memCds-freq_whole_cytCds, frac_tot_memCds))+
-  geom_text(aes(label=kmer_memCds, colour=labs_memCds), size=2)+
-  geom_vline(xintercept=0,lty=2)+theme(legend.position = "none")
-
-ggplot(smer, aes(freq_whole_memCds-freq_whole_cytCds, frac_tot_cytCds))+
-  geom_text(aes(label=kmer_memCds, colour=labs_memCds), size=2)+
-  geom_vline(xintercept=0,lty=2)+theme(legend.position = "none")
-
-
-memCds_bound<-subset(countmers, localization_cat=="membrane" & tc_region=="cds")
-cytUtr3_bound<-subset(countmers, localization_cat=="cytosolic" & tc_region=="utr3")
-colnames(memCds_bound)<-paste0(colnames(memCds_bound), "_memCds")
-colnames(cytUtr3_bound)<-paste0(colnames(cytUtr3_bound), "_cytUtr3")
-
-smer<-merge(memCds_bound, cytUtr3_bound, by.x="seqs_memCds", by.y="seqs_cytUtr3")
-ggplot(smer, aes(frac_tot_memCds, frac_tot_cytUtr3))+
-  geom_text(aes(label=seqs_memCds), size=2)+
-  geom_abline(slope=1)
-ggplot(smer, aes(frac_tot_memCds, frac_tot_cytUtr3))+
-  geom_point()+
-  geom_abline(slope=1)
-
-memCds_bound<-subset(countmers, localization_cat=="membrane" & tc_region=="cds")
-cytCds_bound<-subset(countmers, localization_cat=="cytosolic" & tc_region=="cds")
-colnames(memCds_bound)<-paste0(colnames(memCds_bound), "_memCds")
-colnames(cytCds_bound)<-paste0(colnames(cytCds_bound), "_cytCds")
-
-smer<-merge(memCds_bound, cytCds_bound, by.x="seqs_memCds", by.y="seqs_cytCds")
-ggplot(smer, aes(frac_tot_memCds, frac_tot_cytCds))+
-  geom_text(aes(label=seqs_memCds), size=2)+
-  geom_abline(slope=1)
-
-#7-mer per gene
-
-ag1_cds<-dcast(subset(mer, tc_region=="cds", select=c("transcript_id","localization_cat", "seqs", "norm_tc_num1")),transcript_id+localization_cat~seqs,sum,value.var="norm_tc_num1")
-ag2_cds<-dcast(subset(mer, tc_region=="cds", select=c("transcript_id","localization_cat", "seqs", "norm_tc_num2")), transcript_id+localization_cat~seqs,sum,value.var="norm_tc_num2")
-
-ag1_utr3<-dcast(subset(mer, tc_region=="utr3", select=c("transcript_id","localization_cat", "seqs", "norm_tc_num1")), transcript_id+localization_cat~seqs,sum,value.var="norm_tc_num1")
-ag2_utr3<-dcast(subset(mer, tc_region=="utr3", select=c("transcript_id","localization_cat", "seqs", "norm_tc_num2")), transcript_id+localization_cat~seqs,sum,value.var="norm_tc_num2")
-
-ag1_cds_len<-which(len$transcript %in% ag1_cds$transcript_id)
-ag2_cds_len<-which(len$transcript %in% ag2_cds$transcript_id)
-ag1_utr3_len<-which(len$transcript %in% ag1_utr3$transcript_id)
-ag2_utr3_len<-which(len$transcript %in% ag2_utr3$transcript_id)
-
-ag1_cds_len<-len[ag1_cds_len, c("transcript", "l_cds")]
-ag2_cds_len<-len[ag2_cds_len, c("transcript", "l_cds")]
-ag1_utr3_len<-len[ag1_utr3_len, c("transcript", "l_utr3")]
-ag2_utr3_len<-len[ag2_utr3_len, c("transcript", "l_utr3")]
-
-ag1_cds<-cbind(ag1_cds[,1:2],ag1_cds[,3:ncol(ag1_cds)]/ag1_cds_len$l_cds*1e3)
-ag2_cds<-cbind(ag2_cds[,1:2],ag2_cds[,3:ncol(ag2_cds)]/ag2_cds_len$l_cds*1e3)
-ag1_utr3<-cbind(ag1_utr3[,1:2],ag1_utr3[,3:ncol(ag1_utr3)]/ag1_utr3_len$l_utr3*1e3)
-ag2_utr3<-cbind(ag2_utr3[,1:2],ag2_utr3[,3:ncol(ag2_utr3)]/ag2_utr3_len$l_utr3*1e3)
-
-ag1_cds_tpm<-which(mas$transcript %in% ag1_cds$transcript_id)
-ag2_cds_tpm<-which(mas$transcript %in% ag2_cds$transcript_id)
-ag1_utr3_tpm<-which(mas$transcript %in% ag1_utr3$transcript_id)
-ag2_utr3_tpm<-which(mas$transcript %in% ag2_utr3$transcript_id)
-
-ag1_cds_tpm<-mas[ag1_cds_tpm, c("transcript", "tpm_cutoff")]
-ag1_cds_tpm<-ag1_cds_tpm[order(match(ag1_cds_tpm$transcript, ag1_cds$transcript_id)),]
-ag2_cds_tpm<-mas[ag2_cds_tpm, c("transcript", "tpm_cutoff")]
-ag2_cds_tpm<-ag2_cds_tpm[order(match(ag2_cds_tpm$transcript, ag2_cds$transcript_id)),]
-ag1_utr3_tpm<-mas[ag1_utr3_tpm, c("transcript", "tpm_cutoff")]
-ag1_utr3_tpm<-ag1_utr3_tpm[order(match(ag1_utr3_tpm$transcript, ag1_utr3$transcript_id)),]
-ag2_utr3_tpm<-mas[ag2_utr3_tpm, c("transcript", "tpm_cutoff")]
-ag2_utr3_tpm<-ag2_utr3_tpm[order(match(ag2_utr3_tpm$transcript, ag2_utr3$transcript_id)),]
-
-ag1_cds<-cbind(ag1_cds[,1:2],ag1_cds[,3:ncol(ag1_cds)]/ag1_cds_tpm$tpm_cutoff)
-ag2_cds<-cbind(ag2_cds[,1:2],ag2_cds[,3:ncol(ag2_cds)]/ag2_cds_tpm$tpm_cutoff)
-ag1_utr3<-cbind(ag1_utr3[,1:2],ag1_utr3[,3:ncol(ag1_utr3)]/ag1_utr3_tpm$tpm_cutoff)
-ag2_utr3<-cbind(ag2_utr3[,1:2],ag2_utr3[,3:ncol(ag2_utr3)]/ag2_utr3_tpm$tpm_cutoff)
-
-ag1_cds$region<-"cds1"
-ag2_cds$region<-"cds2"
-ag1_utr3$region<-"utr3_1"
-ag2_utr3$region<-"utr3_2"
-
-p1_cds<-melt(ag1_cds, measure.vars = colnames(ag1_cds)[3:(ncol(ag1_cds)-1)], 
-             id.vars = c("transcript_id", "localization_cat", "region"), value.name = "xl", variable.name = "kmer")
-p2_cds<-melt(ag2_cds, measure.vars = colnames(ag2_cds)[3:(ncol(ag2_cds)-1)], 
-             id.vars = c("transcript_id", "localization_cat", "region"), value.name = "xl", variable.name = "kmer")
-p1_utr3<-melt(ag1_utr3, measure.vars = colnames(ag1_utr3)[3:(ncol(ag1_utr3)-1)], 
-              id.vars = c("transcript_id", "localization_cat", "region"), value.name = "xl", variable.name = "kmer")
-p2_utr3<-melt(ag2_utr3, measure.vars = colnames(ag2_utr3)[3:(ncol(ag2_utr3)-1)], 
-              id.vars = c("transcript_id", "localization_cat", "region"), value.name = "xl", variable.name = "kmer")
-
-plot<-rbind(p1_cds, p2_cds, p1_utr3, p2_utr3)
-plot<-subset(plot, xl>0)
-plot$log2xl<-ifelse(plot$xl<=0, NA, log2(plot$xl))
-plot$count<-ifelse(plot$xl>0, 1, NA)
-meds<-aggregate(log2xl~kmer+localization_cat+region, data=plot, median, na.rm=T)
-meds<-meds[order(meds$log2xl, decreasing=T),]
-meds$id<-paste0(meds$kmer,"_", meds$localization_cat,"_", meds$region)
-freq<-aggregate(count~kmer+localization_cat+region, data=plot, sum)
-freq<-freq[order(freq$count, decreasing=T),]
-freq$id<-paste0(freq$kmer,"_", freq$localization_cat,"_", freq$region)
-
-ssr<-merge(meds, freq, by="id")
-ggplot(ssr, aes(log2xl, count, fill=region.x ))+geom_text(aes(label=kmer.x), size=2)+facet_wrap(~localization_cat.x)
-ssr<-subset(ssr, count>20)
-ssr<-ssr[order(ssr$count, decreasing=T),]
-
-top40<-subset(ssr, localization_cat.x=="membrane" & region.x=="cds1")$kmer.x[1:10]
-plot_sub<-which(plot$kmer %in% top40)
-plot_sub<-plot[plot_sub,]
-plot_sub$kmer<-factor(plot_sub$kmer, levels=rev(top40))
-ggplot(plot_sub, aes(kmer, log2xl, fill=region))+geom_boxplot()+facet_wrap(~localization_cat)+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
-ssr<-merge(meds, freq, by="id")
-ssr_sub<-which(ssr$kmer.x %in% top40)
-ssr_sub<-ssr[ssr_sub,]
-ssr_sub$kmer.x<-factor(ssr_sub$kmer.x, levels=rev(top40))
-ggplot(ssr_sub, aes(kmer.x, count, fill=region.x))+geom_bar(stat = "identity", position = "dodge")+facet_wrap(~localization_cat.x)+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-##10mer crosslinked
-mer<-dat
-
-mer$count<-ifelse(is.na(mer$localization_cat), NA,
-                  ifelse(mer$norm_tc_num1>2 & mer$norm_tc_num2>2 & mer$TPM_transcript>=10 , 1, NA))
-mer<-subset(mer, !is.na(count))
-mer$tc_seq_pos1_start<-ifelse(mer$tc_start-8<1, NA, mer$tc_start-8)
-mer$tc_seq_pos1_stop<-ifelse(mer$tc_start+1>mer$l_tr, NA, mer$tc_start+1)
-mer$tc_seq_pos2_start<-ifelse(mer$tc_start-7<1, NA, mer$tc_start-7)
-mer$tc_seq_pos2_stop<-ifelse(mer$tc_start+2>mer$l_tr, NA, mer$tc_start+2)
-mer$tc_seq_pos3_start<-ifelse(mer$tc_start-6<1, NA, mer$tc_start-6)
-mer$tc_seq_pos3_stop<-ifelse(mer$tc_start+3>mer$l_tr, NA, mer$tc_start+3)
-mer$tc_seq_pos4_start<-ifelse(mer$tc_start-5<1, NA, mer$tc_start-5)
-mer$tc_seq_pos4_stop<-ifelse(mer$tc_start+4>mer$l_tr, NA, mer$tc_start+4)
-mer$tc_seq_pos5_start<-ifelse(mer$tc_start-4<1, NA, mer$tc_start-4)
-mer$tc_seq_pos5_stop<-ifelse(mer$tc_start+5>mer$l_tr, NA, mer$tc_start+5)
-mer$tc_seq_pos6_start<-ifelse(mer$tc_start-3<1, NA, mer$tc_start-3)
-mer$tc_seq_pos6_stop<-ifelse(mer$tc_start+6>mer$l_tr, NA, mer$tc_start+6)
-mer$tc_seq_pos7_start<-ifelse(mer$tc_start-2<1, NA, mer$tc_start-2)
-mer$tc_seq_pos7_stop<-ifelse(mer$tc_start+7>mer$l_tr, NA, mer$tc_start+7)
-mer$tc_seq_pos8_start<-ifelse(mer$tc_start-1<1, NA, mer$tc_start-1)
-mer$tc_seq_pos8_stop<-ifelse(mer$tc_start+8>mer$l_tr, NA, mer$tc_start+8)
-mer$tc_seq_pos9_start<-ifelse(mer$tc_start-0<1, NA, mer$tc_start-0)
-mer$tc_seq_pos9_stop<-ifelse(mer$tc_start+9>mer$l_tr, NA, mer$tc_start+9)
-mer$tc_seq_pos10_start<-ifelse(mer$tc_start+1<1, NA, mer$tc_start+1)
-mer$tc_seq_pos10_stop<-ifelse(mer$tc_start+10>mer$l_tr, NA, mer$tc_start+10)
-
-
-
-
-mer$tc_seq_pos1<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos1_start,end=mer$tc_seq_pos1_stop)))
-mer$tc_seq_pos2<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos2_start,end=mer$tc_seq_pos2_stop)))
-mer$tc_seq_pos3<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos3_start,end=mer$tc_seq_pos3_stop)))
-mer$tc_seq_pos4<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos4_start,end=mer$tc_seq_pos4_stop)))
-mer$tc_seq_pos5<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos5_start,end=mer$tc_seq_pos5_stop)))
-mer$tc_seq_pos6<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos6_start,end=mer$tc_seq_pos6_stop)))
-mer$tc_seq_pos7<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos7_start,end=mer$tc_seq_pos7_stop)))
-mer$tc_seq_pos8<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos8_start,end=mer$tc_seq_pos8_stop)))
-mer$tc_seq_pos9<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos9_start,end=mer$tc_seq_pos9_stop)))
-
-mer$tc_seq_pos10<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                          start=mer$tc_seq_pos10_start,end=mer$tc_seq_pos10_stop)))
-
-
-mer<-melt(mer, measure.vars = colnames(mer)[54:63], id.vars = colnames(mer)[1:33], value.name = "seqs", variable.name = "tc_seq_pos")
-# countmers_gene<-dcast(subset(mer, !is.na(count), select=c("transcript_id", "seq", "count")),transcript_id~seq,sum,value.var="count")
-
-countmers<-aggregate(count~seqs+tc_region+localization_cat, sum, data=mer)
-
-countmers$frac_tot<-countmers$count/sum(countmers$count)
-agr<-aggregate(frac_tot~seqs, sum, data=countmers)
-agr<-agr[order(agr$frac_tot, decreasing = T),]
-agr<-agr[1:40, "seqs"]
-rows<-which(countmers$seqs %in% agr)
-countmers_plot<-countmers[rows,]
-countmers_plot$seqs<-factor(countmers_plot$seqs, levels=rev(agr))
-# ggplot(subset(countmers_plot, tc_region!="utr5"), aes(seqs, frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
-  # theme(text = element_text(size=8))
-
-# library(ggseqlogo)
-# ggplot(subset(countmers_plot, localization_cat=="cytosolic"))+geom_logo(gsub("T","U",as.character(countmers_plot$seqs)), method="bits", seq_type = "rna")+theme_logo()
-
-#write.table(countmers, "./kmers_mem_cyt/bound-10mers-freqs-01032020.txt", quote=F, sep="\t", row.names = F)
-
-##redo 8mer enrichment in CDS/UTR3 mem/cyt
-#run until tcCds
-
-
-setwd("E:/Google Drive/hdlbp/")
-# mas<-read.delim("hdlbp_master_table_with_classes.txt", header=T)
-mas<-read.delim("hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
-inf<-subset(mas, select=c("gene_id","Symbol",
-                          "tpm_cutoff","tc_CDS_norm","localization_cat",
-                          "mean_te_293","loc_tar_CDS","tc_CDS_norm_cat",
-                          "tc_transcript_norm",
-                          "log2FoldChange.mem.cyt.293",
-                          "log2FoldChange.mem.cyt.KO.293",
-                          "log2FoldChange.ribo.rna.KO.WT"))
-
-
-mem<-subset(mas, localization_cat=="membrane" & gene_biotype=="protein_coding" & tpm_cutoff>=10, select="transcript")[,1]
-cyt<-subset(mas, localization_cat=="cytosolic" & gene_biotype=="protein_coding" & tpm_cutoff>=10, select="transcript")[,1]
-
-
-seqCds_mem<-which(names(seqCds) %in% mem)
-seqCds_mem<-seqCds[seqCds_mem]
-seqCds_cyt<-which(names(seqCds) %in% cyt)
-seqCds_cyt<-seqCds[seqCds_cyt]
-
-seqUtr3_mem<-which(names(seqUtr3) %in% mem)
-seqUtr3_mem<-seqUtr3[seqUtr3_mem]
-seqUtr3_cyt<-which(names(seqUtr3) %in% cyt)
-seqUtr3_cyt<-seqUtr3[seqUtr3_cyt]
-kmer<-10
-randsCds_mem <- (Biostrings::oligonucleotideFrequency(seqCds_mem, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqCds_mem<-randsCds_mem/sum(randsCds_mem)
-
-randsCds_cyt <- (Biostrings::oligonucleotideFrequency(seqCds_cyt, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqCds_cyt<-randsCds_cyt/sum(randsCds_cyt)
-
-randsUtr3_mem <- (Biostrings::oligonucleotideFrequency(seqUtr3_mem, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqUtr3_mem<-randsUtr3_mem/sum(randsUtr3_mem)
-
-randsUtr3_cyt <- (Biostrings::oligonucleotideFrequency(seqUtr3_cyt, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqUtr3_cyt<-randsUtr3_cyt/sum(randsUtr3_cyt)
-
-freqCdsUtr3_mem<-(randsCds_mem+randsUtr3_mem)/sum(randsCds_mem+randsUtr3_mem)
-freqCdsUtr3_cyt<-(randsCds_cyt+randsUtr3_cyt)/sum(randsCds_cyt+randsUtr3_cyt)
-
-
-freqs<-data.frame(kmer=names(randsCds_mem),
-                  freqCds_mem=freqCds_mem,
-                  freqCds_cyt=freqCds_cyt,
-                  freqUtr3_mem=freqUtr3_mem,
-                  freqUtr3_cyt=freqUtr3_cyt,
-                  freqCdsUtr3_mem=freqCdsUtr3_mem,
-                  freqCdsUtr3_cyt=freqCdsUtr3_cyt)
-labs<-which(freqs$kmer %in% agr)
-labs<-freqs[labs,]
-labs$labs<-labs$kmer
-freqs$labs<-NA
-freqs<-rbind(freqs, labs)
-ggplot(freqs, aes(freqCds_mem, freqCds_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_mem))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_mem, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqUtr3_mem, freqUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-
-#write.table(freqs, "./kmers_mem_cyt/whole-10mers-freqs-01032020.txt", quote=F, sep="\t", row.names=F)
-mer_freq<-melt(freqs, measure.vars = colnames(freqs)[grepl("freq", colnames(freqs))], id.vars="kmer", value.name = "freq_whole", variable.name = "loc_reg")
-mer_freq$id<-paste0(mer_freq$kmer, "_", mer_freq$loc_reg)
-
-countmers$id<-ifelse(countmers$tc_region=="cds" & countmers$localization_cat=="cytosolic", paste0(countmers$seq, "_freqCds_cyt"),
-                     ifelse(countmers$tc_region=="cds" & countmers$localization_cat=="membrane", paste0(countmers$seq, "_freqCds_mem"),
-                            ifelse(countmers$tc_region=="utr3" & countmers$localization_cat=="cytosolic", paste0(countmers$seq, "_freqUtr3_cyt"),
-                                   ifelse(countmers$tc_region=="utr3" & countmers$localization_cat=="membrane", paste0(countmers$seq, "_freqUtr3_mem"),NA))))
-
-mer_freq<-merge(mer_freq, countmers, by="id")
-
-labs<-which(mer_freq$kmer %in% agr)
-labs<-mer_freq[labs,]
-labs$labs<-labs$kmer
-mer_freq$labs<-NA
-mer_freq<-rbind(mer_freq, labs)
-ggplot(mer_freq,aes(frac_tot, freq_whole))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()+theme(legend.position = "none")+
-  facet_wrap(~localization_cat+tc_region)+coord_cartesian(ylim=c(0,0.001))
-
-ggplot(mer_freq,aes(frac_tot, freq_whole))+geom_point()+geom_abline()+theme(legend.position = "none")+
-  facet_wrap(~localization_cat+tc_region)+coord_cartesian(ylim=c(0,0.001))
-
-mer_freq$top40<-ifelse(is.na(mer_freq$labs), "other", "top40")
-ggplot(mer_freq,aes( freq_whole, colour=top40))+geom_density()+
-  facet_wrap(~localization_cat+tc_region)+coord_cartesian(xlim=c(0,0.0005))
-
-memCds<-subset(mer_freq, loc_reg=="freqCds_mem")
-cytCds<-subset(mer_freq, loc_reg=="freqCds_cyt")
-colnames(memCds)<-paste0(colnames(memCds), "_memCds")
-colnames(cytCds)<-paste0(colnames(cytCds), "_cytCds")
-
-smer<-merge(memCds, cytCds, by.x="kmer_memCds", by.y="kmer_cytCds")
-ggplot(smer, aes(freq_whole_memCds-freq_whole_cytCds, frac_tot_memCds))+
-  geom_text(aes(label=kmer_memCds, colour=labs_memCds), size=2)+
-  geom_vline(xintercept=0,lty=2)+theme(legend.position = "none")
-
-ggplot(smer, aes(freq_whole_memCds-freq_whole_cytCds, frac_tot_cytCds))+
-  geom_text(aes(label=kmer_memCds, colour=labs_memCds), size=2)+
-  geom_vline(xintercept=0,lty=2)+theme(legend.position = "none")
-
-
-memCds_bound<-subset(countmers, localization_cat=="membrane" & tc_region=="cds")
-cytUtr3_bound<-subset(countmers, localization_cat=="cytosolic" & tc_region=="utr3")
-colnames(memCds_bound)<-paste0(colnames(memCds_bound), "_memCds")
-colnames(cytUtr3_bound)<-paste0(colnames(cytUtr3_bound), "_cytUtr3")
-
-smer<-merge(memCds_bound, cytUtr3_bound, by.x="seqs_memCds", by.y="seqs_cytUtr3")
-ggplot(smer, aes(frac_tot_memCds, frac_tot_cytUtr3))+
-  geom_text(aes(label=seqs_memCds), size=2)+
-  geom_abline(slope=1)
-ggplot(smer, aes(frac_tot_memCds, frac_tot_cytUtr3))+
-  geom_point()+
-  geom_abline(slope=1)
-
-memCds_bound<-subset(countmers, localization_cat=="membrane" & tc_region=="cds")
-cytCds_bound<-subset(countmers, localization_cat=="cytosolic" & tc_region=="cds")
-colnames(memCds_bound)<-paste0(colnames(memCds_bound), "_memCds")
-colnames(cytCds_bound)<-paste0(colnames(cytCds_bound), "_cytCds")
-
-smer<-merge(memCds_bound, cytCds_bound, by.x="seqs_memCds", by.y="seqs_cytCds")
-ggplot(smer, aes(frac_tot_memCds, frac_tot_cytCds))+
-  geom_text(aes(label=seqs_memCds), size=2)+
-  geom_abline(slope=1)
 
 #7-mer per gene
 
@@ -2333,313 +1828,7 @@ ggplot(ssr_sub, aes(kmer.x, count, fill=region.x))+geom_bar(stat = "identity", p
 
 
 
-##11mer crosslinked
-mer<-dat
-
-mer$count<-ifelse(is.na(mer$localization_cat), NA,
-                  ifelse(mer$norm_tc_num1>2 & mer$norm_tc_num2>2 & mer$TPM_transcript>=10 , 1, NA))
-mer<-subset(mer, !is.na(count))
-
-mer$tc_seq_pos1_start<-ifelse(mer$tc_start-9<1, NA, mer$tc_start-9)
-mer$tc_seq_pos1_stop<-ifelse(mer$tc_start+1>mer$l_tr, NA, mer$tc_start+1)
-mer$tc_seq_pos2_start<-ifelse(mer$tc_start-8<1, NA, mer$tc_start-8)
-mer$tc_seq_pos2_stop<-ifelse(mer$tc_start+2>mer$l_tr, NA, mer$tc_start+2)
-mer$tc_seq_pos3_start<-ifelse(mer$tc_start-7<1, NA, mer$tc_start-7)
-mer$tc_seq_pos3_stop<-ifelse(mer$tc_start+3>mer$l_tr, NA, mer$tc_start+3)
-mer$tc_seq_pos4_start<-ifelse(mer$tc_start-6<1, NA, mer$tc_start-6)
-mer$tc_seq_pos4_stop<-ifelse(mer$tc_start+4>mer$l_tr, NA, mer$tc_start+4)
-mer$tc_seq_pos5_start<-ifelse(mer$tc_start-5<1, NA, mer$tc_start-5)
-mer$tc_seq_pos5_stop<-ifelse(mer$tc_start+5>mer$l_tr, NA, mer$tc_start+5)
-mer$tc_seq_pos6_start<-ifelse(mer$tc_start-4<1, NA, mer$tc_start-4)
-mer$tc_seq_pos6_stop<-ifelse(mer$tc_start+6>mer$l_tr, NA, mer$tc_start+6)
-mer$tc_seq_pos7_start<-ifelse(mer$tc_start-3<1, NA, mer$tc_start-3)
-mer$tc_seq_pos7_stop<-ifelse(mer$tc_start+7>mer$l_tr, NA, mer$tc_start+7)
-mer$tc_seq_pos8_start<-ifelse(mer$tc_start-2<1, NA, mer$tc_start-2)
-mer$tc_seq_pos8_stop<-ifelse(mer$tc_start+8>mer$l_tr, NA, mer$tc_start+8)
-mer$tc_seq_pos9_start<-ifelse(mer$tc_start-1<1, NA, mer$tc_start-1)
-mer$tc_seq_pos9_stop<-ifelse(mer$tc_start+9>mer$l_tr, NA, mer$tc_start+9)
-mer$tc_seq_pos10_start<-ifelse(mer$tc_start-0<1, NA, mer$tc_start-0)
-mer$tc_seq_pos10_stop<-ifelse(mer$tc_start+10>mer$l_tr, NA, mer$tc_start+10)
-mer$tc_seq_pos11_start<-ifelse(mer$tc_start+1<1, NA, mer$tc_start+1)
-mer$tc_seq_pos11_stop<-ifelse(mer$tc_start+11>mer$l_tr, NA, mer$tc_start+11)
-
-
-
-mer$tc_seq_pos1<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos1_start,end=mer$tc_seq_pos1_stop)))
-mer$tc_seq_pos2<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos2_start,end=mer$tc_seq_pos2_stop)))
-mer$tc_seq_pos3<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos3_start,end=mer$tc_seq_pos3_stop)))
-mer$tc_seq_pos4<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos4_start,end=mer$tc_seq_pos4_stop)))
-mer$tc_seq_pos5<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos5_start,end=mer$tc_seq_pos5_stop)))
-mer$tc_seq_pos6<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos6_start,end=mer$tc_seq_pos6_stop)))
-mer$tc_seq_pos7<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos7_start,end=mer$tc_seq_pos7_stop)))
-mer$tc_seq_pos8<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos8_start,end=mer$tc_seq_pos8_stop)))
-mer$tc_seq_pos9<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos9_start,end=mer$tc_seq_pos9_stop)))
-
-mer$tc_seq_pos10<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                          start=mer$tc_seq_pos10_start,end=mer$tc_seq_pos10_stop)))
-mer$tc_seq_pos11<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                          start=mer$tc_seq_pos11_start,end=mer$tc_seq_pos11_stop)))
-
-
-mer<-melt(mer, measure.vars = colnames(mer)[56:66], id.vars = colnames(mer)[1:33], value.name = "seqs", variable.name = "tc_seq_pos")
-# countmers_gene<-dcast(subset(mer, !is.na(count), select=c("transcript_id", "seq", "count")),transcript_id~seq,sum,value.var="count")
-
-countmers<-aggregate(count~seqs+tc_region+localization_cat, sum, data=mer)
-
-countmers$frac_tot<-countmers$count/sum(countmers$count)
-agr<-aggregate(frac_tot~seqs, sum, data=countmers)
-agr<-agr[order(agr$frac_tot, decreasing = T),]
-agr<-agr[1:40, "seqs"]
-rows<-which(countmers$seqs %in% agr)
-countmers_plot<-countmers[rows,]
-countmers_plot$seqs<-factor(countmers_plot$seqs, levels=rev(agr))
-# ggplot(subset(countmers_plot, tc_region!="utr5"), aes(seqs, frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
-# theme(text = element_text(size=8))
-
-# library(ggseqlogo)
-# ggplot(subset(countmers_plot, localization_cat=="cytosolic"))+geom_logo(gsub("T","U",as.character(countmers_plot$seqs)), method="bits", seq_type = "rna")+theme_logo()
-
-#write.table(countmers, "./kmers_mem_cyt/bound-11mers-freqs-01032020.txt", quote=F, sep="\t", row.names = F)
-
-##redo 8mer enrichment in CDS/UTR3 mem/cyt
-#run until tcCds
-
-
-setwd("E:/Google Drive/hdlbp/")
-# mas<-read.delim("hdlbp_master_table_with_classes.txt", header=T)
-mas<-read.delim("hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
-inf<-subset(mas, select=c("gene_id","Symbol",
-                          "tpm_cutoff","tc_CDS_norm","localization_cat",
-                          "mean_te_293","loc_tar_CDS","tc_CDS_norm_cat",
-                          "tc_transcript_norm",
-                          "log2FoldChange.mem.cyt.293",
-                          "log2FoldChange.mem.cyt.KO.293",
-                          "log2FoldChange.ribo.rna.KO.WT"))
-
-
-mem<-subset(mas, localization_cat=="membrane" & gene_biotype=="protein_coding" & tpm_cutoff>=10, select="transcript")[,1]
-cyt<-subset(mas, localization_cat=="cytosolic" & gene_biotype=="protein_coding" & tpm_cutoff>=10, select="transcript")[,1]
-
-
-seqCds_mem<-which(names(seqCds) %in% mem)
-seqCds_mem<-seqCds[seqCds_mem]
-seqCds_cyt<-which(names(seqCds) %in% cyt)
-seqCds_cyt<-seqCds[seqCds_cyt]
-
-seqUtr3_mem<-which(names(seqUtr3) %in% mem)
-seqUtr3_mem<-seqUtr3[seqUtr3_mem]
-seqUtr3_cyt<-which(names(seqUtr3) %in% cyt)
-seqUtr3_cyt<-seqUtr3[seqUtr3_cyt]
-kmer<-11
-randsCds_mem <- (Biostrings::oligonucleotideFrequency(seqCds_mem, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqCds_mem<-randsCds_mem/sum(randsCds_mem)
-
-randsCds_cyt <- (Biostrings::oligonucleotideFrequency(seqCds_cyt, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqCds_cyt<-randsCds_cyt/sum(randsCds_cyt)
-
-randsUtr3_mem <- (Biostrings::oligonucleotideFrequency(seqUtr3_mem, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqUtr3_mem<-randsUtr3_mem/sum(randsUtr3_mem)
-
-randsUtr3_cyt <- (Biostrings::oligonucleotideFrequency(seqUtr3_cyt, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqUtr3_cyt<-randsUtr3_cyt/sum(randsUtr3_cyt)
-
-freqCdsUtr3_mem<-(randsCds_mem+randsUtr3_mem)/sum(randsCds_mem+randsUtr3_mem)
-freqCdsUtr3_cyt<-(randsCds_cyt+randsUtr3_cyt)/sum(randsCds_cyt+randsUtr3_cyt)
-
-
-freqs<-data.frame(kmer=names(randsCds_mem),
-                  freqCds_mem=freqCds_mem,
-                  freqCds_cyt=freqCds_cyt,
-                  freqUtr3_mem=freqUtr3_mem,
-                  freqUtr3_cyt=freqUtr3_cyt,
-                  freqCdsUtr3_mem=freqCdsUtr3_mem,
-                  freqCdsUtr3_cyt=freqCdsUtr3_cyt)
-labs<-which(freqs$kmer %in% agr)
-labs<-freqs[labs,]
-labs$labs<-labs$kmer
-freqs$labs<-NA
-freqs<-rbind(freqs, labs)
-ggplot(freqs, aes(freqCds_mem, freqCds_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_mem))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_mem, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqUtr3_mem, freqUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-
-setwd("E:/work/hdlbp/")
-#write.table(freqs, "./kmers_mem_cyt/whole-11mers-freqs-01032020.txt", quote=F, sep="\t", row.names=F)
-
-
-##12mer crosslinked
-mer<-dat
-
-mer$count<-ifelse(is.na(mer$localization_cat), NA,
-                  ifelse(mer$norm_tc_num1>2 & mer$norm_tc_num2>2 & mer$TPM_transcript>=10 , 1, NA))
-mer<-subset(mer, !is.na(count))
-
-mer$tc_seq_pos1_start<-ifelse(mer$tc_start-10<1, NA, mer$tc_start-10)
-mer$tc_seq_pos1_stop<-ifelse(mer$tc_start+1>mer$l_tr, NA, mer$tc_start+1)
-mer$tc_seq_pos2_start<-ifelse(mer$tc_start-9<1, NA, mer$tc_start-9)
-mer$tc_seq_pos2_stop<-ifelse(mer$tc_start+2>mer$l_tr, NA, mer$tc_start+2)
-mer$tc_seq_pos3_start<-ifelse(mer$tc_start-8<1, NA, mer$tc_start-8)
-mer$tc_seq_pos3_stop<-ifelse(mer$tc_start+3>mer$l_tr, NA, mer$tc_start+3)
-mer$tc_seq_pos4_start<-ifelse(mer$tc_start-7<1, NA, mer$tc_start-7)
-mer$tc_seq_pos4_stop<-ifelse(mer$tc_start+4>mer$l_tr, NA, mer$tc_start+4)
-mer$tc_seq_pos5_start<-ifelse(mer$tc_start-6<1, NA, mer$tc_start-6)
-mer$tc_seq_pos5_stop<-ifelse(mer$tc_start+5>mer$l_tr, NA, mer$tc_start+5)
-mer$tc_seq_pos6_start<-ifelse(mer$tc_start-5<1, NA, mer$tc_start-5)
-mer$tc_seq_pos6_stop<-ifelse(mer$tc_start+6>mer$l_tr, NA, mer$tc_start+6)
-mer$tc_seq_pos7_start<-ifelse(mer$tc_start-4<1, NA, mer$tc_start-4)
-mer$tc_seq_pos7_stop<-ifelse(mer$tc_start+7>mer$l_tr, NA, mer$tc_start+7)
-mer$tc_seq_pos8_start<-ifelse(mer$tc_start-3<1, NA, mer$tc_start-3)
-mer$tc_seq_pos8_stop<-ifelse(mer$tc_start+8>mer$l_tr, NA, mer$tc_start+8)
-mer$tc_seq_pos9_start<-ifelse(mer$tc_start-2<1, NA, mer$tc_start-2)
-mer$tc_seq_pos9_stop<-ifelse(mer$tc_start+9>mer$l_tr, NA, mer$tc_start+9)
-mer$tc_seq_pos10_start<-ifelse(mer$tc_start-1<1, NA, mer$tc_start-1)
-mer$tc_seq_pos10_stop<-ifelse(mer$tc_start+10>mer$l_tr, NA, mer$tc_start+10)
-mer$tc_seq_pos11_start<-ifelse(mer$tc_start-0<1, NA, mer$tc_start-0)
-mer$tc_seq_pos11_stop<-ifelse(mer$tc_start+11>mer$l_tr, NA, mer$tc_start+11)
-mer$tc_seq_pos12_start<-ifelse(mer$tc_start+1<1, NA, mer$tc_start+1)
-mer$tc_seq_pos12_stop<-ifelse(mer$tc_start+12>mer$l_tr, NA, mer$tc_start+12)
-
-
-
-mer$tc_seq_pos1<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos1_start,end=mer$tc_seq_pos1_stop)))
-mer$tc_seq_pos2<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos2_start,end=mer$tc_seq_pos2_stop)))
-mer$tc_seq_pos3<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos3_start,end=mer$tc_seq_pos3_stop)))
-mer$tc_seq_pos4<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos4_start,end=mer$tc_seq_pos4_stop)))
-mer$tc_seq_pos5<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos5_start,end=mer$tc_seq_pos5_stop)))
-mer$tc_seq_pos6<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos6_start,end=mer$tc_seq_pos6_stop)))
-mer$tc_seq_pos7<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos7_start,end=mer$tc_seq_pos7_stop)))
-mer$tc_seq_pos8<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos8_start,end=mer$tc_seq_pos8_stop)))
-mer$tc_seq_pos9<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                         start=mer$tc_seq_pos9_start,end=mer$tc_seq_pos9_stop)))
-
-mer$tc_seq_pos10<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                          start=mer$tc_seq_pos10_start,end=mer$tc_seq_pos10_stop)))
-mer$tc_seq_pos11<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                          start=mer$tc_seq_pos11_start,end=mer$tc_seq_pos11_stop)))
-mer$tc_seq_pos12<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$transcript_id)],
-                                                          start=mer$tc_seq_pos12_start,end=mer$tc_seq_pos12_stop)))
-
-
-mer<-melt(mer, measure.vars = colnames(mer)[58:69], id.vars = colnames(mer)[1:33], value.name = "seqs", variable.name = "tc_seq_pos")
-# countmers_gene<-dcast(subset(mer, !is.na(count), select=c("transcript_id", "seq", "count")),transcript_id~seq,sum,value.var="count")
-
-countmers<-aggregate(count~seqs+tc_region+localization_cat, sum, data=mer)
-
-countmers$frac_tot<-countmers$count/sum(countmers$count)
-agr<-aggregate(frac_tot~seqs, sum, data=countmers)
-agr<-agr[order(agr$frac_tot, decreasing = T),]
-agr<-agr[1:40, "seqs"]
-rows<-which(countmers$seqs %in% agr)
-countmers_plot<-countmers[rows,]
-countmers_plot$seqs<-factor(countmers_plot$seqs, levels=rev(agr))
-# ggplot(subset(countmers_plot, tc_region!="utr5"), aes(seqs, frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
-# theme(text = element_text(size=8))
-
-# library(ggseqlogo)
-# ggplot(subset(countmers_plot, localization_cat=="cytosolic"))+geom_logo(gsub("T","U",as.character(countmers_plot$seqs)), method="bits", seq_type = "rna")+theme_logo()
-setwd("E:/work/hdlbp/")
-#write.table(countmers, "./kmers_mem_cyt/bound-12mers-freqs-01032020.txt", quote=F, sep="\t", row.names = F)
-
-##redo 8mer enrichment in CDS/UTR3 mem/cyt
-#run until tcCds
-
-
-setwd("E:/Google Drive/hdlbp/")
-# mas<-read.delim("hdlbp_master_table_with_classes.txt", header=T)
-mas<-read.delim("hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
-inf<-subset(mas, select=c("gene_id","Symbol",
-                          "tpm_cutoff","tc_CDS_norm","localization_cat",
-                          "mean_te_293","loc_tar_CDS","tc_CDS_norm_cat",
-                          "tc_transcript_norm",
-                          "log2FoldChange.mem.cyt.293",
-                          "log2FoldChange.mem.cyt.KO.293",
-                          "log2FoldChange.ribo.rna.KO.WT"))
-
-
-mem<-subset(mas, localization_cat=="membrane" & gene_biotype=="protein_coding" & tpm_cutoff>=10, select="transcript")[,1]
-cyt<-subset(mas, localization_cat=="cytosolic" & gene_biotype=="protein_coding" & tpm_cutoff>=10, select="transcript")[,1]
-
-
-seqCds_mem<-which(names(seqCds) %in% mem)
-seqCds_mem<-seqCds[seqCds_mem]
-seqCds_cyt<-which(names(seqCds) %in% cyt)
-seqCds_cyt<-seqCds[seqCds_cyt]
-
-seqUtr3_mem<-which(names(seqUtr3) %in% mem)
-seqUtr3_mem<-seqUtr3[seqUtr3_mem]
-seqUtr3_cyt<-which(names(seqUtr3) %in% cyt)
-seqUtr3_cyt<-seqUtr3[seqUtr3_cyt]
-kmer<-12
-randsCds_mem <- (Biostrings::oligonucleotideFrequency(seqCds_mem, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqCds_mem<-randsCds_mem/sum(randsCds_mem)
-
-randsCds_cyt <- (Biostrings::oligonucleotideFrequency(seqCds_cyt, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqCds_cyt<-randsCds_cyt/sum(randsCds_cyt)
-
-randsUtr3_mem <- (Biostrings::oligonucleotideFrequency(seqUtr3_mem, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqUtr3_mem<-randsUtr3_mem/sum(randsUtr3_mem)
-
-randsUtr3_cyt <- (Biostrings::oligonucleotideFrequency(seqUtr3_cyt, width=kmer, step = 1, as.prob = F, with.labels = TRUE, simplify.as="collapsed"))
-freqUtr3_cyt<-randsUtr3_cyt/sum(randsUtr3_cyt)
-
-freqCdsUtr3_mem<-(randsCds_mem+randsUtr3_mem)/sum(randsCds_mem+randsUtr3_mem)
-freqCdsUtr3_cyt<-(randsCds_cyt+randsUtr3_cyt)/sum(randsCds_cyt+randsUtr3_cyt)
-
-
-freqs<-data.frame(kmer=names(randsCds_mem),
-                  freqCds_mem=freqCds_mem,
-                  freqCds_cyt=freqCds_cyt,
-                  freqUtr3_mem=freqUtr3_mem,
-                  freqUtr3_cyt=freqUtr3_cyt,
-                  freqCdsUtr3_mem=freqCdsUtr3_mem,
-                  freqCdsUtr3_cyt=freqCdsUtr3_cyt)
-labs<-which(freqs$kmer %in% agr)
-labs<-freqs[labs,]
-labs$labs<-labs$kmer
-freqs$labs<-NA
-freqs<-rbind(freqs, labs)
-ggplot(freqs, aes(freqCds_mem, freqCds_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_mem))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_mem, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqCds_mem, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqUtr3_mem, freqUtr3_cyt, colour=labs))+geom_point()+geom_abline()
-ggplot(freqs, aes(freqCds_cyt, freqUtr3_cyt))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_abline()
-
-setwd("E:/work/hdlbp/")
-#write.table(freqs, "./kmers_mem_cyt/whole-12mers-freqs-01032020.txt", quote=F, sep="\t", row.names=F)
-
-
-
+#fig3b
 ##7mer crosslinked with motif
 mer<-dat
 

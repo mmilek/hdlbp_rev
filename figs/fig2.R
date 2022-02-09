@@ -1,13 +1,12 @@
-
 library(ggplot2)
 library(reshape2)
-
+library(corrplot)
 
 tc<-read.delim("data/reproducible.hdlbp.TCseq.bed", header=F)
+
 colnames(tc)<-c("transcript_id","tc_start","tc_stop","tc_num1","all_reads1","tc_num2","all_reads2","seq")
 
 tsig_annot<-read.delim("data/tsig_annot.txt", header=T)
-
 
 dat<-merge(tc, tsig_annot, by="transcript_id", by.y="transcript")
 length(unique(dat$transcript_id))
@@ -18,7 +17,6 @@ norm<-colSums(dat[,c(4,6)], na.rm=T)
 
 dat<-cbind(dat, dat[,c(4,6)]/norm*1e6)
 colnames(dat)[36:ncol(dat)]<-paste0("norm.",colnames(dat)[36:ncol(dat)])
-
 
 dat$cat_tc<-ifelse(dat$tc_stop<=dat$l_utr5, "utr5", 
                    ifelse(dat$tc_stop<=(dat$l_utr5+dat$l_cds), "cds", 
@@ -43,29 +41,27 @@ regionCounts<-regionCounts[,-c(2,5,8)]
 colnames(regionCounts)[2:ncol(regionCounts)]<-paste0(rep(c("cds.", "utr3.", "utr5."),each=2), c("norm.tc_num1", "norm.tc_num2"))
 regionCounts$trans.norm.tc_num1<-rowSums(regionCounts[,c("cds.norm.tc_num1", "utr3.norm.tc_num1", "utr5.norm.tc_num1")], na.rm=T)
 regionCounts$trans.norm.tc_num2<-rowSums(regionCounts[,c("cds.norm.tc_num2", "utr3.norm.tc_num2", "utr5.norm.tc_num2")], na.rm=T)
-library(corrplot)
 regionCounts$utr3_vs_cds1<-regionCounts$utr3.norm.tc_num1/regionCounts$cds.norm.tc_num1
 regionCounts$utr3_vs_cds2<-regionCounts$utr3.norm.tc_num2/regionCounts$cds.norm.tc_num2
 
 
-
-#with imputation
-regionCounts$utr3_vs_cds1<-ifelse(!is.na(regionCounts$utr3.norm.tc_num1) & is.na(regionCounts$cds.norm.tc_num1), 
-                                  regionCounts$utr3.norm.tc_num1/min(regionCounts[!is.na(regionCounts$cds.norm.tc_num1), "cds.norm.tc_num1"]),
-                                  ifelse(is.na(regionCounts$utr3.norm.tc_num1) & !is.na(regionCounts$cds.norm.tc_num1), 
-                                         min(regionCounts[!is.na(regionCounts$utr3.norm.tc_num1), "utr3.norm.tc_num1"])/regionCounts$cds.norm.tc_num1,
-                                         ifelse(!is.na(regionCounts$utr3.norm.tc_num1) & !is.na(regionCounts$cds.norm.tc_num1),
-                                                regionCounts$utr3.norm.tc_num1/regionCounts$cds.norm.tc_num1, NA)))
-regionCounts$utr3_vs_cds2<-ifelse(!is.na(regionCounts$utr3.norm.tc_num2) & is.na(regionCounts$cds.norm.tc_num2), 
-                                  regionCounts$utr3.norm.tc_num2/min(regionCounts[!is.na(regionCounts$cds.norm.tc_num2), "cds.norm.tc_num2"]),
-                                  ifelse(is.na(regionCounts$utr3.norm.tc_num2) & !is.na(regionCounts$cds.norm.tc_num2), 
-                                         min(regionCounts[!is.na(regionCounts$utr3.norm.tc_num2), "utr3.norm.tc_num2"])/regionCounts$cds.norm.tc_num2,
-                                         ifelse(!is.na(regionCounts$utr3.norm.tc_num2) & !is.na(regionCounts$cds.norm.tc_num2),
-                                                regionCounts$utr3.norm.tc_num2/regionCounts$cds.norm.tc_num2, NA)))
-
-corrplot(cor(regionCounts[2:ncol(regionCounts)], use = "pairwise.complete.obs"), type="upper", method="color")
-
-ggplot(regionCounts, aes(log2(utr3_vs_cds1), log2(utr3_vs_cds2)))+geom_point()
+# #with imputation
+# regionCounts$utr3_vs_cds1<-ifelse(!is.na(regionCounts$utr3.norm.tc_num1) & is.na(regionCounts$cds.norm.tc_num1), 
+#                                   regionCounts$utr3.norm.tc_num1/min(regionCounts[!is.na(regionCounts$cds.norm.tc_num1), "cds.norm.tc_num1"]),
+#                                   ifelse(is.na(regionCounts$utr3.norm.tc_num1) & !is.na(regionCounts$cds.norm.tc_num1), 
+#                                          min(regionCounts[!is.na(regionCounts$utr3.norm.tc_num1), "utr3.norm.tc_num1"])/regionCounts$cds.norm.tc_num1,
+#                                          ifelse(!is.na(regionCounts$utr3.norm.tc_num1) & !is.na(regionCounts$cds.norm.tc_num1),
+#                                                 regionCounts$utr3.norm.tc_num1/regionCounts$cds.norm.tc_num1, NA)))
+# regionCounts$utr3_vs_cds2<-ifelse(!is.na(regionCounts$utr3.norm.tc_num2) & is.na(regionCounts$cds.norm.tc_num2), 
+#                                   regionCounts$utr3.norm.tc_num2/min(regionCounts[!is.na(regionCounts$cds.norm.tc_num2), "cds.norm.tc_num2"]),
+#                                   ifelse(is.na(regionCounts$utr3.norm.tc_num2) & !is.na(regionCounts$cds.norm.tc_num2), 
+#                                          min(regionCounts[!is.na(regionCounts$utr3.norm.tc_num2), "utr3.norm.tc_num2"])/regionCounts$cds.norm.tc_num2,
+#                                          ifelse(!is.na(regionCounts$utr3.norm.tc_num2) & !is.na(regionCounts$cds.norm.tc_num2),
+#                                                 regionCounts$utr3.norm.tc_num2/regionCounts$cds.norm.tc_num2, NA)))
+# 
+# corrplot(cor(regionCounts[2:ncol(regionCounts)], use = "pairwise.complete.obs"), type="upper", method="color")
+# 
+# ggplot(regionCounts, aes(log2(utr3_vs_cds1), log2(utr3_vs_cds2)))+geom_point()
 
 
 regionCounts<-merge(regionCounts, tsig_annot, by="gene_id")
@@ -78,31 +74,37 @@ regionCounts$utr5.norm.tc_num2.len<-regionCounts$utr5.norm.tc_num2/regionCounts$
 regionCounts$trans.norm.tc_num1.len<-regionCounts$trans.norm.tc_num1/regionCounts$l_tr*1e3
 regionCounts$trans.norm.tc_num2.len<-regionCounts$trans.norm.tc_num2/regionCounts$l_tr*1e3
 
-ggplot(regionCounts,aes(log2(cds.norm.tc_num1.len),log2(cds.norm.tc_num2.len), colour=localization_cat))+geom_point()
-ggplot(regionCounts,aes(log2(utr3.norm.tc_num1.len),log2(utr3.norm.tc_num2.len), colour=localization_cat))+geom_point()
-
-ggplot(regionCounts,aes(log2(cds.norm.tc_num1.len),log2(utr3.norm.tc_num1.len), colour=localization_cat))+geom_point()
-ggplot(regionCounts,aes(log2(cds.norm.tc_num2.len),log2(utr3.norm.tc_num2.len), colour=localization_cat))+geom_point()
-ggplot(regionCounts,aes(log2(cds.norm.tc_num2.len),log2(trans.norm.tc_num2.len), colour=localization_cat))+geom_point()
-ggplot(regionCounts,aes(log2(cds.norm.tc_num1.len),log2(trans.norm.tc_num1.len), colour=localization_cat))+geom_point()
-ggplot(regionCounts,aes(log2(utr3.norm.tc_num1.len),log2(trans.norm.tc_num1.len), colour=localization_cat))+geom_point()
-ggplot(regionCounts,aes(log2(utr3.norm.tc_num2.len),log2(trans.norm.tc_num2.len), colour=localization_cat))+geom_point()
-
-ggplot(regionCounts, aes(log2(utr3.norm.tc_num1.len/cds.norm.tc_num1.len), colour=localization_cat))+stat_ecdf()
-ggplot(regionCounts, aes(log2(utr3.norm.tc_num2.len/cds.norm.tc_num2.len), colour=localization_cat))+stat_ecdf()
-
-ggplot(regionCounts, aes(log2(utr3.norm.tc_num2.len/cds.norm.tc_num2.len), log2(trans.norm.tc_num1.len), colour=localization_cat))+geom_point()
-ggplot(regionCounts[regionCounts$localization_cat=="membrane",], aes(log2(utr3.norm.tc_num2.len/cds.norm.tc_num2.len), log2(trans.norm.tc_num1.len) ))+geom_point()+geom_point()+coord_cartesian(xlim=c(-10,8))
-ggplot(regionCounts[regionCounts$localization_cat=="cytosolic",], aes(log2(utr3.norm.tc_num2.len/cds.norm.tc_num2.len), log2(trans.norm.tc_num1.len), colour=localization_cat))+geom_point()+coord_cartesian(xlim=c(-10,8))
-
-
-ggplot(regionCounts, aes(log2(utr3_vs_cds1), log2(tc_transcript_norm), colour=localization_cat))+geom_point()
-
 regionCounts$utr3_vs_cds1.norm<-regionCounts$utr3.norm.tc_num1.len/regionCounts$cds.norm.tc_num1.len
 regionCounts$utr3_vs_cds2.norm<-regionCounts$utr3.norm.tc_num2.len/regionCounts$cds.norm.tc_num2.len
 
+ggplot(regionCounts,aes(log2(cds.norm.tc_num1.len),log2(cds.norm.tc_num2.len), colour=localization_cat))+geom_point()
+ggplot(regionCounts,aes(log2(utr3.norm.tc_num1.len),log2(utr3.norm.tc_num2.len), colour=localization_cat))+geom_point()
 
-#get zeros for positional information
+ggplot(regionCounts, aes(log2(utr3.norm.tc_num2.len/cds.norm.tc_num2.len), log2(trans.norm.tc_num1.len), colour=localization_cat))+geom_point()
+
+
+regionCounts$trans.norm.tc.mean<-rowMeans(regionCounts[,c("trans.norm.tc_num1", "trans.norm.tc_num2")])
+regionCounts$trans.norm.tc.mean.exp<- ifelse(regionCounts$tpm_cutoff==0, NA, regionCounts$trans.norm.tc.mean/regionCounts$tpm_cutoff)
+
+regionCounts$cds.norm.tc.mean<-rowMeans(regionCounts[,c("cds.norm.tc_num1", "cds.norm.tc_num2")])
+regionCounts$utr3.norm.tc.mean<-rowMeans(regionCounts[,c("utr3.norm.tc_num1", "utr3.norm.tc_num2")])
+regionCounts$utr3_vs_cds.mean<-rowMeans(regionCounts[,c("utr3_vs_cds1", "utr3_vs_cds2")])
+regionCounts$utr3_vs_cds.norm.mean<-rowMeans(regionCounts[,c("utr3_vs_cds1.norm", "utr3_vs_cds2.norm")])
+
+
+#fig2b
+ggplot(subset(regionCounts, !is.na(localization_cat) & tpm_cutoff>=10 & gene_biotype=="protein_coding"), aes(-log2(utr3_vs_cds.norm.mean), log2(trans.norm.tc.mean.exp), colour=localization_cat))+geom_point(shape=1)+
+  scale_colour_manual(values=c("orange2","dodgerblue3"))
+
+#fig2c
+ggplot(subset(regionCounts, !is.na(localization_cat) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_CDS_norm_cat!="nontarget"),
+         aes(tc_CDS_norm_cat, -log2(utr3_vs_cds.norm.mean),fill=localization_cat))+geom_violin(scale="area",na.rm=T,position=position_dodge())+
+    geom_boxplot(width=0.1,na.rm=T, position=position_dodge(width=0.9), outlier.shape = NA)+theme(axis.text.x = element_text(angle = 45, hjust = 1))+scale_fill_manual(values=c("dodgerblue2","orange3"))
+  
+
+
+
+#for the fig2a, get zeros for positional information (computationally intensive!)
 seqs<-dat[,c("transcript_id", "l_tr","l_utr5", "l_cds","l_utr3")]
 seqs$id<-paste0(seqs$transcript,"_",seqs$l_tr,"_",seqs$l_utr5, "_", seqs$l_cds,"_", seqs$l_utr3)
 seqs<-subset(seqs, !duplicated(id))
@@ -181,29 +183,45 @@ newdat$frac.tc_num1<-newdat$norm.tc_num1/norm$norm.tc_num1
 newdat$frac.tc_num2<-newdat$norm.tc_num2/norm$norm.tc_num2
 
 
-avg<-aggregate(cbind(frac.tc_num1, frac.tc_num2)~pos_from_start+region, data=newdat, mean)
-mel<-melt(avg, id.vars = c("pos_from_start", "region"), measure.vars = c("frac.tc_num1", "frac.tc_num2"), variable.name = "sample", value.name = "scaled_tc_rpm")
+
+#fig2a
+
+mem<-subset(tsig_annot, localization_cat=="membrane" ) 
+cyt<-subset(tsig_annot, localization_cat=="cytosolic" ) 
+
+tesmemS<-which(newdat$tramscript %in% mem$transcript)
+tesmemT<-which(newdat$tramscript %in% cyt$transcript)
+
+tesnmemS<-newdat[tesmemS,]
+tesnmemT<-newdat[tesmemT,]
+
+length(unique(tesnmemS$tramscript))
+length(unique(tesnmemT$tramscript))
+
+tesnmemS$localization<-"mem"
+tesnmemT$localization<-"cyt"
+
+locn<-rbind(tesnmemS,tesnmemT)
+
+avg<-aggregate(cbind(frac.tc_num1, frac.tc_num2)~pos_from_start+localization+region, data=locn, mean, na.rm=T)
+mel<-melt(avg, id.vars = c("pos_from_start", "region", "localization"), measure.vars = c("frac.tc_num1", "frac.tc_num2"), variable.name = "sample", value.name = "scaled_tc_rpm")
 mel$scaled_tc_rpm<-ifelse(mel$region=="cds" & mel$pos_from_start>1500, NA, mel$scaled_tc_rpm)
 mel$scaled_tc_rpm<-ifelse(mel$region=="utr5" & mel$pos_from_start>150, NA, mel$scaled_tc_rpm)
 mel$scaled_tc_rpm<-ifelse(mel$region=="utr3" & mel$pos_from_start>800, NA, mel$scaled_tc_rpm)
 mel<-subset(mel, !is.na(scaled_tc_rpm))
-ggplot(mel, aes(pos_from_start,scaled_tc_rpm))+geom_line()+facet_wrap(~sample+region, scales = "free_x")
+ggplot(mel, aes(pos_from_start,scaled_tc_rpm, colour=localization))+geom_line()+facet_wrap(~sample+region, scales = "free_x")
+ggplot(mel, aes(pos_from_start,scaled_tc_rpm, colour=localization))+geom_line(aes(y=rollmean(scaled_tc_rpm, 33,na.pad=T)))+facet_wrap(~sample+region, scales = "free_x")
 
-
-library(zoo)
-
-ggplot(mel, aes(pos_from_start,scaled_tc_rpm))+geom_line(aes(y=rollmean(scaled_tc_rpm, 15,na.pad=T)))+facet_wrap(~sample+region, scales = "free_x")
-
-
-avg<-aggregate(cbind(frac.tc_num1, frac.tc_num2)~pos_from_stop+region, data=newdat, mean)
-mel<-melt(avg, id.vars = c("pos_from_stop", "region"), measure.vars = c("frac.tc_num1", "frac.tc_num2"), variable.name = "sample", value.name = "scaled_tc_rpm")
+avg<-aggregate(cbind(frac.tc_num1, frac.tc_num2)~pos_from_stop+localization+region, data=locn, mean, na.rm=T)
+mel<-melt(avg, id.vars = c("pos_from_stop", "region", "localization"), measure.vars = c("frac.tc_num1", "frac.tc_num2"), variable.name = "sample", value.name = "scaled_tc_rpm")
 mel$scaled_tc_rpm<-ifelse(mel$region=="cds" & mel$pos_from_stop<(-1500), NA, mel$scaled_tc_rpm)
 mel$scaled_tc_rpm<-ifelse(mel$region=="utr5" & mel$pos_from_stop<(-150), NA, mel$scaled_tc_rpm)
 mel$scaled_tc_rpm<-ifelse(mel$region=="utr3" & mel$pos_from_stop<(-800), NA, mel$scaled_tc_rpm)
 mel<-subset(mel, !is.na(scaled_tc_rpm))
-ggplot(mel, aes(pos_from_stop,scaled_tc_rpm))+geom_line()+facet_wrap(~sample+region, scales = "free_x")
-library(zoo)
-ggplot(mel, aes(pos_from_stop,scaled_tc_rpm))+geom_line(aes(y=rollmean(scaled_tc_rpm, 15,na.pad=T)))+facet_wrap(~sample+region, scales = "free_x")
+ggplot(mel, aes(pos_from_stop,scaled_tc_rpm, colour=localization))+geom_line()+facet_wrap(~sample+region, scales = "free_x")
+ggplot(mel, aes(pos_from_stop,scaled_tc_rpm, colour=localization))+geom_line(aes(y=rollmean(scaled_tc_rpm, 33,na.pad=T)))+facet_wrap(~sample+region, scales = "free_x")
+
+
 
 
 

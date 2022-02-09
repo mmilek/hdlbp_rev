@@ -112,9 +112,9 @@ library(reshape2)
 
 # save.image("ribowaltz_human.RData")
 
-setwd("~/Google Drive/koshi_revision/riboprof/")
-# setwd("E:/Google Drive/koshi_revision/riboprof/")
-load("ribowaltz_human.RData")
+# setwd("~/Google Drive/koshi_revision/riboprof/")
+# # setwd("E:/Google Drive/koshi_revision/riboprof/")
+# load("ribowaltz_human.RData")
 
 
 mas<-read.delim("data/hdlbp_master_table_with_classes_uniq.txt", header=T)
@@ -265,6 +265,7 @@ man$cds.norm.tc.mean.exp<- ifelse(man$tpm_cutoff==0, NA, man$cds.norm.tc.mean/ma
 man$utr3.norm.tc.mean.exp<- ifelse(man$tpm_cutoff==0, NA, man$utr3.norm.tc.mean/man$tpm_cutoff)
 
 ggplot(man, aes(log2(utr3_vs_cds.norm.mean),log2(trans.norm.tc.mean/tpm_cutoff) ))+geom_point()
+#fig2b
 ggplot(man[man$tpm_cutoff>=10 & man$gene_biotype=="protein_coding" & !is.na(man$localization_cat) ,], aes(-log2(utr3_vs_cds.norm.mean),log2(trans.norm.tc.mean.exp), colour=localization_cat ))+geom_point(shape=1, alpha=0.7)+scale_colour_manual(values=c("dodgerblue2","orange3"))
 ggplot(man[man$tpm_cutoff>=10 & man$gene_biotype=="protein_coding" & !is.na(man$localization_cat),], aes(log2(utr3_vs_cds.norm.mean), colour=localization_cat ))+geom_density()
 
