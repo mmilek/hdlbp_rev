@@ -3,7 +3,6 @@ library(reshape2)
 library(corrplot)
 
 tc<-read.delim("data/reproducible.hdlbp.TCseq.bed", header=F)
-
 colnames(tc)<-c("transcript_id","tc_start","tc_stop","tc_num1","all_reads1","tc_num2","all_reads2","seq")
 
 tsig_annot<-read.delim("data/tsig_annot.txt", header=T)
@@ -45,23 +44,6 @@ regionCounts$utr3_vs_cds1<-regionCounts$utr3.norm.tc_num1/regionCounts$cds.norm.
 regionCounts$utr3_vs_cds2<-regionCounts$utr3.norm.tc_num2/regionCounts$cds.norm.tc_num2
 
 
-# #with imputation
-# regionCounts$utr3_vs_cds1<-ifelse(!is.na(regionCounts$utr3.norm.tc_num1) & is.na(regionCounts$cds.norm.tc_num1), 
-#                                   regionCounts$utr3.norm.tc_num1/min(regionCounts[!is.na(regionCounts$cds.norm.tc_num1), "cds.norm.tc_num1"]),
-#                                   ifelse(is.na(regionCounts$utr3.norm.tc_num1) & !is.na(regionCounts$cds.norm.tc_num1), 
-#                                          min(regionCounts[!is.na(regionCounts$utr3.norm.tc_num1), "utr3.norm.tc_num1"])/regionCounts$cds.norm.tc_num1,
-#                                          ifelse(!is.na(regionCounts$utr3.norm.tc_num1) & !is.na(regionCounts$cds.norm.tc_num1),
-#                                                 regionCounts$utr3.norm.tc_num1/regionCounts$cds.norm.tc_num1, NA)))
-# regionCounts$utr3_vs_cds2<-ifelse(!is.na(regionCounts$utr3.norm.tc_num2) & is.na(regionCounts$cds.norm.tc_num2), 
-#                                   regionCounts$utr3.norm.tc_num2/min(regionCounts[!is.na(regionCounts$cds.norm.tc_num2), "cds.norm.tc_num2"]),
-#                                   ifelse(is.na(regionCounts$utr3.norm.tc_num2) & !is.na(regionCounts$cds.norm.tc_num2), 
-#                                          min(regionCounts[!is.na(regionCounts$utr3.norm.tc_num2), "utr3.norm.tc_num2"])/regionCounts$cds.norm.tc_num2,
-#                                          ifelse(!is.na(regionCounts$utr3.norm.tc_num2) & !is.na(regionCounts$cds.norm.tc_num2),
-#                                                 regionCounts$utr3.norm.tc_num2/regionCounts$cds.norm.tc_num2, NA)))
-# 
-# corrplot(cor(regionCounts[2:ncol(regionCounts)], use = "pairwise.complete.obs"), type="upper", method="color")
-# 
-# ggplot(regionCounts, aes(log2(utr3_vs_cds1), log2(utr3_vs_cds2)))+geom_point()
 
 
 regionCounts<-merge(regionCounts, tsig_annot, by="gene_id")
@@ -92,16 +74,34 @@ regionCounts$utr3_vs_cds.mean<-rowMeans(regionCounts[,c("utr3_vs_cds1", "utr3_vs
 regionCounts$utr3_vs_cds.norm.mean<-rowMeans(regionCounts[,c("utr3_vs_cds1.norm", "utr3_vs_cds2.norm")])
 
 
+
+mas<-read.delim("data/hdlbp_master_table_with_classes_uniq.txt", header=T)
+inf<-subset(mas, select=c("gene_id","Symbol",
+                          "tc_transcript_norm_cat"))
+
+regionCounts<-merge(regionCounts, inf, by="gene_id")
+regionCounts$tc_transcript_norm_cat<-as.factor(regionCounts$tc_transcript_norm_cat)
+
 #fig2b
 ggplot(subset(regionCounts, !is.na(localization_cat) & tpm_cutoff>=10 & gene_biotype=="protein_coding"), aes(-log2(utr3_vs_cds.norm.mean), log2(trans.norm.tc.mean.exp), colour=localization_cat))+geom_point(shape=1)+
   scale_colour_manual(values=c("orange2","dodgerblue3"))
 
 #fig2c
-ggplot(subset(regionCounts, !is.na(localization_cat) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_CDS_norm_cat!="nontarget"),
-         aes(tc_CDS_norm_cat, -log2(utr3_vs_cds.norm.mean),fill=localization_cat))+geom_violin(scale="area",na.rm=T,position=position_dodge())+
-    geom_boxplot(width=0.1,na.rm=T, position=position_dodge(width=0.9), outlier.shape = NA)+theme(axis.text.x = element_text(angle = 45, hjust = 1))+scale_fill_manual(values=c("dodgerblue2","orange3"))
-  
 
+ggplot(subset(regionCounts, !is.na(localization_cat) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"),
+       aes(tc_transcript_norm_cat, -log2(utr3_vs_cds.norm.mean),fill=localization_cat))+geom_violin(scale="area",na.rm=T,position=position_dodge())+
+  geom_boxplot(width=0.1,na.rm=T, position=position_dodge(width=0.9), outlier.shape = NA)+theme(axis.text.x = element_text(angle = 45, hjust = 1))+scale_fill_manual(values=c("dodgerblue2","orange3"))
+nrow(subset(regionCounts, tc_transcript_norm<0.3 & !is.na(utr3_vs_cds.norm.mean) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"&localization_cat=="membrane"))
+nrow(subset(regionCounts, tc_transcript_norm>0.3 &  tc_transcript_norm<1.39 & !is.na(utr3_vs_cds.norm.mean) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"&localization_cat=="membrane"))
+nrow(subset(regionCounts, tc_transcript_norm>1.39 & !is.na(utr3_vs_cds.norm.mean) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"&localization_cat=="membrane"))
+nrow(subset(regionCounts, tc_transcript_norm<0.3 & !is.na(utr3_vs_cds.norm.mean) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"&localization_cat=="cytosolic"))
+nrow(subset(regionCounts, tc_transcript_norm>0.3 &  tc_transcript_norm<1.39 & !is.na(utr3_vs_cds.norm.mean) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"&localization_cat=="cytosolic"))
+nrow(subset(regionCounts, tc_transcript_norm>1.39 & !is.na(utr3_vs_cds.norm.mean) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"&localization_cat=="cytosolic"))
+
+sd<-subset(regionCounts, !is.na(localization_cat) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget",
+           select=c("gene_id", "Symbol.x", "trans.norm.tc.mean.exp", "utr3_vs_cds.norm.mean", "localization_cat", "tc_transcript_norm", "tc_transcript_norm_cat"))
+
+# write.table(sd, "source_data/fig2bc.txt", quote=F, sep="\t", row.names=F, col.names=T)
 
 
 #for the fig2a, get zeros for positional information (computationally intensive!)

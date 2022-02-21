@@ -1,3 +1,8 @@
+# this script requires a transcriptome fasta file (line 74). 
+# due to size limitations, we could not provide it in the 
+# github repository. we used a transcriptome fasta file generated 
+# by RSEM during index build from gencode v19 gtf annotation file.
+
 library(ggplot2)
 library(reshape2)
 library(corrplot)
@@ -5,8 +10,6 @@ library(Biostrings)
 library(dplyr)
 library(ggseqlogo)
 library(ggpubr)
-
-
 #fig3i
 dat<-read.delim("data/kd.txt", header=T)
 
@@ -19,8 +22,6 @@ ggbarplot(mel, x = "RNA_oligo", y = "value",
           add = c("mean_sd"), palette = "jco",
           position = position_dodge(.8)) +
   geom_jitter(aes(RNA_oligo, value, fill = RNA_oligo), shape = 21, color = "black",  position = position_jitterdodge(jitter.height = -2, jitter.width = 1.5))
-
-
 
 
 len<-read.delim("data/transcript_cds_utr_lenght.txt", header=T)
@@ -108,6 +109,11 @@ cor(subset(dat, tpm_cutoff>=10 & !is.na(localization_cat) &
              tc_region=="utr3" , 
            select=c("norm_tc_num1", "norm_tc_num2")))
 
+sd<-subset(dat, tpm_cutoff>=10 & !is.na(localization_cat) & 
+             !is.na(log2(norm_tc_num1)) & !is.na(log2(norm_tc_num2)), 
+           select=c("gene_id", "transcript_id", "Symbol", "tc_region","tc_start", "tc_stop",
+                    "norm_tc_num1","norm_tc_num2" ))
+#write.table(sd, "source_data/s2a.txt", quote=F, sep="\t", row.names=F)
 
 ##7mer crosslinked
 mer<-dat
@@ -165,6 +171,11 @@ countmers_plot$localization_cat<-factor(countmers_plot$localization_cat, levels=
 #fig3a
 ggplot(subset(countmers_plot, tc_region!="utr5"), aes(gsub("T","U",seqs), frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
   theme(text = element_text(size=8))+scale_fill_manual(values = c("dodgerblue3", "orange2"))
+
+sd<-subset(countmers_plot, tc_region!="utr5")
+sd$seqs<-gsub("T", "U", sd$seqs)
+           
+#write.table(sd, "source_data/fig3a.txt", quote=F, sep="\t", row.names=F)
 
 
 ##redo 7mer enrichment in CDS/UTR3 mem/cyt
@@ -236,50 +247,57 @@ mer_freq<-rbind(mer_freq, labs)
 ggplot(mer_freq,aes(frac_tot, freq_whole))+geom_text(aes(label=kmer, colour=labs), size=2)+geom_hline(yintercept=0.00015, lty=2, colour="grey")+theme(legend.position = "none")+
   facet_wrap(~localization_cat+tc_region)+coord_cartesian(ylim=c(0,0.001))
 
-ggplot(mer_freq,aes(frac_tot, freq_whole))+geom_point()+geom_abline()+theme(legend.position = "none")+
-  facet_wrap(~localization_cat+tc_region)+coord_cartesian(ylim=c(0,0.001))
+sd<-subset(mer_freq, !is.na(frac_tot) & !is.na(freq_whole), select=colnames(mer_freq)[2:length(colnames(mer_freq))])
+sd$kmer<-gsub("T", "U", sd$kmer)
 
-mer_freq$top40<-ifelse(is.na(mer_freq$labs), "other", "top40")
-ggplot(mer_freq,aes( freq_whole, colour=top40))+geom_density()+
-  facet_wrap(~localization_cat+tc_region)+coord_cartesian(xlim=c(0,0.0005))
-
-memCds<-subset(mer_freq, loc_reg=="freqCds_mem")
-cytCds<-subset(mer_freq, loc_reg=="freqCds_cyt")
-colnames(memCds)<-paste0(colnames(memCds), "_memCds")
-colnames(cytCds)<-paste0(colnames(cytCds), "_cytCds")
-
-smer<-merge(memCds, cytCds, by.x="kmer_memCds", by.y="kmer_cytCds")
-ggplot(smer, aes(freq_whole_memCds-freq_whole_cytCds, frac_tot_memCds))+
-  geom_text(aes(label=kmer_memCds, colour=labs_memCds), size=2)+
-  geom_vline(xintercept=0,lty=2)+theme(legend.position = "none")
-
-ggplot(smer, aes(freq_whole_memCds-freq_whole_cytCds, frac_tot_cytCds))+
-  geom_text(aes(label=kmer_memCds, colour=labs_memCds), size=2)+
-  geom_vline(xintercept=0,lty=2)+theme(legend.position = "none")
+#write.table(sd, "source_data/figs3b.txt", quote=F, sep="\t", row.names=F)
 
 
-memCds_bound<-subset(countmers, localization_cat=="membrane" & tc_region=="cds")
-cytUtr3_bound<-subset(countmers, localization_cat=="cytosolic" & tc_region=="utr3")
-colnames(memCds_bound)<-paste0(colnames(memCds_bound), "_memCds")
-colnames(cytUtr3_bound)<-paste0(colnames(cytUtr3_bound), "_cytUtr3")
 
-smer<-merge(memCds_bound, cytUtr3_bound, by.x="seqs_memCds", by.y="seqs_cytUtr3")
-ggplot(smer, aes(frac_tot_memCds, frac_tot_cytUtr3))+
-  geom_text(aes(label=seqs_memCds), size=2)+
-  geom_abline(slope=1)
-ggplot(smer, aes(frac_tot_memCds, frac_tot_cytUtr3))+
-  geom_point()+
-  geom_abline(slope=1)
+# ggplot(mer_freq,aes(frac_tot, freq_whole))+geom_point()+geom_abline()+theme(legend.position = "none")+
+#   facet_wrap(~localization_cat+tc_region)+coord_cartesian(ylim=c(0,0.001))
 
-memCds_bound<-subset(countmers, localization_cat=="membrane" & tc_region=="cds")
-cytCds_bound<-subset(countmers, localization_cat=="cytosolic" & tc_region=="cds")
-colnames(memCds_bound)<-paste0(colnames(memCds_bound), "_memCds")
-colnames(cytCds_bound)<-paste0(colnames(cytCds_bound), "_cytCds")
-
-smer<-merge(memCds_bound, cytCds_bound, by.x="seqs_memCds", by.y="seqs_cytCds")
-ggplot(smer, aes(frac_tot_memCds, frac_tot_cytCds))+
-  geom_text(aes(label=seqs_memCds), size=2)+
-  geom_abline(slope=1)
+# mer_freq$top40<-ifelse(is.na(mer_freq$labs), "other", "top40")
+# ggplot(mer_freq,aes( freq_whole, colour=top40))+geom_density()+
+#   facet_wrap(~localization_cat+tc_region)+coord_cartesian(xlim=c(0,0.0005))
+# 
+# memCds<-subset(mer_freq, loc_reg=="freqCds_mem")
+# cytCds<-subset(mer_freq, loc_reg=="freqCds_cyt")
+# colnames(memCds)<-paste0(colnames(memCds), "_memCds")
+# colnames(cytCds)<-paste0(colnames(cytCds), "_cytCds")
+# 
+# smer<-merge(memCds, cytCds, by.x="kmer_memCds", by.y="kmer_cytCds")
+# ggplot(smer, aes(freq_whole_memCds-freq_whole_cytCds, frac_tot_memCds))+
+#   geom_text(aes(label=kmer_memCds, colour=labs_memCds), size=2)+
+#   geom_vline(xintercept=0,lty=2)+theme(legend.position = "none")
+# 
+# ggplot(smer, aes(freq_whole_memCds-freq_whole_cytCds, frac_tot_cytCds))+
+#   geom_text(aes(label=kmer_memCds, colour=labs_memCds), size=2)+
+#   geom_vline(xintercept=0,lty=2)+theme(legend.position = "none")
+# 
+# 
+# memCds_bound<-subset(countmers, localization_cat=="membrane" & tc_region=="cds")
+# cytUtr3_bound<-subset(countmers, localization_cat=="cytosolic" & tc_region=="utr3")
+# colnames(memCds_bound)<-paste0(colnames(memCds_bound), "_memCds")
+# colnames(cytUtr3_bound)<-paste0(colnames(cytUtr3_bound), "_cytUtr3")
+# 
+# smer<-merge(memCds_bound, cytUtr3_bound, by.x="seqs_memCds", by.y="seqs_cytUtr3")
+# ggplot(smer, aes(frac_tot_memCds, frac_tot_cytUtr3))+
+#   geom_text(aes(label=seqs_memCds), size=2)+
+#   geom_abline(slope=1)
+# ggplot(smer, aes(frac_tot_memCds, frac_tot_cytUtr3))+
+#   geom_point()+
+#   geom_abline(slope=1)
+# 
+# memCds_bound<-subset(countmers, localization_cat=="membrane" & tc_region=="cds")
+# cytCds_bound<-subset(countmers, localization_cat=="cytosolic" & tc_region=="cds")
+# colnames(memCds_bound)<-paste0(colnames(memCds_bound), "_memCds")
+# colnames(cytCds_bound)<-paste0(colnames(cytCds_bound), "_cytCds")
+# 
+# smer<-merge(memCds_bound, cytCds_bound, by.x="seqs_memCds", by.y="seqs_cytCds")
+# ggplot(smer, aes(frac_tot_memCds, frac_tot_cytCds))+
+#   geom_text(aes(label=seqs_memCds), size=2)+
+#   geom_abline(slope=1)
 
 #7-mer per gene
 
@@ -365,6 +383,23 @@ ggplot(plot_sub, aes(kmer, log2xl, fill=region))+geom_hline(yintercept = 5, lty=
   geom_boxplot(outlier.shape = NA)+
   facet_wrap(~localization_cat, ncol=1)+ theme(axis.text.x = element_text(angle = 90, hjust = 1))+
   scale_fill_manual(values=c("dodgerblue4", "dodgerblue3", "orange2", "orange3"))
+
+sd<-subset(plot_sub, !is.na(log2xl) & !is.na(kmer) )
+sd$kmer<-gsub("T", "U", sd$kmer)
+
+#write.table(sd, "source_data/figs3a.txt", quote=F, sep="\t", row.names=F)
+
+
+
+summary(subset(plot_sub, localization_cat =="membrane" &region=="cds1" & !is.na(log2xl))$kmer)
+summary(subset(plot_sub, localization_cat =="membrane" &region=="cds2" & !is.na(log2xl))$kmer)
+summary(subset(plot_sub, localization_cat =="membrane" &region=="utr3_1" & !is.na(log2xl))$kmer)
+summary(subset(plot_sub, localization_cat =="membrane" &region=="utr3_2" & !is.na(log2xl))$kmer)
+summary(subset(plot_sub, localization_cat =="cytosolic" &region=="cds1" & !is.na(log2xl))$kmer)
+summary(subset(plot_sub, localization_cat =="cytosolic" &region=="cds2" & !is.na(log2xl))$kmer)
+summary(subset(plot_sub, localization_cat =="cytosolic" &region=="utr3_1" & !is.na(log2xl))$kmer)
+summary(subset(plot_sub, localization_cat =="cytosolic" &region=="utr3_2" & !is.na(log2xl))$kmer)
+
 ssr<-merge(meds, freq, by="id")
 ssr_sub<-which(ssr$kmer.x %in% top40)
 ssr_sub<-ssr[ssr_sub,]
@@ -376,7 +411,11 @@ ggplot(ssr_sub, aes(kmer.x, count, fill=region.x))+geom_bar(stat = "identity", p
   facet_wrap(~localization_cat.x, ncol=1)+ theme(axis.text.x = element_text(angle = 90, hjust = 1))+
   scale_fill_manual(values=c("dodgerblue4", "dodgerblue3", "orange2", "orange3"))
 
+sd<-subset(ssr_sub, !is.na(kmer.x) & !is.na(count) , select=c("kmer.x", "localization_cat.x", 
+                                                              "region.x", "count"))
+sd$kmer.x<-gsub("T", "U", sd$kmer)
 
+#write.table(sd, "source_data/figs3a_right.txt", quote=F, sep="\t", row.names=F)
 
 ##4mer crosslinked
 mer<-dat
@@ -985,8 +1024,8 @@ ssr_sub$kmer.x<-factor(ssr_sub$kmer.x, levels=rev(top40))
 ggplot(ssr_sub, aes(kmer.x, count, fill=region.x))+geom_bar(stat = "identity", position = "dodge")+facet_wrap(~localization_cat.x)+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 #z-scores
-# setwd("E:/Google Drive/hdlbp/kmers_mem_cyt/")
-setwd("E:/work/hdlbp/kmers_mem_cyt/")
+setwd("D:/google_drive/hdlbp/kmers_mem_cyt/")
+# setwd("E:/work/hdlbp/kmers_mem_cyt/")
 
 files<-list.files(getwd(), pattern="whole")
 zs<-lapply(files, read.delim, header=T)
@@ -1033,7 +1072,15 @@ ggplot(zs, aes(zscores_CdsCyt_Utr3Cyt, colour=length))+geom_density()+facet_wrap
 ggplot(zs, aes(zscores_CdsMem_CdsCyt, fill=length))+geom_histogram(bins=500)+facet_wrap(~type+length, scales="free_y", ncol=6)+
   geom_vline(xintercept=0, lty=2, colour="grey")+coord_cartesian(xlim=c(-3,10))
 
-ggplot(zs, aes(zscores_CdsUtr3Mem_CdsUtr3Cyt, colour=length))+stat_ecdf()+facet_wrap(~type, scales="free")+coord_cartesian(xlim=c(-3,15))
+#fig3c
+p<-ggplot(zs, aes(zscores_CdsUtr3Mem_CdsUtr3Cyt, colour=length))+stat_ecdf()+facet_wrap(~type, scales="free")+coord_cartesian(xlim=c(-3,15))
+print(p)
+
+sd<-subset(zs, type=="top40",select=c("kmer", "type", "length", colnames(zs)[grepl("zscores", colnames(zs))]))
+ggplot(sd, aes(zscores_CdsUtr3Mem_CdsUtr3Cyt, colour=length))+stat_ecdf()+facet_wrap(~type, scales="free")+coord_cartesian(xlim=c(-3,15))
+
+# write.table(sd, "source_data/fig3c.txt", quote=F, sep="\t", row.names=F)
+
 ggplot(zs, aes(zscores_CdsMem_CdsCyt, colour=length))+stat_ecdf()+facet_wrap(~type, scales="free")+coord_cartesian(xlim=c(-3,13))
 ggplot(zs, aes(zscores_CdsMem_Utr3Cyt, colour=length))+stat_ecdf()+facet_wrap(~type, scales="free")+coord_cartesian(xlim=c(-5,7))
 ggplot(zs, aes(zscores_CdsCyt_Utr3Cyt, colour=length))+stat_ecdf()+facet_wrap(~type, scales="free")+coord_cartesian(xlim=c(-5,7))
@@ -1846,11 +1893,15 @@ agr<-agr[1:5, "seq"]
 rows<-which(countmers$seq %in% agr)
 countmers_plot<-countmers[rows,]
 countmers_plot$seq<-factor(countmers_plot$seq, levels=rev(agr))
-ggplot(subset(countmers_plot, tc_region!="utr5"), aes(seq, frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
-  theme(text = element_text(size=8))
+# ggplot(subset(countmers_plot, tc_region!="utr5"), aes(seq, frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
+#   theme(text = element_text(size=8))
 
 library(ggseqlogo)
-ggplot(subset(countmers_plot, localization_cat=="cytosolic"))+geom_logo(gsub("T","U",as.character(countmers_plot$seq)), method="bits", seq_type = "rna")+theme_logo()
+p<-ggplot(subset(countmers_plot, localization_cat=="membrane" & tc_region=="cds"))+geom_logo(gsub("T","U",as.character(countmers_plot$seq)), method="bits", seq_type = "rna")+theme_logo()
+print(p)
+
+sd<-unique(countmers_plot$seq)
+sd
 
 
 

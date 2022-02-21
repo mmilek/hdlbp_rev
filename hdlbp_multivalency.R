@@ -50,11 +50,13 @@ pfgr<-melt(dfgr, measure.vars = colnames(dfgr)[grepl("pos[0-9]$",colnames(dfgr))
            id.vars = c("second.X.seqnames","second.mcols.norm_tc_num1", "second.mcols.norm_tc_num2", "second.mcols.localization_cat", "second.mcols.tc_region", "distance"),
            value.name = "kmer", variable.name = "kmer_pos")
 #write.table(pfgr, "E:/work/hdlbp/multivalency/pfgr_variable.txt", quote=F, sep="\t", row.names=F)
+# write.table(pfgr, "data/h_values_transcriptome_with_annotation_kmer.txt", quote=F, sep="\t", row.names=F)
+
 
 library(ggplot2)
 library(reshape2)
-setwd("E:/work/hdlbp/multivalency/")
-pfgr<-read.delim("pfgr_variable.txt", header=T)
+# setwd("E:/work/hdlbp/multivalency/")
+pfgr<-read.delim("data/h_values_transcriptome_with_annotation_kmer.txt", header=T)
 pfgr$hval<-1
 pfgr$dup_id<-paste0(pfgr$second.X.seqnames,"_", pfgr$second.mcols.norm_tc_num1,
                     "_", pfgr$second.mcols.norm_tc_num2,"_", pfgr$second.mcols.localization_cat,
@@ -164,12 +166,16 @@ ggplot(sub_pfgr , aes(hval_cat, log2(second.mcols.norm_tc_num1), fill=hval_cat))
 ggplot(sub_pfgr , aes(hval_cat, log2(second.mcols.norm_tc_num2), fill=hval_cat))+geom_violin(scale = "count")+geom_boxplot(width=0.1, outlier.shape = NA) +theme(axis.text.x = element_text(angle = 45, hjust=1))+
   scale_fill_brewer(palette=4)
 
+#fig3e
 ggplot(sub_pfgr , aes(hval_cat, log2(rowMeans(sub_pfgr[,c("second.mcols.norm_tc_num1","second.mcols.norm_tc_num2")])), fill=hval_cat))+geom_violin(scale = "count")+geom_boxplot(width=0.1, outlier.shape = NA) +theme(axis.text.x = element_text(angle = 45, hjust=1))+
   scale_fill_brewer(palette=4)
 
-head(sub_pfgr)
 
-
+summary(subset(sub_pfgr, !is.na(log2(rowMeans(sub_pfgr[,c("second.mcols.norm_tc_num1","second.mcols.norm_tc_num2")]))))$hval_cat)
+sd<-subset(sub_pfgr, !is.na(log2(rowMeans(sub_pfgr[,c("second.mcols.norm_tc_num1","second.mcols.norm_tc_num2")]))),
+           select=c("second.X.seqnames", "second.mcols.norm_tc_num1", "second.mcols.norm_tc_num2",
+                    "second.mcols.localization_cat", "second.mcols.tc_region", "kmer_pos","kmer","hval", "hval_cat"))
+# write.table(sd,"source_data/fig3e.txt", quote=F, sep="\t", row.names=F)
 
 ##most crosslinked 4mers
 
@@ -177,7 +183,7 @@ head(sub_pfgr)
 # pfgr<-melt(dfgr, measure.vars = colnames(dfgr)[grepl("pos[0-9]$",colnames(dfgr))],
            # id.vars = c("second.X.seqnames","second.mcols.norm_tc_num1", "second.mcols.norm_tc_num2", "second.mcols.localization_cat", "second.mcols.tc_region", "distance"),
            # value.name = "kmer", variable.name = "kmer_pos")
-pfgr<-read.delim("pfgr_variable.txt", header=T)
+pfgr<-read.delim("data/h_values_transcriptome_with_annotation_kmer.txt", header=T)
 pfgr$hval<-1
 pfgr$dup_id<-paste0(pfgr$second.X.seqnames,"_", pfgr$second.mcols.norm_tc_num1,
                     "_", pfgr$second.mcols.norm_tc_num2,"_", pfgr$second.mcols.localization_cat,
@@ -272,12 +278,15 @@ plot$hval_cat<-factor(plot$hval_cat, levels=c("hval_hi", "hval_midhi", "hval_mid
 ggplot(plot , aes(hval_cat, log2(tc), fill=hval_cat))+geom_violin(scale = "count")+facet_wrap(~localization_cat+tc_region)
 
 
+#fig3f replicate 1
 ggplot(subset(plot, ((tc_region=="cds" & localization_cat=="membrane") | (tc_region=="utr3" & localization_cat=="cytosolic") )),
        aes(distance, tc, colour=hval_cat))+geom_line()+facet_wrap(~localization_cat+tc_region+hval_cat, scales="free_y", ncol=5)
+
+sd<-subset(plot, ((tc_region=="cds" & localization_cat=="membrane") | (tc_region=="utr3" & localization_cat=="cytosolic") ))
+# write.table(sd, "source_data/fig3f.txt", quote=F, sep="\t", row.names=F)
+
 ggplot(subset(plot, tc_region!="utr5"),aes(distance, tc, colour=hval_cat))+geom_line()+facet_wrap(~localization_cat+tc_region+hval_cat, scales="free_y", ncol=5)
 
-ggplot(subset(sub_pfgr, ((second.mcols.tc_region=="cds" & second.mcols.localization_cat=="membrane") | (second.mcols.tc_region=="utr3" & second.mcols.localization_cat=="cytosolic") )),
-       aes(factor(distance), log2(second.mcols.norm_tc_num1), colour=hval_cat))+geom_boxplot()+facet_wrap(~second.mcols.localization_cat+second.mcols.tc_region+hval_cat, ncol=5)
 
 
 plot<-aggregate(second.mcols.norm_tc_num2~distance+
@@ -300,13 +309,12 @@ plot$hval_cat<-gsub(".*;","",plot$id)
 plot$hval_cat<-factor(plot$hval_cat, levels=c("hval_hi", "hval_midhi", "hval_midmid", "hval_midlo", "hval_lo"))
 ggplot(plot , aes(hval_cat, log2(tc), fill=hval_cat))+geom_violin(scale = "count")+facet_wrap(~localization_cat+tc_region)
 
-
+#fig3f replicate 2
 ggplot(subset(plot, ((tc_region=="cds" & localization_cat=="membrane") | (tc_region=="utr3" & localization_cat=="cytosolic") )),
        aes(distance, tc, colour=hval_cat))+geom_line()+facet_wrap(~localization_cat+tc_region+hval_cat, scales="free_y", ncol=5)
+
 ggplot(subset(plot, tc_region!="utr5"),aes(distance, tc, colour=hval_cat))+geom_line()+facet_wrap(~localization_cat+tc_region+hval_cat, scales="free_y", ncol=5)
 
-ggplot(subset(sub_pfgr, ((second.mcols.tc_region=="cds" & second.mcols.localization_cat=="membrane") | (second.mcols.tc_region=="utr3" & second.mcols.localization_cat=="cytosolic") )),
-       aes(factor(distance), log2(second.mcols.norm_tc_num1), colour=hval_cat))+geom_boxplot()+facet_wrap(~second.mcols.localization_cat+second.mcols.tc_region+hval_cat, ncol=5)
 
 
 
@@ -314,9 +322,8 @@ ggplot(subset(sub_pfgr, ((second.mcols.tc_region=="cds" & second.mcols.localizat
 
 ####multivalency in whole sequences
 
-setwd("E:/Google Drive/hdlbp/")
 # mas<-read.delim("hdlbp_master_table_with_classes.txt", header=T)
-mas<-read.delim("hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
+mas<-read.delim("data/hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
 inf<-subset(mas, select=c("gene_id","Symbol",
                           "tpm_cutoff","tc_CDS_norm","localization_cat",
                           "mean_te_293","loc_tar_CDS","tc_CDS_norm_cat",
@@ -373,17 +380,17 @@ setwd("F:/landthaler/HDLBP/all_clip_data/reclip/mapping_trans/")
 
 # setwd("F:/landthaler/HDLBP/all_clip_data/reclip/mapping_trans/")
 # setwd("E:/work/hdlbp/multivalency/")
-setwd("E:/landthaler/HDLBP/all_clip_data/reclip/mapping_trans/")
+# setwd("E:/landthaler/HDLBP/all_clip_data/reclip/mapping_trans/")
 
-cdsMem<-read.delim("cdsMem_hval_window.txt", header=T)
-utr3Mem<-read.delim("utr3Mem_hval_window.txt", header=T)
-cdsCyt<-read.delim("cdsCyt_hval_window.txt", header=T)
-utr3Cyt<-read.delim("utr3Cyt_hval_window.txt", header=T)
+cdsMem<-read.delim("../../bulky/cdsMem_hval_window.txt", header=T)
+utr3Mem<-read.delim("../../bulky/utr3Mem_hval_window.txt", header=T)
+cdsCyt<-read.delim("../../bulky/cdsCyt_hval_window.txt", header=T)
+utr3Cyt<-read.delim("../../bulky/utr3Cyt_hval_window.txt", header=T)
 
-cdsMem_bck<-read.delim("bck_cdsMem_hval_window.txt", header=T)
-utr3Mem_bck<-read.delim("bck_utr3Mem_hval_window.txt", header=T)
-cdsCyt_bck<-read.delim("bck_cdsCyt_hval_window.txt", header=T)
-utr3Cyt_bck<-read.delim("bck_utr3Cyt_hval_window.txt", header=T)
+cdsMem_bck<-read.delim("../../bulky/bck_cdsMem_hval_window.txt", header=T)
+utr3Mem_bck<-read.delim("../../bulky/bck_utr3Mem_hval_window.txt", header=T)
+cdsCyt_bck<-read.delim("../../bulky/bck_cdsCyt_hval_window.txt", header=T)
+utr3Cyt_bck<-read.delim("../../bulky/bck_utr3Cyt_hval_window.txt", header=T)
 
 
 cdsMem$region<-"cds"
@@ -516,6 +523,7 @@ avg<-aggregate(hval~transcript+region+loc+region_loc,
 
 ggplot(avg, aes(hval, colour=region_loc))+geom_density()
 ggplot(avg, aes(hval, colour=loc))+geom_density()
+
 
 
 quants<-quantile(avg$hval, c(0,1/5, 2/5, 3/5, 4/5, 1))
