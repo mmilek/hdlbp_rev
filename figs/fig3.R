@@ -460,11 +460,13 @@ rows<-which(countmers$seqs %in% agr)
 countmers_plot<-countmers[rows,]
 countmers_plot$seqs<-factor(countmers_plot$seqs, levels=rev(agr))
 countmers_plot$localization_cat<-factor(countmers_plot$localization_cat, levels=c("membrane", "cytosolic"))
+
+#figS3f left panel
 ggplot(subset(countmers_plot, tc_region!="utr5"), aes(seqs, frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
   theme(text = element_text(size=8))+scale_fill_manual(values = c("dodgerblue4", "orange3"))
 
-library(ggseqlogo)
-ggplot(subset(countmers_plot, localization_cat=="cytosolic"))+geom_logo(gsub("T","U",as.character(countmers_plot$seqs)), method="bits", seq_type = "rna")+theme_logo()
+sd<-subset(countmers_plot, tc_region!="utr5")
+# write.table(sd, "source_data/figs3f_left.txt", quote=F, sep="\t", row.names=F)
 
 #write.table(countmers, "./kmers_mem_cyt/bound-4mers-freqs-01032020.txt", quote=F, sep="\t", row.names = F)
 
@@ -472,9 +474,9 @@ ggplot(subset(countmers_plot, localization_cat=="cytosolic"))+geom_logo(gsub("T"
 #run until tcCds
 
 
-setwd("E:/Google Drive/hdlbp/")
+# setwd("E:/Google Drive/hdlbp/")
 # mas<-read.delim("hdlbp_master_table_with_classes.txt", header=T)
-mas<-read.delim("hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
+mas<-read.delim("data/hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
 inf<-subset(mas, select=c("gene_id","Symbol",
                           "tpm_cutoff","tc_CDS_norm","localization_cat",
                           "mean_te_293","loc_tar_CDS","tc_CDS_norm_cat",

@@ -24,7 +24,7 @@ Run scripts in the figures folder.
 
 
 For reproduction of processed data: 
-Run scripts in the 
+Run scripts in the project folder.
 
 
 For the quantification of tRNAs from PAR-CLIP data, please see the scripts in the trna directory.

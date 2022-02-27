@@ -1,0 +1,1572 @@
+gene_id	Symbol	gene_biotype	tc_CDS_norm_cat	target_loc	mean_memb_4h
+ENSG00000094914.8	AAAS	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0897668374405797
+ENSG00000124608.4	AARS2	protein_coding	nontarget	nontarget	0.117962087806617
+ENSG00000008311.10	AASS	protein_coding	nontarget	nontarget	0.196173540204016
+ENSG00000131269.11	ABCB7	protein_coding	nontarget	nontarget	0.0467452201587154
+ENSG00000125257.9	ABCC4	protein_coding	tc>1.04 & tc<65.26	mem_target	0.095670563189021
+ENSG00000117528.7	ABCD3	protein_coding	nontarget	nontarget	0.00746839172523524
+ENSG00000164163.6	ABCE1	protein_coding	nontarget	cyto_target	0.0267198451998103
+ENSG00000204574.8	ABCF1	protein_coding	nontarget	nontarget	0.245045180648404
+ENSG00000033050.3	ABCF2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0570703582286738
+ENSG00000144827.4	ABHD10	protein_coding	nontarget	cyto_target	0.21703682898315
+ENSG00000100997.14	ABHD12	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.119117696165709
+ENSG00000060971.13	ACAA1	protein_coding	nontarget	nontarget	0.0875492186702765
+ENSG00000167315.13	ACAA2	protein_coding	nontarget	cyto_target	0.248202632103674
+ENSG00000177646.13	ACAD9	protein_coding	nontarget	nontarget	0.00832550030550646
+ENSG00000117054.9	ACADM	protein_coding	nontarget	nontarget	-0.035153540983681
+ENSG00000196177.8	ACADSB	protein_coding	nontarget	nontarget	0.109141812669234
+ENSG00000072778.15	ACADVL	protein_coding	nontarget	nontarget	0.109528289647279
+ENSG00000075239.9	ACAT1	protein_coding	tc<0.27	cyto_target	0.204418962756403
+ENSG00000182827.8	ACBD3	protein_coding	nontarget	nontarget	-0.0461964800127211
+ENSG00000131473.12	ACLY	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.108406678859211
+ENSG00000100412.11	ACO2	protein_coding	tc<0.27	cyto_target	0.146579642788322
+ENSG00000112304.6	ACOT13	protein_coding	nontarget	nontarget	1.01949530551648
+ENSG00000123983.9	ACSL3	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.27930750798138
+ENSG00000068366.15	ACSL4	protein_coding	tc<0.27	cyto_target	0.154536332825467
+ENSG00000184009.5	ACTG1	protein_coding	nontarget	nontarget	0.0467993158504602
+ENSG00000136518.12	ACTL6A	protein_coding	tc<0.27	cyto_target	0.122494929343264
+ENSG00000138107.7	ACTR1A	protein_coding	tc<0.27	cyto_target	-0.0786170567064518
+ENSG00000115091.7	ACTR3	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0816521451651501
+ENSG00000137845.10	ADAM10	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.158692286179896
+ENSG00000163050.12	ADCK3	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0166633562970742
+ENSG00000072364.8	AFF4	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.189463043255364
+ENSG00000141385.5	AFG3L2	protein_coding	nontarget	nontarget	0.0839937325454907
+ENSG00000006530.11	AGK	protein_coding	nontarget	nontarget	0.0792447919239604
+ENSG00000204310.6	AGPAT1	protein_coding	nontarget	nontarget	0.261125847511798
+ENSG00000018510.8	AGPS	protein_coding	nontarget	nontarget	-0.0808343259295008
+ENSG00000156709.9	AIFM1	protein_coding	nontarget	nontarget	0.136337874955345
+ENSG00000164022.12	AIMP1	protein_coding	nontarget	nontarget	-0.0442089992380755
+ENSG00000106305.5	AIMP2	protein_coding	nontarget	nontarget	0.118843748178342
+ENSG00000004455.12	AK2	protein_coding	nontarget	cyto_target	-0.0587413834155897
+ENSG00000162433.10	AK4	protein_coding	nontarget	cyto_target	0.251134117406929
+ENSG00000121057.8	AKAP1	protein_coding	tc>0.27 & tc<1.04	mem_target	-0.0722183706915328
+ENSG00000059573.4	ALDH18A1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.06790783823246
+ENSG00000128918.10	ALDH1A2	protein_coding	tc<0.27	cyto_target	0.0978830684340324
+ENSG00000137124.6	ALDH1B1	protein_coding	nontarget	nontarget	0.113525383483402
+ENSG00000111275.8	ALDH2	protein_coding	nontarget	nontarget	0.127314524039914
+ENSG00000072210.14	ALDH3A2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.102213585498111
+ENSG00000112294.8	ALDH5A1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.3938894528235
+ENSG00000164904.11	ALDH7A1	protein_coding	nontarget	nontarget	-0.081420693520212
+ENSG00000143149.8	ALDH9A1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0115878149155843
+ENSG00000149925.12	ALDOA	protein_coding	tc<0.27	cyto_target	-0.0351735723326895
+ENSG00000033011.7	ALG1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0437843910748495
+ENSG00000120697.4	ALG5	protein_coding	nontarget	mem_target	-0.029316541781546
+ENSG00000183684.6	ALYREF	protein_coding	tc<0.27	cyto_target	-0.0113433148725262
+ENSG00000159461.10	AMFR	protein_coding	tc>1.04 & tc<65.26	mem_target	0.288605388584429
+ENSG00000089053.8	ANAPC5	protein_coding	tc<0.27	cyto_target	0.0626424923540475
+ENSG00000196510.8	ANAPC7	protein_coding	tc<0.27	cyto_target	-0.0439660319024741
+ENSG00000185722.12	ANKFY1	protein_coding	nontarget	nontarget	0.146534506889786
+ENSG00000131503.16	ANKHD1	protein_coding	nontarget	nontarget	0.0232818229678678
+ENSG00000132466.13	ANKRD17	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.179163854070275
+ENSG00000140350.11	ANP32A	protein_coding	tc<0.27	cyto_target	0.103409067534657
+ENSG00000136938.8	ANP32B	protein_coding	tc<0.27	cyto_target	-0.0140018560096639
+ENSG00000182718.12	ANXA2	protein_coding	nontarget	nontarget	-0.142863146764081
+ENSG00000100280.12	AP1B1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.200245259257811
+ENSG00000166747.8	AP1G1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0939996881502914
+ENSG00000196961.8	AP2A1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.110728238832408
+ENSG00000042753.7	AP2S1	protein_coding	tc<0.27	cyto_target	0.274946208735408
+ENSG00000132842.9	AP3B1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.126353219584784
+ENSG00000065000.11	AP3D1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.00812312367407936
+ENSG00000166181.8	API5	protein_coding	nontarget	nontarget	-0.0815112327156509
+ENSG00000084234.12	APLP2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0649507583870934
+ENSG00000101474.7	APMAP	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.23227620297853
+ENSG00000163382.7	APOA1BP	protein_coding	tc<0.27	NA	0.195621636595409
+ENSG00000184831.9	APOO	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0424420683482405
+ENSG00000142192.16	APP	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.12138933260283
+ENSG00000095139.9	ARCN1	protein_coding	tc<0.27	cyto_target	0.105646177241942
+ENSG00000134287.5	ARF3	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0471319622257996
+ENSG00000168374.6	ARF4	protein_coding	nontarget	cyto_target	-0.0462083038081183
+ENSG00000004059.6	ARF5	protein_coding	nontarget	nontarget	0.109948287142451
+ENSG00000081181.3	ARG2	protein_coding	nontarget	nontarget	0.302924032767806
+ENSG00000213390.6	ARHGAP19	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.074699404603135
+ENSG00000120805.9	ARL1	protein_coding	nontarget	nontarget	0.128078251849476
+ENSG00000144746.6	ARL6IP5	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0213107564819139
+ENSG00000134108.8	ARL8B	protein_coding	nontarget	nontarget	0.0929734801624564
+ENSG00000104763.13	ASAH1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.284329591792758
+ENSG00000112249.9	ASCC3	protein_coding	nontarget	nontarget	0.0594281616092279
+ENSG00000198356.7	ASNA1	protein_coding	nontarget	nontarget	0.0414952192263276
+ENSG00000064102.10	ASUN	protein_coding	nontarget	nontarget	0.229424506774065
+ENSG00000138138.9	ATAD1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0510406144816997
+ENSG00000197785.9	ATAD3A	protein_coding	nontarget	nontarget	0.0499004288463926
+ENSG00000160072.15	ATAD3B	protein_coding	nontarget	nontarget	0.0147903149953589
+ENSG00000171681.8	ATF7IP	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0185424012529414
+ENSG00000119787.9	ATL2	protein_coding	nontarget	nontarget	-0.0419943889751142
+ENSG00000105726.12	ATP13A1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.439659469016269
+ENSG00000163399.11	ATP1A1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0547728127805685
+ENSG00000069849.6	ATP1B3	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0001837576754119
+ENSG00000174437.12	ATP2A2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.267490211425581
+ENSG00000152234.11	ATP5A1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0748141472027628
+ENSG00000110955.4	ATP5B	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0264315231264576
+ENSG00000165629.15	ATP5C1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0719619380794702
+ENSG00000099624.3	ATP5D	protein_coding	nontarget	cyto_target	0.037005556949199
+ENSG00000116459.6	ATP5F1	protein_coding	tc<0.27	cyto_target	-0.0924880133297857
+ENSG00000167863.7	ATP5H	protein_coding	tc<0.27	cyto_target	0.187847813445629
+ENSG00000154723.8	ATP5J	protein_coding	tc<0.27	cyto_target	0.132334052436945
+ENSG00000167283.3	ATP5L	protein_coding	nontarget	nontarget	0.0170205684525147
+ENSG00000241837.2	ATP5O	protein_coding	tc<0.27	cyto_target	0.0822379345901009
+ENSG00000071553.12	ATP6AP1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.406962523046875
+ENSG00000182220.9	ATP6AP2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.142649398284391
+ENSG00000033627.10	ATP6V0A1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0973157551792168
+ENSG00000159720.7	ATP6V0D1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0195248249231841
+ENSG00000131100.8	ATP6V1E1	protein_coding	nontarget	cyto_target	0.921436298248412
+ENSG00000128524.4	ATP6V1F	protein_coding	nontarget	cyto_target	0.322390961280899
+ENSG00000136888.6	ATP6V1G1	protein_coding	nontarget	cyto_target	-0.0183670889599995
+ENSG00000123472.8	ATPAF1	protein_coding	nontarget	nontarget	0.0672396996081691
+ENSG00000168488.14	ATXN2L	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0318126777220134
+ENSG00000115307.12	AUP1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.17912113032149
+ENSG00000087586.13	AURKA	protein_coding	nontarget	nontarget	0.0441866411567792
+ENSG00000178999.8	AURKB	protein_coding	nontarget	cyto_target	-0.00275701798491148
+ENSG00000112208.10	BAG2	protein_coding	nontarget	nontarget	0.224282451959222
+ENSG00000006453.9	BAIAP2L1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0531893874816601
+ENSG00000198604.6	BAZ1A	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0870271721743806
+ENSG00000185825.11	BCAP31	protein_coding	nontarget	nontarget	0.229246192652917
+ENSG00000116752.5	BCAS2	protein_coding	tc<0.27	cyto_target	0.130174851210504
+ENSG00000105552.10	BCAT2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.207921242931161
+ENSG00000248098.6	BCKDHA	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.14623399388706
+ENSG00000083123.10	BCKDHB	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0993317203551427
+ENSG00000183337.12	BCOR	protein_coding	tc<0.27	cyto_target	0.184362693647075
+ENSG00000204256.8	BRD2	protein_coding	nontarget	nontarget	-0.0260028428200905
+ENSG00000141867.13	BRD4	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.165181337170979
+ENSG00000172270.14	BSG	protein_coding	tc>0.27 & tc<1.04	mem_target	0.283641774232876
+ENSG00000145741.11	BTF3	protein_coding	tc<0.27	cyto_target	0.00464419166828212
+ENSG00000154473.13	BUB3	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0552233508163703
+ENSG00000112578.5	BYSL	protein_coding	tc<0.27	cyto_target	0.0584913342646235
+ENSG00000082153.13	BZW1	protein_coding	nontarget	nontarget	-0.0553675687311995
+ENSG00000136261.10	BZW2	protein_coding	nontarget	nontarget	0.220615329960644
+ENSG00000087302.4	C14orf166	protein_coding	tc<0.27	cyto_target	0.0125998958014544
+ENSG00000123144.6	C19orf43	protein_coding	nontarget	cyto_target	0.0272568825600346
+ENSG00000104979.4	C19orf53	protein_coding	nontarget	cyto_target	-0.0301741406131131
+ENSG00000108561.4	C1QBP	protein_coding	tc<0.27	cyto_target	0.0379385772488192
+ENSG00000160221.12	C21orf33	protein_coding	tc<0.27	cyto_target	0.374379810121684
+ENSG00000136819.10	C9orf78	protein_coding	nontarget	nontarget	-0.182332202608429
+ENSG00000135932.6	CAB39	protein_coding	nontarget	nontarget	-0.313860187204627
+ENSG00000116161.13	CACYBP	protein_coding	nontarget	cyto_target	0.0221636460851524
+ENSG00000143933.12	CALM2	protein_coding	tc<0.27	cyto_target	-0.015821093716449
+ENSG00000179218.9	CALR	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0123105183008606
+ENSG00000128595.12	CALU	protein_coding	nontarget	mem_target	-0.0766725181367511
+ENSG00000111530.8	CAND1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.144669579038908
+ENSG00000127022.10	CANX	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0237286154042777
+ENSG00000126247.6	CAPNS1	protein_coding	tc<0.27	cyto_target	0.02733963772082
+ENSG00000135387.15	CAPRIN1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0167289615101714
+ENSG00000077549.13	CAPZB	protein_coding	tc<0.27	cyto_target	0.160569676769448
+ENSG00000134905.12	CARS2	protein_coding	nontarget	nontarget	0.257171691729801
+ENSG00000147044.16	CASK	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.01161812987539
+ENSG00000121691.4	CAT	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.135945636290287
+ENSG00000122565.14	CBX3	protein_coding	nontarget	cyto_target	0.217834527795155
+ENSG00000060339.9	CCAR1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0721336192148535
+ENSG00000158941.12	CCAR2	protein_coding	nontarget	nontarget	0.0384758483349331
+ENSG00000007080.6	CCDC124	protein_coding	nontarget	nontarget	-0.0851184667742886
+ENSG00000185298.8	CCDC137	protein_coding	nontarget	nontarget	-0.222268011907097
+ENSG00000108588.9	CCDC47	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.121546291427136
+ENSG00000160124.5	CCDC58	protein_coding	nontarget	nontarget	-0.00999388352371405
+ENSG00000142039.3	CCDC97	protein_coding	nontarget	cyto_target	-0.0157299858925148
+ENSG00000145386.5	CCNA2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.057946909684497
+ENSG00000134057.10	CCNB1	protein_coding	tc<0.27	cyto_target	0.0120759928220691
+ENSG00000157456.3	CCNB2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0355377810079775
+ENSG00000166226.8	CCT2	protein_coding	tc<0.27	cyto_target	0.0152396937614319
+ENSG00000163468.10	CCT3	protein_coding	tc<0.27	cyto_target	-0.0302116000339213
+ENSG00000115484.10	CCT4	protein_coding	tc<0.27	cyto_target	-0.103160326365831
+ENSG00000150753.7	CCT5	protein_coding	tc<0.27	cyto_target	-0.0555673870363904
+ENSG00000146731.6	CCT6A	protein_coding	tc<0.27	cyto_target	-0.0350772775132992
+ENSG00000135624.11	CCT7	protein_coding	tc<0.27	cyto_target	-0.00827540268972255
+ENSG00000156261.8	CCT8	protein_coding	tc<0.27	cyto_target	-0.0604153534820834
+ENSG00000103855.13	CD276	protein_coding	tc>1.04 & tc<65.26	mem_target	0.313430374678666
+ENSG00000169217.4	CD2BP2	protein_coding	nontarget	nontarget	0.195458660029424
+ENSG00000167775.6	CD320	protein_coding	tc>0.27 & tc<1.04	mem_target	0.249026317446447
+ENSG00000110651.7	CD81	protein_coding	tc>1.04 & tc<65.26	mem_target	0.282165694582046
+ENSG00000123146.15	CD97	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0925145023563019
+ENSG00000002586.13	CD99	protein_coding	nontarget	nontarget	0.567938353257131
+ENSGR0000002586.13	CD99	protein_coding	nontarget	nontarget	0.567938353257131
+ENSG00000151465.9	CDC123	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.103497548441411
+ENSG00000117399.9	CDC20	protein_coding	tc<0.27	cyto_target	-0.0411708352353329
+ENSG00000094880.6	CDC23	protein_coding	nontarget	nontarget	0.227111650209681
+ENSG00000070831.11	CDC42	protein_coding	nontarget	cyto_target	-0.0259757070008924
+ENSG00000096401.7	CDC5L	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.122025673132476
+ENSG00000134371.9	CDC73	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0557582425769268
+ENSG00000103502.9	CDIPT	protein_coding	tc>1.04 & tc<65.26	mem_target	0.15963288978638
+ENSG00000170312.11	CDK1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.388949190874354
+ENSG00000167258.9	CDK12	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0775473330081099
+ENSG00000123374.6	CDK2	protein_coding	tc<0.27	cyto_target	0.328416697849782
+ENSG00000111328.2	CDK2AP1	protein_coding	nontarget	nontarget	-0.17568652636925
+ENSG00000101391.16	CDK5RAP1	protein_coding	nontarget	nontarget	-0.0951728099707783
+ENSG00000108465.10	CDK5RAP3	protein_coding	nontarget	nontarget	0.130081291425202
+ENSG00000147889.12	CDKN2A	protein_coding	nontarget	cyto_target	0.144039811805536
+ENSG00000069998.8	CECR5	protein_coding	nontarget	nontarget	0.102819513832542
+ENSG00000149187.13	CELF1	protein_coding	nontarget	cyto_target	-0.0875204800663786
+ENSG00000048740.13	CELF2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.119197732240125
+ENSG00000117724.8	CENPF	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0274322823673561
+ENSG00000143702.11	CEP170	protein_coding	nontarget	cyto_target	0.10676606551767
+ENSG00000134255.9	CEPT1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.230942334652752
+ENSG00000143418.15	CERS2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.029016378861782
+ENSG00000172292.10	CERS6	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.039061629412212
+ENSG00000172757.8	CFL1	protein_coding	tc<0.27	cyto_target	0.0274347148327624
+ENSG00000163320.6	CGGBP1	protein_coding	nontarget	cyto_target	0.147090250320265
+ENSG00000159259.7	CHAF1B	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.308861270081155
+ENSG00000198824.4	CHAMP1	protein_coding	nontarget	nontarget	0.127749437226443
+ENSG00000106153.12	CHCHD2	protein_coding	tc<0.27	cyto_target	0.0896610945856833
+ENSG00000111642.10	CHD4	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0811976315749615
+ENSG00000100888.8	CHD8	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0153199760228708
+ENSG00000177830.13	CHID1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0323100503159391
+ENSG00000187446.7	CHP1	protein_coding	nontarget	cyto_target	-0.119256692182979
+ENSG00000160679.8	CHTOP	protein_coding	nontarget	cyto_target	0.0314718988411996
+ENSG00000099622.9	CIRBP	protein_coding	nontarget	cyto_target	0.30317150090164
+ENSG00000122873.7	CISD1	protein_coding	nontarget	nontarget	0.0193021654283678
+ENSG00000145354.5	CISD2	protein_coding	tc<0.27	mem_target	-0.0418181324791607
+ENSG00000136108.10	CKAP2	protein_coding	nontarget	cyto_target	0.10550903089794
+ENSG00000136026.9	CKAP4	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.373668216298317
+ENSG00000175216.10	CKAP5	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0521777609674401
+ENSG00000166165.8	CKB	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.167501674712541
+ENSG00000223572.5	CKMT1A	protein_coding	nontarget	cyto_target	-0.177021422360994
+ENSG00000223572.5	CKMT1A	protein_coding	nontarget	cyto_target	-0.177021422360994
+ENSG00000173207.8	CKS1B	protein_coding	nontarget	nontarget	-0.0434445590305329
+ENSG00000123975.4	CKS2	protein_coding	nontarget	cyto_target	-0.0278791916388672
+ENSG00000162129.8	CLPB	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.154085930901817
+ENSG00000125656.4	CLPP	protein_coding	tc<0.27	cyto_target	0.0519534341450442
+ENSG00000104853.11	CLPTM1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.039527847520688
+ENSG00000049656.9	CLPTM1L	protein_coding	tc>1.04 & tc<65.26	mem_target	0.669126866793329
+ENSG00000166855.5	CLPX	protein_coding	nontarget	nontarget	-0.0129822072580331
+ENSG00000141367.7	CLTC	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.12202580270605
+ENSG00000111726.8	CMAS	protein_coding	tc<0.27	cyto_target	0.0916940003846311
+ENSG00000168763.11	CNNM3	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.129471238652718
+ENSG00000125107.12	CNOT1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.10435259657111
+ENSG00000173786.12	CNP	protein_coding	nontarget	nontarget	0.0663796711015563
+ENSG00000257727.1	CNPY2	protein_coding	tc>0.27 & tc<1.04	mem_target	0.257882188393724
+ENSG00000183978.7	COA3	protein_coding	nontarget	nontarget	-0.00590851757308678
+ENSG00000181924.6	COA4	protein_coding	nontarget	cyto_target	0.164853544676727
+ENSG00000168275.10	COA6	protein_coding	nontarget	nontarget	0.0126113769751552
+ENSG00000068120.10	COASY	protein_coding	tc<0.27	cyto_target	0.130734194092937
+ENSG00000100473.11	COCH	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.243229877080436
+ENSG00000130309.6	COLGALT1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.269718983567814
+ENSG00000269897.1	COMMD3-BMI1	protein_coding	nontarget	nontarget	0.43079161583677
+ENSG00000093010.7	COMT	protein_coding	tc>1.04 & tc<65.26	mem_target	0.158057465390929
+ENSG00000122218.10	COPA	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0404708934697435
+ENSG00000129083.8	COPB1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0135050974479339
+ENSG00000184432.5	COPB2	protein_coding	tc<0.27	cyto_target	-0.0111266261193545
+ENSG00000105669.8	COPE	protein_coding	nontarget	nontarget	0.0505814106892803
+ENSG00000181789.10	COPG1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0214282857010706
+ENSG00000158623.10	COPG2	protein_coding	nontarget	nontarget	-0.0680659023335314
+ENSG00000111481.5	COPZ1	protein_coding	tc<0.27	cyto_target	-0.0224888310925845
+ENSG00000132423.6	COQ3	protein_coding	nontarget	nontarget	0.0373834986084922
+ENSG00000088682.9	COQ9	protein_coding	nontarget	nontarget	-0.321979721435073
+ENSG00000014919.8	COX15	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0724914971850027
+ENSG00000138495.2	COX17	protein_coding	nontarget	nontarget	0.277445619496285
+ENSG00000131143.4	COX4I1	protein_coding	tc<0.27	NA	0.142305867623265
+ENSG00000178741.7	COX5A	protein_coding	nontarget	cyto_target	0.0757091755211576
+ENSG00000135940.2	COX5B	protein_coding	tc<0.27	cyto_target	0.105425845479582
+ENSG00000126267.4	COX6B1	protein_coding	nontarget	cyto_target	0.149087815608568
+ENSG00000115944.10	COX7A2L	protein_coding	nontarget	cyto_target	0.149680634631229
+ENSG00000108582.7	CPD	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.130774573888111
+ENSG00000080819.2	CPOX	protein_coding	nontarget	nontarget	-0.0102498207226462
+ENSG00000165934.8	CPSF2	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0613695000777789
+ENSG00000111605.12	CPSF6	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.280153439344578
+ENSG00000149532.11	CPSF7	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0962861554149995
+ENSG00000157184.5	CPT2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.00383067648127683
+ENSG00000106066.9	CPVL	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.100811382406686
+ENSG00000143162.7	CREG1	protein_coding	tc<0.27	mem_target	-0.16371301032073
+ENSG00000170275.10	CRTAP	protein_coding	tc>1.04 & tc<65.26	mem_target	0.196083807738202
+ENSG00000116791.9	CRYZ	protein_coding	nontarget	cyto_target	-0.0243989531984957
+ENSG00000062485.14	CS	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.000795707942798
+ENSG00000009307.11	CSDE1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0137242962459943
+ENSG00000124207.12	CSE1L	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.100382558872775
+ENSG00000113712.12	CSNK1A1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.186069356466709
+ENSG00000101266.12	CSNK2A1	protein_coding	tc<0.27	cyto_target	-0.552403780030861
+ENSG00000070770.4	CSNK2A2	protein_coding	nontarget	nontarget	-0.0328982208779733
+ENSG00000204435.9	CSNK2B	protein_coding	nontarget	nontarget	0.0656840301867866
+ENSG00000175183.5	CSRP2	protein_coding	nontarget	nontarget	0.194083692382612
+ENSG00000101811.9	CSTF2	protein_coding	nontarget	cyto_target	-0.147305722979638
+ENSG00000175029.12	CTBP2	protein_coding	nontarget	nontarget	-0.124727671387094
+ENSG00000044115.16	CTNNA1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.230058264919117
+ENSG00000119326.10	CTNNAL1	protein_coding	nontarget	nontarget	-0.17329605072974
+ENSG00000168036.12	CTNNB1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.141338452204295
+ENSG00000132792.14	CTNNBL1	protein_coding	tc<0.27	cyto_target	-0.328843287115185
+ENSG00000198730.3	CTR9	protein_coding	nontarget	nontarget	0.000824964325425379
+ENSG00000064601.12	CTSA	protein_coding	tc>1.04 & tc<65.26	mem_target	0.031353840891376
+ENSG00000164733.16	CTSB	protein_coding	tc>1.04 & tc<65.26	mem_target	0.00990380168361925
+ENSG00000109861.11	CTSC	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.274048568997039
+ENSG00000117984.8	CTSD	protein_coding	nontarget	nontarget	-0.0096233150465515
+ENSG00000108094.10	CUL2	protein_coding	nontarget	nontarget	0.0652484653540407
+ENSG00000036257.8	CUL3	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0550156309600152
+ENSG00000139842.10	CUL4A	protein_coding	nontarget	cyto_target	0.00666898460106315
+ENSG00000112514.11	CUTA	protein_coding	nontarget	nontarget	0.395452251304598
+ENSG00000018610.9	CXorf56	protein_coding	nontarget	cyto_target	0.00552211974671653
+ENSG00000166347.14	CYB5A	protein_coding	nontarget	nontarget	-0.0669463403352461
+ENSG00000179091.4	CYC1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.321080572816026
+ENSG00000172115.4	CYCS	protein_coding	nontarget	cyto_target	0.316359789460621
+ENSG00000055163.14	CYFIP2	protein_coding	nontarget	cyto_target	0.208422847992281
+ENSG00000001630.11	CYP51A1	protein_coding	nontarget	nontarget	0.0498375564791238
+ENSG00000132676.11	DAP3	protein_coding	nontarget	nontarget	0.0050011487421054
+ENSG00000115866.6	DARS	protein_coding	tc<0.27	cyto_target	0.0810260276428822
+ENSG00000117593.8	DARS2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.00649758520857448
+ENSG00000071626.12	DAZAP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.04977309245328
+ENSG00000136485.10	DCAF7	protein_coding	nontarget	cyto_target	0.0321022280045091
+ENSG00000132716.14	DCAF8	protein_coding	nontarget	nontarget	0.162484048284004
+ENSG00000172992.7	DCAKD	protein_coding	nontarget	nontarget	0.237440912855057
+ENSG00000132912.8	DCTN4	protein_coding	tc<0.27	cyto_target	0.124774313178588
+ENSG00000137692.7	DCUN1D5	protein_coding	nontarget	nontarget	0.144955951147411
+ENSG00000169738.3	DCXR	protein_coding	tc<0.27	cyto_target	0.0545747084308125
+ENSG00000130311.6	DDA1	protein_coding	tc<0.27	cyto_target	-0.277387071068921
+ENSG00000167986.9	DDB1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.082354048406718
+ENSG00000244038.5	DDOST	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0432777480672041
+ENSG00000198171.8	DDRGK1	protein_coding	tc>0.27 & tc<1.04	mem_target	-0.378906719612265
+ENSG00000079785.10	DDX1	protein_coding	tc<0.27	cyto_target	0.010978948172764
+ENSG00000088205.8	DDX18	protein_coding	tc<0.27	cyto_target	-0.315604212639914
+ENSG00000064703.7	DDX20	protein_coding	nontarget	nontarget	-0.198357997557326
+ENSG00000165732.8	DDX21	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0996961995022483
+ENSG00000089737.11	DDX24	protein_coding	tc<0.27	cyto_target	0.099605435319295
+ENSG00000198563.9	DDX39B	protein_coding	nontarget	nontarget	-0.0531428162283735
+ENSG00000215301.5	DDX3X	protein_coding	tc<0.27	cyto_target	-0.0839018907841688
+ENSG00000198231.8	DDX42	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0108389252830773
+ENSG00000145833.11	DDX46	protein_coding	tc<0.27	cyto_target	-0.0545961698367897
+ENSG00000213782.3	DDX47	protein_coding	nontarget	nontarget	-0.0444528740852696
+ENSG00000105671.7	DDX49	protein_coding	nontarget	nontarget	0.00175220449524807
+ENSG00000108654.7	DDX5	protein_coding	nontarget	nontarget	0.0399658517988358
+ENSG00000107625.8	DDX50	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.00555156549344325
+ENSG00000141141.10	DDX52	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.105013454643098
+ENSG00000110367.7	DDX6	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.145454718914154
+ENSG00000143753.8	DEGS1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.160966769380854
+ENSG00000124795.10	DEK	protein_coding	tc<0.27	cyto_target	0.193400575738256
+ENSG00000116133.7	DHCR24	protein_coding	tc>1.04 & tc<65.26	mem_target	0.18974731472502
+ENSG00000172893.11	DHCR7	protein_coding	tc>1.04 & tc<65.26	mem_target	0.170044627708292
+ENSG00000109606.8	DHX15	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.197054952953607
+ENSG00000140829.7	DHX38	protein_coding	nontarget	nontarget	0.231257826362828
+ENSG00000108406.5	DHX40	protein_coding	tc<0.27	cyto_target	0.149310366186474
+ENSG00000135829.12	DHX9	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.143288665191231
+ENSG00000184047.11	DIABLO	protein_coding	nontarget	nontarget	-0.102251535951826
+ENSG00000086189.5	DIMT1	protein_coding	nontarget	nontarget	-0.073846526193399
+ENSG00000083520.10	DIS3	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0561903861904511
+ENSG00000130826.11	DKC1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0291121459250331
+ENSG00000150768.11	DLAT	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0732611661812277
+ENSG00000091140.8	DLD	protein_coding	nontarget	cyto_target	0.0614866542561658
+ENSG00000119689.10	DLST	protein_coding	nontarget	nontarget	-0.13187386053784
+ENSG00000086061.11	DNAJA1	protein_coding	tc<0.27	cyto_target	0.0119823034313683
+ENSG00000069345.7	DNAJA2	protein_coding	nontarget	nontarget	0.0634149691014494
+ENSG00000103423.9	DNAJA3	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.00763028654508899
+ENSG00000090520.6	DNAJB11	protein_coding	tc>0.27 & tc<1.04	mem_target	0.127339783126019
+ENSG00000148719.10	DNAJB12	protein_coding	nontarget	nontarget	0.0594852540305781
+ENSG00000105821.10	DNAJC2	protein_coding	nontarget	nontarget	0.303743492599858
+ENSG00000168259.10	DNAJC7	protein_coding	nontarget	nontarget	-0.104283644187861
+ENSG00000126698.6	DNAJC8	protein_coding	nontarget	cyto_target	0.058791597320088
+ENSG00000079805.12	DNM2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0439293433777465
+ENSG00000167130.13	DOLPP1	protein_coding	nontarget	mem_target	-0.130468482665487
+ENSG00000000419.8	DPM1	protein_coding	nontarget	nontarget	0.0042067531250557
+ENSG00000179085.7	DPM3	protein_coding	nontarget	mem_target	0.156555726383382
+ENSG00000162961.9	DPY30	protein_coding	nontarget	nontarget	0.159411232403931
+ENSG00000117505.8	DR1	protein_coding	nontarget	cyto_target	0.051060771132564
+ENSG00000185721.7	DRG1	protein_coding	tc<0.27	cyto_target	-0.0971558270257408
+ENSG00000046604.8	DSG2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0543792623256782
+ENSG00000125868.11	DSTN	protein_coding	tc<0.27	cyto_target	-0.516761875043719
+ENSG00000197102.6	DYNC1H1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0014722616907119
+ENSG00000088986.6	DYNLL1	protein_coding	tc<0.27	cyto_target	-0.078162198559692
+ENSG00000103356.11	EARS2	protein_coding	nontarget	cyto_target	0.101559153987701
+ENSG00000147155.6	EBP	protein_coding	tc>0.27 & tc<1.04	mem_target	0.0980079732159947
+ENSG00000104823.4	ECH1	protein_coding	nontarget	nontarget	0.141229496843775
+ENSG00000127884.4	ECHS1	protein_coding	tc<0.27	cyto_target	0.0406200268441386
+ENSG00000167969.8	ECI1	protein_coding	nontarget	nontarget	0.00548625017640765
+ENSG00000198721.8	ECI2	protein_coding	tc<0.27	cyto_target	0.239859497935739
+ENSG00000130159.9	ECSIT	protein_coding	nontarget	nontarget	0.161473002097067
+ENSG00000114346.9	ECT2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.000451056447875314
+ENSG00000107223.8	EDF1	protein_coding	tc<0.27	cyto_target	0.00929599323904813
+ENSG00000156508.13	EEF1A1	protein_coding	tc<0.27	cyto_target	0.0552326341353112
+ENSG00000114942.9	EEF1B2	protein_coding	nontarget	cyto_target	0.143155567382697
+ENSG00000124802.7	EEF1E1	protein_coding	nontarget	nontarget	0.205257509452407
+ENSG00000254772.5	EEF1G	protein_coding	nontarget	nontarget	0.0795959281995011
+ENSG00000167658.11	EEF2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0629476958041188
+ENSG00000115468.7	EFHD1	protein_coding	nontarget	cyto_target	0.436764828719465
+ENSG00000108883.8	EFTUD2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0196194240471333
+ENSG00000103966.5	EHD4	protein_coding	nontarget	nontarget	0.0802239486786075
+ENSG00000149547.10	EI24	protein_coding	tc>1.04 & tc<65.26	NA	0.0201806571567486
+ENSG00000173812.6	EIF1	protein_coding	tc<0.27	cyto_target	0.162290008993537
+ENSG00000173674.6	EIF1AX	protein_coding	nontarget	cyto_target	-0.00723103327364518
+ENSG00000144895.7	EIF2A	protein_coding	tc<0.27	cyto_target	-0.942338402099279
+ENSG00000055332.12	EIF2AK2	protein_coding	nontarget	cyto_target	0.007530867689797
+ENSG00000111361.8	EIF2B1	protein_coding	tc<0.27	cyto_target	-0.0500800148831083
+ENSG00000134001.8	EIF2S1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.115831639325004
+ENSG00000125977.6	EIF2S2	protein_coding	tc<0.27	cyto_target	-0.388709025015625
+ENSG00000130741.6	EIF2S3	protein_coding	tc<0.27	cyto_target	-0.17251511393701
+ENSG00000107581.8	EIF3A	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0555703081854675
+ENSG00000106263.13	EIF3B	protein_coding	tc<0.27	cyto_target	-0.0441518613786588
+ENSG00000184110.10	EIF3C	protein_coding	nontarget	nontarget	-0.293722990451458
+ENSG00000100353.13	EIF3D	protein_coding	tc<0.27	cyto_target	-0.0751411042256988
+ENSG00000104408.5	EIF3E	protein_coding	nontarget	cyto_target	-0.144314949048486
+ENSG00000175390.8	EIF3F	protein_coding	tc<0.27	cyto_target	-0.079346627367105
+ENSG00000130811.6	EIF3G	protein_coding	nontarget	cyto_target	0.0156911793545776
+ENSG00000147677.6	EIF3H	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0539729405902158
+ENSG00000084623.7	EIF3I	protein_coding	tc<0.27	cyto_target	-0.056598044268754
+ENSG00000104131.8	EIF3J	protein_coding	nontarget	nontarget	-0.0647442414991457
+ENSG00000178982.5	EIF3K	protein_coding	tc<0.27	cyto_target	0.055341346694817
+ENSG00000100129.13	EIF3L	protein_coding	tc<0.27	cyto_target	-0.0565483722897417
+ENSG00000149100.8	EIF3M	protein_coding	tc<0.27	cyto_target	0.0451995691330381
+ENSG00000161960.10	EIF4A1	protein_coding	nontarget	nontarget	0.0109966580486862
+ENSG00000141543.5	EIF4A3	protein_coding	tc<0.27	cyto_target	0.116546885174341
+ENSG00000063046.13	EIF4B	protein_coding	tc<0.27	cyto_target	-0.00482852750210378
+ENSG00000151247.8	EIF4E	protein_coding	tc<0.27	cyto_target	0.0557866186049477
+ENSG00000114867.15	EIF4G1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.106669829555181
+ENSG00000110321.11	EIF4G2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0959083063560405
+ENSG00000106682.10	EIF4H	protein_coding	tc<0.27	cyto_target	-0.0238977259147365
+ENSG00000100664.6	EIF5	protein_coding	tc<0.27	cyto_target	0.102841742777486
+ENSG00000132507.13	EIF5A	protein_coding	nontarget	cyto_target	-0.0083852989905345
+ENSG00000006744.14	ELAC2	protein_coding	nontarget	nontarget	0.0882712795910019
+ENSG00000066044.9	ELAVL1	protein_coding	tc<0.27	cyto_target	-0.034520383259044
+ENSG00000179387.5	ELMOD2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0369846318412318
+ENSG00000012660.9	ELOVL5	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.133052100481336
+ENSG00000134014.12	ELP3	protein_coding	nontarget	nontarget	0.370444074006984
+ENSG00000127463.9	EMC1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.080037340563262
+ENSG00000125037.8	EMC3	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0645342200957863
+ENSG00000134153.5	EMC7	protein_coding	tc>1.04 & tc<65.26	mem_target	0.302874471258892
+ENSG00000102119.6	EMD	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.205717159240834
+ENSG00000154380.12	ENAH	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.161379658942942
+ENSG00000167136.6	ENDOG	protein_coding	nontarget	nontarget	0.184827754210428
+ENSG00000074800.9	ENO1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.16390787591949
+ENSG00000082397.11	EPB41L3	protein_coding	tc<0.27	cyto_target	0.0931201623672506
+ENSG00000142627.9	EPHA2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.215010786762534
+ENSG00000135333.9	EPHA7	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.111231319209813
+ENSG00000143819.8	EPHX1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0539081519803637
+ENSG00000136628.13	EPRS	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0363172042576615
+ENSG00000132591.7	ERAL1	protein_coding	tc<0.27	cyto_target	-0.0576820337867226
+ENSG00000012061.11	ERCC1	protein_coding	tc<0.27	cyto_target	0.0188515722444684
+ENSG00000163161.8	ERCC3	protein_coding	nontarget	nontarget	0.199399189222476
+ENSG00000087502.13	ERGIC2	protein_coding	nontarget	nontarget	-0.0229613529718365
+ENSG00000147475.10	ERLIN2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.135700043148291
+ENSG00000089248.6	ERP29	protein_coding	nontarget	mem_target	-0.122952421345601
+ENSG00000139641.8	ESYT1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0528779978487993
+ENSG00000120705.8	ETF1	protein_coding	nontarget	nontarget	-0.0015000048412427
+ENSG00000140374.11	ETFA	protein_coding	tc<0.27	cyto_target	0.104143923704092
+ENSG00000105379.5	ETFB	protein_coding	nontarget	nontarget	0.0326302648635518
+ENSG00000182944.13	EWSR1	protein_coding	tc<0.27	cyto_target	0.0751607852407763
+ENSG00000182473.16	EXOC7	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0914288528660421
+ENSG00000171311.8	EXOSC1	protein_coding	nontarget	nontarget	0.13550996342561
+ENSG00000171824.9	EXOSC10	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0205893338371965
+ENSG00000178896.6	EXOSC4	protein_coding	nontarget	nontarget	0.393463625297113
+ENSG00000123737.8	EXOSC9	protein_coding	nontarget	nontarget	0.0828355018296033
+ENSG00000151348.9	EXT2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.218867530129837
+ENSG00000092820.13	EZR	protein_coding	nontarget	cyto_target	-0.122311800469162
+ENSG00000158769.13	F11R	protein_coding	nontarget	mem_target	0.403779534627868
+ENSG00000134824.9	FADS2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.00493880201957351
+ENSG00000113194.8	FAF2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0132831355919308
+ENSG00000180185.7	FAHD1	protein_coding	nontarget	nontarget	0.159065893241753
+ENSG00000134590.9	FAM127A	protein_coding	nontarget	nontarget	0.700246717571263
+ENSG00000035141.3	FAM136A	protein_coding	nontarget	nontarget	-0.178611070428795
+ENSG00000099290.11	FAM21A	protein_coding	nontarget	nontarget	-0.0826891341228775
+ENSG00000196937.6	FAM3C	protein_coding	nontarget	mem_target	-0.143958972672078
+ENSG00000139146.9	FAM60A	protein_coding	nontarget	cyto_target	0.0226048964916325
+ENSG00000101447.9	FAM83D	protein_coding	nontarget	nontarget	-0.0410760862930067
+ENSG00000140525.13	FANCI	protein_coding	nontarget	cyto_target	0.00758153009073242
+ENSG00000197601.8	FAR1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.425396731949575
+ENSG00000179115.6	FARSA	protein_coding	tc<0.27	cyto_target	0.0611025418546814
+ENSG00000116120.8	FARSB	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0941912987749921
+ENSG00000169710.6	FASN	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.054839630781531
+ENSG00000118246.9	FASTKD2	protein_coding	nontarget	nontarget	-0.0258270261011807
+ENSG00000215251.3	FASTKD5	protein_coding	nontarget	nontarget	-0.208710279023913
+ENSG00000149806.6	FAU	protein_coding	nontarget	cyto_target	0.134805827253555
+ENSG00000105202.3	FBL	protein_coding	tc<0.27	cyto_target	0.0516137876009737
+ENSG00000138829.6	FBN2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.132896249351962
+ENSG00000143756.7	FBXO28	protein_coding	nontarget	nontarget	-0.0424356884069166
+ENSG00000079459.8	FDFT1	protein_coding	tc<0.27	cyto_target	-0.145990130532969
+ENSG00000137714.2	FDX1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.153920821903566
+ENSG00000161513.7	FDXR	protein_coding	nontarget	nontarget	0.257226842909614
+ENSG00000066926.6	FECH	protein_coding	nontarget	cyto_target	0.0219546177286976
+ENSG00000169018.5	FEM1B	protein_coding	nontarget	cyto_target	-0.179760492080467
+ENSG00000168496.3	FEN1	protein_coding	nontarget	nontarget	0.246134549215989
+ENSG00000091483.6	FH	protein_coding	tc<0.27	cyto_target	0.107718553572902
+ENSG00000022267.12	FHL1	protein_coding	tc<0.27	cyto_target	0.236364035750088
+ENSG00000214253.4	FIS1	protein_coding	nontarget	cyto_target	0.351211595008873
+ENSG00000141756.14	FKBP10	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0770129425002052
+ENSG00000100442.6	FKBP3	protein_coding	nontarget	nontarget	0.197242952266764
+ENSG00000132589.11	FLOT2	protein_coding	nontarget	nontarget	0.416797100150433
+ENSG00000054598.5	FOXC1	protein_coding	nontarget	nontarget	-0.205571162102482
+ENSG00000100350.10	FOXRED2	protein_coding	tc>1.04 & tc<65.26	NA	-0.159680716424025
+ENSG00000136877.10	FPGS	protein_coding	nontarget	nontarget	-0.0202686807884021
+ENSG00000109536.7	FRG1	protein_coding	nontarget	nontarget	0.00688839651017462
+ENSG00000163430.5	FSTL1	protein_coding	tc>0.27 & tc<1.04	mem_target	0.239529018923105
+ENSG00000167996.11	FTH1	protein_coding	nontarget	cyto_target	-0.433371542181127
+ENSG00000107164.15	FUBP3	protein_coding	tc<0.27	cyto_target	0.0932569118804547
+ENSG00000069509.5	FUNDC1	protein_coding	nontarget	nontarget	-0.0834796099635558
+ENSG00000089280.14	FUS	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0191937038367124
+ENSG00000165060.7	FXN	protein_coding	nontarget	nontarget	0.159784753869012
+ENSG00000145907.10	G3BP1	protein_coding	tc<0.27	cyto_target	0.0321365508705287
+ENSG00000138757.10	G3BP2	protein_coding	nontarget	cyto_target	0.0497066862323417
+ENSG00000179271.1	GADD45GIP1	protein_coding	nontarget	nontarget	-0.0119870556253561
+ENSG00000143641.8	GALNT2	protein_coding	tc>0.27 & tc<1.04	mem_target	0.0404443585012571
+ENSG00000111640.10	GAPDH	protein_coding	tc<0.27	cyto_target	0.238276224367753
+ENSG00000106105.9	GARS	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0253394441034131
+ENSG00000167491.13	GATAD2A	protein_coding	nontarget	nontarget	-0.137501730272751
+ENSG00000143614.7	GATAD2B	protein_coding	nontarget	cyto_target	0.137570611611462
+ENSG00000257218.1	GATC	protein_coding	tc<0.27	cyto_target	0.015756808623789
+ENSG00000177628.11	GBA	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0936631199355076
+ENSG00000146729.5	GBAS	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.230435328939079
+ENSG00000089154.6	GCN1L1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0245007112932115
+ENSG00000140905.5	GCSH	protein_coding	nontarget	nontarget	0.023029443739866
+ENSG00000057608.12	GDI2	protein_coding	tc<0.27	cyto_target	0.427055987561265
+ENSG00000179409.6	GEMIN4	protein_coding	nontarget	nontarget	0.0827526755912672
+ENSG00000082516.8	GEMIN5	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.099062562809193
+ENSG00000168827.10	GFM1	protein_coding	tc<0.27	cyto_target	-0.0200009150868756
+ENSG00000164347.13	GFM2	protein_coding	tc<0.27	cyto_target	0.0244027366229477
+ENSG00000137563.7	GGH	protein_coding	tc>1.04 & tc<65.26	mem_target	0.043654038317484
+ENSG00000165678.15	GHITM	protein_coding	tc<0.27	cyto_target	-0.0146937343363228
+ENSG00000204120.10	GIGYF2	protein_coding	nontarget	cyto_target	-0.137415015884511
+ENSG00000102393.5	GLA	protein_coding	tc>0.27 & tc<1.04	mem_target	0.0976082993227802
+ENSG00000170266.11	GLB1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.00726142503246124
+ENSG00000178445.8	GLDC	protein_coding	nontarget	nontarget	-0.00263610229842249
+ENSG00000090863.7	GLG1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.255379464534208
+ENSG00000182512.4	GLRX5	protein_coding	nontarget	cyto_target	0.315412577874802
+ENSG00000148672.7	GLUD1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0219945517713367
+ENSG00000140632.12	GLYR1	protein_coding	tc<0.27	cyto_target	-0.0950544063882755
+ENSG00000163655.11	GMPS	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.138378627218286
+ENSG00000088256.4	GNA11	protein_coding	nontarget	nontarget	0.108943412926022
+ENSG00000127955.11	GNAI1	protein_coding	nontarget	nontarget	0.630769969362528
+ENSG00000065135.7	GNAI3	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.115451906461696
+ENSG00000078369.13	GNB1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.187837111692097
+ENSG00000172354.5	GNB2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0700286698554143
+ENSG00000204628.7	GNB2L1	protein_coding	tc<0.27	cyto_target	-0.0432060250317373
+ENSG00000134697.8	GNL2	protein_coding	tc<0.27	cyto_target	0.225972833916296
+ENSG00000130119.11	GNL3L	protein_coding	tc<0.27	cyto_target	-0.120566014177358
+ENSG00000116906.7	GNPAT	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0607825281497717
+ENSG00000135677.6	GNS	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0526464986923518
+ENSG00000167110.12	GOLGA2	protein_coding	nontarget	nontarget	0.19901398240929
+ENSG00000135052.12	GOLM1	protein_coding	tc>0.27 & tc<1.04	mem_target	0.115567226430305
+ENSG00000113384.9	GOLPH3	protein_coding	tc<0.27	cyto_target	0.189859913479749
+ENSG00000143457.6	GOLPH3L	protein_coding	nontarget	nontarget	0.175217946209749
+ENSG00000108587.10	GOSR1	protein_coding	nontarget	cyto_target	-0.102850493522459
+ENSG00000125166.8	GOT2	protein_coding	tc<0.27	cyto_target	0.0595052059302665
+ENSG00000197858.6	GPAA1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.532258223629028
+ENSG00000160818.12	GPATCH4	protein_coding	nontarget	nontarget	-0.0348008732788865
+ENSG00000115159.11	GPD2	protein_coding	nontarget	nontarget	0.155786828699232
+ENSG00000068394.9	GPKOW	protein_coding	nontarget	nontarget	0.100780538342336
+ENSG00000177885.9	GRB2	protein_coding	tc<0.27	cyto_target	0.101866536914304
+ENSG00000109519.8	GRPEL1	protein_coding	nontarget	nontarget	-0.00387286345459075
+ENSG00000164284.10	GRPEL2	protein_coding	nontarget	nontarget	0.0460177158054707
+ENSG00000132463.9	GRSF1	protein_coding	tc<0.27	cyto_target	-0.0932378543633832
+ENSG00000105447.8	GRWD1	protein_coding	tc<0.27	cyto_target	-0.036150411378195
+ENSG00000131149.13	GSE1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0273630669472612
+ENSG00000104687.8	GSR	protein_coding	tc<0.27	cyto_target	-0.0211384671572938
+ENSG00000125651.9	GTF2F1	protein_coding	nontarget	nontarget	0.247906389034419
+ENSG00000188342.7	GTF2F2	protein_coding	tc<0.27	cyto_target	0.0746481203100734
+ENSG00000183474.11	GTF2H2C	protein_coding	tc<0.27	cyto_target	-0.048666396745907
+ENSG00000077809.8	GTF2I	protein_coding	nontarget	nontarget	0.0931605874827929
+ENSG00000077235.13	GTF3C1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.00962309732013495
+ENSG00000125484.7	GTF3C4	protein_coding	nontarget	nontarget	0.0225048859263341
+ENSG00000148308.13	GTF3C5	protein_coding	tc<0.27	cyto_target	0.101067556281415
+ENSG00000130299.12	GTPBP3	protein_coding	nontarget	nontarget	0.00338212859523558
+ENSG00000107937.14	GTPBP4	protein_coding	tc<0.27	cyto_target	0.00711974205638165
+ENSG00000151233.6	GXYLT1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.390117917368051
+ENSG00000184897.4	H1FX	protein_coding	nontarget	nontarget	0.296994368922876
+ENSG00000105968.14	H2AFV	protein_coding	nontarget	cyto_target	0.0668150038253554
+ENSG00000132475.4	H3F3B	protein_coding	tc<0.27	cyto_target	-0.0316326096976243
+ENSG00000131373.10	HACL1	protein_coding	nontarget	nontarget	0.37338263251054
+ENSG00000138796.11	HADH	protein_coding	nontarget	cyto_target	0.27101517720953
+ENSG00000084754.6	HADHA	protein_coding	nontarget	nontarget	-0.00488725064324374
+ENSG00000138029.9	HADHB	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0619742759457487
+ENSG00000170445.8	HARS	protein_coding	nontarget	nontarget	0.047298605472934
+ENSG00000143575.10	HAX1	protein_coding	tc<0.27	cyto_target	0.0216267042733267
+ENSG00000112339.10	HBS1L	protein_coding	nontarget	nontarget	0.23480354066644
+ENSG00000172534.9	HCFC1	protein_coding	nontarget	nontarget	0.0754346524485088
+ENSG00000116478.7	HDAC1	protein_coding	nontarget	cyto_target	0.0318316988080195
+ENSG00000196591.7	HDAC2	protein_coding	tc<0.27	cyto_target	0.19109543612527
+ENSG00000167674.10	HDGFRP2	protein_coding	nontarget	nontarget	0.202690137432284
+ENSG00000115677.12	HDLBP	protein_coding	tc>1.04 & tc<65.26	cyto_target	-1.88196427688886
+ENSG00000119285.6	HEATR1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.204542519603744
+ENSG00000119969.10	HELLS	protein_coding	nontarget	cyto_target	-0.124164567416473
+ENSG00000213614.5	HEXA	protein_coding	nontarget	nontarget	-0.020594364607035
+ENSG00000049860.9	HEXB	protein_coding	tc>1.04 & tc<65.26	mem_target	0.385891537783989
+ENSG00000106049.4	HIBADH	protein_coding	nontarget	nontarget	0.240472096019375
+ENSG00000198130.10	HIBCH	protein_coding	nontarget	nontarget	-0.258818667605922
+ENSG00000181061.9	HIGD1A	protein_coding	nontarget	nontarget	-0.125247882598217
+ENSG00000137133.6	HINT2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.174840753008083
+ENSG00000187837.2	HIST1H1C	protein_coding	nontarget	cyto_target	0.140225570656521
+ENSG00000156515.17	HK1	protein_coding	tc<0.27	cyto_target	-0.095014946801664
+ENSG00000159399.5	HK2	protein_coding	nontarget	cyto_target	0.0903882346599995
+ENSG00000206503.7	HLA-A	protein_coding	nontarget	nontarget	0.168629193888125
+ENSG00000204525.10	HLA-C	protein_coding	nontarget	nontarget	-0.0888671944650302
+ENSG00000071794.11	HLTF	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.081414850443173
+ENSG00000101294.12	HM13	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.188025396226636
+ENSG00000137309.15	HMGA1	protein_coding	tc<0.27	cyto_target	-0.143141875818354
+ENSG00000189403.10	HMGB1	protein_coding	nontarget	nontarget	0.0784007910281753
+ENSG00000164104.7	HMGB2	protein_coding	tc<0.27	cyto_target	0.15695761098963
+ENSG00000113161.11	HMGCR	protein_coding	tc>1.04 & tc<65.26	mem_target	0.156031665947155
+ENSG00000205581.6	HMGN1	protein_coding	nontarget	nontarget	0.0316740126176203
+ENSG00000103415.7	HMOX2	protein_coding	nontarget	nontarget	0.160735090727007
+ENSG00000177733.4	HNRNPA0	protein_coding	nontarget	cyto_target	-0.0208310197099538
+ENSG00000135486.13	HNRNPA1	protein_coding	nontarget	nontarget	-0.0827228157028967
+ENSG00000122566.16	HNRNPA2B1	protein_coding	tc<0.27	cyto_target	0.0514842812282517
+ENSG00000170144.14	HNRNPA3	protein_coding	tc<0.27	cyto_target	0.0483817520716808
+ENSG00000197451.6	HNRNPAB	protein_coding	tc<0.27	cyto_target	0.117998064140149
+ENSG00000138668.14	HNRNPD	protein_coding	tc<0.27	cyto_target	-0.0180527714717493
+ENSG00000169813.12	HNRNPF	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.143702779603111
+ENSG00000169045.13	HNRNPH1	protein_coding	tc<0.27	cyto_target	0.105856713065736
+ENSG00000165119.14	HNRNPK	protein_coding	tc<0.27	cyto_target	0.0752094648239274
+ENSG00000104824.12	HNRNPL	protein_coding	tc<0.27	cyto_target	0.205508022118804
+ENSG00000125944.14	HNRNPR	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.103023359364827
+ENSG00000153187.12	HNRNPU	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.072674133625871
+ENSG00000105323.12	HNRNPUL1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0705004821435438
+ENSG00000170689.8	HOXB9	protein_coding	nontarget	cyto_target	-0.0614119864749625
+ENSG00000153936.12	HS2ST1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.128728973485126
+ENSG00000072506.8	HSD17B10	protein_coding	nontarget	nontarget	0.175977146737347
+ENSG00000149084.7	HSD17B12	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.154863323062185
+ENSG00000133835.10	HSD17B4	protein_coding	tc<0.27	cyto_target	0.104642747600501
+ENSG00000080824.14	HSP90AA1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0300374346611463
+ENSG00000096384.15	HSP90AB1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0158399045594542
+ENSG00000166598.8	HSP90B1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0437296794381309
+ENSG00000155304.4	HSPA13	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0341172574717247
+ENSG00000204388.5	HSPA1B	protein_coding	nontarget	nontarget	-0.644646003404839
+ENSG00000044574.7	HSPA5	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.313282671354046
+ENSG00000113013.8	HSPA9	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0939269531966007
+ENSG00000144381.12	HSPD1	protein_coding	tc<0.27	cyto_target	-0.0512679352677135
+ENSG00000115541.6	HSPE1	protein_coding	nontarget	nontarget	-0.0702830200536342
+ENSG00000102241.7	HTATSF1	protein_coding	tc<0.27	cyto_target	0.132042341037171
+ENSG00000149428.14	HYOU1	protein_coding	nontarget	nontarget	-0.224211049039472
+ENSG00000196305.13	IARS	protein_coding	nontarget	cyto_target	0.131696051706599
+ENSG00000067704.8	IARS2	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.096365775834765
+ENSG00000167862.5	ICT1	protein_coding	nontarget	nontarget	0.133092143400775
+ENSG00000119912.11	IDE	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.29606870319741
+ENSG00000182054.5	IDH2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.253841324329884
+ENSG00000166411.9	IDH3A	protein_coding	nontarget	nontarget	0.100165265931251
+ENSG00000101365.16	IDH3B	protein_coding	nontarget	cyto_target	-0.262439047405197
+ENSG00000067829.14	IDH3G	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.184939559271168
+ENSG00000159217.5	IGF2BP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0866748908044315
+ENSG00000197081.8	IGF2R	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.257290765843775
+ENSG00000113141.11	IK	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.107444949208548
+ENSG00000143621.12	ILF2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0267984446070649
+ENSG00000129351.13	ILF3	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0506561410001404
+ENSG00000132323.4	ILKAP	protein_coding	tc<0.27	cyto_target	0.061218113100302
+ENSG00000105135.11	ILVBL	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0999184730134752
+ENSG00000178035.7	IMPDH2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0592580451039605
+ENSG00000164880.11	INTS1	protein_coding	nontarget	nontarget	0.0802005110495092
+ENSG00000143624.9	INTS3	protein_coding	tc<0.27	cyto_target	0.0514662409206216
+ENSG00000140575.8	IQGAP1	protein_coding	nontarget	nontarget	0.0469150731201005
+ENSG00000145703.11	IQGAP2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0240561809569573
+ENSG00000184216.7	IRAK1	protein_coding	tc<0.27	cyto_target	0.415727542023039
+ENSG00000168264.6	IRF2BP2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0377243291144139
+ENSG00000135070.9	ISCA1	protein_coding	nontarget	nontarget	0.232865314231674
+ENSG00000136003.11	ISCU	protein_coding	nontarget	nontarget	-0.070920491993994
+ENSG00000150093.14	ITGB1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.156668613262497
+ENSG00000128928.4	IVD	protein_coding	nontarget	cyto_target	-0.111935342402474
+ENSG00000173801.12	JUP	protein_coding	nontarget	nontarget	-0.0143735589954508
+ENSG00000065427.10	KARS	protein_coding	tc<0.27	cyto_target	0.118773609253351
+ENSG00000178695.4	KCTD12	protein_coding	nontarget	cyto_target	0.475809013356544
+ENSG00000153885.10	KCTD15	protein_coding	nontarget	nontarget	0.0884660401558726
+ENSG00000136636.8	KCTD3	protein_coding	tc<0.27	cyto_target	0.0820069478470091
+ENSG00000167977.4	KCTD5	protein_coding	nontarget	nontarget	0.0806493297242842
+ENSG00000134901.8	KDELC1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0704659685507573
+ENSG00000178202.8	KDELC2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.139744630768783
+ENSG00000004487.11	KDM1A	protein_coding	tc<0.27	cyto_target	0.110909670761347
+ENSG00000121774.13	KHDRBS1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0306464575739915
+ENSG00000088247.11	KHSRP	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.056758578603141
+ENSG00000166803.6	KIAA0101	protein_coding	tc<0.27	cyto_target	0.0650046420767936
+ENSG00000166398.8	KIAA0355	protein_coding	nontarget	nontarget	0.0168648656142045
+ENSG00000116685.11	KIAA2013	protein_coding	tc>0.27 & tc<1.04	mem_target	0.112691323997237
+ENSG00000112984.7	KIF20A	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.00947518601611475
+ENSG00000079616.8	KIF22	protein_coding	tc<0.27	cyto_target	0.0129621454963841
+ENSG00000137807.9	KIF23	protein_coding	nontarget	nontarget	-0.0421949814515993
+ENSG00000142945.8	KIF2C	protein_coding	nontarget	cyto_target	-0.242206046132428
+ENSG00000090889.10	KIF4A	protein_coding	nontarget	nontarget	0.0544588148934868
+ENSG00000170759.10	KIF5B	protein_coding	tc<0.27	cyto_target	-0.0304333785719262
+ENSG00000237649.3	KIFC1	protein_coding	nontarget	nontarget	-0.0422052265265948
+ENSG00000182481.4	KPNA2	protein_coding	nontarget	nontarget	-0.114365525464962
+ENSG00000102753.5	KPNA3	protein_coding	nontarget	cyto_target	0.290121291263403
+ENSG00000025800.9	KPNA6	protein_coding	nontarget	nontarget	0.0600575111642474
+ENSG00000108424.5	KPNB1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0628711006536296
+ENSG00000126777.13	KTN1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.120113085460996
+ENSG00000091136.9	LAMB1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.363817696088151
+ENSG00000135862.5	LAMC1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.430210036973095
+ENSG00000185896.9	LAMP1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.119457938195298
+ENSG00000005893.11	LAMP2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0221655804882632
+ENSG00000134248.9	LAMTOR5	protein_coding	nontarget	nontarget	0.16071401623604
+ENSG00000002549.8	LAP3	protein_coding	nontarget	nontarget	0.15155064919015
+ENSG00000155506.12	LARP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.184296643066266
+ENSG00000133706.13	LARS	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0362292685907746
+ENSG00000001497.12	LAS1L	protein_coding	nontarget	cyto_target	0.223153445379285
+ENSG00000143815.10	LBR	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.222524423331503
+ENSG00000136167.9	LCP1	protein_coding	tc<0.27	cyto_target	0.00842146395069692
+ENSG00000134333.9	LDHA	protein_coding	tc<0.27	cyto_target	0.114757384728948
+ENSG00000111716.8	LDHB	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0385618259033551
+ENSG00000166477.8	LEO1	protein_coding	nontarget	nontarget	-0.222512788035381
+ENSG00000168924.10	LETM1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0652017377478439
+ENSG00000108679.8	LGALS3BP	protein_coding	tc>0.27 & tc<1.04	mem_target	-0.455692194342902
+ENSG00000100600.10	LGMN	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0942198733261289
+ENSG00000005156.7	LIG3	protein_coding	tc<0.27	cyto_target	-0.061112841893443
+ENSG00000148943.7	LIN7C	protein_coding	nontarget	cyto_target	-0.126778195080084
+ENSG00000169223.10	LMAN2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.147641562564092
+ENSG00000113368.7	LMNB1	protein_coding	tc<0.27	cyto_target	0.271326445217528
+ENSG00000176619.6	LMNB2	protein_coding	nontarget	cyto_target	0.183541699577657
+ENSG00000196365.7	LONP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.014953583169732
+ENSG00000102910.9	LONP2	protein_coding	nontarget	nontarget	0.229468753885134
+ENSG00000111684.6	LPCAT3	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.075064733919782
+ENSG00000123684.8	LPGAT1	protein_coding	tc>1.04 & tc<65.26	NA	0.15079665817313
+ENSG00000163956.6	LRPAP1	protein_coding	tc>0.27 & tc<1.04	mem_target	0.096531355895809
+ENSG00000138095.14	LRPPRC	protein_coding	tc<0.27	cyto_target	-0.0585051659178131
+ENSG00000132128.12	LRRC41	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.14470510504645
+ENSG00000130764.5	LRRC47	protein_coding	tc<0.27	cyto_target	0.0750211709353917
+ENSG00000108829.9	LRRC59	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0424445343366094
+ENSG00000161036.6	LRWD1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.318564712754542
+ENSG00000130520.6	LSM4	protein_coding	tc<0.27	cyto_target	0.209591245013537
+ENSG00000105699.12	LSR	protein_coding	tc>1.04 & tc<65.26	mem_target	0.185700434283998
+ENSG00000198862.9	LTN1	protein_coding	nontarget	nontarget	0.303454585652393
+ENSG00000269955.2	LUC7L2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0161658295772123
+ENSG00000108848.11	LUC7L3	protein_coding	nontarget	nontarget	-0.100134690132628
+ENSG00000143353.7	LYPLAL1	protein_coding	nontarget	nontarget	0.321004467202815
+ENSG00000111196.5	MAGOHB	protein_coding	nontarget	nontarget	-0.119536436700676
+ENSG00000102158.15	MAGT1	protein_coding	nontarget	nontarget	-0.464391596527311
+ENSG00000112893.5	MAN2A1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0256988155144391
+ENSG00000104774.8	MAN2B1	protein_coding	tc>1.04 & tc<65.26	NA	-0.235065764661361
+ENSG00000145050.11	MANF	protein_coding	nontarget	nontarget	0.238223362371857
+ENSG00000140941.8	MAP1LC3B	protein_coding	nontarget	nontarget	0.153642073463817
+ENSG00000100030.10	MAPK1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.186869226631776
+ENSG00000101367.8	MAPRE1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.284478720229607
+ENSG00000186205.8	MARC1	protein_coding	tc>0.27 & tc<1.04	mem_target	0.170990130904426
+ENSG00000198060.5	MARCH5	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0297775300233845
+ENSG00000155130.5	MARCKS	protein_coding	nontarget	cyto_target	0.119024049435609
+ENSG00000175130.6	MARCKSL1	protein_coding	nontarget	nontarget	0.167980573999385
+ENSG00000166986.8	MARS	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0106245190757794
+ENSG00000015479.13	MATR3	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0135308134117263
+ENSG00000071655.13	MBD3	protein_coding	nontarget	nontarget	-0.0357056196663945
+ENSG00000131844.11	MCCC2	protein_coding	nontarget	cyto_target	0.160270282766821
+ENSG00000180398.7	MCFD2	protein_coding	nontarget	mem_target	-0.135023923603277
+ENSG00000143384.8	MCL1	protein_coding	nontarget	nontarget	0.0082723822114122
+ENSG00000073111.9	MCM2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.00610630162315497
+ENSG00000112118.13	MCM3	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0206576107986725
+ENSG00000104738.12	MCM4	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.135623542736121
+ENSG00000100297.11	MCM5	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0187467092629915
+ENSG00000076003.4	MCM6	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0242263732597772
+ENSG00000166508.13	MCM7	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.128595061276469
+ENSG00000197771.8	MCMBP	protein_coding	tc<0.27	cyto_target	0.401404938817539
+ENSG00000137337.10	MDC1	protein_coding	nontarget	nontarget	0.0436671211750496
+ENSG00000146701.7	MDH2	protein_coding	tc<0.27	cyto_target	0.134326567978131
+ENSG00000112159.7	MDN1	protein_coding	nontarget	nontarget	0.0118186819722844
+ENSG00000082212.7	ME2	protein_coding	tc<0.27	cyto_target	0.151903756295656
+ENSG00000184634.11	MED12	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.113756115443497
+ENSG00000136146.10	MED4	protein_coding	nontarget	cyto_target	0.0652821418477348
+ENSG00000146834.9	MEPCE	protein_coding	nontarget	nontarget	-0.108750107099083
+ENSG00000117899.6	MESDC2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.166777265978563
+ENSG00000111142.9	METAP2	protein_coding	tc<0.27	cyto_target	-0.0452339950335725
+ENSG00000165055.11	METTL2B	protein_coding	nontarget	nontarget	0.689431254525164
+ENSG00000185432.10	METTL7A	protein_coding	nontarget	mem_target	0.342718574690485
+ENSG00000140545.10	MFGE8	protein_coding	tc>1.04 & tc<65.26	mem_target	0.656985405526645
+ENSG00000171109.14	MFN1	protein_coding	nontarget	nontarget	0.00394213299482592
+ENSG00000116688.12	MFN2	protein_coding	nontarget	nontarget	0.0756217183197646
+ENSG00000008394.8	MGST1	protein_coding	tc<0.27	mem_target	0.162632922979051
+ENSG00000154305.12	MIA3	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.225127117787063
+ENSG00000165487.9	MICU2	protein_coding	tc<0.27	cyto_target	0.0497721047911745
+ENSG00000110917.3	MLEC	protein_coding	tc>0.27 & tc<1.04	mem_target	0.0635520895991441
+ENSG00000089693.6	MLF2	protein_coding	tc<0.27	cyto_target	-0.0383813436948272
+ENSG00000169446.4	MMGT1	protein_coding	tc>0.27 & tc<1.04	mem_target	0.228226068872447
+ENSG00000115275.7	MOGS	protein_coding	nontarget	mem_target	0.0791692901591459
+ENSG00000185787.10	MORF4L1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0806319623267696
+ENSG00000123562.12	MORF4L2	protein_coding	nontarget	nontarget	0.0860226746607644
+ENSG00000197965.7	MPZL1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.683370979463388
+ENSG00000020922.8	MRE11A	protein_coding	tc<0.27	cyto_target	0.232468105668507
+ENSG00000179010.10	MRFAP1	protein_coding	nontarget	cyto_target	-0.0070783246760953
+ENSG00000159111.8	MRPL10	protein_coding	tc<0.27	cyto_target	-0.0257020045792075
+ENSG00000174547.9	MRPL11	protein_coding	tc<0.27	cyto_target	0.0900248252966264
+ENSG00000180992.5	MRPL14	protein_coding	nontarget	nontarget	0.0185877763614146
+ENSG00000137547.4	MRPL15	protein_coding	nontarget	nontarget	0.204346945809562
+ENSG00000166902.4	MRPL16	protein_coding	nontarget	cyto_target	0.229417029063398
+ENSG00000158042.8	MRPL17	protein_coding	nontarget	nontarget	0.107543697101756
+ENSG00000112110.5	MRPL18	protein_coding	nontarget	nontarget	-0.0900303328421903
+ENSG00000115364.9	MRPL19	protein_coding	tc<0.27	cyto_target	-0.0946656114996641
+ENSG00000242485.1	MRPL20	protein_coding	nontarget	nontarget	0.0581910429103206
+ENSG00000197345.8	MRPL21	protein_coding	nontarget	nontarget	0.0393572993364693
+ENSG00000214026.6	MRPL23	protein_coding	tc<0.27	cyto_target	0.0869646085430446
+ENSG00000143314.8	MRPL24	protein_coding	nontarget	nontarget	0.095427570749652
+ENSG00000108826.11	MRPL27	protein_coding	nontarget	nontarget	-0.00905010227923365
+ENSG00000086504.11	MRPL28	protein_coding	tc<0.27	cyto_target	-0.18170841984625
+ENSG00000114686.4	MRPL3	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.107585246143552
+ENSG00000243147.3	MRPL33	protein_coding	nontarget	nontarget	-0.196976175082737
+ENSG00000116221.11	MRPL37	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0555836777844265
+ENSG00000204316.8	MRPL38	protein_coding	tc<0.27	cyto_target	-0.034691078065097
+ENSG00000154719.9	MRPL39	protein_coding	tc<0.27	cyto_target	0.105168337310531
+ENSG00000105364.9	MRPL4	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.134095842458051
+ENSG00000185608.4	MRPL40	protein_coding	tc<0.27	cyto_target	0.124269502823322
+ENSG00000182154.7	MRPL41	protein_coding	nontarget	cyto_target	0.0942807094398821
+ENSG00000055950.12	MRPL43	protein_coding	nontarget	nontarget	-0.010646546725953
+ENSG00000135900.3	MRPL44	protein_coding	nontarget	nontarget	-0.110653306598388
+ENSG00000174100.5	MRPL45	protein_coding	tc<0.27	cyto_target	0.0365576674185127
+ENSG00000259494.1	MRPL46	protein_coding	nontarget	nontarget	0.106124955016848
+ENSG00000136522.9	MRPL47	protein_coding	nontarget	cyto_target	-0.0529095711308182
+ENSG00000175581.9	MRPL48	protein_coding	nontarget	nontarget	-0.0372871272141259
+ENSG00000149792.4	MRPL49	protein_coding	nontarget	nontarget	0.138256897552916
+ENSG00000136897.6	MRPL50	protein_coding	nontarget	nontarget	0.077762526399989
+ENSG00000204822.6	MRPL53	protein_coding	nontarget	nontarget	0.0275525084362271
+ENSG00000162910.14	MRPL55	protein_coding	nontarget	nontarget	0.050337061420733
+ENSG00000048544.5	MRPS10	protein_coding	nontarget	nontarget	0.0484546520090897
+ENSG00000128626.7	MRPS12	protein_coding	nontarget	nontarget	-0.410694923910987
+ENSG00000120333.4	MRPS14	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0345546900827859
+ENSG00000182180.9	MRPS16	protein_coding	tc<0.27	cyto_target	0.101335188375651
+ENSG00000096080.7	MRPS18A	protein_coding	nontarget	nontarget	0.0192626110385299
+ENSG00000204568.7	MRPS18B	protein_coding	nontarget	nontarget	0.129941059857287
+ENSG00000122140.6	MRPS2	protein_coding	tc<0.27	cyto_target	-0.0947807512941262
+ENSG00000175110.7	MRPS22	protein_coding	nontarget	nontarget	-0.052376983045158
+ENSG00000181610.8	MRPS23	protein_coding	tc<0.27	cyto_target	-0.0343483478553838
+ENSG00000062582.9	MRPS24	protein_coding	nontarget	nontarget	0.0593181098698835
+ENSG00000125901.5	MRPS26	protein_coding	nontarget	nontarget	-0.0193668655535483
+ENSG00000113048.12	MRPS27	protein_coding	tc<0.27	cyto_target	-0.13750236207054
+ENSG00000112996.5	MRPS30	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0519245545457288
+ENSG00000102738.6	MRPS31	protein_coding	nontarget	cyto_target	-0.0427062712809738
+ENSG00000090263.11	MRPS33	protein_coding	nontarget	nontarget	0.0268742382768495
+ENSG00000074071.9	MRPS34	protein_coding	tc<0.27	cyto_target	-0.0132271901320968
+ENSG00000061794.8	MRPS35	protein_coding	nontarget	cyto_target	0.0289342852570562
+ENSG00000125445.6	MRPS7	protein_coding	nontarget	nontarget	0.0928232930838268
+ENSG00000135972.4	MRPS9	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0435428878844874
+ENSG00000053372.4	MRTO4	protein_coding	tc<0.27	cyto_target	-0.137351860245025
+ENSG00000095002.8	MSH2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.09191014497652
+ENSG00000116062.10	MSH6	protein_coding	nontarget	nontarget	0.29989281018637
+ENSG00000147065.12	MSN	protein_coding	tc<0.27	cyto_target	-0.232591035932859
+ENSG00000198712.1	MT-CO2	protein_coding	nontarget	nontarget	-0.0849848794465176
+ENSG00000182979.13	MTA1	protein_coding	nontarget	nontarget	0.230053762648931
+ENSG00000149480.2	MTA2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.019065270013771
+ENSG00000147649.5	MTDH	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0650248996993387
+ENSG00000120254.11	MTHFD1L	protein_coding	nontarget	nontarget	-0.110998949701641
+ENSG00000065911.7	MTHFD2	protein_coding	tc<0.27	cyto_target	-0.123515366531478
+ENSG00000107951.8	MTPAP	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.196526618573503
+ENSG00000173171.10	MTX1	protein_coding	nontarget	nontarget	0.0561978219625025
+ENSG00000146085.7	MUT	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.132860928099278
+ENSG00000182534.9	MXRA7	protein_coding	nontarget	mem_target	0.126919196948271
+ENSG00000132382.10	MYBBP1A	protein_coding	tc<0.27	cyto_target	0.0518239990336469
+ENSG00000133026.8	MYH10	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0313853230523691
+ENSG00000100345.16	MYH9	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0953354464858661
+ENSG00000101608.8	MYL12A	protein_coding	nontarget	nontarget	-0.199852873233121
+ENSG00000152082.9	MZT2B	protein_coding	nontarget	nontarget	0.0512465728734806
+ENSG00000102030.11	NAA10	protein_coding	nontarget	nontarget	0.520413175669963
+ENSG00000111300.5	NAA25	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.136810538232094
+ENSG00000196531.6	NACA	protein_coding	nontarget	cyto_target	-0.0005932855166283
+ENSG00000160877.5	NACC1	protein_coding	nontarget	nontarget	-0.118244479882815
+ENSG00000145414.4	NAF1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0488307269654935
+ENSG00000187109.9	NAP1L1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0203747070297696
+ENSG00000105402.3	NAPA	protein_coding	nontarget	cyto_target	0.112635087385795
+ENSG00000135372.4	NAT10	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0897981782094615
+ENSG00000010292.8	NCAPD2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0333644401721798
+ENSG00000151503.8	NCAPD3	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0352380752266155
+ENSG00000146918.15	NCAPG2	protein_coding	nontarget	nontarget	0.051874493255258
+ENSG00000061676.10	NCKAP1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.126609060991999
+ENSG00000115053.11	NCL	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0367788233142861
+ENSG00000162736.11	NCSTN	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.343705909036058
+ENSG00000130414.7	NDUFA10	protein_coding	tc<0.27	cyto_target	0.267373412590807
+ENSG00000174886.8	NDUFA11	protein_coding	nontarget	cyto_target	0.62151207318515
+ENSG00000184752.8	NDUFA12	protein_coding	nontarget	cyto_target	0.120611394246256
+ENSG00000186010.14	NDUFA13	protein_coding	nontarget	nontarget	0.20494187999338
+ENSG00000131495.4	NDUFA2	protein_coding	nontarget	cyto_target	0.121898943802644
+ENSG00000189043.5	NDUFA4	protein_coding	nontarget	nontarget	0.111776318000066
+ENSG00000128609.10	NDUFA5	protein_coding	nontarget	cyto_target	-0.0273015233188842
+ENSG00000184983.5	NDUFA6	protein_coding	nontarget	nontarget	0.255767492068747
+ENSG00000267855.1	NDUFA7	protein_coding	nontarget	nontarget	0.206347971990543
+ENSG00000167774.2	NDUFA7	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.206347971990543
+ENSG00000119421.5	NDUFA8	protein_coding	nontarget	nontarget	0.112808355500406
+ENSG00000139180.6	NDUFA9	protein_coding	nontarget	nontarget	0.147614099440947
+ENSG00000004779.5	NDUFAB1	protein_coding	tc<0.27	cyto_target	0.208578285481826
+ENSG00000164182.6	NDUFAF2	protein_coding	nontarget	nontarget	0.108608436720276
+ENSG00000178057.10	NDUFAF3	protein_coding	tc<0.27	cyto_target	-0.105055461903402
+ENSG00000123545.5	NDUFAF4	protein_coding	nontarget	cyto_target	0.0216650243520108
+ENSG00000183648.5	NDUFB1	protein_coding	nontarget	nontarget	0.326455215476806
+ENSG00000140990.10	NDUFB10	protein_coding	nontarget	cyto_target	-0.00110934555889816
+ENSG00000147123.10	NDUFB11	protein_coding	tc>1.04 & tc<65.26	NA	0.350305099465038
+ENSG00000119013.4	NDUFB3	protein_coding	nontarget	cyto_target	0.245609395154671
+ENSG00000065518.7	NDUFB4	protein_coding	tc<0.27	cyto_target	0.236910296145235
+ENSG00000136521.8	NDUFB5	protein_coding	tc<0.27	cyto_target	0.033297022659395
+ENSG00000099795.2	NDUFB7	protein_coding	tc<0.27	cyto_target	0.184356733018851
+ENSG00000166136.11	NDUFB8	protein_coding	nontarget	nontarget	0.138274071889273
+ENSG00000151366.8	NDUFC2	protein_coding	nontarget	nontarget	0.630407103821781
+ENSG00000023228.9	NDUFS1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.253716043088845
+ENSG00000158864.8	NDUFS2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0666708580891739
+ENSG00000213619.5	NDUFS3	protein_coding	tc<0.27	cyto_target	0.0238645660285621
+ENSG00000164258.7	NDUFS4	protein_coding	nontarget	nontarget	0.0249886591607777
+ENSG00000168653.6	NDUFS5	protein_coding	nontarget	cyto_target	0.124331853606196
+ENSG00000145494.7	NDUFS6	protein_coding	nontarget	nontarget	0.107478869817682
+ENSG00000115286.15	NDUFS7	protein_coding	tc<0.27	cyto_target	0.160132842024154
+ENSG00000110717.6	NDUFS8	protein_coding	tc<0.27	cyto_target	0.0841788489288132
+ENSG00000167792.7	NDUFV1	protein_coding	tc<0.27	cyto_target	0.104780864428834
+ENSG00000178127.8	NDUFV2	protein_coding	nontarget	nontarget	0.0924084933805097
+ENSG00000139350.7	NEDD1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0162050726823368
+ENSG00000129559.8	NEDD8	protein_coding	nontarget	nontarget	0.0035632493176475
+ENSG00000185049.8	NELFA	protein_coding	nontarget	nontarget	-0.0162214920886634
+ENSG00000101158.8	NELFCD	protein_coding	tc<0.27	cyto_target	-0.00308134202384582
+ENSG00000204386.6	NEU1	protein_coding	nontarget	nontarget	0.373673180538808
+ENSG00000244005.8	NFS1	protein_coding	nontarget	nontarget	0.0936184129397157
+ENSG00000145912.4	NHP2	protein_coding	tc<0.27	cyto_target	0.0966949720548995
+ENSG00000100138.9	NHP2L1	protein_coding	tc<0.27	cyto_target	-0.116956458971631
+ENSG00000196290.10	NIF3L1	protein_coding	nontarget	nontarget	0.496234060900107
+ENSG00000184117.7	NIPSNAP1	protein_coding	nontarget	cyto_target	0.220380376498098
+ENSG00000123213.18	NLN	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0793786263373897
+ENSG00000243678.7	NME1-NME2	protein_coding	nontarget	nontarget	0.0848173542527231
+ENSG00000136448.7	NMT1	protein_coding	nontarget	nontarget	0.100653061175786
+ENSG00000112992.12	NNT	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0672049718188439
+ENSG00000188976.6	NOC2L	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0593429337347744
+ENSG00000184967.2	NOC4L	protein_coding	nontarget	cyto_target	0.145029663810405
+ENSG00000130935.5	NOL11	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.00894279897929811
+ENSG00000166197.12	NOLC1	protein_coding	tc<0.27	cyto_target	0.0512586479544295
+ENSG00000103512.10	NOMO1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.161458398522337
+ENSG00000147140.11	NONO	protein_coding	tc<0.27	cyto_target	-0.0347336212299528
+ENSG00000101361.10	NOP56	protein_coding	tc<0.27	cyto_target	-0.300906877915841
+ENSG00000055044.6	NOP58	protein_coding	nontarget	cyto_target	-0.051677324943745
+ENSG00000142546.9	NOSIP	protein_coding	nontarget	nontarget	-0.0336464403245431
+ENSG00000119655.4	NPC2	protein_coding	tc>0.27 & tc<1.04	NA	0.0120446330819686
+ENSG00000182446.9	NPLOC4	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0726125492630482
+ENSG00000181163.9	NPM1	protein_coding	nontarget	cyto_target	-0.108834087737039
+ENSG00000107833.6	NPM3	protein_coding	nontarget	nontarget	0.0904986785241148
+ENSG00000156642.12	NPTN	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.126103537017819
+ENSG00000171246.5	NPTX1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.227983448118479
+ENSG00000213281.4	NRAS	protein_coding	tc<0.27	cyto_target	-0.179190406704714
+ENSG00000147383.6	NSDHL	protein_coding	nontarget	nontarget	0.437403409653561
+ENSG00000073969.14	NSF	protein_coding	nontarget	nontarget	0.0520674939473538
+ENSG00000126653.11	NSRP1	protein_coding	tc<0.27	cyto_target	0.0136576893241526
+ENSG00000037474.10	NSUN2	protein_coding	tc<0.27	cyto_target	0.0577888439329493
+ENSG00000122643.14	NT5C3A	protein_coding	tc>0.27 & tc<1.04	mem_target	-0.0782854187673394
+ENSG00000104805.11	NUCB1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.216319015883851
+ENSG00000070081.11	NUCB2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0789009054947147
+ENSG00000213965.3	NUDT19	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.040364233226878
+ENSG00000167005.9	NUDT21	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.00235916311597208
+ENSG00000173598.9	NUDT4	protein_coding	nontarget	nontarget	-0.139893013991015
+ENSG00000113569.11	NUP155	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.11308074985704
+ENSG00000095319.10	NUP188	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0798174583058661
+ENSG00000155561.10	NUP205	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.03525176658528
+ENSG00000132182.7	NUP210	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.298241707081152
+ENSG00000108559.7	NUP88	protein_coding	tc<0.27	cyto_target	0.0816033664403123
+ENSG00000102900.8	NUP93	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.178719255415123
+ENSG00000137804.8	NUSAP1	protein_coding	tc<0.27	cyto_target	0.0775853583966774
+ENSG00000065154.7	OAT	protein_coding	tc<0.27	cyto_target	0.0632533502056386
+ENSG00000109180.10	OCIAD1	protein_coding	tc>0.27 & tc<1.04	mem_target	0.108334355595824
+ENSG00000197822.6	OCLN	protein_coding	tc>0.27 & tc<1.04	mem_target	0.35141636016506
+ENSG00000105953.10	OGDH	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.152525653514027
+ENSG00000147162.9	OGT	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0549267409118152
+ENSG00000138430.11	OLA1	protein_coding	nontarget	cyto_target	0.0360683649091936
+ENSG00000135336.10	ORC3	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.106199826846846
+ENSG00000115947.9	ORC4	protein_coding	nontarget	cyto_target	-0.0440333036139449
+ENSG00000164815.6	ORC5	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.161589173644606
+ENSG00000091651.4	ORC6	protein_coding	tc<0.27	cyto_target	0.123523591980617
+ENSG00000123353.5	ORMDL2	protein_coding	nontarget	mem_target	0.0824804779336396
+ENSG00000091039.12	OSBPL8	protein_coding	tc<0.27	cyto_target	-0.0070295638068705
+ENSG00000198856.8	OSTC	protein_coding	tc>1.04 & tc<65.26	NA	0.279441219791127
+ENSG00000155463.8	OXA1L	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.384581349963284
+ENSG00000083720.8	OXCT1	protein_coding	nontarget	nontarget	0.228959219261834
+ENSG00000185624.10	P4HB	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0890354935603675
+ENSG00000170515.9	PA2G4	protein_coding	tc<0.27	cyto_target	-0.16063659977492
+ENSG00000070756.9	PABPC1	protein_coding	tc<0.27	cyto_target	-0.0408900281730262
+ENSG00000090621.9	PABPC4	protein_coding	tc<0.27	cyto_target	0.236986582779589
+ENSG00000100836.6	PABPN1	protein_coding	tc<0.27	cyto_target	0.276552405196923
+ENSG00000100266.13	PACSIN2	protein_coding	nontarget	cyto_target	0.101556261144748
+ENSG00000006712.10	PAF1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.02793224617071
+ENSG00000116288.8	PARK7	protein_coding	tc<0.27	cyto_target	-0.110564277509546
+ENSG00000143799.8	PARP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0946239943192973
+ENSG00000177425.6	PAWR	protein_coding	nontarget	cyto_target	0.116304547982937
+ENSG00000169564.5	PCBP1	protein_coding	nontarget	nontarget	0.0535688348297589
+ENSG00000197111.11	PCBP2	protein_coding	tc<0.27	cyto_target	-0.292784995161154
+ENSG00000078674.13	PCM1	protein_coding	nontarget	nontarget	0.186776727954392
+ENSG00000132646.6	PCNA	protein_coding	tc<0.27	cyto_target	-0.18672182633579
+ENSG00000150593.11	PDCD4	protein_coding	tc<0.27	cyto_target	0.362717412081723
+ENSG00000105185.7	PDCD5	protein_coding	nontarget	cyto_target	0.100630550202991
+ENSG00000131828.9	PDHA1	protein_coding	tc<0.27	cyto_target	-0.0958538500699653
+ENSG00000168291.8	PDHB	protein_coding	tc<0.27	cyto_target	-0.0220004960847957
+ENSG00000155660.6	PDIA4	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.293555872991278
+ENSG00000143870.8	PDIA6	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0135692142593677
+ENSG00000067992.8	PDK3	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.148911116828918
+ENSG00000107438.4	PDLIM1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.119792477864797
+ENSG00000121892.10	PDS5A	protein_coding	tc<0.27	cyto_target	0.104086437015492
+ENSG00000242265.1	PEG10	protein_coding	tc<0.27	cyto_target	-0.177477448735594
+ENSG00000100029.13	PES1	protein_coding	tc<0.27	cyto_target	0.0182555848515632
+ENSG00000034693.10	PEX3	protein_coding	nontarget	nontarget	0.341852660119009
+ENSG00000152556.11	PFKM	protein_coding	nontarget	nontarget	-0.0817990270207202
+ENSG00000108518.7	PFN1	protein_coding	tc<0.27	cyto_target	0.203353489741176
+ENSG00000247077.2	PGAM5	protein_coding	nontarget	nontarget	0.0732975577148007
+ENSG00000101856.8	PGRMC1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.162974049675445
+ENSG00000164902.9	PHAX	protein_coding	nontarget	nontarget	0.0156229319545933
+ENSG00000167085.7	PHB	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0845523404557904
+ENSG00000215021.4	PHB2	protein_coding	nontarget	nontarget	0.0287457409284619
+ENSG00000100410.3	PHF5A	protein_coding	nontarget	nontarget	-0.11516352792701
+ENSG00000092621.7	PHGDH	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.183022175058245
+ENSG00000033800.9	PIAS1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.00807034668841922
+ENSG00000124155.12	PIGT	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0535214502638329
+ENSG00000127445.9	PIN1	protein_coding	tc<0.27	cyto_target	0.380705115101507
+ENSG00000102309.8	PIN4	protein_coding	nontarget	nontarget	0.382226445238807
+ENSG00000143398.15	PIP5K1A	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.00663502944007075
+ENSG00000107959.11	PITRM1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.146196527034958
+ENSG00000065243.14	PKN2	protein_coding	nontarget	nontarget	0.147707771458966
+ENSG00000105223.14	PLD3	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0902030654537046
+ENSG00000166851.10	PLK1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0812333759513474
+ENSG00000083444.12	PLOD1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0567930629062209
+ENSG00000152952.7	PLOD2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0682926438615099
+ENSG00000171566.7	PLRG1	protein_coding	nontarget	nontarget	0.036771686449805
+ENSG00000102024.13	PLS3	protein_coding	tc<0.27	cyto_target	0.0759470655021399
+ENSG00000141682.11	PMAIP1	protein_coding	nontarget	nontarget	0.0640959343072974
+ENSG00000165688.7	PMPCA	protein_coding	tc<0.27	cyto_target	-0.119829442016163
+ENSG00000105819.9	PMPCB	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0178114196928379
+ENSG00000115946.3	PNO1	protein_coding	nontarget	nontarget	0.254998795218825
+ENSG00000138035.10	PNPT1	protein_coding	nontarget	nontarget	0.254833314755236
+ENSG00000101346.7	POFUT1	protein_coding	nontarget	mem_target	-0.0128677343231652
+ENSG00000101868.6	POLA1	protein_coding	tc<0.27	cyto_target	0.0985035437405608
+ENSG00000062822.8	POLD1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0203487592646067
+ENSG00000004142.7	POLDIP2	protein_coding	nontarget	nontarget	-0.0592901464109745
+ENSG00000177084.12	POLE	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.207652968745726
+ENSG00000181222.10	POLR2A	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.259711654482507
+ENSG00000099817.7	POLR2E	protein_coding	nontarget	cyto_target	0.00390661662780785
+ENSG00000177700.5	POLR2L	protein_coding	nontarget	nontarget	0.0399464321672899
+ENSG00000099821.9	POLRMT	protein_coding	nontarget	nontarget	-0.161602211265664
+ENSG00000105854.8	PON2	protein_coding	tc<0.27	mem_target	0.0760801508809609
+ENSG00000172336.4	POP7	protein_coding	nontarget	nontarget	-0.127618352197668
+ENSG00000127948.9	POR	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.100838172177388
+ENSG00000196262.9	PPIA	protein_coding	tc<0.27	cyto_target	0.145184503900515
+ENSG00000166794.4	PPIB	protein_coding	tc>1.04 & tc<65.26	mem_target	0.121839061181521
+ENSG00000168938.5	PPIC	protein_coding	tc<0.27	mem_target	0.452124696140018
+ENSG00000084072.12	PPIE	protein_coding	nontarget	cyto_target	0.111951644414971
+ENSG00000171960.6	PPIH	protein_coding	nontarget	nontarget	0.127191313899851
+ENSG00000172531.10	PPP1CA	protein_coding	tc<0.27	cyto_target	-0.02500425441565
+ENSG00000213639.5	PPP1CB	protein_coding	nontarget	nontarget	0.327314652533906
+ENSG00000186298.7	PPP1CC	protein_coding	tc<0.27	cyto_target	-0.0103220293200695
+ENSG00000204569.5	PPP1R10	protein_coding	nontarget	nontarget	0.0310090369418782
+ENSG00000104695.8	PPP2CB	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0122325269405591
+ENSG00000105568.13	PPP2R1A	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.13317349932069
+ENSG00000149923.9	PPP4C	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.100852981294491
+ENSG00000131238.12	PPT1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.112485982640221
+ENSG00000102103.11	PQBP1	protein_coding	tc<0.27	cyto_target	-0.152968379098366
+ENSG00000198901.9	PRC1	protein_coding	nontarget	cyto_target	-0.0464807746726084
+ENSG00000143294.10	PRCC	protein_coding	nontarget	nontarget	0.0824952020190715
+ENSG00000137509.6	PRCP	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.121579121978498
+ENSG00000117450.9	PRDX1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.147930856526965
+ENSG00000167815.7	PRDX2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.450386676069627
+ENSG00000165672.5	PRDX3	protein_coding	tc<0.27	cyto_target	-0.000983725540885221
+ENSG00000123131.8	PRDX4	protein_coding	tc>1.04 & tc<65.26	mem_target	0.257107217961453
+ENSG00000126432.9	PRDX5	protein_coding	nontarget	cyto_target	0.232712599445693
+ENSG00000169230.5	PRELID1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.495528357570237
+ENSG00000108946.10	PRKAR1A	protein_coding	tc<0.27	cyto_target	-0.0700380851793697
+ENSG00000163558.8	PRKCI	protein_coding	nontarget	nontarget	0.12052708688665
+ENSG00000253729.3	PRKDC	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.020786307443561
+ENSG00000126457.16	PRMT1	protein_coding	tc<0.27	cyto_target	0.0313729860036845
+ENSG00000101000.4	PROCR	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.706515251242624
+ENSG00000110107.4	PRPF19	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0329325636160894
+ENSG00000101161.6	PRPF6	protein_coding	tc<0.27	cyto_target	0.206974349955854
+ENSG00000174231.12	PRPF8	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0353696726865755
+ENSG00000147224.6	PRPS1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.150243320353781
+ENSG00000164244.16	PRRC1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0262969330910657
+ENSG00000204469.8	PRRC2A	protein_coding	nontarget	nontarget	0.279070871202764
+ENSG00000117523.11	PRRC2C	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0106355709748572
+ENSG00000197746.9	PSAP	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0799149254454073
+ENSG00000164985.10	PSIP1	protein_coding	tc<0.27	cyto_target	-0.00984493575044802
+ENSG00000100902.6	PSMA6	protein_coding	nontarget	nontarget	0.128381208644146
+ENSG00000008018.8	PSMB1	protein_coding	tc<0.27	cyto_target	0.0228532608558435
+ENSG00000126067.7	PSMB2	protein_coding	tc<0.27	cyto_target	0.0977012682656452
+ENSG00000159377.6	PSMB4	protein_coding	tc<0.27	cyto_target	-0.01549751094981
+ENSG00000100804.14	PSMB5	protein_coding	tc<0.27	cyto_target	-0.0593329124217211
+ENSG00000142507.5	PSMB6	protein_coding	nontarget	cyto_target	-0.125440712176767
+ENSG00000100764.9	PSMC1	protein_coding	nontarget	nontarget	0.107816366699519
+ENSG00000161057.6	PSMC2	protein_coding	nontarget	cyto_target	0.00865727935332707
+ENSG00000197170.5	PSMD12	protein_coding	nontarget	cyto_target	0.0828670619497085
+ENSG00000175166.12	PSMD2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.253255629481231
+ENSG00000159352.11	PSMD4	protein_coding	nontarget	nontarget	0.0767485016166179
+ENSG00000163636.6	PSMD6	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.132016680785855
+ENSG00000131467.6	PSME3	protein_coding	nontarget	cyto_target	0.0242737307358527
+ENSG00000183527.7	PSMG1	protein_coding	tc<0.27	cyto_target	0.291764450371067
+ENSG00000121390.13	PSPC1	protein_coding	tc<0.27	cyto_target	0.120264262703713
+ENSG00000117569.14	PTBP2	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.101331194874553
+ENSG00000132300.14	PTCD3	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.086075003207766
+ENSG00000156471.8	PTDSS1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0320932633506887
+ENSG00000110958.11	PTGES3	protein_coding	tc<0.27	cyto_target	-0.0511426825560768
+ENSG00000187514.10	PTMA	protein_coding	nontarget	cyto_target	-0.00436699052152723
+ENSG00000196396.5	PTPN1	protein_coding	nontarget	nontarget	-0.228888078988677
+ENSG00000141378.13	PTRH2	protein_coding	nontarget	NA	0.15120232642702
+ENSG00000179950.9	PUF60	protein_coding	nontarget	nontarget	-0.105563212417156
+ENSG00000177192.9	PUS1	protein_coding	nontarget	nontarget	0.0825109017849833
+ENSG00000091127.9	PUS7	protein_coding	tc<0.27	cyto_target	0.2614969319709
+ENSG00000136045.7	PWP1	protein_coding	nontarget	nontarget	0.0584974616690973
+ENSG00000241945.3	PWP2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.141597884930277
+ENSG00000183010.12	PYCR1	protein_coding	nontarget	cyto_target	0.0124639080436842
+ENSG00000143811.12	PYCR2	protein_coding	nontarget	nontarget	0.0374347216425638
+ENSG00000172053.10	QARS	protein_coding	tc<0.27	cyto_target	0.0280384350359433
+ENSG00000112531.12	QKI	protein_coding	nontarget	cyto_target	0.349047221169104
+ENSG00000130348.7	QRSL1	protein_coding	nontarget	nontarget	-0.131248831592251
+ENSG00000165661.11	QSOX2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.00191114798396793
+ENSG00000084733.6	RAB10	protein_coding	tc<0.27	cyto_target	-0.163253868593162
+ENSG00000185236.7	RAB11B	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.116448848312567
+ENSG00000119396.6	RAB14	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.060265456191155
+ENSG00000099246.12	RAB18	protein_coding	nontarget	nontarget	0.170953050108298
+ENSG00000138069.12	RAB1A	protein_coding	nontarget	cyto_target	0.0940236740799655
+ENSG00000174903.10	RAB1B	protein_coding	tc<0.27	cyto_target	0.343350061689136
+ENSG00000080371.4	RAB21	protein_coding	nontarget	nontarget	-0.00231769449843521
+ENSG00000104388.10	RAB2A	protein_coding	nontarget	cyto_target	-0.154779255645071
+ENSG00000111737.7	RAB35	protein_coding	nontarget	nontarget	0.119068482707925
+ENSG00000108774.10	RAB5C	protein_coding	nontarget	cyto_target	0.0505231201650077
+ENSG00000175582.15	RAB6A	protein_coding	nontarget	cyto_target	0.11395512160845
+ENSG00000075785.8	RAB7A	protein_coding	nontarget	cyto_target	0.0463549937032521
+ENSG00000167461.7	RAB8A	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0402604545647545
+ENSG00000105404.6	RABAC1	protein_coding	tc>0.27 & tc<1.04	mem_target	0.113370468071682
+ENSG00000136238.13	RAC1	protein_coding	nontarget	cyto_target	0.00840312656191857
+ENSG00000161800.8	RACGAP1	protein_coding	tc<0.27	cyto_target	0.0648492314051763
+ENSG00000164754.8	RAD21	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0244983369765565
+ENSG00000101146.8	RAE1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.097370519482685
+ENSG00000006451.3	RALA	protein_coding	nontarget	cyto_target	0.083989075252572
+ENSG00000132341.7	RAN	protein_coding	tc<0.27	cyto_target	-0.0131439735307889
+ENSG00000100401.15	RANGAP1	protein_coding	nontarget	nontarget	0.0463983883058193
+ENSG00000127314.13	RAP1B	protein_coding	nontarget	cyto_target	-0.0722739737573989
+ENSG00000123728.5	RAP2C	protein_coding	nontarget	nontarget	0.320681093203645
+ENSG00000113643.4	RARS	protein_coding	tc<0.27	cyto_target	0.116586206987595
+ENSG00000146282.13	RARS2	protein_coding	nontarget	nontarget	0.0844537055385183
+ENSG00000161847.9	RAVER1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0152646608969525
+ENSG00000139687.9	RB1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.236137141406241
+ENSG00000162521.14	RBBP4	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.135243507008
+ENSG00000117222.9	RBBP5	protein_coding	nontarget	nontarget	0.23444724763084
+ENSG00000244462.3	RBM12	protein_coding	nontarget	cyto_target	0.179699457741058
+ENSG00000162775.10	RBM15	protein_coding	nontarget	nontarget	0.195342342875525
+ENSG00000119707.9	RBM25	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0100534801289699
+ENSG00000091009.6	RBM27	protein_coding	nontarget	nontarget	0.0694853007907584
+ENSG00000102317.13	RBM3	protein_coding	tc<0.27	cyto_target	0.299622326712454
+ENSG00000126254.7	RBM42	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.041862208290922
+ENSG00000147274.10	RBMX	protein_coding	nontarget	cyto_target	-0.231528098977878
+ENSG00000180198.11	RCC1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.152769798217296
+ENSG00000179051.9	RCC2	protein_coding	nontarget	cyto_target	0.0959926880565355
+ENSG00000049449.4	RCN1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.285966623275921
+ENSG00000117906.9	RCN2	protein_coding	tc>0.27 & tc<1.04	mem_target	0.0915220031247358
+ENSG00000072042.8	RDH11	protein_coding	tc>1.04 & tc<65.26	mem_target	0.00109578743295352
+ENSG00000240857.1	RDH14	protein_coding	nontarget	nontarget	-0.168928985371459
+ENSG00000137710.10	RDX	protein_coding	nontarget	cyto_target	-0.0315192056625938
+ENSG00000004700.11	RECQL	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0656326042543724
+ENSG00000129625.8	REEP5	protein_coding	tc>0.27 & tc<1.04	mem_target	0.0124354062832452
+ENSG00000157916.14	RER1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.168002355616885
+ENSG00000035928.10	RFC1	protein_coding	nontarget	cyto_target	0.177312064669921
+ENSG00000049541.6	RFC2	protein_coding	nontarget	nontarget	0.0937319543927723
+ENSG00000133119.8	RFC3	protein_coding	tc<0.27	cyto_target	0.0395957143345079
+ENSG00000111445.9	RFC5	protein_coding	nontarget	cyto_target	0.0177028892099866
+ENSG00000067560.6	RHOA	protein_coding	tc<0.27	cyto_target	-0.0901694244657239
+ENSG00000143878.8	RHOB	protein_coding	nontarget	nontarget	0.177706375343099
+ENSG00000140983.9	RHOT2	protein_coding	tc<0.27	cyto_target	0.0145178100235855
+ENSG00000104889.4	RNASEH2A	protein_coding	tc<0.27	cyto_target	0.30622640554734
+ENSG00000155827.7	RNF20	protein_coding	nontarget	nontarget	0.103694260573862
+ENSG00000103549.17	RNF40	protein_coding	nontarget	nontarget	-0.0621792726472745
+ENSG00000204308.6	RNF5	protein_coding	nontarget	nontarget	0.292723541879179
+ENSG00000101654.13	RNMT	protein_coding	nontarget	nontarget	0.116971577244689
+ENSG00000171861.6	RNMTL1	protein_coding	nontarget	nontarget	0.0591447637956043
+ENSG00000205937.7	RNPS1	protein_coding	tc<0.27	cyto_target	0.185277999250792
+ENSG00000132383.7	RPA1	protein_coding	tc<0.27	cyto_target	0.139860293780913
+ENSG00000117748.5	RPA2	protein_coding	tc<0.27	cyto_target	0.189135889289819
+ENSG00000198755.6	RPL10A	protein_coding	nontarget	nontarget	-0.1929568747313
+ENSG00000142676.8	RPL11	protein_coding	tc<0.27	cyto_target	-0.0216463129893083
+ENSG00000197958.8	RPL12	protein_coding	nontarget	cyto_target	-0.0158100543057553
+ENSG00000167526.9	RPL13	protein_coding	tc<0.27	cyto_target	0.0177256992023308
+ENSG00000142541.12	RPL13A	protein_coding	tc<0.27	cyto_target	0.00575252837168658
+ENSG00000188846.9	RPL14	protein_coding	nontarget	nontarget	-0.129454611583696
+ENSG00000174748.14	RPL15	protein_coding	nontarget	cyto_target	0.00729196232134858
+ENSG00000265681.2	RPL17	protein_coding	nontarget	nontarget	-0.0312127721390957
+ENSG00000063177.8	RPL18	protein_coding	tc<0.27	cyto_target	0.0402971038658103
+ENSG00000105640.8	RPL18A	protein_coding	tc<0.27	cyto_target	0.0110632014301798
+ENSG00000108298.5	RPL19	protein_coding	tc<0.27	cyto_target	-0.0272276692527305
+ENSG00000122026.6	RPL21	protein_coding	nontarget	nontarget	-0.0345102237184534
+ENSG00000116251.5	RPL22	protein_coding	nontarget	cyto_target	-0.135223277457924
+ENSG00000125691.8	RPL23	protein_coding	tc<0.27	cyto_target	0.163152237925792
+ENSG00000198242.9	RPL23A	protein_coding	nontarget	cyto_target	0.0603255897019168
+ENSG00000114391.8	RPL24	protein_coding	tc<0.27	cyto_target	-0.0999261781315686
+ENSG00000161970.8	RPL26	protein_coding	tc<0.27	cyto_target	0.113068017304029
+ENSG00000131469.8	RPL27	protein_coding	tc<0.27	cyto_target	0.0525312284340757
+ENSG00000166441.8	RPL27A	protein_coding	nontarget	cyto_target	-0.00529814310305475
+ENSG00000108107.8	RPL28	protein_coding	nontarget	cyto_target	-0.0125530179533176
+ENSG00000162244.6	RPL29	protein_coding	nontarget	cyto_target	0.151648429758072
+ENSG00000100316.11	RPL3	protein_coding	tc<0.27	cyto_target	-0.10712341683437
+ENSG00000156482.6	RPL30	protein_coding	nontarget	cyto_target	0.0124565348238013
+ENSG00000071082.6	RPL31	protein_coding	nontarget	cyto_target	0.158457785972124
+ENSG00000144713.8	RPL32	protein_coding	tc<0.27	cyto_target	0.138093458473434
+ENSG00000109475.12	RPL34	protein_coding	tc<0.27	cyto_target	-0.00474244772454048
+ENSG00000136942.10	RPL35	protein_coding	tc<0.27	cyto_target	0.202501460423433
+ENSG00000182899.10	RPL35A	protein_coding	tc<0.27	cyto_target	0.232740298703648
+ENSG00000130255.8	RPL36	protein_coding	tc<0.27	cyto_target	0.0125758914652577
+ENSG00000197756.5	RPL37A	protein_coding	tc<0.27	cyto_target	0.151065666759092
+ENSG00000172809.8	RPL38	protein_coding	tc<0.27	cyto_target	-0.0675785032716592
+ENSG00000174444.10	RPL4	protein_coding	tc<0.27	cyto_target	0.0833466191367472
+ENSG00000122406.8	RPL5	protein_coding	tc<0.27	cyto_target	-0.0357772196849111
+ENSG00000089009.11	RPL6	protein_coding	tc<0.27	cyto_target	-0.0397793150135788
+ENSG00000147604.9	RPL7	protein_coding	nontarget	nontarget	-0.0522841185136526
+ENSG00000148303.12	RPL7A	protein_coding	nontarget	nontarget	0.0170898920422966
+ENSG00000161016.11	RPL8	protein_coding	tc<0.27	cyto_target	0.0170484970355537
+ENSG00000163682.11	RPL9	protein_coding	tc<0.27	cyto_target	-0.0282629439440753
+ENSG00000089157.11	RPLP0	protein_coding	tc<0.27	cyto_target	-0.0306242088281524
+ENSG00000137818.7	RPLP1	protein_coding	tc<0.27	cyto_target	0.17176168783135
+ENSG00000177600.4	RPLP2	protein_coding	nontarget	cyto_target	-0.00498755207690075
+ENSG00000163902.7	RPN1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0958044106299605
+ENSG00000118705.12	RPN2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0487996567320814
+ENSG00000148688.9	RPP30	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.179367064302409
+ENSG00000101413.7	RPRD1B	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.57931016779365
+ENSG00000124614.9	RPS10	protein_coding	nontarget	nontarget	-0.284635097698039
+ENSG00000270800.1	RPS10-NUDT3	protein_coding	nontarget	nontarget	0.107120516093181
+ENSG00000142534.2	RPS11	protein_coding	tc<0.27	cyto_target	-0.0905468066320613
+ENSG00000112306.7	RPS12	protein_coding	tc<0.27	cyto_target	-0.0803691122253435
+ENSG00000110700.2	RPS13	protein_coding	tc<0.27	cyto_target	0.00991984568714901
+ENSG00000164587.7	RPS14	protein_coding	tc<0.27	cyto_target	-0.010032812309872
+ENSG00000115268.5	RPS15	protein_coding	nontarget	cyto_target	-0.0582188311027925
+ENSG00000134419.11	RPS15A	protein_coding	nontarget	cyto_target	0.0196387027917892
+ENSG00000105193.4	RPS16	protein_coding	tc<0.27	cyto_target	-0.0297329826074877
+ENSG00000184779.8	RPS17	protein_coding	nontarget	nontarget	-0.16309864031346
+ENSG00000231500.2	RPS18	protein_coding	nontarget	nontarget	-0.0564035117592397
+ENSG00000105372.2	RPS19	protein_coding	tc<0.27	cyto_target	-0.0091405841269988
+ENSG00000140988.11	RPS2	protein_coding	tc<0.27	cyto_target	-0.00107039921941513
+ENSG00000008988.5	RPS20	protein_coding	nontarget	cyto_target	-0.0212870716388317
+ENSG00000171858.13	RPS21	protein_coding	nontarget	cyto_target	-0.0542124570526012
+ENSG00000186468.8	RPS23	protein_coding	tc<0.27	cyto_target	-0.0672257477637319
+ENSG00000138326.14	RPS24	protein_coding	tc<0.27	cyto_target	-0.0499275621312958
+ENSG00000118181.6	RPS25	protein_coding	nontarget	nontarget	-0.0363036551230426
+ENSG00000197728.5	RPS26	protein_coding	nontarget	cyto_target	0.111131142880416
+ENSG00000177954.7	RPS27	protein_coding	nontarget	nontarget	-0.0983620130349838
+ENSG00000143947.8	RPS27A	protein_coding	nontarget	cyto_target	-0.0555994421861459
+ENSG00000185088.8	RPS27L	protein_coding	nontarget	cyto_target	0.192558443615178
+ENSG00000233927.4	RPS28	protein_coding	nontarget	cyto_target	-0.0062395841368517
+ENSG00000213741.4	RPS29	protein_coding	nontarget	cyto_target	0.00829025623438002
+ENSG00000145425.5	RPS3A	protein_coding	nontarget	nontarget	-0.0230631410460862
+ENSG00000198034.6	RPS4X	protein_coding	tc<0.27	cyto_target	0.0632649402414624
+ENSG00000083845.4	RPS5	protein_coding	tc<0.27	cyto_target	-0.0934257522976212
+ENSG00000137154.8	RPS6	protein_coding	tc<0.27	cyto_target	0.0528969030969127
+ENSG00000171863.8	RPS7	protein_coding	nontarget	cyto_target	0.051108268110401
+ENSG00000142937.7	RPS8	protein_coding	tc<0.27	cyto_target	0.0616956313830211
+ENSG00000170889.9	RPS9	protein_coding	nontarget	cyto_target	-0.0501150531911108
+ENSG00000168028.9	RPSA	protein_coding	tc<0.27	cyto_target	-0.0119177527211089
+ENSG00000125844.11	RRBP1	protein_coding	nontarget	nontarget	-0.561052857915076
+ENSG00000167325.10	RRM1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.244271239405577
+ENSG00000171848.9	RRM2	protein_coding	tc<0.27	cyto_target	0.0754224371962257
+ENSG00000085721.8	RRN3	protein_coding	nontarget	nontarget	-0.0367893022169232
+ENSG00000052749.9	RRP12	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0548410243571286
+ENSG00000160208.11	RRP1B	protein_coding	nontarget	nontarget	-0.061968564727271
+ENSG00000100220.7	RTCB	protein_coding	nontarget	nontarget	-0.0861480212321481
+ENSG00000133318.9	RTN3	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0192932716112698
+ENSG00000176225.8	RTTN	protein_coding	nontarget	cyto_target	0.0115826875696608
+ENSG00000175792.7	RUVBL1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.425175015516962
+ENSG00000183207.8	RUVBL2	protein_coding	tc<0.27	cyto_target	0.170900392021045
+ENSG00000197747.4	S100A10	protein_coding	tc>0.27 & tc<1.04	cyto_target	3.56902013295135e-05
+ENSG00000211456.6	SACM1L	protein_coding	nontarget	nontarget	0.120944167250252
+ENSG00000164105.3	SAP30	protein_coding	nontarget	nontarget	-0.143485188259607
+ENSG00000079332.10	SAR1A	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0861141955613298
+ENSG00000205323.4	SARNP	protein_coding	nontarget	cyto_target	-0.220396576229459
+ENSG00000104835.10	SARS2	protein_coding	tc<0.27	cyto_target	-0.020945058056609
+ENSG00000075856.7	SART3	protein_coding	nontarget	nontarget	0.174824667011316
+ENSG00000126524.5	SBDS	protein_coding	nontarget	cyto_target	0.146291778981833
+ENSG00000156304.10	SCAF4	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0557120401357696
+ENSG00000213079.5	SCAF8	protein_coding	nontarget	nontarget	0.0620403377029946
+ENSG00000116521.6	SCAMP3	protein_coding	tc>1.04 & tc<65.26	mem_target	0.203844178908972
+ENSG00000073060.11	SCARB1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0492002102709971
+ENSG00000138760.4	SCARB2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.124584533405587
+ENSG00000099194.5	SCD	protein_coding	tc>1.04 & tc<65.26	mem_target	0.105738147954518
+ENSG00000145284.7	SCD5	protein_coding	tc>1.04 & tc<65.26	mem_target	0.260317119720714
+ENSG00000092108.16	SCFD1	protein_coding	nontarget	nontarget	0.0527181571379761
+ENSG00000102098.13	SCML2	protein_coding	tc<0.27	cyto_target	0.0922177920902776
+ENSG00000133028.6	SCO1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0429643573078311
+ENSG00000130489.8	SCO2	protein_coding	nontarget	nontarget	0.0100234891698771
+ENSG00000116171.12	SCP2	protein_coding	tc<0.27	cyto_target	0.0437090387423068
+ENSG00000121064.8	SCPEP1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.188193204306525
+ENSG00000143751.9	SDE2	protein_coding	nontarget	nontarget	0.194552235165631
+ENSG00000078808.12	SDF4	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0635595621396219
+ENSG00000073578.12	SDHA	protein_coding	nontarget	nontarget	0.0956673982688868
+ENSG00000117118.5	SDHB	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.023997206529488
+ENSG00000223380.3	SEC22B	processed_transcript	nontarget	nontarget	-0.0152463668105029
+ENSG00000100934.10	SEC23A	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.299752763149143
+ENSG00000101310.10	SEC23B	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.091493247116532
+ENSG00000138802.7	SEC24B	protein_coding	nontarget	nontarget	0.156162373718104
+ENSG00000058262.5	SEC61A1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.603693862940173
+ENSG00000106803.5	SEC61B	protein_coding	tc<0.27	cyto_target	0.223011111557702
+ENSG00000008952.12	SEC62	protein_coding	tc>0.27 & tc<1.04	mem_target	-0.354371709064005
+ENSG00000025796.9	SEC63	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.154466067071197
+ENSG00000168385.13	SEPT2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.125106279789325
+ENSG00000122545.13	SEPT7	protein_coding	nontarget	nontarget	0.0166681885459193
+ENSG00000184640.13	SEPT9	protein_coding	nontarget	cyto_target	0.251266836303278
+ENSG00000142864.10	SERBP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0785928161530444
+ENSG00000140264.15	SERF2	protein_coding	nontarget	cyto_target	0.0717994881012509
+ENSG00000111897.6	SERINC1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.224692582209441
+ENSG00000149257.9	SERPINH1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.00629555808471177
+ENSG00000119335.12	SET	protein_coding	tc<0.27	cyto_target	0.0956991404550449
+ENSG00000168066.16	SF1	protein_coding	tc<0.27	cyto_target	0.172665071588652
+ENSG00000099995.14	SF3A1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.197392758844867
+ENSG00000104897.5	SF3A2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.384900064733671
+ENSG00000183431.7	SF3A3	protein_coding	tc<0.27	cyto_target	-0.0893424648709105
+ENSG00000115524.11	SF3B1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0809101221790197
+ENSG00000189091.8	SF3B3	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0824229288928001
+ENSG00000143368.9	SF3B4	protein_coding	nontarget	nontarget	-0.032698294848451
+ENSG00000169976.5	SF3B5	protein_coding	nontarget	nontarget	0.0824496464532845
+ENSG00000116560.6	SFPQ	protein_coding	tc<0.27	cyto_target	-0.000166508634314552
+ENSG00000061936.5	SFSWAP	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.18607825760772
+ENSG00000164466.8	SFXN1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.00637633620605018
+ENSG00000104969.5	SGTA	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.125578654029602
+ENSG00000169375.11	SIN3A	protein_coding	nontarget	nontarget	0.178710091245242
+ENSG00000039123.11	SKIV2L2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0843362457692627
+ENSG00000113558.14	SKP1	protein_coding	tc<0.27	cyto_target	0.319372714458999
+ENSG00000145604.11	SKP2	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.151462820734525
+ENSG00000163950.8	SLBP	protein_coding	tc<0.27	cyto_target	0.304008617721021
+ENSG00000064651.9	SLC12A2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0710946378545211
+ENSG00000155380.7	SLC16A1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.41996516934905
+ENSG00000105281.8	SLC1A5	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.194346107901933
+ENSG00000108528.9	SLC25A11	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0954589158653557
+ENSG00000004864.9	SLC25A13	protein_coding	nontarget	cyto_target	-0.0531893675415052
+ENSG00000151729.6	SLC25A4	protein_coding	nontarget	nontarget	0.0619740456181399
+ENSG00000005022.5	SLC25A5	protein_coding	tc<0.27	cyto_target	0.092598401823685
+ENSGR0000169100.8	SLC25A6	protein_coding	nontarget	nontarget	0.0957389373290182
+ENSG00000169100.8	SLC25A6	protein_coding	nontarget	nontarget	0.0957389373290182
+ENSG00000140284.6	SLC27A2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.255179290089892
+ENSG00000112759.12	SLC29A1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.00247573699180632
+ENSG00000117394.15	SLC2A1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0600899985008495
+ENSG00000111371.11	SLC38A1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.00288266532055351
+ENSG00000134294.9	SLC38A2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.055719094562935
+ENSG00000104635.9	SLC39A14	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.336542784861453
+ENSG00000168003.12	SLC3A2	protein_coding	tc<0.27	mem_target	0.04031542768328
+ENSG00000163798.9	SLC4A1AP	protein_coding	nontarget	nontarget	-0.281631817606252
+ENSG00000139514.8	SLC7A1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0757072700926624
+ENSG00000172716.12	SLFN11	protein_coding	nontarget	nontarget	0.259196146449332
+ENSG00000119705.5	SLIRP	protein_coding	tc<0.27	cyto_target	-0.0433016495642706
+ENSG00000113658.12	SMAD5	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.181371122620514
+ENSG00000127616.13	SMARCA4	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0110192822396761
+ENSG00000153147.5	SMARCA5	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0897553468682717
+ENSG00000173473.6	SMARCC1	protein_coding	tc<0.27	cyto_target	-0.00445483584087147
+ENSG00000072501.13	SMC1A	protein_coding	nontarget	nontarget	-0.0614868098797768
+ENSG00000136824.14	SMC2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.110085104003604
+ENSG00000108055.9	SMC3	protein_coding	nontarget	nontarget	-0.0259111053975771
+ENSG00000113810.11	SMC4	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0244000369701169
+ENSG00000101596.10	SMCHD1	protein_coding	nontarget	nontarget	0.196630166337596
+ENSG00000122692.7	SMU1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0894507485224666
+ENSG00000197157.6	SND1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.124803471492399
+ENSG00000144028.10	SNRNP200	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.100339192547414
+ENSG00000060688.8	SNRNP40	protein_coding	tc<0.27	cyto_target	0.120121133948534
+ENSG00000104852.10	SNRNP70	protein_coding	tc<0.27	cyto_target	0.0336028455425744
+ENSG00000131876.12	SNRPA1	protein_coding	tc<0.27	cyto_target	0.286823868727451
+ENSG00000125835.13	SNRPB	protein_coding	nontarget	cyto_target	-0.40066852198457
+ENSG00000124562.5	SNRPC	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.103697399440331
+ENSG00000167088.6	SNRPD1	protein_coding	nontarget	nontarget	0.258873556539119
+ENSG00000125743.6	SNRPD2	protein_coding	nontarget	cyto_target	0.142845566516851
+ENSG00000100028.7	SNRPD3	protein_coding	nontarget	cyto_target	-0.0739102109780703
+ENSG00000182004.8	SNRPE	protein_coding	nontarget	nontarget	0.147659999227026
+ENSG00000139343.6	SNRPF	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.056401936037478
+ENSG00000143977.9	SNRPG	protein_coding	nontarget	nontarget	-0.232388315457347
+ENSG00000205302.2	SNX2	protein_coding	nontarget	cyto_target	0.0552566732423265
+ENSG00000112335.10	SNX3	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0960750945167068
+ENSG00000057252.8	SOAT1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0377261074480777
+ENSG00000112096.12	SOD2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0379480388669613
+ENSG00000076382.12	SPAG5	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0105032656389588
+ENSG00000118363.7	SPCS2	protein_coding	nontarget	nontarget	0.134565617501833
+ENSG00000129128.8	SPCS3	protein_coding	tc>1.04 & tc<65.26	mem_target	0.142173526672004
+ENSG00000133104.8	SPG20	protein_coding	nontarget	nontarget	0.00616228813722487
+ENSG00000167642.8	SPINT2	protein_coding	tc<0.27	mem_target	-0.0561153352734979
+ENSG00000138600.5	SPPL2A	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.123756354724904
+ENSG00000197694.9	SPTAN1	protein_coding	nontarget	nontarget	0.30062281321364
+ENSG00000090054.9	SPTLC1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0990841023813506
+ENSG00000104549.7	SQLE	protein_coding	tc>0.27 & tc<1.04	mem_target	0.166896766121581
+ENSG00000161011.15	SQSTM1	protein_coding	nontarget	cyto_target	-0.153084545954453
+ENSG00000140319.6	SRP14	protein_coding	nontarget	cyto_target	0.0319365982575209
+ENSG00000100883.7	SRP54	protein_coding	nontarget	nontarget	0.0155747904236165
+ENSG00000167881.10	SRP68	protein_coding	nontarget	nontarget	-0.0252340354869598
+ENSG00000174780.11	SRP72	protein_coding	tc<0.27	cyto_target	-0.294855826426058
+ENSG00000143742.8	SRP9	protein_coding	nontarget	cyto_target	0.0198443527406743
+ENSG00000096063.10	SRPK1	protein_coding	nontarget	cyto_target	0.0651223894969449
+ENSG00000182934.7	SRPR	protein_coding	tc<0.27	mem_target	0.0460717824324695
+ENSG00000144867.7	SRPRB	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.195783541760459
+ENSG00000087087.14	SRRT	protein_coding	tc<0.27	cyto_target	-0.0670055684246835
+ENSG00000116754.9	SRSF11	protein_coding	tc<0.27	cyto_target	0.125308220075693
+ENSG00000112081.12	SRSF3	protein_coding	tc<0.27	cyto_target	0.0848215786937025
+ENSG00000124193.10	SRSF6	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.093677007465617
+ENSG00000138385.11	SSB	protein_coding	tc<0.27	cyto_target	0.107273941818463
+ENSG00000106028.6	SSBP1	protein_coding	tc<0.27	cyto_target	0.0229505022224343
+ENSG00000124783.8	SSR1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.137550346684966
+ENSG00000180879.9	SSR4	protein_coding	nontarget	nontarget	0.334766159558001
+ENSG00000149136.3	SSRP1	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.0102064516700021
+ENSG00000160075.10	SSU72	protein_coding	tc<0.27	cyto_target	0.14389619590406
+ENSG00000100380.8	ST13	protein_coding	tc<0.27	cyto_target	-0.0415744419703213
+ENSG00000101972.14	STAG2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.169373824933578
+ENSG00000124214.15	STAU1	protein_coding	tc<0.27	cyto_target	0.171908691577348
+ENSG00000168439.12	STIP1	protein_coding	tc<0.27	cyto_target	0.112220587650791
+ENSG00000165283.11	STOML2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0343593020092872
+ENSG00000023734.6	STRAP	protein_coding	tc<0.27	cyto_target	0.0514752032256949
+ENSG00000134910.8	STT3A	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.00260698137762432
+ENSG00000163527.5	STT3B	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0182294213227652
+ENSG00000103266.6	STUB1	protein_coding	tc<0.27	cyto_target	0.0136068523545
+ENSG00000168818.5	STX18	protein_coding	nontarget	nontarget	0.148827122286234
+ENSG00000079950.9	STX7	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.070314570533169
+ENSG00000170310.10	STX8	protein_coding	nontarget	cyto_target	0.280590987176275
+ENSG00000113387.7	SUB1	protein_coding	tc<0.27	cyto_target	0.234547458190686
+ENSG00000136143.9	SUCLA2	protein_coding	tc<0.27	cyto_target	0.146070268245984
+ENSG00000163541.7	SUCLG1	protein_coding	nontarget	nontarget	0.10883587091883
+ENSG00000165416.10	SUGT1	protein_coding	nontarget	cyto_target	0.00941312681919957
+ENSG00000116030.12	SUMO1	protein_coding	nontarget	nontarget	0.207023373887746
+ENSG00000184900.11	SUMO3	protein_coding	nontarget	cyto_target	0.0498232981131018
+ENSG00000092201.5	SUPT16H	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0680587459936344
+ENSG00000196235.9	SUPT5H	protein_coding	tc<0.27	cyto_target	-0.0551130252935495
+ENSG00000156502.9	SUPV3L1	protein_coding	tc<0.27	cyto_target	0.105557046453796
+ENSG00000148248.9	SURF4	protein_coding	tc>1.04 & tc<65.26	mem_target	0.00606019946941963
+ENSG00000169895.5	SYAP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.244777381726041
+ENSG00000125755.14	SYMPK	protein_coding	tc<0.27	cyto_target	0.0177105798450655
+ENSG00000135316.13	SYNCRIP	protein_coding	tc<0.27	cyto_target	-0.0252612351586477
+ENSG00000136463.7	TACO1	protein_coding	nontarget	nontarget	-0.0344183419463552
+ENSG00000137413.11	TAF8	protein_coding	nontarget	nontarget	-0.206144924861184
+ENSG00000158710.10	TAGLN2	protein_coding	tc<0.27	cyto_target	0.230608303231734
+ENSG00000120948.11	TARDBP	protein_coding	tc<0.27	cyto_target	-0.000175153195871497
+ENSG00000143374.10	TARS2	protein_coding	nontarget	cyto_target	-0.125127122998468
+ENSG00000106638.11	TBL2	protein_coding	nontarget	nontarget	0.0161400634499942
+ENSG00000136270.9	TBRG4	protein_coding	tc<0.27	cyto_target	-0.0804532735537067
+ENSG00000154582.12	TCEB1	protein_coding	tc<0.27	cyto_target	0.275321559199994
+ENSG00000103363.10	TCEB2	protein_coding	nontarget	cyto_target	0.00367770272531
+ENSG00000113649.7	TCERG1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0438446904920698
+ENSG00000120438.7	TCP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0248320648581693
+ENSG00000099797.7	TECR	protein_coding	tc>0.27 & tc<1.04	mem_target	0.177223647164262
+ENSG00000100726.10	TELO2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.177685114275231
+ENSG00000166848.5	TERF2IP	protein_coding	nontarget	cyto_target	0.13777807377339
+ENSG00000108064.6	TFAM	protein_coding	tc<0.27	cyto_target	-0.201251307271549
+ENSG00000100109.12	TFIP11	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0045306551358095
+ENSG00000072274.8	TFRC	protein_coding	nontarget	mem_target	-0.189513620825697
+ENSG00000125676.15	THOC2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.00535734921113718
+ENSG00000100296.9	THOC5	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.14439588429531
+ENSG00000131652.9	THOC6	protein_coding	tc<0.27	cyto_target	-0.00366711834653325
+ENSG00000151923.13	TIAL1	protein_coding	nontarget	cyto_target	-0.0441346316773533
+ENSG00000099800.3	TIMM13	protein_coding	nontarget	nontarget	0.10785542539281
+ENSG00000134375.6	TIMM17A	protein_coding	tc<0.27	cyto_target	0.389732620443335
+ENSG00000138297.9	TIMM23	protein_coding	nontarget	nontarget	-0.0120938191332163
+ENSG00000104980.3	TIMM44	protein_coding	tc<0.27	cyto_target	-0.449199223096147
+ENSG00000105197.6	TIMM50	protein_coding	tc<0.27	cyto_target	0.0150534073144897
+ENSG00000126953.5	TIMM8A	protein_coding	nontarget	nontarget	0.0450597034369235
+ENSG00000150779.7	TIMM8B	protein_coding	tc<0.27	cyto_target	-0.0209378084017645
+ENSG00000140332.11	TLE3	protein_coding	nontarget	nontarget	0.115797753163781
+ENSG00000125304.8	TM9SF2	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0556087137262233
+ENSG00000077147.10	TM9SF3	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.192303987013136
+ENSG00000198498.5	TMA16	protein_coding	nontarget	nontarget	-0.0426256869293836
+ENSG00000139644.8	TMBIM6	protein_coding	tc>1.04 & tc<65.26	mem_target	0.218181087086321
+ENSG00000143183.12	TMCO1	protein_coding	tc>1.04 & tc<65.26	mem_target	0.032158792697399
+ENSG00000170348.4	TMED10	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.100162677178868
+ENSG00000086598.6	TMED2	protein_coding	tc<0.27	mem_target	-0.122074507868218
+ENSG00000158604.10	TMED4	protein_coding	nontarget	mem_target	0.129912106940196
+ENSG00000184840.7	TMED9	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0954356713388776
+ENSG00000110108.5	TMEM109	protein_coding	tc>0.27 & tc<1.04	mem_target	0.316934609727466
+ENSG00000119777.14	TMEM214	protein_coding	tc>0.27 & tc<1.04	mem_target	0.0952151264925971
+ENSG00000112697.11	TMEM30A	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.177850878821946
+ENSG00000109133.8	TMEM33	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.195510473768704
+ENSG00000166471.6	TMEM41B	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0854392380798555
+ENSG00000170876.7	TMEM43	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.12288907743741
+ENSG00000175606.6	TMEM70	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.358301775858281
+ENSG00000120802.9	TMPO	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.177299098050368
+ENSG00000139921.8	TMX1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.180511680603383
+ENSG00000213593.5	TMX2	protein_coding	nontarget	nontarget	-0.0362078264348202
+ENSG00000120889.8	TNFRSF10B	protein_coding	tc<0.27	mem_target	0.050022227068534
+ENSG00000083312.13	TNPO1	protein_coding	tc<0.27	cyto_target	0.0160608522771946
+ENSG00000064419.9	TNPO3	protein_coding	tc<0.27	cyto_target	-0.00230606455475005
+ENSG00000100216.4	TOMM22	protein_coding	tc<0.27	cyto_target	0.444614268949282
+ENSG00000154174.7	TOMM70A	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.180801862469941
+ENSG00000198900.5	TOP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0602000140035409
+ENSG00000131747.10	TOP2A	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0941902602288229
+ENSG00000136816.11	TOR1B	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0597216097153427
+ENSG00000146242.5	TPBG	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.308734220008998
+ENSG00000101150.13	TPD52L2	protein_coding	nontarget	cyto_target	0.0970353648132535
+ENSG00000111669.10	TPI1	protein_coding	nontarget	nontarget	0.0736409515492401
+ENSG00000167460.10	TPM4	protein_coding	nontarget	cyto_target	0.225516949176339
+ENSG00000047410.9	TPR	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.152858365289241
+ENSG00000088325.11	TPX2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.327471402377935
+ENSG00000170855.3	TRIAP1	protein_coding	nontarget	nontarget	0.1291629560482
+ENSG00000121060.10	TRIM25	protein_coding	nontarget	nontarget	0.222534083735895
+ENSG00000204713.6	TRIM27	protein_coding	nontarget	nontarget	0.135676699915087
+ENSG00000130726.7	TRIM28	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.443687163724046
+ENSG00000197323.6	TRIM33	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0558182596819397
+ENSG00000174173.6	TRMT10C	protein_coding	nontarget	nontarget	-0.141531893084903
+ENSG00000173113.2	TRMT112	protein_coding	nontarget	cyto_target	0.0390583678518904
+ENSG00000166166.8	TRMT61A	protein_coding	nontarget	nontarget	-0.0279742053251619
+ENSG00000165832.4	TRUB1	protein_coding	tc<0.27	cyto_target	-0.115544957748037
+ENSG00000170892.6	TSEN34	protein_coding	tc<0.27	cyto_target	-0.0276249679726418
+ENSG00000123297.12	TSFM	protein_coding	tc<0.27	cyto_target	-0.137824503783552
+ENSG00000116918.9	TSNAX	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0277398693247376
+ENSG00000189241.6	TSPYL1	protein_coding	nontarget	nontarget	0.039413428846692
+ENSG00000167721.6	TSR1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.205770895129664
+ENSG00000128311.9	TST	protein_coding	nontarget	cyto_target	-0.0222004284404465
+ENSG00000113312.6	TTC1	protein_coding	nontarget	nontarget	0.0568728536579596
+ENSG00000116830.7	TTF2	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0422534711327483
+ENSG00000112742.5	TTK	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0191342103920088
+ENSG00000136295.10	TTYH3	protein_coding	tc>1.04 & tc<65.26	mem_target	0.196731890125274
+ENSG00000123416.11	TUBA1B	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0274024634562437
+ENSG00000196230.8	TUBB	protein_coding	nontarget	nontarget	0.142696341544284
+ENSG00000188229.5	TUBB4B	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0446621736196151
+ENSG00000131462.3	TUBG1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.174979387743007
+ENSG00000130640.9	TUBGCP2	protein_coding	nontarget	cyto_target	0.0303277732846464
+ENSG00000178952.4	TUFM	protein_coding	tc<0.27	cyto_target	-0.0489647892530876
+ENSG00000084652.11	TXLNA	protein_coding	nontarget	nontarget	-0.0469201435873441
+ENSG00000086712.8	TXLNG	protein_coding	nontarget	nontarget	0.0160783501592643
+ENSG00000136810.8	TXN	protein_coding	tc<0.27	cyto_target	0.0357706369922813
+ENSG00000100348.5	TXN2	protein_coding	nontarget	nontarget	0.0972156329033077
+ENSG00000117862.7	TXNDC12	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0928810439184102
+ENSG00000113621.10	TXNDC15	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.227186950355882
+ENSG00000239264.4	TXNDC5	protein_coding	tc>1.04 & tc<65.26	mem_target	0.124937980187919
+ENSG00000184470.15	TXNRD2	protein_coding	nontarget	nontarget	0.0511570834964767
+ENSG00000156521.9	TYSND1	protein_coding	tc<0.27	cyto_target	0.388872445396519
+ENSG00000160201.7	U2AF1	protein_coding	tc<0.27	cyto_target	-0.138825825087402
+ENSG00000134882.11	UBAC2	protein_coding	tc>1.04 & tc<65.26	mem_target	0.0426581100475885
+ENSG00000143569.14	UBAP2L	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.05053692923527
+ENSG00000131508.11	UBE2D2	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.153256726396645
+ENSG00000184787.14	UBE2G2	protein_coding	nontarget	cyto_target	0.0764567205813898
+ENSG00000103275.14	UBE2I	protein_coding	tc<0.27	cyto_target	0.049175997610532
+ENSG00000198833.6	UBE2J1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.13437622055908
+ENSG00000160087.16	UBE2J2	protein_coding	tc<0.27	cyto_target	-0.11455724064611
+ENSG00000108106.9	UBE2S	protein_coding	tc<0.27	cyto_target	0.0302358903630533
+ENSG00000135018.9	UBQLN1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0411233748846098
+ENSG00000188021.7	UBQLN2	protein_coding	tc<0.27	cyto_target	0.192569846035165
+ENSG00000108312.10	UBTF	protein_coding	nontarget	cyto_target	0.0729584349282528
+ENSG00000162191.9	UBXN1	protein_coding	nontarget	nontarget	0.488371365408394
+ENSG00000104691.10	UBXN8	processed_transcript	nontarget	nontarget	-0.308932377973401
+ENSG00000070010.14	UFD1L	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.131583705298386
+ENSG00000136731.8	UGGT1	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0910311361847975
+ENSG00000034063.9	UHRF1	processed_transcript	nontarget	nontarget	0.12932261878731
+ENSG00000076248.6	UNG	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.0188819234700177
+ENSG00000005007.8	UPF1	protein_coding	nontarget	nontarget	-1.5758510609436
+ENSG00000101019.17	UQCC1	protein_coding	nontarget	nontarget	0.0872157490455614
+ENSG00000137288.5	UQCC2	protein_coding	nontarget	nontarget	-0.0561892111726041
+ENSG00000156467.5	UQCRB	protein_coding	nontarget	nontarget	0.16235744366257
+ENSG00000010256.6	UQCRC1	protein_coding	tc<0.27	cyto_target	0.0590797105738435
+ENSG00000140740.6	UQCRC2	protein_coding	tc<0.27	cyto_target	0.0516888342890624
+ENSG00000169021.4	UQCRFS1	protein_coding	tc<0.27	cyto_target	0.106435165206206
+ENSG00000173660.7	UQCRH	protein_coding	nontarget	nontarget	0.0479812441085311
+ENSG00000164405.6	UQCRQ	protein_coding	tc<0.27	cyto_target	0.392153933944882
+ENSG00000173915.8	USMG5	protein_coding	nontarget	nontarget	0.792337336476291
+ENSG00000138768.10	USO1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0766075175975304
+ENSG00000162607.8	USP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.243654253984299
+ENSG00000102226.5	USP11	protein_coding	tc>1.04 & tc<65.26	cyto_target	0.4841141876005
+ENSG00000124422.7	USP22	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.00621329695149326
+ENSG00000077254.10	USP33	protein_coding	nontarget	nontarget	0.0203818904504606
+ENSG00000090686.11	USP48	protein_coding	nontarget	nontarget	0.0125750628546114
+ENSG00000187555.10	USP7	protein_coding	nontarget	cyto_target	0.0216747260685764
+ENSG00000049245.8	VAMP3	protein_coding	nontarget	nontarget	0.127070347084889
+ENSG00000118640.6	VAMP8	protein_coding	nontarget	nontarget	-0.079663345239187
+ENSG00000101558.9	VAPA	protein_coding	tc<0.27	cyto_target	0.104167213851788
+ENSG00000124164.11	VAPB	protein_coding	nontarget	nontarget	0.0248457121723715
+ENSG00000204394.8	VARS	protein_coding	nontarget	nontarget	-0.159835879196033
+ENSG00000137411.12	VARS2	protein_coding	nontarget	nontarget	0.0126441642599088
+ENSG00000108828.11	VAT1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.345499263896691
+ENSG00000155959.6	VBP1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.141098388299018
+ENSG00000165280.11	VCP	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0626990140520523
+ENSG00000213585.6	VDAC1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0476965240131998
+ENSG00000165637.9	VDAC2	protein_coding	nontarget	nontarget	0.036265214065624
+ENSG00000078668.9	VDAC3	protein_coding	tc<0.27	cyto_target	0.027268339139389
+ENSG00000026025.9	VIM	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.258900195751034
+ENSG00000145041.11	VPRBP	protein_coding	nontarget	nontarget	-0.877175410958687
+ENSG00000122958.10	VPS26A	protein_coding	nontarget	nontarget	0.208674811261975
+ENSG00000111237.14	VPS29	protein_coding	nontarget	nontarget	0.122420975725858
+ENSG00000139719.5	VPS33A	protein_coding	nontarget	nontarget	0.00880563411471653
+ENSG00000069329.11	VPS35	protein_coding	tc<0.27	cyto_target	0.0863370573966659
+ENSG00000136631.8	VPS45	protein_coding	nontarget	nontarget	0.00733462620965174
+ENSG00000223501.4	VPS52	protein_coding	nontarget	nontarget	-0.100003524967867
+ENSG00000141252.15	VPS53	protein_coding	nontarget	nontarget	0.27404742185609
+ENSG00000100749.3	VRK1	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0352914928193941
+ENSG00000062650.13	WAPAL	protein_coding	nontarget	nontarget	0.10049064423512
+ENSG00000084463.3	WBP11	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.00692610086351254
+ENSG00000065183.11	WDR3	protein_coding	tc<0.27	cyto_target	0.0171639854750465
+ENSG00000134987.7	WDR36	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.0158278093434722
+ENSG00000114742.9	WDR48	protein_coding	tc<0.27	cyto_target	0.118141242873741
+ENSG00000178252.13	WDR6	protein_coding	nontarget	nontarget	0.133515538882325
+ENSG00000140395.4	WDR61	protein_coding	tc<0.27	cyto_target	0.0235612624999327
+ENSG00000116455.9	WDR77	protein_coding	tc<0.27	cyto_target	0.197020561866528
+ENSG00000164091.7	WDR82	protein_coding	nontarget	nontarget	-0.0282818664652263
+ENSG00000116729.9	WLS	protein_coding	tc>1.04 & tc<65.26	mem_target	0.311787286772428
+ENSG00000165392.5	WRN	protein_coding	nontarget	nontarget	-0.0981634787766925
+ENSG00000124535.11	WRNIP1	protein_coding	nontarget	nontarget	0.302856641273241
+ENSG00000082898.12	XPO1	protein_coding	tc>0.27 & tc<1.04	cyto_target	-0.103270465709474
+ENSG00000124571.13	XPO5	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.133548415773015
+ENSG00000079246.11	XRCC5	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.038949318253251
+ENSG00000196419.8	XRCC6	protein_coding	tc<0.27	cyto_target	-0.00997079587213838
+ENSG00000088930.6	XRN2	protein_coding	tc<0.27	cyto_target	-0.170275059445307
+ENSG00000139131.8	YARS2	protein_coding	nontarget	nontarget	-0.00722677478774292
+ENSG00000065978.13	YBX1	protein_coding	tc<0.27	cyto_target	-0.0256768757389831
+ENSG00000060138.8	YBX3	protein_coding	tc<0.27	cyto_target	0.0267560781971481
+ENSG00000127337.2	YEATS4	protein_coding	nontarget	nontarget	0.0751446975895574
+ENSG00000137207.7	YIPF3	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.0973626376362418
+ENSG00000136758.14	YME1L1	protein_coding	tc>1.04 & tc<65.26	cyto_target	-0.116998107451063
+ENSG00000198492.10	YTHDF2	protein_coding	tc<0.27	cyto_target	-0.0430670208260742
+ENSG00000185728.12	YTHDF3	protein_coding	nontarget	nontarget	-0.166606667896624
+ENSG00000166913.8	YWHAB	protein_coding	nontarget	cyto_target	0.0368478787578134
+ENSG00000108953.12	YWHAE	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0382647093017373
+ENSG00000170027.5	YWHAG	protein_coding	nontarget	cyto_target	0.070252936351864
+ENSG00000134308.9	YWHAQ	protein_coding	tc<0.27	cyto_target	-0.00794219320854875
+ENSG00000164924.13	YWHAZ	protein_coding	nontarget	cyto_target	-0.0186112032192716
+ENSG00000100811.6	YY1	protein_coding	nontarget	nontarget	0.0741684156753011
+ENSG00000043355.6	ZIC2	protein_coding	nontarget	nontarget	-0.172486988509395
+ENSG00000084073.4	ZMPSTE24	protein_coding	tc>1.04 & tc<65.26	mem_target	-0.367820860862819
+ENSG00000167635.7	ZNF146	protein_coding	nontarget	cyto_target	0.0952143358542672
+ENSG00000010244.12	ZNF207	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0344910923734971
+ENSG00000117174.6	ZNHIT6	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.0614921790260075
+ENSG00000132485.8	ZRANB2	protein_coding	tc>0.27 & tc<1.04	cyto_target	0.149692003140398
+ENSG00000086827.4	ZW10	protein_coding	nontarget	nontarget	0.37223419613781

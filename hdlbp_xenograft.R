@@ -1,6 +1,6 @@
-setwd("E:/Dropbox/HDLBP (1)/")
+# setwd("E:/Dropbox/HDLBP (1)/")
 
-dat<-read.delim("Xenograft/xenograft_all.txt", stringsAsFactors = F, dec = ",")
+dat<-read.delim("data/xenograft_all.txt", stringsAsFactors = F, dec = ",")
 
 library(ggplot2)
 

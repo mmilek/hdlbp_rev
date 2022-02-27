@@ -1,6 +1,3 @@
-git_dir<-"E:/work/hdlbp/git_rstudio/hdlbp/"
-
-setwd(paste0(git_dir,"/data"))
 library(ggplot2)
 library(reshape2)
 library(RColorBrewer)
@@ -12,15 +9,10 @@ library(gplots)
 library(data.table)
 
 
-
-
-
-
-
                     #### proteinGroups table load and preparation ####
 
-PG <- fread("proteinGroups-RQ.txt", sep = "\t", stringsAsFactors = FALSE, data.table = F, check.names = T)
-PG_noRQ <- fread("proteinGroups-notRQ.txt", sep = "\t", stringsAsFactors = FALSE, data.table = F, check.names = T)
+PG <- fread("data/proteinGroups-RQ.txt", sep = "\t", stringsAsFactors = FALSE, data.table = F, check.names = T)
+PG_noRQ <- fread("data/proteinGroups-notRQ.txt", sep = "\t", stringsAsFactors = FALSE, data.table = F, check.names = T)
 
 # PG <- fread("second_run_181119/proteinGroups-RQ.txt", sep = "\t", stringsAsFactors = FALSE, data.table = F, check.names = T)
 # PG_noRQ <- fread("second_run_181119/proteinGroups-notRQ.txt", sep = "\t", stringsAsFactors = FALSE, data.table = F, check.names = T)
@@ -119,11 +111,6 @@ for (i in intensities) {
 
 
 
-
-
-
-
-
 #### Unscrupulous Requantification ####
 
 
@@ -140,16 +127,12 @@ for (i in 1:(length(ratios))) {
 
 
 
-
-
-# Delet Unscrupulous ratios
+# Delete Unscrupulous ratios
 for (i in 1:length(ratios)) {
   PG[,ratios[i]] <- ifelse(PG[,unscrupulous.ratios[i]], NA, PG[,ratios[i]])
   
   rm(i)
 }
-
-
 
 
 
@@ -161,16 +144,12 @@ PG <- subset(PG, Potential.contaminant != "+")
 PG <- subset(PG, Only.identified.by.site != "+")
 
 
-
-
 #transform Intensity and ratios to Log2 (or 10 if you prefer)
 PG[c(intensities, ratios)] = log2(PG[c(intensities, ratios)])
 # change Inf and NaN values for NA
 is.na(PG[c(intensities, ratios)]) <- sapply(PG[c(intensities, ratios)], is.infinite)
 
 is.na(PG[c(intensities, ratios)]) <- sapply(PG[c(intensities, ratios)], is.nan)
-
-
 
 # how many proteins were identified (have intensities values not NA) in each L-H group pair
 for (i in 1:length(intensities)) {
@@ -209,12 +188,7 @@ for (i in 1:length(ratios)) {
 }
 
 
-
-
 rm(PG_noRQ, requantified.intensities, requantified.ratios, unscrupulous.ratios)
-
-
-
 
 #### Define PG_summ as working table ####
 
@@ -225,11 +199,15 @@ PG_summ <- subset(PG, select = c("Majority.protein.IDs",
 PG_summ$Gene.names <- sapply(strsplit(PG_summ$Gene.names, ";"), "[", 1)
 PG_summ$Majority.protein.IDs <- sapply(strsplit(PG_summ$Majority.protein.IDs, ";"), "[", 1)
 
-PG_summ<-subset(PG_summ, Gene.names!="") #PG_summ from carlos script
+PG_summ<-subset(PG_summ, Gene.names!="") 
 PG_summ<-subset(PG_summ, !duplicated(Gene.names))
 
-setwd(paste0(git_dir,"/data"))
-man<-read.delim("hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
+# write.table(PG_summ, "data/protein_groups_psilac.txt", quote=F, sep="\t", row.names=F)
+
+#start fig5c,fig5d
+
+PG_summ<-read.delim("data/protein_groups_psilac.txt", header=T)
+man<-read.delim("data/hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
 pas<-merge(man, PG_summ, by.x="Symbol", by.y="Gene.names", all.x=T)
 
 mel<-melt(pas, measure.vars = colnames(pas)[grepl("iBAQ.L", colnames(pas))], id.vars = c("Symbol", "localization_cat","tsig"))
@@ -263,10 +241,10 @@ length(subset(pas,localization_cat=="membrane" & !is.na(mean_memb_4h), select="m
 length(subset(pas,localization_cat=="cytosolic" & !is.na(mean_memb_4h), select="mean_memb_4h")[,1])
 
 ggplot(subset(pas, !is.na(tc_transcript_norm_cat)), aes(mean_memb_4h, colour=tc_transcript_norm_cat))+stat_ecdf()+coord_cartesian(xlim=c(-.7,.7))+xlab("H/M KO/WT")
+
+#fig4d
 ggplot(subset(pas, !is.na(tc_CDS_norm_cat)), aes(mean_memb_4h, colour=tc_CDS_norm_cat))+stat_ecdf()+coord_cartesian(xlim=c(-.7,.7))+xlab("H/M KO/WT")
 
-ggplot(subset(pas, !is.na(loc_tar_CDS) & localization_cat=="membrane"), aes(mean_memb_4h, colour=loc_tar_CDS))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))+xlab("H/M KO/WT")
-ggplot(subset(pas, !is.na(loc_tar_CDS) & localization_cat=="cytosolic"), aes(mean_memb_4h, colour=loc_tar_CDS))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))+xlab("H/M KO/WT")
 
 ks.test(subset(pas, tc_transcript_norm_cat=="tc>1.12 & tc<132.32" & !is.na(mean_memb_4h), select="mean_memb_4h")[,1],
             subset(pas, tc_transcript_norm_cat=="nontarget" & !is.na(mean_memb_4h), select="mean_memb_4h")[,1])
@@ -333,7 +311,9 @@ ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target)), aes(Ratio.H
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target)), aes(-Ratio.H.M.normalized.Memb_4h_Reverse_1, colour=target))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target)), aes(-Ratio.H.M.normalized.Memb_4h_Reverse_2, colour=target))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))
 
+#fig4c
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target_loc)), aes(mean_memb_4h, colour=target_loc))+stat_ecdf()+coord_cartesian(xlim=c(-.7,.7))+xlab("mean H/M (KO/WT)")
+
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target_loc)), aes(Ratio.H.M.normalized.Memb_4h_Forward_1, colour=target_loc))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target_loc)), aes(Ratio.H.M.normalized.Memb_4h_Forward_2, colour=target_loc))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target_loc)), aes(Ratio.H.M.normalized.Memb_4h_Reverse_1, colour=target_loc))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))
@@ -497,6 +477,7 @@ int$Symbol<-factor(int$Symbol,  levels=int$Symbol[order(int$mean_memb_4h, decrea
 int<-int[order(int$mean_memb_4h, decreasing = F),]
 int<-int[1:60,]
 
+#figS5e
 ggplot(int) +geom_point( aes(Symbol, 1, colour=-mean_memb_4h, size= -log2FoldChange.ribo.rna.KO.WT))+coord_flip()+xlab("")+scale_colour_gradient(low="dodgerblue2", high="orange2")+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank())
@@ -548,5 +529,4 @@ colnames(supp)<-c("Symbol",
                   "mean.Ratio.H.M.normalized.Memb_4h",
                   "hdlbp.target.yes.no")
 
-setwd(paste0(git_dir, "/supp_tables"))
-write.table(supp, "tableS7_psilac.txt", quote=F, sep="\t", row.names = F)
+# write.table(supp, "tableS7_psilac.txt", quote=F, sep="\t", row.names = F)

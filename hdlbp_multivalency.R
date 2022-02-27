@@ -108,8 +108,11 @@ freq_hs_plot<-freq_hs[filter,]
 freq_hs_plot$kmer<-factor(freq_hs_plot$kmer, levels=rev(unique(freq_hs_all$kmer)))
 freq_hs_plot$second.mcols.localization_cat<-factor(freq_hs_plot$second.mcols.localization_cat, levels=c("membrane", "cytosolic"))
 
+#figS3f right panel
 ggplot(subset(freq_hs_plot, second.mcols.tc_region!="utr5"), aes(kmer,freq, fill=second.mcols.tc_region))+
   geom_bar(stat="identity", position="dodge")+facet_wrap(~second.mcols.localization_cat)+coord_flip()+scale_fill_manual(values=c("dodgerblue4", "orange3"))
+sd<-subset(freq_hs_plot, second.mcols.tc_region!="utr5")
+# write.table(sd, "source_data/figs3f_right.txt", quote=F, sep="\t", row.names=F)
 
 
 hs$id<-paste0(hs$second.X.seqnames, "_", hs$kmer)
@@ -196,8 +199,8 @@ hs<-aggregate(hval~second.X.seqnames+kmer+second.mcols.localization_cat+second.m
 mean_hs<-aggregate(hval~kmer+second.mcols.localization_cat+second.mcols.tc_region, data=hs, mean)
 max_hs<-aggregate(hval~kmer+second.mcols.localization_cat+second.mcols.tc_region, data=hs, max)
 
-# xlinked<-c("TTCT","CTTC","TCTT","TTCC","TCCT","CTCT","TTTC","CTTT","TCTC","TTTT") #most crosslinked kmers
-xlinked<-unique(freq_hs_plot$kmer)
+xlinked<-c("TTCT","CTTC","TCTT","TTCC","TCCT","CTCT","TTTC","CTTT","TCTC","TTTT") #most crosslinked kmers
+# xlinked<-unique(freq_hs_plot$kmer)
 # xlinked<-"CTTC"
 
 filter<-which(mean_hs$kmer %in% xlinked)

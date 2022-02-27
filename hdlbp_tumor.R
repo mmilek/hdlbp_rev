@@ -2,7 +2,8 @@ library(ggplot2)
 library(reshape2)
 library(corrplot)
 library(DESeq2)
-setwd("D:/Documents/hdlbp_git/tumor/")
+# setwd("D:/Documents/hdlbp_git/tumor/")
+setwd("../../tumor/")
 
 files<-list.files(getwd(), pattern="genes")
 
@@ -10,15 +11,22 @@ dat<-lapply(files, read.delim)
 names(dat)<-gsub("\\..*","",files)
 
 tab<-data.frame(sapply(dat, function(x) cbind(x[,5])))
-row.names(tab)<-dat[[1]][,1]
+tab$gene_id<-dat[[1]][,1]
+tab<-tab[,c(19,1:18)]
 
 corrplot(cor(tab), type="upper", method="color")
-
+# write.table(tab,"data/tumor_rnaseq_read_counts.txt", quote=F, sep="\t", row.names = F)
 
 tpm<-data.frame(sapply(dat, function(x) cbind(x[,6])))
-row.names(tpm)<-dat[[1]][,1]
+tpm$gene_id<-dat[[1]][,1]
+tpm<-tpm[,c(19,1:18)]
 
 corrplot(cor(tpm), type="upper", method="color")
+# write.table(tpm,"data/tumor_rnaseq_tpm.txt", quote=F, sep="\t", row.names = F)
+
+#figS7
+tab<-read.delim("data/tumor_rnaseq_read_counts.txt", header=T)
+tpm<-read.delim("data/tumor_rnaseq_tpm.txt", header=T)
 
 ##PCA
 # subs<-subset(tab, select=colnames(tab)[grepl("[CMT]_",colnames(tab))])
@@ -39,20 +47,8 @@ dds<-DESeqDataSetFromMatrix(countData = round(subs),
 
 
 vsd <- vst(dds, blind=FALSE)
-pcaData <- plotPCA(vsd, intgroup=c("Condition", "Batch"), returnData=TRUE)
-percentVar <- round(100 * attr(pcaData, "percentVar"))
-ggplot(pcaData, aes(PC1, PC2, color=Condition, shape=Batch)) +
-  geom_point(size=3) +
-  xlab(paste0("PC1: ",percentVar[1],"% variance")) +
-  ylab(paste0("PC2: ",percentVar[2],"% variance")) 
 
-pcaData <- plotPCA(vsd, intgroup=c("Condition", "Source"), returnData=TRUE)
-percentVar <- round(100 * attr(pcaData, "percentVar"))
-ggplot(pcaData, aes(PC1, PC2, color=Condition, shape=Source)) +
-  geom_point(size=3) +
-  xlab(paste0("PC1: ",percentVar[1],"% variance")) +
-  ylab(paste0("PC2: ",percentVar[2],"% variance")) 
-
+#figS7c lower panel
 pcaData <- plotPCA(vsd, intgroup=c("Batch", "Source"), returnData=TRUE)
 percentVar <- round(100 * attr(pcaData, "percentVar"))
 ggplot(pcaData, aes(PC1, PC2, color=Batch, shape=Source)) +
@@ -60,6 +56,9 @@ ggplot(pcaData, aes(PC1, PC2, color=Batch, shape=Source)) +
   xlab(paste0("PC1: ",percentVar[1],"% variance")) +
   ylab(paste0("PC2: ",percentVar[2],"% variance")) 
 
+# write.table(pcaData, "source_data/fig7c_lower.txt", quote=F, sep="\t", row.names =F )
+
+#figS7c upper panel
 pcaData <- plotPCA(vsd, intgroup=c("Batch", "Condition"), returnData=TRUE)
 percentVar <- round(100 * attr(pcaData, "percentVar"))
 ggplot(pcaData, aes(PC1, PC2, color=Batch, shape=Condition)) +
@@ -67,6 +66,7 @@ ggplot(pcaData, aes(PC1, PC2, color=Batch, shape=Condition)) +
   xlab(paste0("PC1: ",percentVar[1],"% variance")) +
   ylab(paste0("PC2: ",percentVar[2],"% variance")) 
 
+# write.table(pcaData, "source_data/fig7c_upper.txt", quote=F, sep="\t", row.names =F )
 
 # genes<-read.table("geneInfo.txt", header=T)[,c(1,4:5,10)]
 

@@ -1,0 +1,1052 @@
+gene_id	Symbol	log2FoldChange.tumor.KO.WT	reg_tumor	localization_cat	loc_tar_CDS
+ENSG00000000003.10	TSPAN6	-0.274960166251777	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000001036.9	FUCA2	-0.622113273140163	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000001461.12	NIPAL3	0.2404898651305	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000001630.11	CYP51A1	-0.656996861429348	not_quantified	membrane	nontarget_membrane
+ENSG00000002586.13	CD99	-0.943622704061638	not_quantified	membrane	nontarget_membrane
+ENSG00000003056.3	M6PR	-0.466699569989336	not_quantified	membrane	membrane_tc<1.66
+ENSG00000003989.12	SLC7A2	-0.293879646589578	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000004399.8	PLXND1	-0.438734262104085	not_quantified	membrane	membrane_tc<1.66
+ENSG00000004866.14	ST7	-1.07151825337409	down_tumor	membrane	membrane_tc<1.66
+ENSG00000005486.12	RHBDD2	-0.734973419295461	not_quantified	membrane	nontarget_membrane
+ENSG00000005893.11	LAMP2	-1.01807259116557	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000006042.7	TMEM98	1.1968264966507	up_tumor	membrane	membrane_tc<1.66
+ENSG00000006118.10	TMEM132A	-0.445720231369068	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000006327.9	TNFRSF12A	0.854893506036059	not_quantified	membrane	nontarget_membrane
+ENSG00000006576.12	PHTF2	0.0937008815585349	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000006831.9	ADIPOR2	-0.368915474832288	not_quantified	membrane	membrane_tc<1.66
+ENSG00000007341.14	ST7L	-0.299934080089044	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000007541.10	PIGQ	-0.243801636546362	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000008282.3	SYPL1	-0.973538947407225	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000008394.8	MGST1	-0.875517044329237	not_quantified	membrane	membrane_tc<1.66
+ENSG00000008952.12	SEC62	0.184957435805674	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000010278.7	CD9	-1.10798822989758	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000011105.7	TSPAN9	-0.193368192641316	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000011478.7	QPCTL	0.425127872182788	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000012174.7	MBTPS2	0.796291361526645	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000012232.4	EXTL3	0.23511078657629	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000012660.9	ELOVL5	-0.908367560853344	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000013523.5	ANGEL1	-0.432461811940241	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000016864.12	GLT8D1	-1.12963095320045	down_tumor	membrane	membrane_tc<1.66
+ENSG00000017260.15	ATP2C1	-0.731089692947136	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000025796.9	SEC63	-0.576200096390446	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000026297.11	RNASET2	-0.98341722207556	not_quantified	membrane	nontarget_membrane
+ENSG00000026508.12	CD44	-0.841956376347806	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000027697.8	IFNGR1	-1.28634279045258	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000027847.9	B4GALT7	-0.309220705983951	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000028203.13	VEZT	-0.215519597594026	not_quantified	membrane	nontarget_membrane
+ENSG00000029364.7	SLC39A9	-0.719411488996577	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000030582.12	GRN	-1.42683936109105	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000033011.7	ALG1	-0.216940807364964	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000033100.10	CHPF2	-0.837506193962344	not_quantified	membrane	nontarget_membrane
+ENSG00000033170.12	FUT8	1.02720504279551	up_tumor	membrane	nontarget_membrane
+ENSG00000033627.10	ATP6V0A1	-0.140045306227935	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000035862.8	TIMP2	-0.284323107587136	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000037749.7	MFAP3	-0.508860121046381	not_quantified	membrane	nontarget_membrane
+ENSG00000038002.4	AGA	-0.661215564760939	not_quantified	membrane	membrane_tc<1.66
+ENSG00000040487.8	PQLC2	0.311937353848671	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000042445.9	RETSAT	-0.524293056155956	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000044574.7	HSPA5	-0.679404545387529	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000046604.8	DSG2	-0.703801250305368	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000049449.4	RCN1	-0.313919469121425	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000049656.9	CLPTM1L	-0.0778460770099747	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000049860.9	HEXB	-0.904959894740418	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000050130.13	JKAMP	-0.8505549508644	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000051108.10	HERPUD1	-1.09938900917948	down_tumor	membrane	nontarget_membrane
+ENSG00000051523.6	CYBA	-0.945539426884133	not_quantified	membrane	membrane_tc<1.66
+ENSG00000052802.8	MSMO1	-0.889832284643914	not_quantified	membrane	nontarget_membrane
+ENSG00000052841.10	TTC17	-0.952063742183092	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000054793.9	ATP9A	-1.03537987161734	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000055211.8	GINM1	0.0188033320008252	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000057252.8	SOAT1	-0.66438529870248	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000058063.11	ATP11B	-0.939654263008018	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000058262.5	SEC61A1	-0.916889277519437	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000058799.9	YIPF1	-0.494657220781325	not_quantified	membrane	nontarget_membrane
+ENSG00000058804.10	NDC1	-0.33873593485461	not_quantified	membrane	nontarget_membrane
+ENSG00000060656.15	PTPRU	-1.0178044374101	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000062716.6	VMP1	-1.17017275378025	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000064115.6	TM7SF3	0.315681663555061	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000064545.10	TMEM161A	-0.116283099714911	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000064601.12	CTSA	-0.954453463070365	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000064651.9	SLC12A2	-0.893998886043591	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000065600.8	TMEM206	-0.228069659534423	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000065665.16	SEC61A2	-0.492442672279258	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000066322.8	ELOVL1	-0.875783577773478	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000067141.12	NEO1	-0.765313434206023	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000067167.3	TRAM1	-1.29855551968624	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000067182.3	TNFRSF1A	-0.452324967464427	not_quantified	membrane	nontarget_membrane
+ENSG00000068001.9	HYAL2	-0.855398712423833	not_quantified	membrane	nontarget_membrane
+ENSG00000068650.14	ATP11A	-0.893516195083827	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000068697.6	LAPTM4A	-0.493538433914782	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000068912.9	ERLEC1	-0.776253249219043	not_quantified	membrane	membrane_tc<1.66
+ENSG00000069849.6	ATP1B3	-0.296650895012985	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000070018.4	LRP6	0.014915339447141	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000070081.11	NUCB2	0.0394470165383129	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000070413.14	DGCR2	-0.902341997002743	not_quantified	membrane	nontarget_membrane
+ENSG00000070961.10	ATP2B1	0.607420125244229	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000071553.12	ATP6AP1	-0.332297215632355	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000072041.12	SLC6A15	0.146604660767772	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000072042.8	RDH11	-0.232928033476405	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000072274.8	TFRC	0.179233858412706	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000072310.12	SREBF1	-0.793005805309144	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000072682.14	P4HA2	0.616451148683256	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000072849.6	DERL2	-0.854355541332011	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000073008.10	PVR	0.13425077475606	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000073060.11	SCARB1	-0.614648187706521	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000074695.5	LMAN1	-0.767446595554235	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000074696.8	PTPLAD1	-0.661322019160873	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000074842.3	C19orf10	-0.500507611600524	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000075790.6	BCAP29	-0.599147094171238	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000076351.8	SLC46A1	-0.0940401573133566	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000076706.10	MCAM	1.65040254983019	up_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000077147.10	TM9SF3	-1.13917410992652	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000077232.12	DNAJC10	-0.480960093393223	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000077782.15	FGFR1	1.11526062875703	up_tumor	membrane	membrane_tc<1.66
+ENSG00000077942.13	FBLN1	0.146430136230967	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000078808.12	SDF4	-0.643472028070278	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000079150.13	FKBP7	-1.08482971826613	down_tumor	membrane	nontarget_membrane
+ENSG00000080189.10	SLC35C2	-0.676684445126363	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000080815.14	PSEN1	-0.862655879499308	not_quantified	membrane	nontarget_membrane
+ENSG00000080822.12	CLDND1	-1.24409690629636	down_tumor	membrane	nontarget_membrane
+ENSG00000081087.10	OSTM1	0.0544601290705296	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000081177.14	EXD2	-0.885710574944515	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000082641.11	NFE2L1	-0.00950491763441367	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000082781.7	ITGB5	-0.340993284988593	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000082996.15	RNF13	-0.949739057073632	not_quantified	membrane	membrane_tc<1.66
+ENSG00000083444.12	PLOD1	0.783017927948604	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000083454.17	P2RX5	1.25196256286852	up_tumor	membrane	nontarget_membrane
+ENSG00000083857.9	FAT1	-0.238310583267843	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000084073.4	ZMPSTE24	-0.93218564312437	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000084234.12	APLP2	-0.393846440835055	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000085063.10	CD59	-0.862872222711916	not_quantified	membrane	membrane_tc<1.66
+ENSG00000085365.13	SCAMP1	-1.04689491250791	down_tumor	membrane	nontarget_membrane
+ENSG00000085871.4	MGST2	-0.989391523842666	not_quantified	membrane	nontarget_membrane
+ENSG00000085998.9	POMGNT1	-0.0183756769937177	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000086062.8	B4GALT1	-0.631509524090031	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000086289.7	EPDR1	-0.336742140350772	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000086598.6	TMED2	-0.899430691648172	not_quantified	membrane	membrane_tc<1.66
+ENSG00000086619.9	ERO1LB	0.245709449715085	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000086848.10	ALG9	-0.492173390835956	not_quantified	membrane	nontarget_membrane
+ENSG00000087253.7	LPCAT2	-0.647119167152916	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000087303.12	NID2	-2.5186257071635	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000087502.13	ERGIC2	0.000266101489885538	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000088035.11	ALG6	-0.674771471332725	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000088298.8	EDEM2	-0.474891068954814	not_quantified	membrane	nontarget_membrane
+ENSG00000089057.10	SLC23A2	-0.657796649569739	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000089248.6	ERP29	-0.0509077778338522	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000089327.10	FXYD5	-0.737370544570873	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000089597.12	GANAB	-0.5304463782119	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000090054.9	SPTLC1	0.147200080304446	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000090432.5	MUL1	-0.876102177519724	not_quantified	membrane	nontarget_membrane
+ENSG00000090520.6	DNAJB11	-0.660372039980461	not_quantified	membrane	membrane_tc<1.66
+ENSG00000090581.5	GNPTG	-0.40383218094867	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000090661.7	CERS4	0.601601444555237	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000090776.5	EFNB1	-1.11644206466496	down_tumor	membrane	membrane_tc<1.66
+ENSG00000090863.7	GLG1	-0.664299397132136	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000090971.4	NAT14	0.577772439559778	not_quantified	membrane	nontarget_membrane
+ENSG00000091129.15	NRCAM	0.0235715070405111	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000091136.9	LAMB1	-0.866593332472541	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000091317.7	CMTM6	-0.353540567408228	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000091947.5	TMEM101	0.0459329598916217	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000092931.7	MFSD11	0.772615238520052	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000093010.7	COMT	-0.411450118206667	not_quantified	membrane	membrane_tc<1.66
+ENSG00000094975.9	SUCO	-0.768175308248006	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000095209.7	TMEM38B	-0.818506080232452	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000095739.7	BAMBI	-0.937910437939523	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000099194.5	SCD	-1.01356079470977	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000099203.2	TMED1	-0.310443329833354	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000099219.9	ERMP1	-0.9934383139295	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000099282.5	TSPAN15	-0.927425317783953	not_quantified	membrane	nontarget_membrane
+ENSG00000099797.7	TECR	-0.629854949168649	not_quantified	membrane	membrane_tc<1.66
+ENSG00000099904.11	ZDHHC8	-0.295456295541811	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000099999.10	RNF215	-0.0722723966503639	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000100196.6	KDELR3	-1.22150964378006	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000100219.12	XBP1	-0.983720753334014	not_quantified	membrane	membrane_tc<1.66
+ENSG00000100242.11	SUN2	-0.489978344972012	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000100258.13	LMF2	-0.805954968300962	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000100263.9	RHBDD3	-0.0395037340231478	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000100321.10	SYNGR1	0.369633892917877	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000100473.11	COCH	-0.449596687482712	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000100528.7	CNIH1	-0.65981943278041	not_quantified	membrane	nontarget_membrane
+ENSG00000100532.7	CGRRF1	-0.718360966427766	not_quantified	membrane	nontarget_membrane
+ENSG00000100564.4	PIGH	-0.135247956895639	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000100596.2	SPTLC2	-0.176474540567745	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000100600.10	LGMN	-0.374825496633549	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000100612.9	DHRS7	-0.914637891373549	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000100926.10	TM9SF1	-0.636750502746783	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000100997.14	ABHD12	-0.756929117215502	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000101000.4	PROCR	1.11511449409355	up_tumor	membrane	membrane_tc<1.66
+ENSG00000101104.8	PABPC1L	0.30829417862491	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000101160.9	CTSZ	-0.662417627178827	not_quantified	membrane	membrane_tc<1.66
+ENSG00000101187.11	SLCO4A1	-1.60100972652078	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000101290.9	CDS2	-0.220259049607858	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000101294.12	HM13	-0.302554481105846	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000101337.11	TM9SF4	-0.859712177455131	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000101346.7	POFUT1	-0.113647786198292	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000101439.4	CST3	-1.43837428882273	down_tumor	membrane	membrane_tc<1.66
+ENSG00000101464.6	PIGU	-0.579587940210985	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000101474.7	APMAP	-0.247066497728075	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000101856.8	PGRMC1	-0.711401921901434	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000101974.10	ATP11C	-0.723399572375748	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000102003.6	SYP	1.63245997217924	up_tumor	membrane	nontarget_membrane
+ENSG00000102007.6	PLP2	-0.935712165087647	not_quantified	membrane	nontarget_membrane
+ENSG00000102100.10	SLC35A2	-0.511286853239707	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000102158.15	MAGT1	-0.0203791949903752	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000102181.15	CD99L2	-0.143385627192306	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000102265.7	TIMP1	-1.14676201050019	down_tumor	membrane	nontarget_membrane
+ENSG00000102393.5	GLA	-0.233660760281067	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000102471.9	NDFIP2	-0.825491121062459	not_quantified	membrane	membrane_tc<1.66
+ENSG00000102805.9	CLN5	-0.748929276238588	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000103064.9	SLC7A6	-0.0850777218289833	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000103222.14	ABCC1	-0.124701361764912	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000103226.13	NOMO3	-0.455324906486724	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000103249.13	CLCN7	-0.412821746996261	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000103257.4	SLC7A5	-0.269478697017091	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000103335.15	PIEZO1	0.246864498415117	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000103429.6	BFAR	-0.202380873918978	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000103502.9	CDIPT	-0.761009333962543	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000103512.10	NOMO1	-0.246691036346517	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000103855.13	CD276	-0.185619790160869	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000103978.11	TMEM87A	-0.0708133637883248	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000104213.8	PDGFRL	-0.349165254566247	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000104331.4	IMPAD1	-0.667587465918345	not_quantified	membrane	membrane_tc<1.66
+ENSG00000104332.7	SFRP1	0.572610083601013	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000104341.12	LAPTM4B	-0.386009526522572	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000104549.7	SQLE	-1.02042839734581	down_tumor	membrane	membrane_tc<1.66
+ENSG00000104635.9	SLC39A14	-0.272841734787108	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000104660.13	LEPROTL1	-0.615758118913836	not_quantified	membrane	nontarget_membrane
+ENSG00000104723.16	TUSC3	-0.315144297940449	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000104763.13	ASAH1	-1.23747146840101	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000104805.11	NUCB1	-1.43481820139619	down_tumor	membrane	membrane_tc<1.66
+ENSG00000104853.11	CLPTM1	-0.515097873407966	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000104870.8	FCGRT	-0.0995069400260146	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000105135.11	ILVBL	-0.68186216132019	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000105223.14	PLD3	-0.465178935570502	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000105281.8	SLC1A5	-0.185479547114956	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000105290.7	APLP1	1.43776890217717	up_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000105404.6	RABAC1	-0.779575521792183	not_quantified	membrane	membrane_tc<1.66
+ENSG00000105409.11	ATP1A3	2.37010478465091	up_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000105426.10	PTPRS	0.423240963817636	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000105429.8	MEGF8	-0.213144610006969	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000105438.4	KDELR1	-0.679267823276475	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000105518.9	TMEM205	-0.315807716860841	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000105612.4	DNASE2	-0.274058269032231	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000105677.7	TMEM147	-0.453686437209397	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000105699.12	LSR	-0.863667483142015	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000105726.12	ATP13A1	-0.411935201590799	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000105767.2	CADM4	-0.518237007062593	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000105854.8	PON2	-0.636502374316484	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000105976.10	MET	-0.518769257770711	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000105983.15	LMBR1	-0.819926743844352	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000106066.9	CPVL	-2.88632002463354	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000106080.6	FKBP14	0.957568733743608	not_quantified	membrane	membrane_tc<1.66
+ENSG00000106397.7	PLOD3	-0.303846153797358	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000106460.14	TMEM106B	-1.21685046118662	down_tumor	membrane	membrane_tc<1.66
+ENSG00000106537.7	TSPAN13	-1.63341013719881	down_tumor	membrane	membrane_tc<1.66
+ENSG00000106609.12	TMEM248	-1.06282278182382	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000106638.11	TBL2	-0.651342892050714	not_quantified	membrane	nontarget_membrane
+ENSG00000106771.8	TMEM245	0.380989966952053	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000106799.8	TGFBR1	-0.84453964550024	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000107281.5	NPDC1	-1.89469155421512	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000107331.12	ABCA2	-1.22777550109521	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000107566.9	ERLIN1	-0.234481998301696	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000107779.7	BMPR1A	0.0380552612188221	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000107789.11	MINPP1	-0.993485624892353	not_quantified	membrane	membrane_tc<1.66
+ENSG00000107798.13	LIPA	-1.16974489663513	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000108219.10	TSPAN14	0.658797196753638	not_quantified	membrane	nontarget_membrane
+ENSG00000108474.12	PIGL	-0.819999626904965	not_quantified	membrane	membrane_tc<1.66
+ENSG00000108582.7	CPD	-0.82346265856953	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000108588.9	CCDC47	-0.237679243444993	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000108639.3	SYNGR2	-0.660444823131264	not_quantified	membrane	membrane_tc<1.66
+ENSG00000108679.8	LGALS3BP	-1.28641570753511	down_tumor	membrane	membrane_tc<1.66
+ENSG00000108784.5	NAGLU	-0.252778573563721	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000109016.13	DHRS7B	0.342675218007026	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000109084.9	TMEM97	-0.548759295888049	not_quantified	membrane	nontarget_membrane
+ENSG00000109099.9	PMP22	-0.265067725924963	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000109133.8	TMEM33	-0.615635181366772	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000109180.10	OCIAD1	-0.633442064048987	not_quantified	membrane	membrane_tc<1.66
+ENSG00000109472.9	CPE	0.222242950057771	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000109572.9	CLCN3	-0.237654893375606	not_quantified	membrane	membrane_tc<1.66
+ENSG00000109586.7	GALNT7	-1.84581357425943	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000109736.10	MFSD10	-0.517044340828219	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000109861.11	CTSC	-0.861021128088162	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000109929.5	SC5D	0.128051851232144	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000110108.5	TMEM109	-0.109651317962111	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000110328.5	GALNT18	-0.298339811129906	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000110344.5	UBE4A	-0.481849224477998	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000110492.11	MDK	-1.99650764128763	down_tumor	membrane	membrane_tc<1.66
+ENSG00000110651.7	CD81	-0.889844283293793	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000110660.10	SLC35F2	-0.38675670238854	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000110911.10	SLC11A2	-0.527936003239755	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000110917.3	MLEC	-0.546339974222546	not_quantified	membrane	membrane_tc<1.66
+ENSG00000111371.11	SLC38A1	-0.502769453601253	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000111666.6	CHPT1	-0.472156471908409	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000111670.10	GNPTAB	0.312590217773195	not_quantified	membrane	membrane_tc<1.66
+ENSG00000111684.6	LPCAT3	-0.588395561247742	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000111711.5	GOLT1B	-0.887531851626291	not_quantified	membrane	membrane_tc<1.66
+ENSG00000111775.2	COX6A1	-0.61159187755403	not_quantified	membrane	nontarget_membrane
+ENSG00000111817.12	DSE	0.67759759504642	not_quantified	membrane	nontarget_membrane
+ENSG00000111897.6	SERINC1	-0.772854851528585	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000112378.11	PERP	-1.01192427369806	down_tumor	membrane	nontarget_membrane
+ENSG00000112473.12	SLC39A7	-0.340018634213377	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000112697.11	TMEM30A	-0.986533123755366	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000112715.16	VEGFA	-1.94492521692529	down_tumor	membrane	membrane_tc<1.66
+ENSG00000112759.12	SLC29A1	-0.061042249892394	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000112763.11	BTN2A1	-0.454925088851248	not_quantified	membrane	membrane_tc<1.66
+ENSG00000112893.5	MAN2A1	-0.766060037785342	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000113161.11	HMGCR	-0.600489253738137	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000113194.8	FAF2	-0.529529107009215	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000113583.6	C5orf15	-0.57191140094678	not_quantified	membrane	nontarget_membrane
+ENSG00000113621.10	TXNDC15	-0.578239182337997	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000113719.11	ERGIC1	-0.0137273304936157	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000113732.4	ATP6V0E1	-0.489577213884385	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000113739.6	STC2	0.282836457473935	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000114395.6	CYB561D2	-1.05597291936167	down_tumor	membrane	membrane_tc<1.66
+ENSG00000114529.8	C3orf52	-0.397359161494344	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000114544.11	SLC41A3	-0.796381068915614	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000114554.7	PLXNA1	-0.292017690836465	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000114631.10	PODXL2	-0.57483071457841	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000114650.14	SCAP	-0.246886529313449	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000114770.12	ABCC5	-0.0797126918204799	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000114850.2	SSR3	-0.711714308625133	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000114902.9	SPCS1	-0.726719438936993	not_quantified	membrane	membrane_tc<1.66
+ENSG00000114988.7	LMAN2L	0.305343029797575	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000115084.8	SLC35F5	-0.554727165758663	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000115107.15	STEAP3	0.238609293161607	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000115275.7	MOGS	-0.596144658065833	not_quantified	membrane	nontarget_membrane
+ENSG00000115307.12	AUP1	-0.25334717291967	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000115310.13	RTN4	0.279580934642559	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000115414.14	FN1	-1.51939540194697	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000115446.7	UNC50	-0.553855661165732	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000115457.5	IGFBP2	-0.999131280908751	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000115461.4	IGFBP5	1.08459577242134	up_tumor	membrane	nontarget_membrane
+ENSG00000115486.7	GGCX	0.201926719340416	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000115526.6	CHST10	0.577966998557699	not_quantified	membrane	nontarget_membrane
+ENSG00000115652.10	UXS1	-0.163814168837189	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000115828.11	QPCT	-0.895250418715313	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000115884.6	SDC1	-0.743066504809571	not_quantified	membrane	membrane_tc<1.66
+ENSG00000116005.7	PCYOX1	0.460250825537854	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000116133.7	DHCR24	-0.708157879707257	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000116209.7	TMEM59	-0.987216332249233	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000116237.11	ICMT	-0.54854807361385	not_quantified	membrane	membrane_tc<1.66
+ENSG00000116260.12	QSOX1	-0.820214048158294	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000116406.14	EDEM3	-0.920937350046002	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000116521.6	SCAMP3	-0.362098351461841	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000116685.11	KIAA2013	-0.269112589819786	not_quantified	membrane	membrane_tc<1.66
+ENSG00000116729.9	WLS	-0.597290390826731	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000116815.11	CD58	-1.44273994184854	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000116857.12	TMEM9	-0.679170752745337	not_quantified	membrane	membrane_tc<1.66
+ENSG00000117114.15	LPHN2	-1.99418390285993	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000117262.14	GPR89A	-0.435501068131393	not_quantified	membrane	nontarget_membrane
+ENSG00000117298.10	ECE1	0.3311495148763	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000117335.14	CD46	-1.44279710771808	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000117362.8	APH1A	-0.626966510627892	not_quantified	membrane	nontarget_membrane
+ENSG00000117385.11	LEPRE1	0.346176937532766	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000117394.15	SLC2A1	-0.881833175111688	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000117410.9	ATP6V0B	-0.093367633666864	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000117479.8	SLC19A2	-0.953459689719845	not_quantified	membrane	membrane_tc<1.66
+ENSG00000117500.8	TMED5	-0.847092428228727	not_quantified	membrane	membrane_tc<1.66
+ENSG00000117620.8	SLC35A3	-0.444947642632509	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000117862.7	TXNDC12	-0.631692764952404	not_quantified	membrane	membrane_tc<1.66
+ENSG00000117868.11	ESYT2	-1.12385511133424	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000117899.6	MESDC2	0.169573592283143	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000117906.9	RCN2	-0.483735632047909	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000117984.8	CTSD	-0.930457176433757	not_quantified	membrane	nontarget_membrane
+ENSG00000118363.7	SPCS2	-1.02921172879292	down_tumor	membrane	nontarget_membrane
+ENSG00000118705.12	RPN2	-0.15506058971723	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000118855.14	MFSD1	-0.896957788157608	not_quantified	membrane	nontarget_membrane
+ENSG00000119523.8	ALG2	-0.958634185672873	not_quantified	membrane	nontarget_membrane
+ENSG00000119537.11	KDSR	-0.161861072009788	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000119777.14	TMEM214	-0.663673264893032	not_quantified	membrane	membrane_tc<1.66
+ENSG00000119820.6	YIPF4	0.795608198524281	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000119888.6	EPCAM	-1.74916733154925	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000119899.11	SLC17A5	-0.00740603082402882	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000119946.9	CNNM1	0.221537362349655	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000119977.16	TCTN3	-1.02091742355459	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000120256.5	LRP11	-0.39180407572941	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000120451.6	SNX19	-0.680263541854073	not_quantified	membrane	nontarget_membrane
+ENSG00000120697.4	ALG5	-0.754320762309142	not_quantified	membrane	nontarget_membrane
+ENSG00000120725.8	SIL1	-0.572437252204881	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000120885.15	CLU	-0.742880052046409	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000120889.8	TNFRSF10B	-0.466499633799159	not_quantified	membrane	membrane_tc<1.66
+ENSG00000120942.9	UBIAD1	0.185398263552586	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000121039.5	RDH10	-0.542785733134583	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000121057.8	AKAP1	-0.443622693161102	not_quantified	membrane	membrane_tc<1.66
+ENSG00000121064.8	SCPEP1	0.669632182499677	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000121073.9	SLC35B1	-0.30793232377962	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000121753.8	BAI2	0.500613810589315	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000121775.13	TMEM39B	0.325517591388754	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000121940.11	CLCC1	-0.343041745486472	not_quantified	membrane	membrane_tc<1.66
+ENSG00000122642.6	FKBP9	-0.733236727672269	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000122643.14	NT5C3A	-0.802832398154661	not_quantified	membrane	membrane_tc<1.66
+ENSG00000122884.8	P4HA1	-1.58071234855365	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000123131.8	PRDX4	-1.15619555309039	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000123146.15	CD97	-0.248864279487943	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000123179.9	EBPL	-0.0113777049239816	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000123353.5	ORMDL2	-0.238769163446993	not_quantified	membrane	nontarget_membrane
+ENSG00000123983.9	ACSL3	-0.440473332780751	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000124145.5	SDC4	0.0916747963658619	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000124155.12	PIGT	-0.838111147397356	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000124783.8	SSR1	-0.68309519558196	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000125037.8	EMC3	0.140009406430604	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000125247.11	TMTC4	-1.01709130623681	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000125257.9	ABCC4	-0.127437879600636	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000125304.8	TM9SF2	-1.21599140025195	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000125505.12	MBOAT7	-1.17212028781331	down_tumor	membrane	nontarget_membrane
+ENSG00000125827.4	TMX4	-0.302796020734118	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000125844.11	RRBP1	-0.0132305899133273	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000125912.6	NCLN	-0.146774095191093	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000125991.14	ERGIC3	-0.503190722198366	not_quantified	membrane	membrane_tc<1.66
+ENSG00000126062.3	TMEM115	-0.78135081147252	not_quantified	membrane	nontarget_membrane
+ENSG00000126709.10	IFI6	0.842269668119299	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000126773.8	PCNXL4	-0.531327044535917	not_quantified	membrane	nontarget_membrane
+ENSG00000126777.13	KTN1	0.158603028318874	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000126821.7	SGPP1	-0.818267296099999	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000126903.11	SLC10A3	-0.59283644320282	not_quantified	membrane	nontarget_membrane
+ENSG00000127022.10	CANX	-0.34743827876257	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000127418.10	FGFRL1	-1.64817383360432	down_tumor	membrane	nontarget_membrane
+ENSG00000127463.9	EMC1	0.701625312958502	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000127526.9	SLC35E1	0.819296004454071	not_quantified	membrane	nontarget_membrane
+ENSG00000127948.9	POR	-0.663413918849483	not_quantified	membrane	membrane_tc<1.66
+ENSG00000127990.11	SGCE	-1.15152353503098	down_tumor	membrane	membrane_tc<1.66
+ENSG00000128011.4	LRFN1	0.682670887010578	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000128039.6	SRD5A3	-0.945735568351842	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000128228.4	SDF2L1	-0.0652148506355423	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000128463.8	EMC4	-0.156817211315948	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000128567.12	PODXL	-1.78748827343843	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000128595.12	CALU	-0.834080178120943	not_quantified	membrane	nontarget_membrane
+ENSG00000128602.5	SMO	0.312096321769431	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000128699.9	ORMDL1	-0.754389560375702	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000128791.7	TWSG1	-0.798048023951708	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000128973.7	CLN6	-0.40694914964384	not_quantified	membrane	nontarget_membrane
+ENSG00000129038.11	LOXL1	-1.32046962847766	down_tumor	membrane	membrane_tc<1.66
+ENSG00000129103.13	SUMF2	-0.693645059523534	not_quantified	membrane	membrane_tc<1.66
+ENSG00000129128.8	SPCS3	-0.871658103284904	not_quantified	membrane	membrane_tc<1.66
+ENSG00000129255.10	MPDU1	0.329101615391847	not_quantified	membrane	membrane_tc<1.66
+ENSG00000129353.10	SLC44A2	-0.391597130002188	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000129562.6	DAD1	-0.677263321184103	not_quantified	membrane	membrane_tc<1.66
+ENSG00000129625.8	REEP5	-0.709364866447389	not_quantified	membrane	membrane_tc<1.66
+ENSG00000129636.8	ITFG1	-0.707044653375334	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000130175.5	PRKCSH	-1.07033695551383	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000130193.7	THEM6	-1.52425854300583	down_tumor	membrane	nontarget_membrane
+ENSG00000130202.5	PVRL2	-0.541879705137486	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000130203.5	APOE	0.197178924829826	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000130208.5	APOC1	1.75919735440467	up_tumor	membrane	nontarget_membrane
+ENSG00000130303.8	BST2	0.688879667701475	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000130309.6	COLGALT1	0.0662949576512016	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000130702.9	LAMA5	-0.201563066965369	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000130714.11	POMT1	-0.543606736879602	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000130733.6	YIPF2	-1.35090496983141	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000130962.13	PRRG1	-0.391931689479735	not_quantified	membrane	nontarget_membrane
+ENSG00000131067.12	GGT7	-0.467495095243514	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000131238.12	PPT1	-0.20409192672595	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000131389.12	SLC6A6	-0.452534869594114	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000131446.11	MGAT1	-0.66328452665811	not_quantified	membrane	nontarget_membrane
+ENSG00000131504.11	DIAPH1	0.742627093511194	not_quantified	membrane	membrane_tc<1.66
+ENSG00000131507.9	NDFIP1	-0.662013218036228	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000131591.13	C1orf159	-0.639908406294419	not_quantified	membrane	membrane_tc<1.66
+ENSG00000131724.6	IL13RA1	-0.654222469208129	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000131748.11	STARD3	-0.0368644496610718	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000131871.10	VIMP	-0.357968712626007	not_quantified	membrane	membrane_tc<1.66
+ENSG00000131873.5	CHSY1	-0.426426469364557	not_quantified	membrane	nontarget_membrane
+ENSG00000132182.7	NUP210	-0.0217763336520478	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000132386.6	SERPINF1	-0.358201151035434	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000132581.5	SDF2	-0.0287838461221866	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000132670.16	PTPRA	-0.807999648505658	not_quantified	membrane	membrane_tc<1.66
+ENSG00000132824.9	SERINC3	-0.758532017140852	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000133027.13	PEMT	-0.443095074818949	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000133065.6	SLC41A1	-0.0999900028540295	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000133318.9	RTN3	-0.71860084159405	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000133597.5	ADCK2	-0.944451200664679	not_quantified	membrane	nontarget_membrane
+ENSG00000133657.10	ATP13A3	-0.705472385489417	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000133678.9	TMEM254	-0.515694721089429	not_quantified	membrane	membrane_tc<1.66
+ENSG00000133872.9	TMEM66	-1.50913271607449	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000133935.6	C14orf1	-0.386669814736349	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000134109.6	EDEM1	-0.87230748735278	not_quantified	membrane	membrane_tc<1.66
+ENSG00000134153.5	EMC7	-0.240160677917308	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000134243.7	SORT1	-0.836984130596023	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000134247.9	PTGFRN	-1.17090847025967	down_tumor	membrane	membrane_tc<1.66
+ENSG00000134250.13	NOTCH2	0.137687290514025	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000134255.9	CEPT1	-0.850940716108736	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000134285.6	FKBP11	-0.110622167273967	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000134294.9	SLC38A2	-0.553748625339958	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000134824.9	FADS2	-0.450971224200302	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000134851.8	TMEM165	-1.02604822131263	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000134871.13	COL4A2	-0.34223506537761	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000134882.11	UBAC2	-0.644532299498732	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000134910.8	STT3A	-0.715873389441446	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000134970.13	TMED7	-1.45594551989853	down_tumor	membrane	nontarget_membrane
+ENSG00000135047.10	CTSL	0.0550613633381607	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000135052.12	GOLM1	-0.837486778070414	not_quantified	membrane	membrane_tc<1.66
+ENSG00000135124.10	P2RX4	0.793429956421808	not_quantified	membrane	nontarget_membrane
+ENSG00000135211.5	TMEM60	-0.97282028354829	not_quantified	membrane	membrane_tc<1.66
+ENSG00000135317.8	SNX14	-0.298554875696536	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000135404.7	CD63	-0.562356747542753	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000135452.5	TSPAN31	-0.132332054341582	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000135503.8	ACVR1B	-0.38832073867733	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000135506.11	OS9	-0.853313127465795	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000135535.10	CD164	-1.3995443640077	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000135677.6	GNS	-0.553777286098996	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000135750.10	KCNK1	-1.43477776647007	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000135862.5	LAMC1	-0.441530762053376	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000135916.11	ITM2C	-0.359932354664044	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000135919.8	SERPINE2	-0.34096329302464	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000135926.8	TMBIM1	-0.373130815965746	not_quantified	membrane	membrane_tc<1.66
+ENSG00000136026.9	CKAP4	-0.201530718482283	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000136156.8	ITM2B	-1.36472205353738	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000136240.5	KDELR2	-1.11564191627373	down_tumor	membrane	nontarget_membrane
+ENSG00000136295.10	TTYH3	-1.27177421084174	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000136720.6	HS6ST1	0.173578354928302	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000136731.8	UGGT1	0.426246222911814	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000136770.6	DNAJC1	0.455183356019231	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000136802.7	LRRC8A	-0.334508495891609	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000136816.11	TOR1B	-0.726993896818763	not_quantified	membrane	membrane_tc<1.66
+ENSG00000136827.11	TOR1A	-0.620889454411251	not_quantified	membrane	nontarget_membrane
+ENSG00000136868.9	SLC31A1	0.518014298600322	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000136943.6	CTSV	-0.531085732647278	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000136986.5	DERL1	-0.470464489154633	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000137161.12	CNPY3	-0.694072207408708	not_quantified	membrane	nontarget_membrane
+ENSG00000137207.7	YIPF3	-1.10541220954398	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000137216.14	TMEM63B	-0.546075384711607	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000137404.10	NRM	-0.683407825680613	not_quantified	membrane	nontarget_membrane
+ENSG00000137414.5	FAM8A1	-1.32387770726777	down_tumor	membrane	membrane_tc<1.66
+ENSG00000137509.6	PRCP	-0.655079314735538	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000137522.13	RNF121	-0.223495911247749	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000137563.7	GGH	-0.253014159808557	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000137700.12	SLC37A4	-0.359458774643723	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000137824.11	RMDN3	-0.610752779765572	not_quantified	membrane	membrane_tc<1.66
+ENSG00000137842.2	TMEM62	-0.579627706563705	not_quantified	membrane	membrane_tc<1.66
+ENSG00000137845.10	ADAM10	-0.87132315847749	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000138018.13	EPT1	-0.194122152969288	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000138031.10	ADCY3	0.22235258670368	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000138074.10	SLC5A6	0.429069854039675	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000138085.12	ATRAID	-0.362966081831917	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000138138.9	ATAD1	-0.666020428995428	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000138600.5	SPPL2A	-0.645141175321541	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000138604.5	GLCE	-1.4019771160492	down_tumor	membrane	membrane_tc<1.66
+ENSG00000138744.10	NAAA	0.0741465803514063	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000138760.4	SCARB2	-0.661623050548559	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000138821.8	SLC39A8	-0.946427575250887	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000138829.6	FBN2	0.261858590927971	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000139291.9	TMEM19	1.31562890313348	up_tumor	membrane	nontarget_membrane
+ENSG00000139324.7	TMTC3	-0.950149233456753	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000139370.6	SLC15A4	-0.640100807335331	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000139514.8	SLC7A1	-0.347487798620628	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000139624.8	CERS5	-0.0853717341230604	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000139636.11	LMBR1L	0.10830030615912	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000139641.8	ESYT1	-0.125973003041984	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000139644.8	TMBIM6	-0.443851575651629	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000139921.8	TMX1	-0.686965957654543	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000140284.6	SLC27A2	-0.524592232534189	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000140391.10	TSPAN3	-1.24995076792552	down_tumor	membrane	nontarget_membrane
+ENSG00000140479.12	PCSK6	-0.848288953254566	not_quantified	membrane	membrane_tc<1.66
+ENSG00000140497.12	SCAMP2	-0.551517301349475	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000140511.7	HAPLN3	-0.066817430831607	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000140545.10	MFGE8	-0.377497791915554	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000140564.6	FURIN	-0.522913921195814	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000140688.12	C16orf58	-1.0750393765884	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000140931.15	CMTM3	0.133409598001111	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000140943.12	MBTPS1	-0.414915034867516	not_quantified	membrane	membrane_tc<1.66
+ENSG00000141349.4	G6PC3	-0.693523454056179	not_quantified	membrane	membrane_tc<1.66
+ENSG00000141424.8	SLC39A6	-0.608222276594294	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000141429.9	GALNT1	-1.02079542793516	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000141458.8	NPC1	0.117169727137352	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000141696.8	LEPREL4	0.755694106692671	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000141699.6	FAM134C	0.053703904360817	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000141736.9	ERBB2	-0.123005460037329	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000141756.14	FKBP10	-0.00153071717383235	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000141873.6	SLC39A3	0.456208543671223	not_quantified	membrane	membrane_tc<1.66
+ENSG00000142156.10	COL6A1	-0.175273358885335	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000142166.8	IFNAR1	-0.898450217334288	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000142188.12	TMEM50B	-1.29023462414367	down_tumor	membrane	nontarget_membrane
+ENSG00000142192.16	APP	-1.03437841193148	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000142227.6	EMP3	0.38411210253304	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000142494.9	SLC47A1	1.55097750581127	up_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000142627.9	EPHA2	-0.398086966268735	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000142687.13	KIAA0319L	0.751358426517553	not_quantified	membrane	membrane_tc<1.66
+ENSG00000142892.10	PIGK	-0.964994888670772	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000142949.12	PTPRF	0.171750390430093	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000143061.13	IGSF3	-0.857466752240011	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000143153.8	ATP1B1	-1.71533160155191	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000143162.7	CREG1	-0.751427974824757	not_quantified	membrane	membrane_tc<1.66
+ENSG00000143183.12	TMCO1	0.076889603271067	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000143315.5	PIGM	0.271553116258845	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000143324.9	XPR1	-0.765981654794759	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000143337.14	TOR1AIP1	-1.00958980980219	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000143418.15	CERS2	-0.715923697795499	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000143515.12	ATP8B2	1.70838499066847	up_tumor	membrane	membrane_tc<1.66
+ENSG00000143537.9	ADAM15	-1.02133804070969	down_tumor	membrane	membrane_tc<1.66
+ENSG00000143554.9	SLC27A3	0.996352766395855	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000143570.13	SLC39A1	-0.531158621885204	not_quantified	membrane	membrane_tc<1.66
+ENSG00000143590.9	EFNA3	-0.904380216594018	not_quantified	membrane	nontarget_membrane
+ENSG00000143641.8	GALNT2	0.208217242776055	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000143643.8	TTC13	-0.83222079977908	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000143753.8	DEGS1	-0.271397298833576	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000143771.7	CNIH4	-0.995287379389644	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000143801.12	PSEN2	-0.436746719914992	not_quantified	membrane	membrane_tc<1.66
+ENSG00000143815.10	LBR	-1.33945658935118	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000143819.8	EPHX1	-1.5574624945039	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000143870.8	PDIA6	-0.585645090823875	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000144043.7	TEX261	-0.193823611442524	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000144136.6	SLC20A1	0.220276806060543	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000144320.9	KIAA1715	0.138723914360655	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000144468.12	RHBDD1	-0.672323450614966	not_quantified	membrane	nontarget_membrane
+ENSG00000144647.5	POMGNT2	0.0272093248693612	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000144724.14	PTPRG	-0.343050475783395	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000144746.6	ARL6IP5	-0.718324676367472	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000144785.4	RP11-977G19.10	-0.053080931754265	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000144867.7	SRPRB	-0.59663556330006	not_quantified	membrane	membrane_tc<1.66
+ENSG00000145050.11	MANF	-0.248566591043476	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000145284.7	SCD5	-0.612873918306269	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000145354.5	CISD2	-0.919182504673948	not_quantified	membrane	membrane_tc<1.66
+ENSG00000145495.10	MARCH6	-0.688401041262223	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000145730.16	PAM	-0.996627866231772	not_quantified	membrane	membrane_tc<1.66
+ENSG00000145740.14	SLC30A5	-0.599288661625536	not_quantified	membrane	membrane_tc<1.66
+ENSG00000145860.7	RNF145	-0.0371859439238064	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000146072.6	TNFRSF21	-0.808743117235155	not_quantified	membrane	nontarget_membrane
+ENSG00000146242.5	TPBG	-1.1426761118404	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000146409.6	SLC18B1	-0.634274794467743	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000146416.12	AIG1	0.000611263663953724	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000146433.8	TMEM181	0.292284011819723	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000146842.12	TMEM209	-0.22535612031243	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000147100.5	SLC16A2	0.305875146788156	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000147155.6	EBP	-0.518445542917915	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000147475.10	ERLIN2	-0.415997178783017	not_quantified	membrane	membrane_tc<1.66
+ENSG00000147526.15	TACC1	1.1697268481283	up_tumor	membrane	nontarget_membrane
+ENSG00000147649.5	MTDH	0.275727170886163	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000147955.12	SIGMAR1	-0.344242819095783	not_quantified	membrane	membrane_tc<1.66
+ENSG00000148110.11	HIATL1	-0.638995949269638	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000148175.8	STOM	0.256699911451953	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000148248.9	SURF4	-0.828910882585097	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000148343.14	FAM73B	-0.732869665354601	not_quantified	membrane	nontarget_membrane
+ENSG00000148358.15	GPR107	-0.930786779193238	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000148468.12	FAM171A1	-0.144697463348902	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000148719.10	DNAJB12	-0.356710791689612	not_quantified	membrane	nontarget_membrane
+ENSG00000148926.5	ADM	-0.833915453972738	not_quantified	membrane	nontarget_membrane
+ENSG00000149084.7	HSD17B12	-0.614594783085388	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000149257.9	SERPINH1	-0.927016478247476	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000149428.14	HYOU1	-0.947434075406387	not_quantified	membrane	nontarget_membrane
+ENSG00000149483.7	TMEM138	0.337346464557324	not_quantified	membrane	nontarget_membrane
+ENSG00000149485.12	FADS1	-0.148026304103976	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000149541.5	B3GAT3	0.133208904890695	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000149809.10	TM7SF2	-0.0739558274304473	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000150093.14	ITGB1	-0.492897756925851	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000150403.13	TMCO3	-0.51272086213684	not_quantified	membrane	membrane_tc<1.66
+ENSG00000150687.7	PRSS23	-1.59461163844779	down_tumor	membrane	nontarget_membrane
+ENSG00000151233.6	GXYLT1	1.31781095225028	up_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000151348.9	EXT2	-0.528147974545524	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000151353.10	TMEM18	0.69401051676778	not_quantified	membrane	membrane_tc<1.66
+ENSG00000151366.8	NDUFC2	-0.140116634055809	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000151665.8	PIGF	-0.273902589051983	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000152127.4	MGAT5	0.0851524233409631	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000152291.9	TGOLN2	0.833612139697499	not_quantified	membrane	membrane_tc<1.66
+ENSG00000152558.10	TMEM123	-1.35347742118174	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000152661.7	GJA1	-0.576425644626528	not_quantified	membrane	membrane_tc<1.66
+ENSG00000152683.10	SLC30A6	-0.860287959384344	not_quantified	membrane	nontarget_membrane
+ENSG00000152700.9	SAR1B	-0.747349734061727	not_quantified	membrane	membrane_tc<1.66
+ENSG00000152894.10	PTPRK	-0.794492329735146	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000152952.7	PLOD2	-1.24052112363876	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000152990.9	GPR125	0.043166663393264	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000153066.8	TXNDC11	-0.95223088618648	not_quantified	membrane	membrane_tc<1.66
+ENSG00000153162.8	BMP6	-1.76786479125237	down_tumor	membrane	membrane_tc<1.66
+ENSG00000153395.5	LPCAT1	-0.596706715740776	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000153898.8	MCOLN2	1.84406796822394	up_tumor	membrane	membrane_tc<1.66
+ENSG00000153936.12	HS2ST1	-0.898157071897854	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000153956.11	CACNA2D1	0.557965275728784	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000154305.12	MIA3	-0.122741697470559	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000154889.12	MPPE1	-0.147185010741065	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000154978.8	VOPP1	-0.275418376599908	not_quantified	membrane	nontarget_membrane
+ENSG00000155254.8	MARVELD1	-0.779286963289989	not_quantified	membrane	nontarget_membrane
+ENSG00000155256.13	ZFYVE27	-0.866488501461041	not_quantified	membrane	membrane_tc<1.66
+ENSG00000155304.4	HSPA13	-0.85116569068695	not_quantified	membrane	membrane_tc<1.66
+ENSG00000155380.7	SLC16A1	-0.555724885234476	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000155660.6	PDIA4	-0.898453820197096	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000155755.14	TMEM237	-0.376549385030158	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000155850.7	SLC26A2	1.43772902782565	up_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000155957.12	TMBIM4	-1.01820343419028	down_tumor	membrane	nontarget_membrane
+ENSG00000155984.10	TMEM185A	-0.431852973889138	not_quantified	membrane	membrane_tc<1.66
+ENSG00000156171.10	DRAM2	-1.35996354332824	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000156471.8	PTDSS1	-0.25669725659411	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000156599.6	ZDHHC5	-0.705279288543468	not_quantified	membrane	membrane_tc<1.66
+ENSG00000156642.12	NPTN	-0.550040488843055	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000156671.8	SAMD8	-0.193570991735367	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000156875.9	HIAT1	-0.809355319205727	not_quantified	membrane	membrane_tc<1.66
+ENSG00000157193.10	LRP8	0.0322944846276655	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000157224.11	CLDN12	-1.04971097773608	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000157593.12	SLC35B2	-0.331485388653977	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000157600.7	TMEM164	-0.576463911145488	not_quantified	membrane	nontarget_membrane
+ENSG00000157637.8	SLC38A10	-0.730713914378416	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000157800.13	SLC37A3	-0.451044945495326	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000157837.11	SPPL3	-0.0701925096338892	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000157916.14	RER1	-0.660509450414288	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000158089.10	GALNT14	2.06688680771494	up_tumor	membrane	membrane_tc<1.66
+ENSG00000158201.5	ABHD3	-0.82585210411134	not_quantified	membrane	membrane_tc<1.66
+ENSG00000158457.4	TSPAN33	-0.244824835047476	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000158470.5	B4GALT5	-0.267588609150591	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000158604.10	TMED4	-0.482586813344189	not_quantified	membrane	nontarget_membrane
+ENSG00000158615.8	PPP1R15B	-0.600951177903583	not_quantified	membrane	nontarget_membrane
+ENSG00000158669.7	AGPAT6	-0.0149402474044328	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000158747.9	NBL1	-0.506489810636813	not_quantified	membrane	nontarget_membrane
+ENSG00000158769.13	F11R	0.296377118940014	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000158850.10	B4GALT3	-0.0479116576667519	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000159063.8	ALG8	-0.4919207541118	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000159322.13	ADPGK	-0.107458956879038	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000159348.8	CYB5R1	-0.388428435630932	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000159363.13	ATP13A2	-0.727117076398696	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000159461.10	AMFR	-0.623505509502674	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000160216.14	AGPAT3	-0.331172647083304	not_quantified	membrane	membrane_tc<1.66
+ENSG00000160404.13	TOR2A	-0.540790761660555	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000160446.14	ZDHHC12	-0.547090575437792	not_quantified	membrane	membrane_tc<1.66
+ENSG00000160606.6	TLCD1	0.16760977373145	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000160613.8	PCSK7	1.5199782873406	up_tumor	membrane	nontarget_membrane
+ENSG00000160767.16	FAM189B	1.31979001625679	up_tumor	membrane	nontarget_membrane
+ENSG00000160932.6	LY6E	-0.31479759336749	not_quantified	membrane	nontarget_membrane
+ENSG00000161091.8	MFSD12	0.0804982064247077	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000161638.6	ITGA5	-0.742036314959414	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000161671.12	EMC10	-0.492211994094375	not_quantified	membrane	nontarget_membrane
+ENSG00000161904.7	LEMD2	-0.291516600802973	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000161921.10	CXCL16	-0.685144787639285	not_quantified	membrane	membrane_tc<1.66
+ENSG00000162073.9	PAQR4	-0.733253213466497	not_quantified	membrane	membrane_tc<1.66
+ENSG00000162144.5	CYB561A3	0.460853525780235	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000162298.12	SYVN1	-1.15174581068494	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000162337.7	LRP5	-0.836616746234124	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000162430.12	SEPN1	-0.376712789105203	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000162496.4	DHRS3	-1.39864828539833	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000162512.11	SDC3	-0.1834024538928	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000162604.8	TM2D1	-0.148991596022923	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000162694.9	EXTL2	-0.836503349093902	not_quantified	membrane	nontarget_membrane
+ENSG00000162729.9	IGSF8	-0.405960528653229	not_quantified	membrane	nontarget_membrane
+ENSG00000162736.11	NCSTN	-1.04073673494719	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000162769.8	FLVCR1	1.02758207737357	up_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000162878.8	PKDCC	-0.317238395157707	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000163069.8	SGCB	-0.64015334119453	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000163162.4	RNF149	-0.0257013212026171	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000163291.10	PAQR3	-0.799704277209414	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000163399.11	ATP1A1	-0.959448047698784	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000163430.5	FSTL1	-0.401119728383133	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000163463.7	KRTCAP2	-0.285451553546459	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000163479.9	SSR2	-0.65837276848574	not_quantified	membrane	membrane_tc<1.66
+ENSG00000163527.5	STT3B	-1.13318434242621	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000163703.13	CRELD1	-1.06779375204669	down_tumor	membrane	nontarget_membrane
+ENSG00000163710.3	PCOLCE2	-0.217816495666613	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000163870.10	TPRA1	0.0726292694403244	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000163900.6	TMEM41A	0.884432855942794	not_quantified	membrane	nontarget_membrane
+ENSG00000163902.7	RPN1	-0.569498122145174	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000163933.5	RFT1	-0.270713368959143	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000163956.6	LRPAP1	-0.50837321200979	not_quantified	membrane	membrane_tc<1.66
+ENSG00000164040.12	PGRMC2	-0.897088298863559	not_quantified	membrane	membrane_tc<1.66
+ENSG00000164081.8	TEX264	-0.909127652106022	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000164180.9	TMEM161B	-0.362792841729613	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000164181.9	ELOVL7	-0.214477602971089	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000164251.4	F2RL1	-0.313606438458756	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000164291.12	ARSK	0.209236358933292	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000164294.9	GPX8	-0.708318402318983	not_quantified	membrane	nontarget_membrane
+ENSG00000164414.12	SLC35A1	-1.35455591795536	down_tumor	membrane	membrane_tc<1.66
+ENSG00000164647.4	STEAP1	-1.19793715340024	down_tumor	membrane	nontarget_membrane
+ENSG00000164733.16	CTSB	0.0839633625409796	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000164828.13	SUN1	-0.510301298390842	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000164889.8	SLC4A2	0.211381409236528	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000164930.7	FZD6	-1.12062469682553	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000165152.4	TMEM246	-1.31579719814291	down_tumor	membrane	nontarget_membrane
+ENSG00000165282.9	PIGO	-0.530034732683094	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000165474.5	GJB2	-2.37328173827465	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000165476.8	REEP3	-0.99694638324807	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000165650.7	PDZD8	-0.39640181829042	not_quantified	membrane	membrane_tc<1.66
+ENSG00000165661.11	QSOX2	0.00515209868200425	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000165948.6	IFI27L1	-0.348506251793834	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000165996.9	PTPLA	-0.281692804194657	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000166086.8	JAM3	3.55442839762005	up_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000166130.10	IKBIP	0.199922413939753	not_quantified	membrane	nontarget_membrane
+ENSG00000166224.12	SGPL1	-0.714829396746566	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000166340.10	TPP1	-0.907496907470905	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000166471.6	TMEM41B	-0.747865028283353	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000166479.5	TMX3	-0.595484177416308	not_quantified	membrane	nontarget_membrane
+ENSG00000166507.12	NDST2	-0.39345187742068	not_quantified	membrane	nontarget_membrane
+ENSG00000166557.8	TMED3	-0.0164458475227909	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000166562.4	SEC11C	0.288126464023294	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000166598.8	HSP90B1	-0.198552950508871	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000166619.8	BLCAP	-0.409458984076016	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000166710.13	B2M	-0.757582151041763	not_quantified	membrane	membrane_tc<1.66
+ENSG00000166734.14	CASC4	0.0529516851811715	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000166794.4	PPIB	-0.572529920062905	not_quantified	membrane	membrane_tc<1.66
+ENSG00000166822.8	TMEM170A	-0.124004283617055	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000166881.5	TMEM194A	-0.353099027476784	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000166997.3	CNPY4	0.642114999877747	not_quantified	membrane	nontarget_membrane
+ENSG00000167004.8	PDIA3	-0.962656313606675	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000167114.8	SLC27A4	-0.251311462760771	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000167123.14	CERCAM	0.685232619946386	not_quantified	membrane	membrane_tc<1.66
+ENSG00000167130.13	DOLPP1	-0.598982651856775	not_quantified	membrane	nontarget_membrane
+ENSG00000167323.5	STIM1	-0.495298501000616	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000167397.10	VKORC1	-0.445650822331194	not_quantified	membrane	membrane_tc<1.66
+ENSG00000167536.9	DHRS13	-0.28217587951344	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000167543.11	TP53I13	0.324464883449973	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000167642.8	SPINT2	-0.775934280577546	not_quantified	membrane	membrane_tc<1.66
+ENSG00000167645.12	YIF1B	-0.173163149812234	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000167695.10	FAM57A	-0.864632240996582	not_quantified	membrane	nontarget_membrane
+ENSG00000167700.4	MFSD3	-0.636815337338008	not_quantified	membrane	membrane_tc<1.66
+ENSG00000167775.6	CD320	0.621107863490013	not_quantified	membrane	membrane_tc<1.66
+ENSG00000167904.10	TMEM68	0.362327390072844	not_quantified	membrane	nontarget_membrane
+ENSG00000167925.11	GHDC	-1.02369290300606	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000167930.11	ITFG3	-1.34862187866492	down_tumor	membrane	nontarget_membrane
+ENSG00000167972.9	ABCA3	-0.930952738459799	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000168000.10	BSCL2	0.178068098445751	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000168003.12	SLC3A2	-0.130267256894109	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000168216.6	LMBRD1	-1.46138441937021	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000168282.4	MGAT2	-0.948164443114794	not_quantified	membrane	membrane_tc<1.66
+ENSG00000168394.9	TAP1	0.323552002394286	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000168476.7	REEP4	-0.692116714297063	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000168528.7	SERINC2	-1.39459112861539	down_tumor	membrane	nontarget_membrane
+ENSG00000168569.7	TMEM223	-0.163909396322115	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000168575.5	SLC20A2	-0.536799298954911	not_quantified	membrane	membrane_tc<1.66
+ENSG00000168591.11	TMUB2	0.196248428798144	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000168615.7	ADAM9	-0.481580797296514	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000168701.14	TMEM208	-0.648399302369235	not_quantified	membrane	membrane_tc<1.66
+ENSG00000168763.11	CNNM3	-0.161850240018895	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000168917.8	SLC35G2	0.620967170307046	not_quantified	membrane	nontarget_membrane
+ENSG00000168936.6	TMEM129	-1.00048599074855	down_tumor	membrane	nontarget_membrane
+ENSG00000168938.5	PPIC	-0.592739336678201	not_quantified	membrane	membrane_tc<1.66
+ENSG00000169105.6	CHST14	-0.346635728636327	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000169223.10	LMAN2	-0.0638794821875679	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000169359.9	SLC33A1	-0.358500485475636	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000169439.7	SDC2	-0.399189521349166	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000169446.4	MMGT1	-0.988178999420347	not_quantified	membrane	membrane_tc<1.66
+ENSG00000169490.12	TM2D2	-0.244546412010813	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000169682.13	SPNS1	0.318018184492532	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000169684.9	CHRNA5	1.00383701564936	up_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000169692.8	AGPAT2	-1.2147503723183	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000169814.8	BTD	-1.38302670085741	down_tumor	membrane	membrane_tc<1.66
+ENSG00000169826.6	CSGALNACT2	-0.352136996991319	not_quantified	membrane	membrane_tc<1.66
+ENSG00000169855.15	ROBO1	0.223490659032286	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000169919.12	GUSB	-0.573410658413603	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000170017.8	ALCAM	-1.20772205136206	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000170088.9	TMEM192	1.18819423219466	up_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000170113.11	NIPA1	-0.439155188854585	not_quantified	membrane	nontarget_membrane
+ENSG00000170266.11	GLB1	-1.20950771563103	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000170275.10	CRTAP	-0.567921595290587	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000170293.4	CMTM8	-0.666123289468938	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000170348.4	TMED10	-1.30128117793458	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000170412.12	GPRC5C	-0.21515123324134	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000170425.3	ADORA2B	0.327106861439982	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000170464.5	DNAJC18	1.71568216495968	up_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000170522.5	ELOVL6	-0.823770241834118	not_quantified	membrane	membrane_tc<1.66
+ENSG00000170540.10	ARL6IP1	-0.528029606919992	not_quantified	membrane	nontarget_membrane
+ENSG00000170558.4	CDH2	-3.02524440350333	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000170571.7	EMB	1.88648870219567	up_tumor	membrane	membrane_tc<1.66
+ENSG00000170876.7	TMEM43	-0.974443158387086	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000170881.4	RNF139	-1.01555977195981	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000171135.10	JAGN1	-0.612080687094263	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000171155.7	C1GALT1C1	-1.27948835717337	down_tumor	membrane	membrane_tc<1.66
+ENSG00000171208.5	NETO2	-0.178365217960893	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000171246.5	NPTX1	1.41547606864139	up_tumor	membrane	membrane_tc<1.66
+ENSG00000171298.8	GAA	-0.087734974284521	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000171302.12	CANT1	-0.604790861742853	not_quantified	membrane	membrane_tc<1.66
+ENSG00000171492.10	LRRC8D	-0.376340988009494	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000171603.12	CLSTN1	-0.900274044984462	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000171867.12	PRNP	-0.568944107037259	not_quantified	membrane	nontarget_membrane
+ENSG00000172037.9	LAMB2	-0.906480680374415	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000172057.5	ORMDL3	-0.0644631924683115	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000172269.12	DPAGT1	-1.00602286038761	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000172270.14	BSG	-1.09607149611702	down_tumor	membrane	membrane_tc<1.66
+ENSG00000172292.10	CERS6	-0.410251708843016	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000172889.11	EGFL7	-0.00926301789592372	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000172893.11	DHCR7	-0.971370768308421	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000172954.9	LCLAT1	0.0393639991275282	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000173402.7	DAG1	-0.808200456078824	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000173409.9	ARV1	-0.918661511036008	not_quantified	membrane	membrane_tc<1.66
+ENSG00000173456.4	RNF26	-0.528423750566344	not_quantified	membrane	membrane_tc<1.66
+ENSG00000173486.8	FKBP2	-0.195498012922687	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000173530.5	TNFRSF10D	-0.148487501284753	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000173638.14	SLC19A1	-0.0778026457901052	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000173852.9	DPY19L1	-0.987526477213287	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000173905.4	GOLIM4	-0.653317188144378	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000173918.10	C1QTNF1	-0.0893471025962587	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000173950.11	XXYLT1	0.364587659768107	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000174106.2	LEMD3	-0.371324418855286	not_quantified	membrane	membrane_tc<1.66
+ENSG00000174132.8	FAM174A	-0.909193951195002	not_quantified	membrane	nontarget_membrane
+ENSG00000174227.11	PIGG	-0.325552071774095	not_quantified	membrane	membrane_tc<1.66
+ENSG00000174233.7	ADCY6	-0.879311968573613	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000174437.12	ATP2A2	-0.278053976981362	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000174669.7	SLC29A2	-0.273076255230875	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000174684.6	B3GNT1	-0.300304043615242	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000174851.10	YIF1A	-1.12208740923719	down_tumor	membrane	membrane_tc<1.66
+ENSG00000174915.7	PTDSS2	-0.471898540446267	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000175283.7	DOLK	-0.252038708004031	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000176022.3	B3GALT6	-0.284490753207336	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000176142.8	TMEM39A	-1.10076420456912	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000176454.9	LPCAT4	-0.931076003876334	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000176915.10	ANKLE2	0.288970655431209	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000177042.10	TMEM80	-1.03044980260023	down_tumor	membrane	membrane_tc<1.66
+ENSG00000177054.9	ZDHHC13	-0.634790099681109	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000177058.7	SLC38A9	-0.34594003970108	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000177119.11	ANO6	-0.729746797684252	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000177239.10	MAN1B1	-0.186000175491346	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000177628.11	GBA	-0.138345077594228	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000177674.11	AGTRAP	-0.591258819587809	not_quantified	membrane	membrane_tc<1.66
+ENSG00000177697.13	CD151	-0.806695289499124	not_quantified	membrane	membrane_tc<1.66
+ENSG00000177706.8	FAM20C	-0.0803621954556574	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000177728.10	KIAA0195	0.0488418761005241	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000177830.13	CHID1	-0.395699637245951	not_quantified	membrane	membrane_tc<1.66
+ENSG00000177917.6	ARL6IP6	-1.14402369602578	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000178202.8	KDELC2	-0.0844786836987519	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000178467.13	P4HTM	-1.14210058344243	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000178719.12	GRINA	-0.418101303738991	not_quantified	membrane	nontarget_membrane
+ENSG00000178904.14	DPY19L3	-0.727236027509778	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000178927.12	C17orf62	-0.0177137420379953	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000179085.7	DPM3	-0.150819842510782	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000179163.11	FUCA1	-0.729729048748261	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000179218.9	CALR	-0.723377255425219	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000179241.8	LDLRAD3	-0.168837109786263	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000179344.12	HLA-DQB1	-0.917788966225773	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000179387.5	ELMOD2	-0.855504028034738	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000179431.5	FJX1	1.38693660890788	up_tumor	membrane	nontarget_membrane
+ENSG00000179820.11	MYADM	0.246043696056481	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000180398.7	MCFD2	0.0768456268950252	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000180776.11	ZDHHC20	0.497422613039581	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000180879.9	SSR4	-1.05748614774065	down_tumor	membrane	nontarget_membrane
+ENSG00000181027.6	FKRP	0.211683875479274	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000181104.6	F2R	0.657437788317605	not_quantified	membrane	nontarget_membrane
+ENSG00000181523.8	SGSH	-0.776024551730747	not_quantified	membrane	nontarget_membrane
+ENSG00000181704.7	YIPF6	-0.115483964022829	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000182022.13	CHST15	-1.22139155849814	down_tumor	membrane	nontarget_membrane
+ENSG00000182087.8	TMEM259	-0.097827989293119	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000182197.6	EXT1	-0.784323582944109	not_quantified	membrane	membrane_tc<1.66
+ENSG00000182220.9	ATP6AP2	-1.19690986709949	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000182240.11	BACE2	-0.993028535129778	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000182534.9	MXRA7	0.222064772567877	not_quantified	membrane	nontarget_membrane
+ENSG00000182544.8	MFSD5	-0.396949777635844	not_quantified	membrane	nontarget_membrane
+ENSG00000182858.9	ALG12	-0.845237943594987	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000182934.7	SRPR	-0.818508754283041	not_quantified	membrane	membrane_tc<1.66
+ENSG00000182963.5	GJC1	2.31793012444002	up_tumor	membrane	nontarget_membrane
+ENSG00000182985.12	CADM1	-0.256026116474157	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000183255.7	PTTG1IP	-1.01452628801348	down_tumor	membrane	membrane_tc<1.66
+ENSG00000183291.11	SEP15	-0.938597494618676	not_quantified	membrane	membrane_tc<1.66
+ENSG00000183722.7	LHFP	0.354168590022147	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000183726.6	TMEM50A	-0.866891281019903	not_quantified	membrane	nontarget_membrane
+ENSG00000183853.13	KIRREL	0.564211982783535	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000184164.10	CRELD2	-0.608176820062752	not_quantified	membrane	membrane_tc<1.66
+ENSG00000184232.4	OAF	0.192687028918818	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000184277.8	TM2D3	0.21523335871842	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000184840.7	TMED9	-0.336827339460128	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000184916.4	JAG2	-0.0803734117285403	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000184992.10	BRI3BP	1.06856195872806	up_tumor	membrane	membrane_tc<1.66
+ENSG00000185000.5	DGAT1	-1.33541184857927	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000185090.10	MANEAL	-0.34576338499902	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000185115.4	NDNL2	-0.170642373016544	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000185127.5	C6orf120	-0.925993867592348	not_quantified	membrane	membrane_tc<1.66
+ENSG00000185164.10	NOMO2	-0.784008699618049	not_quantified	membrane	membrane_tc<1.66
+ENSG00000185344.9	ATP6V0A2	0.64083763114727	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000185432.10	METTL7A	1.99794677436091	up_tumor	membrane	nontarget_membrane
+ENSG00000185475.4	TMEM179B	-0.341618445870325	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000185624.10	P4HB	-0.948421454639734	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000185803.4	SLC52A2	-0.404003840297231	not_quantified	membrane	nontarget_membrane
+ENSG00000185825.11	BCAP31	-0.396821746046843	not_quantified	membrane	nontarget_membrane
+ENSG00000185883.6	ATP6V0C	-0.0224173760486297	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000185885.11	IFITM1	-0.944822369318489	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000185896.9	LAMP1	-0.253648696226869	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000186205.8	MARC1	0.165628582235184	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000186283.9	TOR3A	0.660547166208212	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000186480.8	INSIG1	-1.13531756239619	down_tumor	membrane	nontarget_membrane
+ENSG00000186501.10	TMEM222	-0.765165957993258	not_quantified	membrane	membrane_tc<1.66
+ENSG00000186866.12	POFUT2	-0.528256932767875	not_quantified	membrane	membrane_tc<1.66
+ENSG00000187498.10	COL4A1	-0.364314922478605	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000188157.9	AGRN	-0.602131413826774	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000188603.12	CLN3	-0.220102376765955	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000188706.8	ZDHHC9	-1.33726170470235	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000188807.8	TMEM201	-0.0789633151557035	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000188811.8	NHLRC3	-0.0310231539148637	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000189050.10	RNFT1	-0.223498906142604	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000196352.9	CD55	-2.24431959156407	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000196411.5	EPHB4	-0.281045876621972	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000196547.10	MAN2A2	-0.19438840839882	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000196562.10	SULF2	-0.96386538838209	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000196576.10	PLXNB2	-0.928598504641149	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000196584.2	XRCC2	0.751775424867369	not_quantified	membrane	nontarget_membrane
+ENSG00000196715.5	VKORC1L1	-0.499287706036972	not_quantified	membrane	nontarget_membrane
+ENSG00000196743.4	GM2A	0.0162674980360473	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000196776.10	CD47	-0.787016370516981	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000196937.6	FAM3C	-1.31317719217218	down_tumor	membrane	nontarget_membrane
+ENSG00000196950.9	SLC39A10	-1.40306341309791	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000197081.8	IGF2R	-0.166531831225923	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000197136.4	PCNXL3	-0.388050081655064	not_quantified	membrane	membrane_tc<1.66
+ENSG00000197217.8	ENTPD4	-0.932508823506986	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000197375.8	SLC22A5	-0.363366646657545	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000197563.5	PIGN	-0.94968131913147	not_quantified	membrane	membrane_tc<1.66
+ENSG00000197586.8	ENTPD6	-0.360061766779482	not_quantified	membrane	membrane_tc<1.66
+ENSG00000197746.9	PSAP	-0.296676794099863	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000197822.6	OCLN	-1.08481313096847	down_tumor	membrane	membrane_tc<1.66
+ENSG00000197858.6	GPAA1	-0.503499510320792	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000197930.8	ERO1L	-1.65190690972919	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000197965.7	MPZL1	-0.710728948991534	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000197977.3	ELOVL2	0.114667871396453	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000198171.8	DDRGK1	-1.21676824198382	down_tumor	membrane	membrane_tc<1.66
+ENSG00000198189.6	HSD17B11	-0.935514941005235	not_quantified	membrane	nontarget_membrane
+ENSG00000198363.11	ASPH	0.361738330952744	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000198663.12	C6orf89	-0.483442839988341	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000198695.2	MT-ND6	0.921776529730396	not_quantified	membrane	nontarget_membrane
+ENSG00000198712.1	MT-CO2	0.627978458506381	not_quantified	membrane	nontarget_membrane
+ENSG00000198715.7	C1orf85	0.0565673626985291	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000198727.2	MT-CYB	0.109126640155978	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000198732.6	SMOC1	-1.1407804181319	down_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000198763.3	MT-ND2	0.707558717343078	not_quantified	membrane	nontarget_membrane
+ENSG00000198786.2	MT-ND5	0.139099234761078	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000198792.8	TMEM184B	-0.419653409718449	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000198804.2	MT-CO1	-0.162091758763407	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000198818.5	SFT2D1	-0.635033778912202	not_quantified	membrane	membrane_tc<1.66
+ENSG00000198832.6	SELM	0.766092788419962	not_quantified	membrane	nontarget_membrane
+ENSG00000198840.2	MT-ND3	1.26295678249319	up_tumor	membrane	nontarget_membrane
+ENSG00000198843.8	SELT	-0.214625479286313	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000198886.2	MT-ND4	-0.0503648338143703	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000198888.2	MT-ND1	0.484888286612753	not_quantified	membrane	nontarget_membrane
+ENSG00000198899.2	MT-ATP6	0.253226692190673	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000198911.7	SREBF2	-0.762132663846352	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000198925.6	ATG9A	-0.245018324294227	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000198938.2	MT-CO3	0.0708369019160261	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000198951.7	NAGA	-0.871227729478971	not_quantified	membrane	membrane_tc<1.66
+ENSG00000204070.5	SYS1	-0.489165373416295	not_quantified	membrane	nontarget_membrane
+ENSG00000204160.7	ZDHHC18	-0.26039923254895	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000204267.9	TAP2	0.316516886618372	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000204310.6	AGPAT1	-0.419239992153536	not_quantified	membrane	nontarget_membrane
+ENSG00000204386.6	NEU1	-0.269067819414648	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000204427.7	ABHD16A	-0.990512329187185	not_quantified	membrane	nontarget_membrane
+ENSG00000204516.5	MICB	0.949794173504723	not_quantified	membrane	nontarget_membrane
+ENSG00000204520.8	MICA	-0.222129880058596	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000204525.10	HLA-C	-0.616876807326289	not_quantified	membrane	nontarget_membrane
+ENSG00000204580.7	DDR1	-1.26186779855082	down_tumor	membrane	nontarget_membrane
+ENSG00000204592.5	HLA-E	-0.827491101341918	not_quantified	membrane	nontarget_membrane
+ENSG00000204642.9	HLA-F	1.69150352424368	up_tumor	membrane	nontarget_membrane
+ENSG00000204852.11	TCTN1	-0.261155854820017	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000205060.6	SLC35B4	0.883386681448662	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000205155.3	PSENEN	-0.712677782174015	not_quantified	membrane	membrane_tc<1.66
+ENSG00000205213.9	LGR4	-0.535961728911583	not_quantified	membrane	membrane_tc<1.66
+ENSG00000206503.7	HLA-A	-0.910900337419682	not_quantified	membrane	nontarget_membrane
+ENSG00000206527.5	PTPLB	-0.280063429929272	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000211445.7	GPX3	-0.866186576356671	not_quantified	membrane	nontarget_membrane
+ENSG00000212907.2	MT-ND4L	0.448848694608357	not_quantified	membrane	nontarget_membrane
+ENSG00000213064.5	SFT2D2	-1.07588489371562	down_tumor	membrane	membrane_tc<1.66
+ENSG00000213593.5	TMX2	-0.210395433389055	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000213614.5	HEXA	-0.901637201249253	not_quantified	membrane	nontarget_membrane
+ENSG00000213625.4	LEPROT	-0.57013511924184	not_quantified	membrane	nontarget_membrane
+ENSG00000213676.6	ATF6B	0.0787661585467409	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000213853.5	EMP2	0.627226753525848	not_quantified	membrane	nontarget_membrane
+ENSG00000214021.11	TTLL3	-0.335187976832307	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000214160.5	ALG3	-0.769104516834654	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000216490.3	IFI30	0.0875888506855602	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000219200.6	RNASEK	0.267210427884005	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000221988.8	PPT2	0.0655816041414261	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000226479.3	TMEM185B	0.020289076707567	unchanged_tumor	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000227500.5	SCAMP4	0.349837613361993	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000228253.1	MT-ATP8	1.15760177579096	up_tumor	membrane	nontarget_membrane
+ENSG00000231925.7	TAPBP	-0.293961339468303	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000234745.5	HLA-B	-0.430342689512223	unchanged_tumor	membrane	membrane_tc<1.66
+ENSG00000239264.4	TXNDC5	-0.872054190752261	not_quantified	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000240849.6	TMEM189	-0.175260843158598	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000240857.1	RDH14	-0.296517571096359	unchanged_tumor	membrane	nontarget_membrane
+ENSG00000242574.4	HLA-DMB	-1.60876198490909	down_tumor	membrane	nontarget_membrane
+ENSG00000243279.2	PRAF2	-0.557857898577134	not_quantified	membrane	nontarget_membrane
+ENSG00000243449.2	C4orf48	1.80984253774958	up_tumor	membrane	nontarget_membrane
+ENSG00000243646.4	IL10RB	-0.243290964005989	unchanged_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000243749.1	ZMYM6NB	-0.67809440456314	not_quantified	membrane	nontarget_membrane
+ENSG00000244038.5	DDOST	-0.637228316216659	not_quantified	membrane	membrane_tc>5.56 & tc<65.26
+ENSG00000250722.1	SEPP1	-1.31442423477155	down_tumor	membrane	membrane_tc>1.66 & tc<5.56
+ENSG00000257727.1	CNPY2	-0.0676098729741998	unchanged_tumor	membrane	membrane_tc<1.66
+ENSGR0000002586.13	CD99	-0.943622704061638	not_quantified	membrane	nontarget_membrane

@@ -1,6 +1,4 @@
-git_dir<-"E:/work/hdlbp/git_rstudio/hdlbp/"
-setwd(paste0(git_dir, "/data"))
-dat<-read.delim("proteinGroups - Exp150+144.txt", header=T)
+dat<-read.delim("data/proteinGroups - Exp150+144.txt", header=T)
 library(ggplot2)
 
 use<-dat[,c(2,7,11,12,53:57,65,66,42:46)]
@@ -42,6 +40,8 @@ use$up1<-ifelse( (use$enr1>=thr& log2(use$lfq.hdlbp1)>=27) | (use$lfq.ctrl2==0 &
 use$up2<-ifelse( (use$enr2>=thr & log2(use$lfq.hdlbp2)>=27) | (use$lfq.ctrl2==0 & log2(use$lfq.hdlbp2)>=27),"enr2", NA)
 use$up3<-ifelse( (use$enr3>=thr & log2(use$lfq.hdlbp3)>=27) | (use$lfq.ctrl3==0 & log2(use$lfq.hdlbp3)>=27),"enr3", NA)
 
+#figS4e
+
 ggplot(subset(use, Razor...unique.peptides>=3), aes(log10(lfq.hdlbp1), log10(lfq.ctrl2), colour=up1))+geom_point(shape=1)
 ggplot(subset(use, Razor...unique.peptides>=3), aes(log10(lfq.hdlbp2), log10(lfq.ctrl2), colour=up2))+geom_point(shape=1)
 ggplot(subset(use, Razor...unique.peptides>=3), aes(log10(lfq.hdlbp3), log10(lfq.ctrl3), colour=up3))+geom_point(shape=1)
@@ -76,9 +76,14 @@ int<-int[order(int$mean_lfq, decreasing = T),]
 top<-int[1:60,]
 ggplot(top,aes(factor(gene, levels=top$gene[order(top$mean_lfq, decreasing = F)]), log10(mean_lfq)))+geom_bar(stat = "identity")+coord_flip()+xlab("")
 ggplot(top,aes(factor(gene, levels=top$gene[order(top$mean_lfq, decreasing = F)]), 1))+geom_point(aes(colour=log10(mean_lfq)))
+
+#fig4d
 ggplot(top)+geom_point(aes(factor(gene, levels=top$gene[order(top$mean_lfq, decreasing = F)]), 1, colour=log10(mean_lfq), size=log2(imp_enr)))+coord_flip()+xlab("")+scale_colour_gradient(low="dodgerblue2", high="orange2",limits=c(6,13))+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         panel.background = element_blank())
+
+
+
 
 int<-int[order(int$mean_enr, decreasing = T),]
 top<-int[1:60,]
@@ -121,14 +126,15 @@ enr1<-subset(use, up1=="enr1")
 enr2<-subset(use, up2=="enr2")
 enr3<-subset(use, up3=="enr3")
 
+#figS4g
 library(VennDiagram)
-
+dev.off()
 draw.triple.venn(nrow(enr1), nrow(enr2), nrow(enr3),
                  nrow(merge(enr1, enr2, by="gene")),  nrow(merge(enr2, enr3, by="gene")), nrow(merge(enr1, enr3, by="gene")),
                            nrow(merge(enr3, merge(enr1, enr2, by="gene"), by="gene")), euler.d=T,scaled=T, category=c("replicate 1", "replicate 2", "replicate 3"))
 
 library(readxl)
-ging<-read_xlsx("bioid_published_gingras.xlsx")
+ging<-read_xlsx("data/bioid_published_gingras.xlsx")
 ging<-as.data.frame(ging)
 colnames(ging)[4]<-"gene"
 nrow(merge(ging, int, by="gene"))
@@ -144,6 +150,7 @@ gingtop<-ging[1:300,]
 
 nrow(merge(gingtop, int, by="gene"))
 
+dev.off()
 draw.pairwise.venn(nrow(int), nrow(gingtop), 
                  nrow(merge(gingtop, int, by="gene")),   euler.d=T,scaled=T, category=c("this study", "gingras"))
 
@@ -160,9 +167,9 @@ crap<-subset(crap, PROTID!="")
 crap<-subset(crap, !duplicated(PROTID))
 crap$PROTID<-gsub(";.*","",crap$PROTID)
 crap<-subset(crap, !duplicated(PROTID))
-write.table(crap,"hdlbp_crapome.txt", quote=F, sep="\t", row.names=F, col.names = T)
+# write.table(crap,"hdlbp_crapome.txt", quote=F, sep="\t", row.names=F, col.names = T)
 
-pro<-read.delim("hdlbp_prohits_input.txt", header=T)
+# pro<-read.delim("hdlbp_prohits_input.txt", header=T)
 # pro<-subset(pro, avgSPC>=6 & SP>0.95&FC_A>=2)
 # write.table(pro, "hdlbp_prohits_input_filtered.txt", quote=F, sep="\t", row.names=F, col.names = T)
 
