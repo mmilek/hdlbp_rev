@@ -1,6 +1,7 @@
 library(ggplot2)
 library(reshape2)
 library(corrplot)
+library(zoo)
 
 tc<-read.delim("data/reproducible.hdlbp.TCseq.bed", header=F)
 colnames(tc)<-c("transcript_id","tc_start","tc_stop","tc_num1","all_reads1","tc_num2","all_reads2","seq")
@@ -10,7 +11,6 @@ tsig_annot<-read.delim("data/tsig_annot.txt", header=T)
 dat<-merge(tc, tsig_annot, by="transcript_id", by.y="transcript")
 length(unique(dat$transcript_id))
 length(unique(dat$gene_id))
-
 
 norm<-colSums(dat[,c(4,6)], na.rm=T)
 
@@ -43,9 +43,6 @@ regionCounts$trans.norm.tc_num2<-rowSums(regionCounts[,c("cds.norm.tc_num2", "ut
 regionCounts$utr3_vs_cds1<-regionCounts$utr3.norm.tc_num1/regionCounts$cds.norm.tc_num1
 regionCounts$utr3_vs_cds2<-regionCounts$utr3.norm.tc_num2/regionCounts$cds.norm.tc_num2
 
-
-
-
 regionCounts<-merge(regionCounts, tsig_annot, by="gene_id")
 regionCounts$cds.norm.tc_num1.len<-regionCounts$cds.norm.tc_num1/regionCounts$l_cds*1e3
 regionCounts$cds.norm.tc_num2.len<-regionCounts$cds.norm.tc_num2/regionCounts$l_cds*1e3
@@ -59,12 +56,6 @@ regionCounts$trans.norm.tc_num2.len<-regionCounts$trans.norm.tc_num2/regionCount
 regionCounts$utr3_vs_cds1.norm<-regionCounts$utr3.norm.tc_num1.len/regionCounts$cds.norm.tc_num1.len
 regionCounts$utr3_vs_cds2.norm<-regionCounts$utr3.norm.tc_num2.len/regionCounts$cds.norm.tc_num2.len
 
-ggplot(regionCounts,aes(log2(cds.norm.tc_num1.len),log2(cds.norm.tc_num2.len), colour=localization_cat))+geom_point()
-ggplot(regionCounts,aes(log2(utr3.norm.tc_num1.len),log2(utr3.norm.tc_num2.len), colour=localization_cat))+geom_point()
-
-ggplot(regionCounts, aes(log2(utr3.norm.tc_num2.len/cds.norm.tc_num2.len), log2(trans.norm.tc_num1.len), colour=localization_cat))+geom_point()
-
-
 regionCounts$trans.norm.tc.mean<-rowMeans(regionCounts[,c("trans.norm.tc_num1", "trans.norm.tc_num2")])
 regionCounts$trans.norm.tc.mean.exp<- ifelse(regionCounts$tpm_cutoff==0, NA, regionCounts$trans.norm.tc.mean/regionCounts$tpm_cutoff)
 
@@ -73,8 +64,7 @@ regionCounts$utr3.norm.tc.mean<-rowMeans(regionCounts[,c("utr3.norm.tc_num1", "u
 regionCounts$utr3_vs_cds.mean<-rowMeans(regionCounts[,c("utr3_vs_cds1", "utr3_vs_cds2")])
 regionCounts$utr3_vs_cds.norm.mean<-rowMeans(regionCounts[,c("utr3_vs_cds1.norm", "utr3_vs_cds2.norm")])
 
-
-
+#add parclip information per transcript
 mas<-read.delim("data/hdlbp_master_table_with_classes_uniq.txt", header=T)
 inf<-subset(mas, select=c("gene_id","Symbol",
                           "tc_transcript_norm_cat"))
@@ -91,6 +81,7 @@ ggplot(subset(regionCounts, !is.na(localization_cat) & tpm_cutoff>=10 & gene_bio
 ggplot(subset(regionCounts, !is.na(localization_cat) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"),
        aes(tc_transcript_norm_cat, -log2(utr3_vs_cds.norm.mean),fill=localization_cat))+geom_violin(scale="area",na.rm=T,position=position_dodge())+
   geom_boxplot(width=0.1,na.rm=T, position=position_dodge(width=0.9), outlier.shape = NA)+theme(axis.text.x = element_text(angle = 45, hjust = 1))+scale_fill_manual(values=c("dodgerblue2","orange3"))
+
 nrow(subset(regionCounts, tc_transcript_norm<0.3 & !is.na(utr3_vs_cds.norm.mean) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"&localization_cat=="membrane"))
 nrow(subset(regionCounts, tc_transcript_norm>0.3 &  tc_transcript_norm<1.39 & !is.na(utr3_vs_cds.norm.mean) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"&localization_cat=="membrane"))
 nrow(subset(regionCounts, tc_transcript_norm>1.39 & !is.na(utr3_vs_cds.norm.mean) & tpm_cutoff>=10 & gene_biotype=="protein_coding" & tc_transcript_norm_cat!="nontarget"&localization_cat=="membrane"))
@@ -104,7 +95,7 @@ sd<-subset(regionCounts, !is.na(localization_cat) & tpm_cutoff>=10 & gene_biotyp
 # write.table(sd, "source_data/fig2bc.txt", quote=F, sep="\t", row.names=F, col.names=T)
 
 
-#for the fig2a, get zeros for positional information (computationally intensive!)
+#for the fig2a, get zeros for positional information (this is computationally intensive)
 seqs<-dat[,c("transcript_id", "l_tr","l_utr5", "l_cds","l_utr3")]
 seqs$id<-paste0(seqs$transcript,"_",seqs$l_tr,"_",seqs$l_utr5, "_", seqs$l_cds,"_", seqs$l_utr3)
 seqs<-subset(seqs, !duplicated(id))
@@ -210,6 +201,9 @@ mel$scaled_tc_rpm<-ifelse(mel$region=="utr5" & mel$pos_from_start>150, NA, mel$s
 mel$scaled_tc_rpm<-ifelse(mel$region=="utr3" & mel$pos_from_start>800, NA, mel$scaled_tc_rpm)
 mel<-subset(mel, !is.na(scaled_tc_rpm))
 ggplot(mel, aes(pos_from_start,scaled_tc_rpm, colour=localization))+geom_line()+facet_wrap(~sample+region, scales = "free_x")
+# write.table(mel, "source_data/fig2a_start.txt", quote=F, sep="\t", row.names=F)
+
+#fig2a start
 ggplot(mel, aes(pos_from_start,scaled_tc_rpm, colour=localization))+geom_line(aes(y=rollmean(scaled_tc_rpm, 33,na.pad=T)))+facet_wrap(~sample+region, scales = "free_x")
 
 avg<-aggregate(cbind(frac.tc_num1, frac.tc_num2)~pos_from_stop+localization+region, data=locn, mean, na.rm=T)
@@ -219,9 +213,8 @@ mel$scaled_tc_rpm<-ifelse(mel$region=="utr5" & mel$pos_from_stop<(-150), NA, mel
 mel$scaled_tc_rpm<-ifelse(mel$region=="utr3" & mel$pos_from_stop<(-800), NA, mel$scaled_tc_rpm)
 mel<-subset(mel, !is.na(scaled_tc_rpm))
 ggplot(mel, aes(pos_from_stop,scaled_tc_rpm, colour=localization))+geom_line()+facet_wrap(~sample+region, scales = "free_x")
+
+#fig2a stop
 ggplot(mel, aes(pos_from_stop,scaled_tc_rpm, colour=localization))+geom_line(aes(y=rollmean(scaled_tc_rpm, 33,na.pad=T)))+facet_wrap(~sample+region, scales = "free_x")
 
-
-
-
-
+# write.table(mel, "source_data/fig2a_stop.txt", quote=F, sep="\t", row.names=F)

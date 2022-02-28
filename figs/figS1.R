@@ -1,21 +1,11 @@
-#figS1b figS1c
-
 library(ggplot2)
 library(reshape2)
 library(corrplot)
 library(DESeq2)
 
-dat<-read.delim("geo_processed_data/processed_data_rnaseq_fractionation.txt", header=T)
+#figS1b figS1c
 
-# setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/frac/")
-# # setwd("E:/work/hdlbp/frac/")
-# 
-# 
-# files<-list.files(getwd(), pattern="genes")
-# 
-# dat<-lapply(files, read.delim)
-# names(dat)<-gsub("\\..*","",files)
-# 
+dat<-read.delim("geo_processed_data/processed_data_rnaseq_fractionation.txt", header=T)
 
 tab<-subset(dat, select=c("gene_id", colnames(dat)[grepl("^[CMT]_293", colnames(dat))]))
 
@@ -27,7 +17,6 @@ corrplot(cor(tab), type="upper", method="color", addCoef.col = "white")
 
 # write.table(cor(tab), "source_data/figS1c.txt", quote=F, sep="\t", row.names=F)
 
-
 coldata<-data.frame(SampleID=colnames(tab),
                     Fraction=sub(";","_",gsub("_.*","",sub("_",";",colnames(tab)))),
                     Batch=substr(colnames(tab), nchar(colnames(tab)), nchar(colnames(tab))))
@@ -37,7 +26,6 @@ coldata<-apply(coldata,2,as.factor)
 dds<-DESeqDataSetFromMatrix(countData = round(tab),
                             colData = coldata, 
                             design = ~Batch+Fraction)
-
 
 vsd <- vst(dds, blind=FALSE)
 pcaData <- plotPCA(vsd, intgroup=c("Fraction", "Batch"), returnData=TRUE)
@@ -50,7 +38,6 @@ ggplot(pcaData, aes(PC1, PC2, color=Fraction, shape=Batch)) +
   ylab(paste0("PC2: ",percentVar[2],"% variance")) 
 
 # write.table(pcaData, "source_data/figS1b.txt", quote=F, sep="\t", row.names=F)
-
 
 #figS1f
 
@@ -84,7 +71,6 @@ ggplot(subset(dat, tpm_cutoff>=1 & localization_cat=="membrane" & Annotation=="p
        aes(log2(tc_CDS_norm), log2(tpm_cutoff), colour=localization_cat))+geom_point(shape=1, alpha=0.7)+
   scale_colour_manual(values=c("orange2"))+xlim(-10.5,8)+ylim(0,15)
 
-
 sd<-subset(dat, tpm_cutoff>=1 & !is.na(localization_cat)& Annotation=="protein_coding" & !is.na(tc_CDS_norm) & !is.na(tc_CDS), 
            select=c("gene_id", "Symbol","tc_CDS", "tc_CDS_norm", "tpm_cutoff", "localization_cat", "Annotation"))
 # write.table(sd, "source_data/figS1fg.txt", quote=F, sep="\t", row.names=F)
@@ -116,7 +102,6 @@ summary(subset(mel, region=="UTR3" & !is.na(par_clip_enrichment))$localization_c
 
 # write.table(mel, "source_data/figS1h.txt", quote=F, sep="\t", row.names=F, col.names=T)
 
-
 #figS1i
 
 ggplot(subset(dat, tpm_cutoff>=10 & Annotation=="protein_coding"),
@@ -128,5 +113,3 @@ sd<-subset(dat, tpm_cutoff>=10 & Annotation=="protein_coding" & !is.na(log2FoldC
            select=c("gene_id", "Symbol", "tpm_cutoff", "log2FoldChange.mem.cyt.293_1", "log2FoldChange.mem.cyt.293_2", "tc_CDS_norm"))
 
 # write.table(sd, "source_data/figS1i.txt", quote=F, sep="\t", row.names=F, col.names=T)
-
-

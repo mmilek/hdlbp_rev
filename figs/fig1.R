@@ -54,7 +54,6 @@ summary(subset(dat, tpm_cutoff>=10 &  gene_biotype=="protein_coding" & !is.na(lo
 sd<-subset(dat, tpm_cutoff>=10 &  gene_biotype=="protein_coding" & !is.na(log2FoldChange.mem.cyt.293) & tsig_new!="other", select=c("gene_id", "Symbol", "log2FoldChange.mem.cyt.293", "localization_cat", "tsig_new"))
 # write.table(sd, "source_data/fig1b.txt", quote=F, sep="\t", row.names=F, col.names=T)
 
-
 #fig1d bottom
 ggplot(subset(dat, !is.na(localization_cat)& gene_biotype=="protein_coding"),
        aes(log2(tc_CDS_norm), log2(tpm_cutoff), colour=localization_cat))+geom_point(shape=1, alpha=0.7)+
@@ -67,28 +66,23 @@ ggplot(subset(dat, !is.na(localization_cat)& gene_biotype=="protein_coding"),
 
 sd<-subset(dat, !is.na(localization_cat)& gene_biotype=="protein_coding" & !is.na(tc_CDS_norm) & !is.na(tpm_cutoff) , select=c("gene_id", "Symbol", "tc_CDS_norm", "tpm_cutoff", "localization_cat", "tsig_new"))
 # write.table(sd, "source_data/fig1d.txt", quote=F, sep="\t", row.names=F, col.names=T)
-ggplot(sd,
-       aes(log2(tc_CDS_norm), log2(tpm_cutoff), colour=localization_cat))+geom_point(shape=1, alpha=0.7)+
-  scale_colour_manual(values=c("dodgerblue4", "orange2"))
 
 #fig1e
 
+#n of targets_membrane
 nrow(subset(dat, tpm_cutoff>=10 & gene_biotype=="protein_coding" & !is.na(tc_transcript_norm) & localization_cat=="membrane"))
+#n of targets_cytosolic
 nrow(subset(dat, tpm_cutoff>=10 & gene_biotype=="protein_coding" & !is.na(tc_transcript_norm) & localization_cat=="cytosolic"))
-
+#n of nontargets_membrane
 nrow(subset(dat, tpm_cutoff>=10  & gene_biotype=="protein_coding"  & is.na(tc_transcript_norm) & localization_cat=="membrane"))
+#n of nontargets_cytosolic
 nrow(subset(dat, tpm_cutoff>=10  & gene_biotype=="protein_coding"  & is.na(tc_transcript_norm) & localization_cat=="cytosolic"))
 
-
 #fig1f
-ggplot(subset(dat, tpm_cutoff>=10 & tsig_new!="other"& tsig_new!="MitoEncoded"),
+ggplot(subset(dat, tpm_cutoff>=10 & tsig_new!="other"& tsig_new!="MitoEncoded" & !is.na(tc_CDS_norm)),
        aes(tsig_new,log2(tc_CDS_norm), fill=tsig_new))+geom_violin()+
   geom_boxplot(width=0.2, fill="white", outlier.shape = NA)+
   scale_fill_manual(values=c("dodgerblue4", "dodgerblue4","dodgerblue4","orange2", "darkred", "darkred","darkred"))+
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 summary(subset(dat, tpm_cutoff>=10 & tsig_new!="other"& tsig_new!="MitoEncoded" & !is.na(tc_CDS_norm))$tsig_new)
-
-
-
-
