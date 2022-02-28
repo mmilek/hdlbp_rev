@@ -1,7 +1,6 @@
 library(ggplot2)
 library(reshape2)
 
-
 #fig1a and fig1b
 
 #prepare data, correct for MitoCarta mRNAs
@@ -42,9 +41,6 @@ summary(subset(dat, tpm_cutoff>=10 & gene_biotype=="protein_coding" & !is.na(log
 
 sd<-subset(dat, tpm_cutoff>=10 & gene_biotype=="protein_coding" & !is.na(log2FoldChange.mem.cyt.293), select=c("gene_id", "Symbol", "log2FoldChange.mem.cyt.293", "localization_cat"))
 # write.table(sd, "source_data/fig1a.txt", quote=F, sep="\t", row.names=F, col.names=T)
-ggplot(sd, aes(log2FoldChange.mem.cyt.293, fill=localization_cat))+geom_histogram(bins=250)+
-  scale_fill_manual(values=c("dodgerblue4", "orange2"))
-
 
 #fig1b
 ggplot(subset(dat, tpm_cutoff>=10 &  gene_biotype=="protein_coding" & tsig_new!="other"),
@@ -53,28 +49,21 @@ ggplot(subset(dat, tpm_cutoff>=10 &  gene_biotype=="protein_coding" & tsig_new!=
   scale_fill_manual(values=c("dodgerblue4", "dodgerblue4","dodgerblue4","darkgreen","orange2", "darkred", "darkred","darkred"))+
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
   
-
 summary(subset(dat, tpm_cutoff>=10 &  gene_biotype=="protein_coding" & !is.na(log2FoldChange.mem.cyt.293))$tsig_new)
 
 sd<-subset(dat, tpm_cutoff>=10 &  gene_biotype=="protein_coding" & !is.na(log2FoldChange.mem.cyt.293) & tsig_new!="other", select=c("gene_id", "Symbol", "log2FoldChange.mem.cyt.293", "localization_cat", "tsig_new"))
 # write.table(sd, "source_data/fig1b.txt", quote=F, sep="\t", row.names=F, col.names=T)
-ggplot(sd,
-       aes(tsig_new,log2FoldChange.mem.cyt.293, fill=tsig_new))+geom_violin()+
-  geom_boxplot(width=0.1, fill="white", outlier.shape = NA)+
-  scale_fill_manual(values=c("dodgerblue4", "dodgerblue4","dodgerblue4","darkgreen","orange2", "darkred", "darkred","darkred"))+
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 
-#fig1d
+#fig1d bottom
 ggplot(subset(dat, !is.na(localization_cat)& gene_biotype=="protein_coding"),
        aes(log2(tc_CDS_norm), log2(tpm_cutoff), colour=localization_cat))+geom_point(shape=1, alpha=0.7)+
        scale_colour_manual(values=c("dodgerblue4", "orange2"))
 
-
+#fig1d top
 ggplot(subset(dat, !is.na(localization_cat)& gene_biotype=="protein_coding"),
        aes(log2(tc_CDS_norm), colour=localization_cat))+geom_density()+
        scale_colour_manual(values=c("dodgerblue4", "orange2"))
-
 
 sd<-subset(dat, !is.na(localization_cat)& gene_biotype=="protein_coding" & !is.na(tc_CDS_norm) & !is.na(tpm_cutoff) , select=c("gene_id", "Symbol", "tc_CDS_norm", "tpm_cutoff", "localization_cat", "tsig_new"))
 # write.table(sd, "source_data/fig1d.txt", quote=F, sep="\t", row.names=F, col.names=T)
