@@ -135,7 +135,10 @@ fin<-subset(merged, `293_1`>=thr | `293_2`>=thr | guide1_1>=thr | guide1_2>=thr 
 # write.table(fin, "psite_position_counts_chx.txt", quote=F, sep="\t", row.names=F, col.names=T)
 # write.table(fin, "psite_position_counts_nochx.txt", quote=F, sep="\t", row.names=F, col.names=T)
 setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/ribo/meta/considered/")
-fin<-read.delim("psite_position_counts_chx.txt", header=T)
+
+
+#start here
+fin<-read.delim("data/psite_position_counts_chx.txt", header=T)
 # fin<-read.delim("psite_position_counts_nochx.txt", header=T)
 colnames(fin)<-gsub("X","", colnames(fin))
 
@@ -216,7 +219,8 @@ minFilter<-which(nor$transcript %in% minorf$transcript)
 nor<-nor[minFilter,]
 
 # nor<-subset(nor, `293_1`>0 & `293_2`>0 & guide1_1>0 & guide1_2>0 & guide2_1>0 & guide2_2>0) # exclude all zeros for median - this probably not correct, so left out and did mean instead
-
+library(reshape2)
+library(ggplot2)
 avg<-aggregate(cbind(`293_1`,`293_2` ,guide1_1 ,guide1_2 ,guide2_1, guide2_2)~frame_start, data=nor, mean, na.rm=T)
 mel<-melt(avg, measure.vars = c("293_1","293_2" ,"guide1_1" ,"guide1_2" ,"guide2_1", "guide2_2"), id.vars = "frame_start")
 ggplot(mel[mel$frame_start>=2 & mel$frame_start<=500,], aes(frame_start, value, colour=variable))+geom_line()+coord_cartesian(xlim=c(0,300))
@@ -228,7 +232,7 @@ ggplot(mel[mel$frame_stop<=(-2) & mel$frame_stop>=(-500),], aes(frame_stop, valu
 
 
 #tsig_annot from ulrike_tsig.R
-tsig_annot<-read.delim("tsig_annot.txt", header=T)
+tsig_annot<-read.delim("data/tsig_annot.txt", header=T)
 memS<-subset(tsig_annot, localization_cat=="membrane" & grepl("SignalP", tsig_annot$tsig) )
 memT<-subset(tsig_annot, localization_cat=="membrane" & tsig=="TMhelix-only") 
 memN<-subset(tsig_annot, localization_cat=="membrane" & tsig=="mem_notsig") 
@@ -256,17 +260,23 @@ tesncyt$localization<-"cyt"
 
 locn<-rbind(tesnmemS,tesnmemT,tesnmemN,tesncyt)
 
+
+#figS5c
+
 avg<-aggregate(cbind(`293_1`,`293_2` ,guide1_1 ,guide1_2 ,guide2_1, guide2_2)~frame_start+localization, data=locn, mean, na.rm=T)
 mel<-melt(avg, measure.vars = c("293_1","293_2" ,"guide1_1" ,"guide1_2" ,"guide2_1", "guide2_2"), id.vars = c("frame_start","localization"))
+mel<-mel[mel$frame_start>=2 & mel$frame_start<=500 & mel$localization!="memN" ,]
+# write.table(mel, "source_data/figS5c_start.txt", quote=F, sep="\t", row.names=F)
 
 library(zoo)
 
 ggplot(mel[mel$frame_start>=2 & mel$frame_start<=500 & mel$localization!="memN" ,], aes(frame_start, value, colour=localization))+geom_line(aes(y=rollmean(value, 10, na.pad=T)))+facet_wrap(~variable)+coord_cartesian(xlim=c(0,250))+geom_vline(xintercept=39, lty=2)+geom_vline(xintercept=79, lty=2)+ylab("scaled_psite_coverage")
 ggplot(mel[mel$frame_start>=2 & mel$frame_start<=500 & mel$localization!="memN",], aes(frame_start, value, colour=localization))+geom_line(aes(y=rollmean(value, 10, na.pad=T)))+facet_wrap(~variable)+coord_cartesian(xlim=c(0,500))+geom_vline(xintercept=39, lty=2)+geom_vline(xintercept=79, lty=2)+ylab("scaled_psite_coverage")
 
-
 avg<-aggregate(cbind(`293_1`,`293_2` ,guide1_1 ,guide1_2 ,guide2_1, guide2_2)~frame_stop+localization, data=locn, mean, na.rm=T)
 mel<-melt(avg, measure.vars = c("293_1","293_2" ,"guide1_1" ,"guide1_2" ,"guide2_1", "guide2_2"), id.vars = c("frame_stop","localization"))
+mel<-mel[mel$frame_stop<=(-2) & mel$frame_stop>=(-500) & mel$localization!="memN" ,]
+# write.table(mel, "source_data/figS5c_stop.txt", quote=F, sep="\t", row.names=F)
 
 library(zoo)
 

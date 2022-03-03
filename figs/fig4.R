@@ -6,13 +6,15 @@ library(ggplot2)
 #fig4d
 dat<-read.delim("data/proteinGroups - Exp150+144.txt", header=T)
 
-
 use<-dat[,c(2,7,11,12,53:57,65,66,42:46)]
 colnames(use)[5:9]<-c("lfq.hdlbp1", "lfq.ctrl2", "lfq.hdlbp2", "lfq.ctrl3", "lfq.hdlbp3")
 
 colnames(use)[12:16]<-c("int.hdlbp1", "int.ctrl2", "int.hdlbp2", "int.ctrl3", "int.hdlbp3")
 
 use$Gene.names<-as.character(use$Gene.names)
+
+#compute enrichment per replicate
+
 use$enr1<-ifelse(use$lfq.ctrl2==0, NA, use$lfq.hdlbp1/use$lfq.ctrl2)
 use$enr2<-ifelse(use$lfq.ctrl2==0, NA, use$lfq.hdlbp2/use$lfq.ctrl2)
 use$enr3<-ifelse(use$lfq.ctrl3==0, NA, use$lfq.hdlbp3/use$lfq.ctrl3)
@@ -27,19 +29,9 @@ use$gene<-gsub(";.*","",use$Gene.names)
 
 use$positive<-ifelse(use$gene=="HDLBP", "HDLBP", NA)
 
-
 ggplot(subset(use, Razor...unique.peptides>=5), aes(log2(lfq.hdlbp1), log2(lfq.ctrl2), colour=positive))+geom_point()+geom_text(aes(label=gene))
 ggplot(subset(use, Razor...unique.peptides>=5), aes(log2(lfq.hdlbp2), log2(lfq.ctrl2), colour=positive))+geom_point()+geom_text(aes(label=gene))
 ggplot(subset(use, Razor...unique.peptides>=5), aes(log2(lfq.hdlbp3), log2(lfq.ctrl3), colour=positive))+geom_point()+geom_text(aes(label=gene))
-
-
-ggplot(subset(use, Razor...unique.peptides>=5), aes(log2(enr2), log2(enr3), colour=positive))+geom_point()+geom_text(aes(label=positive))
-ggplot(subset(use, Razor...unique.peptides>=5), aes(log2(enr1), log2(enr2), colour=positive))+geom_point()+geom_text(aes(label=positive))
-ggplot(subset(use, Razor...unique.peptides>=5), aes(log2(enr1), log2(enr3), colour=positive))+geom_point()+geom_text(aes(label=positive))
-
-ggplot(subset(use, Razor...unique.peptides>=5), aes(log2(enr1), log2(enr2), colour=positive))+geom_point()+geom_text(aes(label=gene))
-ggplot(subset(use, Razor...unique.peptides>=5), aes(log2(enr1), log2(enr3), colour=positive))+geom_point()+geom_text(aes(label=gene))
-ggplot(subset(use, Razor...unique.peptides>=5), aes(log2(enr2), log2(enr3), colour=positive))+geom_point()+geom_text(aes(label=gene))
 
 thr<-3
 use$up1<-ifelse( (use$enr1>=thr& log2(use$lfq.hdlbp1)>=27) | (use$lfq.ctrl2==0 & log2(use$lfq.hdlbp1)>=27),"enr1", NA)

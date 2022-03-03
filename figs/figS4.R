@@ -79,23 +79,23 @@ int<-subset(use, up=="enr" & Reverse!="+" & Potential.contaminant!="+"& Razor...
 
 int<-int[order(int$mean_lfq, decreasing = T),]
 top<-int[1:60,]
-ggplot(top,aes(factor(gene, levels=top$gene[order(top$mean_lfq, decreasing = F)]), log10(mean_lfq)))+geom_bar(stat = "identity")+coord_flip()+xlab("")
+ggplot(top,aes(factor(gene, levels=gene[order(mean_lfq, decreasing = F)]), log10(mean_lfq)))+geom_bar(stat = "identity")+coord_flip()+xlab("")
 
 int<-int[order(int$mean_enr, decreasing = T),]
 top<-int[1:60,]
-ggplot(top,aes(factor(gene, levels=top$gene[order(top$mean_enr, decreasing = F)]), log2(mean_enr)))+geom_bar(stat = "identity")+coord_flip()
+ggplot(top,aes(factor(gene, levels=gene[order(mean_enr, decreasing = F)]), log2(mean_enr)))+geom_bar(stat = "identity")+coord_flip()
 
 int<-int[order(int$imp_enr, decreasing = T),]
 top<-int[1:60,]
 
 top<-subset(int, is.na(mean_enr))
-top<-top[order(top$mean_lfq, decreasing = T),]
+top<-top[order(mean_lfq, decreasing = T),]
 top<-top[1:60,]
-ggplot(top,aes(factor(gene, levels=top$gene[order(top$mean_lfq, decreasing = F)]), log2(mean_lfq)))+geom_bar(stat = "identity")+coord_flip()
+ggplot(top,aes(factor(gene, levels=gene[order(mean_lfq, decreasing = F)]), log2(mean_lfq)))+geom_bar(stat = "identity")+coord_flip()
 
 int<-int[order(int$Razor...unique.peptides, decreasing = T),]
 top<-int[1:60,]
-ggplot(top,aes(factor(gene, levels=top$gene[order(top$Razor...unique.peptides, decreasing = F)]), log2(Razor...unique.peptides)))+geom_bar(stat = "identity")+coord_flip()
+ggplot(top,aes(factor(gene, levels=gene[order(Razor...unique.peptides, decreasing = F)]), log2(Razor...unique.peptides)))+geom_bar(stat = "identity")+coord_flip()
 
 
 ##overlap between replicates

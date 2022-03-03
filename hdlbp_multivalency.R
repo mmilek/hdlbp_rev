@@ -385,6 +385,9 @@ setwd("F:/landthaler/HDLBP/all_clip_data/reclip/mapping_trans/")
 # setwd("E:/work/hdlbp/multivalency/")
 # setwd("E:/landthaler/HDLBP/all_clip_data/reclip/mapping_trans/")
 
+# fig3g due to size limitations we cannot provide all h values. 
+# please contact milekm@gmail.com if you require the files
+
 cdsMem<-read.delim("../../bulky/cdsMem_hval_window.txt", header=T)
 utr3Mem<-read.delim("../../bulky/utr3Mem_hval_window.txt", header=T)
 cdsCyt<-read.delim("../../bulky/cdsCyt_hval_window.txt", header=T)
@@ -458,9 +461,12 @@ maxs<-aggregate(hval~transcript+region+loc+region_loc, data=hval, max, na.rm=T)
 
 library(ggplot2)
 
-ggplot(avg, aes(hval, colour=loc))+geom_density()+facet_wrap(~region)
+#fig3g
 ggplot(subset(avg,grepl("cds",region_loc)), aes(hval, colour=region_loc))+stat_ecdf()
+
 ggplot(subset(avg,grepl("bck",region_loc)), aes(hval, colour=region_loc))+stat_ecdf()
+
+
 ggplot(avg, aes(hval, colour=loc))+stat_ecdf()
 
 ggplot(avg, aes(hval, colour=loc))+geom_density()

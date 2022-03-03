@@ -1,4 +1,4 @@
-gene_id	Symbol.x	trans.norm.tc.mean.exp	utr3_vs_cds.norm.mean	localization_cat	tc_transcript_norm	tc_transcript_norm_cat
+gene_id	Symbol	trans.norm.tc.mean.exp	utr3_vs_cds.norm.mean	localization_cat	tc_transcript_norm	tc_transcript_norm_cat
 ENSG00000000003.10	TSPAN6	7.30225960493144	0.321470732379554	membrane	2.82562197455814	tc>1.12 & tc<132.32
 ENSG00000001036.9	FUCA2	8.31162995972157	0.0218384120998178	membrane	2.49759846301633	tc>1.12 & tc<132.32
 ENSG00000001084.6	GCLC	0.205328080806977	NA	cytosolic	0.189080595603876	tc<0.3
