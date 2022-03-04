@@ -1,3 +1,5 @@
+#to produce figS5c and associated analysis
+
 library(riboWaltz)
 library(GenomicRanges)
 library(ggplot2)

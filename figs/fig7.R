@@ -1,4 +1,5 @@
-#fig7
+# fig7
+
 library(ggplot2)
 
 dat<-read.delim("data/xenograft_all.txt", stringsAsFactors = F, dec = ",")
@@ -32,7 +33,6 @@ ggplot(dat, aes(status, (tumor_weight_mg), colour=status))+geom_boxplot()+
 
 # write.table(dat, "source_data/fig7f.txt", quote=F, sep="\t", row.names = F)
 
-
 t.test(dat[dat$status=="WT" & dat$time=="7", "Volume"], dat[dat$status=="KO" & dat$time=="7", "Volume"])
 t.test(dat[dat$status=="WT" & dat$time=="14", "Volume"], dat[dat$status=="KO" & dat$time=="14", "Volume"])
 t.test(dat[dat$status=="WT" & dat$time=="21", "Volume"], dat[dat$status=="KO" & dat$time=="21", "Volume"])
@@ -49,9 +49,7 @@ t.test(dat[dat$status=="WT" & dat$time=="7", "Height"], dat[dat$status=="KO" & d
 t.test(dat[dat$status=="WT" & dat$time=="14", "Height"], dat[dat$status=="KO" & dat$time=="14", "Height"])
 t.test(dat[dat$status=="WT" & dat$time=="21", "Height"], dat[dat$status=="KO" & dat$time=="21", "Height"])
 
-
 t.test(dat[dat$status=="WT" & dat$time=="21", "tumor_weight_mg"], dat[dat$status=="KO" & dat$time=="21", "tumor_weight_mg"])
-
 
 length(na.omit(dat[dat$status=="WT" & dat$time=="7", "Volume"]))
 length(na.omit(dat[dat$status=="KO" & dat$time=="7", "Volume"]))
@@ -62,12 +60,11 @@ length(na.omit(dat[dat$status=="KO" & dat$time=="21", "Volume"]))
 length(na.omit(dat[dat$status=="WT" & dat$time=="21", "tumor_weight_mg"]))
 length(na.omit(dat[dat$status=="KO" & dat$time=="21", "tumor_weight_mg"]))
 
-
-#figS7
+# figS7
 tab<-read.delim("data/tumor_rnaseq_read_counts.txt", header=T)
 tpm<-read.delim("data/tumor_rnaseq_tpm.txt", header=T)
 
-##PCA
+# PCA
 
 subs<-tab
 row.names(subs)<-subs$gene_id
@@ -89,7 +86,7 @@ dds<-DESeqDataSetFromMatrix(countData = round(subs),
 
 vsd <- vst(dds, blind=FALSE)
 
-#figS7c lower panel
+# figS7c lower panel
 pcaData <- plotPCA(vsd, intgroup=c("Batch", "Source"), returnData=TRUE)
 percentVar <- round(100 * attr(pcaData, "percentVar"))
 ggplot(pcaData, aes(PC1, PC2, color=Batch, shape=Source)) +
@@ -99,7 +96,7 @@ ggplot(pcaData, aes(PC1, PC2, color=Batch, shape=Source)) +
 
 # write.table(pcaData, "source_data/fig7c_lower.txt", quote=F, sep="\t", row.names =F )
 
-#figS7c upper panel
+# figS7c upper panel
 pcaData <- plotPCA(vsd, intgroup=c("Batch", "Condition"), returnData=TRUE)
 percentVar <- round(100 * attr(pcaData, "percentVar"))
 ggplot(pcaData, aes(PC1, PC2, color=Batch, shape=Condition)) +
@@ -110,7 +107,8 @@ ggplot(pcaData, aes(PC1, PC2, color=Batch, shape=Condition)) +
 # write.table(pcaData, "source_data/fig7c_upper.txt", quote=F, sep="\t", row.names =F )
 
 
-####deseq simple comparisons within fractions
+# deseq simple comparisons within fractions
+
 cnt<-subs[,colnames(subs)[grepl("Tumor_", colnames(subs))]]
 
 coldata<-data.frame(SampleID=colnames(cnt),
@@ -139,7 +137,6 @@ lfc.tumor.KO.WT<-data.frame(res[,c(1,2,6)])
 colnames(lfc.tumor.KO.WT)<-paste0(colnames(lfc.tumor.KO.WT),".tumor.KO.WT")
 counts.tumor.KO.WT<-cbind(counts(dds, normalize=F), counts(dds, normalize=T))
 colnames(counts.tumor.KO.WT)[13:ncol(counts.tumor.KO.WT)]<-paste0("norm.", colnames(counts.tumor.KO.WT)[13:ncol(counts.tumor.KO.WT)])
-
 
 cnt<-subs[,colnames(subs)[grepl("A_", colnames(subs))]]
 
@@ -200,7 +197,6 @@ fin<-subset(fin, tpm.A_WT_1 >=thr |
               tpm.Tumor_HDLBP_KO_4 >=thr |
               tpm.Tumor_HDLBP_KO_5 >=thr )
 
-
 mas<-read.delim("data/hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
 inf<-subset(mas, select=c("gene_id","Symbol","gene_biotype", 
                           "tsig" , "loc_tar_CDS", "localization_cat" ))
@@ -227,9 +223,7 @@ ggplot(subset(exp, !is.na(reg_a549)), aes(reg_a549))+geom_bar()+coord_flip()
 ggplot(subset(exp, !is.na(reg_tumor)), aes(reg_tumor))+geom_bar()+coord_flip()
 ggplot(subset(exp, !is.na(reg_tumor) | !is.na(reg_a549)), aes(reg_both))+geom_bar()+coord_flip()
 
-
-
-#supplemental tables
+# make supplemental tables
 reg_tumor_up<-subset(exp, reg_tumor=="up_tumor" & Annotation=="protein_coding",
                      select = colnames(exp)[c(1,68,59:61,62:67,69:71,8:19)])
 reg_tumor_up<-reg_tumor_up[order(reg_tumor_up$log2FoldChange.tumor.KO.WT, decreasing = T),]
@@ -237,12 +231,10 @@ reg_tumor_down<-subset(exp, reg_tumor=="down_tumor" & Annotation=="protein_codin
                        select = colnames(exp)[c(1,68,59:61,62:67,69:71,8:19)])
 reg_tumor_down<-reg_tumor_down[order(reg_tumor_down$log2FoldChange.tumor.KO.WT, decreasing = F),]
 
-#write.table(reg_tumor_up, "data_tables/tumor_up.txt", quote=F, sep="\t", row.names = F, col.names = T)
-#write.table(reg_tumor_down, "data_tables/tumor_down.txt", quote=F, sep="\t", row.names = F, col.names = T)
+# write.table(reg_tumor_up, "data_tables/tumor_up.txt", quote=F, sep="\t", row.names = F, col.names = T)
+# write.table(reg_tumor_down, "data_tables/tumor_down.txt", quote=F, sep="\t", row.names = F, col.names = T)
 
-
-
-#fig7h
+# fig7h
 ggplot(subset(exp, gene_biotype=="protein_coding" & !is.na(reg_tumor) & !is.na(localization_cat)), aes(log2FoldChange.tumor.KO.WT, colour=localization_cat))+stat_ecdf()+
   scale_color_manual(values=c("dodgerblue3", "orange3"))+coord_cartesian(xlim=c(-2.5,2.5))+
   geom_hline(yintercept=0.5, lty=2, colour="grey")
@@ -265,7 +257,7 @@ g2<-subset(exp, gene_biotype=="protein_coding" &
              !is.na(reg_tumor) & localization_cat=="membrane" & 
              !is.na(log2FoldChange.tumor.KO.WT), select="log2FoldChange.tumor.KO.WT")[,1]
 
-#does not run
+# memory intense
 # wilcox.test(g1[!duplicated(g1)],g2[!duplicated(g2)], exact = T)
 
 wilcox.test(subset(exp, gene_biotype=="protein_coding" & 
@@ -289,8 +281,3 @@ nrow(subset(exp, gene_biotype=="protein_coding" &
 nrow(subset(exp, gene_biotype=="protein_coding" & 
               reg_tumor=="not_quantified" & 
               !is.na(log2FoldChange.tumor.KO.WT)))
-
-
-
-
-

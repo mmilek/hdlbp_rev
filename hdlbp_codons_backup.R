@@ -160,7 +160,7 @@ cod<-read.delim("data/codon_table.txt")
 codcols<-merge(cols, cod, by="codon")
 codcols$cod_aa<-paste0(codcols$codon,";",codcols$aa2)
 colnames(ave)[2:35]<-codcols$cod_aa
-usg<-read.delim("data/codonUsage.txt")
+usg<-read.delim("trna/codonUsage.txt")
 usg$codon<-gsub("T","U",usg$codon)
 usg$codon<-paste0(usg$codon,";",usg$aa)
 usg$dum<-1

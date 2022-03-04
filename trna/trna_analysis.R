@@ -1,11 +1,13 @@
-# setwd("E:/work/hdlbp/counts_trna_uniq//")
-# on the cluster is on fast /fast/AG_Landthaler/miha/hdlbp/reclip/counts_trna
+# complete downstream trna count analysis
+
+library(Biostrings)
 library(ggplot2)
 library(reshape2)
 library(DESeq2)
 library(corrplot)
-mas<-read.delim("data/tRNA_hdlbp2_TCseq_filtered.bed", header=F, stringsAsFactors = F)
-# mas<-read.delim("tRNA_hdlbp2_TCseq.bed", header=F)
+
+# input files from counts_trna.sh output
+# mas<-read.delim("data/tRNA_hdlbp2_TCseq_filtered.bed", header=F, stringsAsFactors = F)
 perTrna<-aggregate(V5~V1, data=mas, sum )
 mas<-merge(mas, perTrna, by="V1")
 mas$fracTCpos<-mas$V5.x/mas$V8
@@ -17,8 +19,7 @@ colnames(mas)[2:5]<-c("TCnumber","seq","allReadsPerPos","TCpertrna")
 colnames(mas)[2:7]<-paste0(colnames(mas)[2:7],"_hdlbp2")
 head(mas, 25)
 
-mas2<-read.delim("data/tRNA_hdlbp3_TCseq_filtered.bed", header=F, stringsAsFactors = F)
-# mas2<-read.delim("tRNA_hdlbp3_TCseq.bed", header=F)
+# mas2<-read.delim("data/tRNA_hdlbp3_TCseq_filtered.bed", header=F, stringsAsFactors = F)
 perTrna<-aggregate(V5~V1, data=mas2, sum )
 mas2<-merge(mas2, perTrna, by="V1")
 mas2$fracTCpos<-mas2$V5.x/mas2$V8
@@ -39,8 +40,6 @@ mer$sd_normTCnumber_hdlbp<-apply(mer[,c("normTCnumber_hdlbp2","normTCnumber_hdlb
 mer$fracTCnumber_hdlbp_mean<-rowMeans(mer[,c("fracTCpos_hdlbp2","fracTCpos_hdlbp3")])
 mer$sd_fracTCpos_hdlbp<-apply(mer[,c("fracTCpos_hdlbp2","fracTCpos_hdlbp3")],1, sd)
 
-
-
 files<-list.files(getwd(), pattern="readcounts$")[-c(5,6)]
 dat<-lapply(files, read.delim, header=F)
 tet<-Reduce(function(...) merge(..., by="V1",all=T), dat)
@@ -52,14 +51,11 @@ norm<-sweep(tet,2,colSums(tet,na.rm=T)/1e6,"/")
 colnames(norm)<-paste0("norm.",colnames(norm))
 tet<-cbind(tet, norm)
 
-
-library(Biostrings)
 codUs<-read.delim("codonUsage.txt", header=T)
 codUs$anti<-as.character(reverseComplement(DNAStringSet(codUs$codon)))
 codUs$trna<-paste0(codUs$aa,";",codUs$anti)
 
 tet<-merge(tet, codUs[,c("trna","codon","codonUsage")],by.x="row.names",by.y="trna",all.x=T)
-
 
 fin<-merge(mer, tet, by.x="id", by.y="Row.names")
 
@@ -90,10 +86,10 @@ fin$id<-paste0(fin$id,";",fin$codon)
 fin$id<-paste0(gsub(";.*","-",fin$id),
                gsub("T","U",gsub(".*-","",sub(";","-",fin$id))))
 
-# fin$id<-factor(fin$id,levels=fin$enrichment_rank, labels=fin$id[fin$enrichment_rank])
 fin$plot<-as.numeric(fin$enrichment_rank)
-#write.table(fin, "hdlbp_tRNA_perPosition.txt", quote=F, sep="\t", row.names=F)
 
+# make master table
+# write.table(fin, "hdlbp_tRNA_perPosition.txt", quote=F, sep="\t", row.names=F)
 
 fin<-subset(fin, expression_cutoff>=1000)
 
@@ -104,8 +100,6 @@ ggplot(fin, aes(factor(plot),fracTCnumber_hdlbp_mean,color=isotype))+
   geom_point(size=0.7)+
   theme(axis.text.x = element_text(angle = 90,vjust=0.5,hjust=1))+
   geom_hline(yintercept = 0.3, linetype=2, colour="grey")+scale_x_discrete(labels=unique(fin$id)[order(unique(fin$enrichment_rank))])
-
-
 
 ggplot(fin, aes(plot,fracTCnumber_hdlbp_mean,color=isotype))+
   geom_text(aes(label=seq_hdlbp2), size=3, angle=90)+
@@ -128,8 +122,3 @@ p4<-ggplot(usg, aes(id, dum))+geom_tile(aes(fill=log2(exp_normTCpertrna_hdlbp_me
 print(p2)
 print(p3)
 print(p4)
-
-
-
-
-

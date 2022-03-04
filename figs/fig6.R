@@ -1,4 +1,5 @@
 #fig6b
+
 fin<-read.delim("geo_processed_data/processed_data_parclip_trna.txt", header=T)
 
 tcs<-subset(fin, select=c("trna_id","exp_normTCpertrna_hdlbp_mean"))

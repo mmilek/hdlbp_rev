@@ -2,9 +2,9 @@ library(ggplot2)
 library(reshape2)
 library(zoo)
 
-#fig5b
+# fig5b
 
-#prepare data, correct for MitoCarta mRNAs
+# prepare data, correct for MitoCarta mRNAs
 
 dat<-read.delim("data/hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
 mito<-read.delim("data/mitocarta2.txt", header=T)
@@ -46,7 +46,7 @@ sd<-subset(dat, localization_cat=="membrane" & !is.na(log2FoldChange.ribo.rna.KO
            "loc_tar_CDS", "log2FoldChange.ribo.rna.KO.WT"))
 # write.table(sd, "source_data/fig5b.txt", quote=F, sep="\t", row.names=F)
 
-#start fig5c,fig5d
+# start fig5c,fig5d
 
 PG_summ<-read.delim("data/protein_groups_psilac.txt", header=T)
 man<-read.delim("data/hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
@@ -67,15 +67,10 @@ ggplot(plot, aes(variable, value, fill=localization_cat))+geom_boxplot()+coord_f
 
 pas$Ratio.H.M.normalized.Memb_4h_Reverse_1<--pas$Ratio.H.M.normalized.Memb_4h_Reverse_1
 pas$Ratio.H.M.normalized.Memb_4h_Reverse_2<--pas$Ratio.H.M.normalized.Memb_4h_Reverse_2
-# pas$Ratio.H.M.normalized.Memb_2h_Reverse_1<--pas$Ratio.H.M.normalized.Memb_2h_Reverse_1
-# pas$Ratio.H.M.normalized.Memb_2h_Reverse_2<--pas$Ratio.H.M.normalized.Memb_2h_Reverse_2
 
 pas$mean_memb_4h<-rowMeans(pas[,colnames(pas)[grepl("Ratio.H.M.normalized.Memb_4h", colnames(pas))]])
 
-# pas$mean_memb_2h<-rowMeans(pas[,colnames(pas)[grepl("Ratio.H.M.normalized.Memb_2h", colnames(pas))]])
-
 ggplot(subset(pas, !is.na(localization_cat)), aes(mean_memb_4h, colour=localization_cat))+stat_ecdf()+coord_cartesian(xlim=c(-.7,.7))+xlab("H/M KO/WT")
-# ggplot(subset(pas, !is.na(localization_cat)), aes(mean_memb_2h, colour=localization_cat))+stat_ecdf()
 
 ks.test(subset(pas, localization_cat=="membrane" & !is.na(mean_memb_4h), select="mean_memb_4h")[,1],
         subset(pas, localization_cat=="cytosolic" & !is.na(mean_memb_4h), select="mean_memb_4h")[,1])
@@ -84,10 +79,8 @@ length(subset(pas,localization_cat=="cytosolic" & !is.na(mean_memb_4h), select="
 
 ggplot(subset(pas, !is.na(tc_transcript_norm_cat)), aes(mean_memb_4h, colour=tc_transcript_norm_cat))+stat_ecdf()+coord_cartesian(xlim=c(-.7,.7))+xlab("H/M KO/WT")
 
-#fig5d
+# fig5d
 ggplot(subset(pas, !is.na(tc_CDS_norm_cat)), aes(mean_memb_4h, colour=tc_CDS_norm_cat))+stat_ecdf()+coord_cartesian(xlim=c(-.7,.7))+xlab("H/M KO/WT")
-
-
 
 ks.test(subset(pas, tc_transcript_norm_cat=="tc>1.12 & tc<132.32" & !is.na(mean_memb_4h), select="mean_memb_4h")[,1],
         subset(pas, tc_transcript_norm_cat=="nontarget" & !is.na(mean_memb_4h), select="mean_memb_4h")[,1])
@@ -114,8 +107,6 @@ ks.test(subset(pas, tc_CDS_norm_cat=="nontarget" & !is.na(mean_memb_4h), select=
         subset(pas, tc_CDS_norm_cat=="tc<0.27" & !is.na(mean_memb_4h), select="mean_memb_4h")[,1])
 ks.test(subset(pas, tc_CDS_norm_cat=="tc>0.27 & tc<1.04" & !is.na(mean_memb_4h), select="mean_memb_4h")[,1],
         subset(pas, tc_CDS_norm_cat=="tc<0.27" & !is.na(mean_memb_4h), select="mean_memb_4h")[,1])
-
-
 
 ks.test(subset(pas, tc_transcript_norm_cat=="tc>1.12 & tc<132.32" & !is.na(Ratio.H.M.normalized.Memb_4h_Forward_1), select="Ratio.H.M.normalized.Memb_4h_Forward_1")[,1],
         subset(pas, tc_transcript_norm_cat=="nontarget" & !is.na(Ratio.H.M.normalized.Memb_4h_Forward_1), select="Ratio.H.M.normalized.Memb_4h_Forward_1")[,1])
@@ -154,7 +145,7 @@ ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target)), aes(Ratio.H
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target)), aes(-Ratio.H.M.normalized.Memb_4h_Reverse_1, colour=target))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target)), aes(-Ratio.H.M.normalized.Memb_4h_Reverse_2, colour=target))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))
 
-#fig5c
+# fig5c
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target_loc)), aes(mean_memb_4h, colour=target_loc))+stat_ecdf()+coord_cartesian(xlim=c(-.7,.7))+xlab("mean H/M (KO/WT)")
 
 sd<-subset(pas, !is.na(tc_CDS_norm_cat) & !is.na(mean_memb_4h),
@@ -169,14 +160,12 @@ ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target_loc)), aes(Rat
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target_loc)), aes(Ratio.H.M.normalized.Memb_4h_Reverse_1, colour=target_loc))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))
 ggplot(subset(pas, gene_biotype=="protein_coding" & !is.na(target_loc)), aes(Ratio.H.M.normalized.Memb_4h_Reverse_2, colour=target_loc))+stat_ecdf()+coord_cartesian(xlim=c(-1,1))
 
-
 length(subset(pas, gene_biotype=="protein_coding" & !is.na(mean_memb_4h) & target=="target", select="mean_memb_4h")[,1])
 length(subset(pas, gene_biotype=="protein_coding" & !is.na(mean_memb_4h) & target=="nontarget", select="mean_memb_4h")[,1])
 
 length(subset(pas, gene_biotype=="protein_coding" & !is.na(mean_memb_4h) & target_loc=="mem_target", select="mean_memb_4h")[,1])
 length(subset(pas, gene_biotype=="protein_coding" & !is.na(mean_memb_4h) & target_loc=="cyto_target", select="mean_memb_4h")[,1])
 length(subset(pas, gene_biotype=="protein_coding" & !is.na(mean_memb_4h) & target_loc=="nontarget", select="mean_memb_4h")[,1])
-
 
 ks.test(subset(pas, target=="target" & !is.na(Ratio.H.M.normalized.Memb_4h_Forward_1), select="Ratio.H.M.normalized.Memb_4h_Forward_1")[,1],
         subset(pas, target=="nontarget" & !is.na(Ratio.H.M.normalized.Memb_4h_Forward_1), select="Ratio.H.M.normalized.Memb_4h_Forward_1")[,1])
@@ -212,7 +201,7 @@ ks.test(subset(pas, target_loc=="mem_target" & !is.na(Ratio.H.M.normalized.Memb_
 ks.test(subset(pas, target_loc=="mem_target" & !is.na(Ratio.H.M.normalized.Memb_4h_Reverse_2), select="Ratio.H.M.normalized.Memb_4h_Reverse_2")[,1],
         subset(pas, target_loc=="nontarget" & !is.na(Ratio.H.M.normalized.Memb_4h_Reverse_2), select="Ratio.H.M.normalized.Memb_4h_Reverse_2")[,1])
 
-#fig5i begin
+# fig5i begin
 
 mas<-read.delim("data/hdlbp_master_table_with_classes_uniq.txt", header=T)
 inf<-subset(mas, select=c("gene_id","Symbol",
@@ -367,8 +356,6 @@ ggplot(mel[mel$codon>2,], aes(codon, value, colour=variable))+geom_line()+coord_
 ##tm or sp
 tm<-subset(tsig_annot, tsig=="TMhelix-only" & tpm_cutoff>=10 & localization_cat=="membrane")
 sp<-subset(tsig_annot, grepl("SignalP", tsig_annot$tsig) & tpm_cutoff>=10 & localization_cat=="membrane" & !is.na(loc_tar_CDS) & loc_tar_CDS!="nontarget_membrane")
-# tm<-subset(tsig_annot, tsig=="TMhelix-only" & tpm_cutoff>=10 )
-# sp<-subset(tsig_annot, grepl("SignalP", tsig_annot$tsig) & tpm_cutoff>=10)
 
 tm_list<-subset(tm, select=c("gene_id", "Symbol", "Transcript.stable.ID.version", 
                              "l_utr5", "l_cds", "l_utr3", "start"))
@@ -412,7 +399,4 @@ ggplot(mel[ mel$localization=="tm",], aes(codon, value, colour=localization))+ge
 
 # make source data
 # write.table(mel, "../../hdlbp_rev/hdlbp_rev/source_data/fig5i.txt", quote=F, sep="\t", row.names = F)
-
-
-
 

@@ -22,9 +22,7 @@ sd<-subset(dat, tpm_cutoff>=10 & Annotation=="protein_coding" & !is.na(log2FoldC
 
 # write.table(sd, "source_data/figS5d.txt", quote=F, sep="\t", row.names=F, col.names=T)
 
-
-
-#figS5e
+# figS5e
 
 PG_summ<-read.delim("data/protein_groups_psilac.txt", header=T)
 man<-read.delim("data/hdlbp_master_table_with_classes_uniq_tsig.txt", header=T)
@@ -36,7 +34,6 @@ pas$Ratio.H.M.normalized.Memb_4h_Reverse_1<--pas$Ratio.H.M.normalized.Memb_4h_Re
 pas$Ratio.H.M.normalized.Memb_4h_Reverse_2<--pas$Ratio.H.M.normalized.Memb_4h_Reverse_2
 
 pas$mean_memb_4h<-rowMeans(pas[,colnames(pas)[grepl("Ratio.H.M.normalized.Memb_4h", colnames(pas))]])
-
 
 pas$target<-ifelse(is.na(pas$tc_transcript_norm_cat), NA,
                    ifelse(pas$tc_transcript_norm_cat=="nontarget", "nontarget", "target"))
@@ -226,8 +223,6 @@ ggplot(mel[mel$codon>2,], aes(codon, value, colour=variable))+geom_line()+coord_
 ##tm or sp
 tm<-subset(tsig_annot, tsig=="TMhelix-only" & tpm_cutoff>=10 & localization_cat=="membrane")
 sp<-subset(tsig_annot, grepl("SignalP", tsig_annot$tsig) & tpm_cutoff>=10 & localization_cat=="membrane" & !is.na(loc_tar_CDS) & loc_tar_CDS!="nontarget_membrane")
-# tm<-subset(tsig_annot, tsig=="TMhelix-only" & tpm_cutoff>=10 )
-# sp<-subset(tsig_annot, grepl("SignalP", tsig_annot$tsig) & tpm_cutoff>=10)
 
 tm_list<-subset(tm, select=c("gene_id", "Symbol", "Transcript.stable.ID.version", 
                              "l_utr5", "l_cds", "l_utr3", "start"))
@@ -263,7 +258,6 @@ mel<-melt(avg, measure.vars = c("293_1","293_2" ,"guide1_1" ,"guide1_2" ,"guide2
 
 ggplot(mel, aes(codon, value, colour=localization))+geom_line(aes(y=rollmean(value, 5, na.pad=T)))+facet_wrap(~variable)
 
-
 ggplot(mel[ mel$localization=="sp",], aes(codon, value, colour=localization))+geom_line(aes(y=rollmean(value, 5, na.pad=T)))+facet_wrap(~variable)+
   geom_hline(yintercept = 2.5, lty=2)+geom_vline(xintercept = 40, lty=2)+coord_cartesian(ylim=c(0,5),xlim=c(0,250))
 ggplot(mel[ mel$localization=="tm",], aes(codon, value, colour=localization))+geom_line(aes(y=rollmean(value, 5, na.pad=T)))+facet_wrap(~variable)+
@@ -272,7 +266,8 @@ ggplot(mel[ mel$localization=="tm",], aes(codon, value, colour=localization))+ge
 # make source data
 # write.table(mel, "../../hdlbp_rev/hdlbp_rev/source_data/fig5i.txt", quote=F, sep="\t", row.names = F)
 
-#figS5c this is very computationaly intense! make sure you have enough resources.
+# figS5c this is very computationaly intense! make 
+# sure you have enough resources.
 
 fin<-read.delim("data/psite_position_counts_chx.txt", header=T)
 colnames(fin)<-gsub("X","", colnames(fin))
@@ -378,7 +373,7 @@ tesncyt$localization<-"cyt"
 
 locn<-rbind(tesnmemS,tesnmemT,tesnmemN,tesncyt)
 
-#figS5c plotting
+# figS5c plotting
 
 avg<-aggregate(cbind(`293_1`,`293_2` ,guide1_1 ,guide1_2 ,guide2_1, guide2_2)~frame_start+localization, data=locn, mean, na.rm=T)
 mel<-melt(avg, measure.vars = c("293_1","293_2" ,"guide1_1" ,"guide1_2" ,"guide2_1", "guide2_2"), id.vars = c("frame_start","localization"))
@@ -396,8 +391,8 @@ mel<-mel[mel$frame_stop<=(-2) & mel$frame_stop>=(-500) & mel$localization!="memN
 ggplot(mel[mel$frame_stop<=(-2) & mel$frame_stop>=(-500) & mel$localization!="memN" ,], aes(frame_stop, value, colour=localization))+geom_line(aes(y=rollmean(value, 10, na.pad=T)))+facet_wrap(~variable)+coord_cartesian(xlim=c(-250,0))+ylab("scaled_psite_coverage")
 ggplot(mel[mel$frame_stop<=(-2) & mel$frame_stop>=(-500) & mel$localization!="memN" ,], aes(frame_stop, value, colour=localization))+geom_line(aes(y=rollmean(value, 10, na.pad=T)))+facet_wrap(~variable)+coord_cartesian(xlim=c(-500,0))+ylab("scaled_psite_coverage")
 
-
-#figS5a and figS5b
+# figS5a and figS5b - file size limitation, not all
+# files provided
 
 library(riboWaltz)
 library(data.table)
@@ -485,6 +480,3 @@ for (i in names(reads)){
   # write.table(dfwt, paste0(out,"frame_psite/source_data/",i,".txt"), quote=F, sep="\t", row.names=F)
   ggsave(paste0(out,"/frame_psite/",i,".pdf" ),width = 6, height = 3, units="in")
 }
-
-
-

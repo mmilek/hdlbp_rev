@@ -1,4 +1,5 @@
 #figS7
+
 tab<-read.delim("data/tumor_rnaseq_read_counts.txt", header=T)
 tpm<-read.delim("data/tumor_rnaseq_tpm.txt", header=T)
 
@@ -20,7 +21,6 @@ corrplot(cor(subs, use="pairwise.complete.obs"), type="upper", method="color",tl
 dds<-DESeqDataSetFromMatrix(countData = round(subs),
                             colData = coldata, 
                             design = ~Batch+Condition+Source)
-
 
 vsd <- vst(dds, blind=FALSE)
 
@@ -44,8 +44,7 @@ ggplot(pcaData, aes(PC1, PC2, color=Batch, shape=Condition)) +
 
 # write.table(pcaData, "source_data/fig7c_upper.txt", quote=F, sep="\t", row.names =F )
 
-
-####deseq simple comparisons between conditions
+# deseq simple comparisons between conditions
 cnt<-subs[,colnames(subs)[grepl("Tumor_", colnames(subs))]]
 
 coldata<-data.frame(SampleID=colnames(cnt),
@@ -75,7 +74,6 @@ colnames(lfc.tumor.KO.WT)<-paste0(colnames(lfc.tumor.KO.WT),".tumor.KO.WT")
 counts.tumor.KO.WT<-cbind(counts(dds, normalize=F), counts(dds, normalize=T))
 colnames(counts.tumor.KO.WT)[13:ncol(counts.tumor.KO.WT)]<-paste0("norm.", colnames(counts.tumor.KO.WT)[13:ncol(counts.tumor.KO.WT)])
 
-
 cnt<-subs[,colnames(subs)[grepl("A_", colnames(subs))]]
 
 coldata<-data.frame(SampleID=colnames(cnt),
@@ -84,7 +82,6 @@ coldata<-data.frame(SampleID=colnames(cnt),
                     Source=gsub("_.*","",colnames(cnt)))
 
 coldata<-apply(coldata,2,as.factor)
-
 
 dds<-DESeqDataSetFromMatrix(countData = round(cnt),
                             colData = coldata, 
@@ -162,8 +159,6 @@ ggplot(subset(exp, !is.na(reg_a549)), aes(reg_a549))+geom_bar()+coord_flip()
 ggplot(subset(exp, !is.na(reg_tumor)), aes(reg_tumor))+geom_bar()+coord_flip()
 ggplot(subset(exp, !is.na(reg_tumor) | !is.na(reg_a549)), aes(reg_both))+geom_bar()+coord_flip()
 
-
-
 #supplemental tables
 reg_tumor_up<-subset(exp, reg_tumor=="up_tumor" & gene_biotype=="protein_coding",
                      select = c("gene_id","Symbol","baseMean.tumor.KO.WT","log2FoldChange.tumor.KO.WT","padj.tumor.KO.WT","gene_biotype","reg_tumor","tpm.Tumor_HDLBP_KO_2","tpm.Tumor_HDLBP_KO_3","tpm.Tumor_HDLBP_KO_4","tpm.Tumor_HDLBP_KO_5","tpm.Tumor_WT_1","tpm.Tumor_WT_2","tpm.Tumor_WT_3","tpm.Tumor_WT_4","tpm.Tumor_WT_5","tpm.Tumor_WT_6","tpm.Tumor_WT_7","tpm.Tumor_WT_8"))
@@ -175,9 +170,7 @@ reg_tumor_down<-reg_tumor_down[order(reg_tumor_down$log2FoldChange.tumor.KO.WT, 
 #write.table(reg_tumor_up, "supp_tables/tumor_up_stringent.txt", quote=F, sep="\t", row.names = F, col.names = T)
 #write.table(reg_tumor_down, "supp_tables/tumor_down_stringent.txt", quote=F, sep="\t", row.names = F, col.names = T)
 
-
-
-#fig7h
+# fig7h
 ggplot(subset(exp, gene_biotype=="protein_coding" & !is.na(reg_tumor) & !is.na(localization_cat)), aes(log2FoldChange.tumor.KO.WT, colour=localization_cat))+stat_ecdf()+
   scale_color_manual(values=c("dodgerblue3", "orange3"))+coord_cartesian(xlim=c(-2.5,2.5))+
   geom_hline(yintercept=0.5, lty=2, colour="grey")
@@ -200,7 +193,7 @@ g2<-subset(exp, gene_biotype=="protein_coding" &
              !is.na(reg_tumor) & localization_cat=="membrane" & 
              !is.na(log2FoldChange.tumor.KO.WT), select="log2FoldChange.tumor.KO.WT")[,1]
 
-#does not run
+# does not run
 # wilcox.test(g1[!duplicated(g1)],g2[!duplicated(g2)], exact = T)
 
 wilcox.test(subset(exp, gene_biotype=="protein_coding" & 
@@ -295,7 +288,7 @@ wilcox.test(subset(exp, gene_biotype=="protein_coding" &
                      !is.na(reg_tumor) & localization_cat=="membrane" & 
                      !is.na(log2FoldChange.tumor.KO.WT), select="log2FoldChange.tumor.KO.WT")[,1])            
 
-#figS7d
+# figS7d
 ggplot(subset(exp, gene_biotype=="protein_coding" ), 
        aes(log10(baseMean.tumor.KO.WT), log2FoldChange.tumor.KO.WT, color=reg_tumor))+
   geom_point(shape=1, size=1)+coord_cartesian(ylim=c(-10,10), xlim=c(0,6))+scale_color_manual(values=c("orange3", "grey",  "black", "dodgerblue3"))+geom_hline(yintercept=0, lty=2, colour="grey")
