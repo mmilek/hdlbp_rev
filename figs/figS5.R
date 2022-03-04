@@ -272,7 +272,7 @@ ggplot(mel[ mel$localization=="tm",], aes(codon, value, colour=localization))+ge
 # make source data
 # write.table(mel, "../../hdlbp_rev/hdlbp_rev/source_data/fig5i.txt", quote=F, sep="\t", row.names = F)
 
-#figS5c very computationaly intense
+#figS5c this is very computationaly intense! make sure you have enough resources.
 
 fin<-read.delim("data/psite_position_counts_chx.txt", header=T)
 colnames(fin)<-gsub("X","", colnames(fin))
@@ -395,4 +395,96 @@ mel<-mel[mel$frame_stop<=(-2) & mel$frame_stop>=(-500) & mel$localization!="memN
 
 ggplot(mel[mel$frame_stop<=(-2) & mel$frame_stop>=(-500) & mel$localization!="memN" ,], aes(frame_stop, value, colour=localization))+geom_line(aes(y=rollmean(value, 10, na.pad=T)))+facet_wrap(~variable)+coord_cartesian(xlim=c(-250,0))+ylab("scaled_psite_coverage")
 ggplot(mel[mel$frame_stop<=(-2) & mel$frame_stop>=(-500) & mel$localization!="memN" ,], aes(frame_stop, value, colour=localization))+geom_line(aes(y=rollmean(value, 10, na.pad=T)))+facet_wrap(~variable)+coord_cartesian(xlim=c(-500,0))+ylab("scaled_psite_coverage")
+
+
+#figS5a and figS5b
+
+library(riboWaltz)
+library(data.table)
+library(ggplot2)
+
+# prepare annotation for hg19
+# anH<-create_annotation(gtfpath = "gencode.v19.primary_assembly.annotation.gtf", dataSource="gencode.v19", organism="Homo sapiens")
+# sequences_biost <- Biostrings::readDNAStringSet("hg19.transcripts.fa",
+# length(names(sequences_biost) %in% anH$transcript)
+# nrow(anH[names(sequences_biost) %in% anH$transcript,])
+# length(sequences_biost[as.character(anH$transcript)])
+# save.image("ribowaltz_hg38.RData")
+
+# load("ribowaltz_human.RData") # due to size limitations this cannot be provided, but you can build your own annotation as indicated above
+anH<-data.table(anH) #higher versions of ribowaltz work with data table
+
+#here transcriptome-mapped read bed files have to be provided (bamToBed)
+# setwd("D:/Documents/hdlbp_git/bed_original/")
+# 
+# files<-list.files(getwd(), pattern="*bed*")
+files<-gsub("\\.bed","",files)
+
+#set output dir
+# out<-"D:/Documents/hdlbp_git/original_riboQC/"
+
+reads <- bedtolist(getwd(),anH)
+
+psite_offset <- psite(reads, start=TRUE, cl=100, flanking = 6, extremity="auto", 
+                      plot=F, plot_dir=paste0(out,"/psite_offset_start"), plot_format="pdf", log_file = F, log_file_dir = paste0(out,"/psite_offset_start/"))
+
+reads_psite_list <- psite_info(reads, psite_offset)
+
+#figS5a
+for (i in names(reads)){
+  comparison_dt<-list()
+  comparison_dt[[paste0(i,"_21nt")]]<-reads_psite_list[[i]][length==21]
+  comparison_dt[[paste0(i,"_22nt")]]<-reads_psite_list[[i]][length==22]
+  comparison_dt[[paste0(i,"_23nt")]]<-reads_psite_list[[i]][length==23]
+  comparison_dt[[paste0(i,"_24nt")]]<-reads_psite_list[[i]][length==24]
+  comparison_dt[[paste0(i,"_25nt")]]<-reads_psite_list[[i]][length==25]
+  comparison_dt[[paste0(i,"_26nt")]]<-reads_psite_list[[i]][length==26]
+  comparison_dt[[paste0(i,"_27nt")]]<-reads_psite_list[[i]][length==27]
+  comparison_dt[[paste0(i,"_28nt")]]<-reads_psite_list[[i]][length==28]
+  comparison_dt[[paste0(i,"_29nt")]]<-reads_psite_list[[i]][length==29]
+  comparison_dt[[paste0(i,"_30nt")]]<-reads_psite_list[[i]][length==30]
+  comparison_dt[[paste0(i,"_31nt")]]<-reads_psite_list[[i]][length==31]
+  comparison_dt[[paste0(i,"_32nt")]]<-reads_psite_list[[i]][length==32]
+  names_list<-list(paste0(i,"_21nt"),
+                   paste0(i,"_22nt"),
+                   paste0(i,"_23nt"), 
+                   paste0(i,"_24nt"),
+                   paste0(i,"_25nt"),
+                   paste0(i,"_26nt"),
+                   paste0(i,"_27nt"),
+                   paste0(i,"_28nt"),
+                   paste0(i,"_29nt"),
+                   paste0(i,"_30nt"),
+                   paste0(i,"_31nt"),
+                   paste0(i,"_32nt"))
+  names(names_list)<-c(paste0(i,"_21nt"),
+                       paste0(i,"_22nt"), 
+                       paste0(i,"_23nt"),
+                       paste0(i,"_24nt"),
+                       paste0(i,"_25nt"),
+                       paste0(i,"_26nt"),
+                       paste0(i,"_27nt"),
+                       paste0(i,"_28nt"),
+                       paste0(i,"_29nt"),
+                       paste0(i,"_30nt"),
+                       paste0(i,"_31nt"),
+                       paste0(i,"_32nt"))
+  example_metaheatmap<-metaheatmap_psite(comparison_dt, anH, sample=names_list,
+                                         utr5l=20, cdsl=40, utr3l=20, log=T)
+  example_metaheatmap[["plot"]]
+  dfwt<-example_metaheatmap[["dt"]]
+  # write.table(dfwt, paste0(out,"source_data/",i,".txt"), quote=F, sep="\t", row.names=F)
+  ggsave(paste0(out,"/metaheatmap/",i,".pdf" ),width = 10, height = 7, units="in")
+}
+
+#figS5b
+for (i in names(reads)){
+  example_frames<-frame_psite(reads_psite_list, sample=i, region="all")
+  example_frames[["plot"]]
+  dfwt<-example_frames[["dt"]]
+  # write.table(dfwt, paste0(out,"frame_psite/source_data/",i,".txt"), quote=F, sep="\t", row.names=F)
+  ggsave(paste0(out,"/frame_psite/",i,".pdf" ),width = 6, height = 3, units="in")
+}
+
+
 
