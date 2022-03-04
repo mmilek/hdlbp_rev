@@ -3,10 +3,12 @@ library(reshape2)
 library(corrplot)
 library(Biostrings)
 library(dplyr)
+library(DESeq2)
+
 # setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/all_clip_data/mapping_trans/")
 # setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/all_clip_data/reclip/mapping_trans/")
-setwd("F:/landthaler/HDLBP/all_clip_data/reclip/mapping_trans/")
-len<-read.delim("transcript_cds_utr_lenght.txt", header=T)
+# setwd("F:/landthaler/HDLBP/all_clip_data/reclip/mapping_trans/")
+len<-read.delim("data/transcript_cds_utr_lenght.txt", header=T)
 rownames(len)<-len$transcript
 len$cds_start<-len$l_utr5+1
 len$cds_stop<-len$l_utr5+len$l_cds
@@ -29,9 +31,9 @@ len$frame_stop<-len$cds_start
 # write.table(bed, "transcript_orf.bed", quote=F, sep="\t", row.names=F, col.names = F)
 
 #selecting highest expressed isoform
-rsem1<-read.delim("T_293_1.isoforms.results", header=T)
+rsem1<-read.delim("data/T_293_1.isoforms.results", header=T)
 colnames(rsem1)[2:length(colnames(rsem1))]<-paste0(colnames(rsem1)[2:length(colnames(rsem1))],"_","T_293_1")
-rsem2<-read.delim("T_293_2.isoforms.results", header=T)
+rsem2<-read.delim("data/T_293_2.isoforms.results", header=T)
 colnames(rsem2)[2:length(colnames(rsem2))]<-paste0(colnames(rsem2)[2:length(colnames(rsem2))],"_","T_293_2")
 rsem<-merge(rsem1,rsem2, by="transcript_id")
 rsem$TPM<-rowMeans(rsem[,c("TPM_T_293_1","TPM_T_293_2")])
@@ -57,9 +59,9 @@ relevantBed<-relevantBed[order(relevantBed$transcript, relevantBed$start),]
 #write.table(relevantBed[,c(1, 12, 2, 10, 13,14)], "considered.transcripts.bed", quote=F, sep="\t", row.names = F, col.names = F)
 
 
-tc<-read.delim("reproducible.hdlbp.TCseq.bed", header=F)
+tc<-read.delim("data/reproducible.hdlbp.TCseq.bed", header=F)
 colnames(tc)<-c("transcript_id","tc_start","tc_stop","tc_num1","all_reads1","tc_num2","all_reads2","seq")
-library(DESeq2)
+
 fac<-estimateSizeFactorsForMatrix(tc[,c("all_reads1","all_reads2")])
 tc$norm_tc_num1<-tc$tc_num1/fac[1]
 tc$norm_tc_num2<-tc$tc_num2/fac[2]
@@ -76,7 +78,11 @@ dat$codon_start<-ifelse((dat$tc_from_start-1)%%3==0, dat$tc_from_start,
                         ifelse((dat$tc_from_start-2)%%3==0,dat$tc_from_start-1,
                                dat$tc_from_start-2))
 
-fastapath<-"hg19bt1.transcripts.fa"
+# due to size limitations we cannot provide the transcriptome fasta file. please 
+# provide this using local path. We used RSEM to produce 
+# transcriptome fasta using gencode v19 annotation
+
+fastapath<-"~/hdlbp_git/hg19bt1.transcripts.fa"
 seqTrans <- Biostrings::readDNAStringSet(fastapath, format = "fasta", use.names = TRUE)
 
 sub<- seqTrans[ham$transcript]
@@ -128,10 +134,7 @@ colnames(fin1)[2:(ncol(fin1))]<-paste0("rep1_",colnames(fin1)[2:(ncol(fin1))])
 colnames(fin2)[2:(ncol(fin2))]<-paste0("rep2_",colnames(fin2)[2:(ncol(fin2))])
 fin<-merge(fin1, fin2, by="gene_id")
 
-# setwd("~/Google Drive/hdlbp/")
-setwd("E:/Google Drive/hdlbp/")
-# mas<-read.delim("hdlbp_master_table_with_classes.txt", header=T)
-mas<-read.delim("hdlbp_master_table_with_classes_uniq.txt", header=T)
+mas<-read.delim("data/hdlbp_master_table_with_classes_uniq.txt", header=T)
 inf<-subset(mas, select=c("gene_id","Symbol",
                           "tpm_cutoff","tc_CDS_norm","localization_cat",
                           "mean_te_293","loc_tar_CDS","tc_CDS_norm_cat",
@@ -153,11 +156,11 @@ cols<-data.frame(codon=colnames(ave)[2:35], seq=seq(1,length(colnames(ave)[2:35]
 # setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/all_clip_data/mapping_trans/")
 # setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/all_clip_data/reclip/mapping_trans/")
 setwd("F:/landthaler/HDLBP/all_clip_data/reclip//mapping_trans/")
-cod<-read.delim("codon_table.txt")
+cod<-read.delim("data/codon_table.txt")
 codcols<-merge(cols, cod, by="codon")
 codcols$cod_aa<-paste0(codcols$codon,";",codcols$aa2)
 colnames(ave)[2:35]<-codcols$cod_aa
-usg<-read.delim("codonUsage.txt")
+usg<-read.delim("data/codonUsage.txt")
 usg$codon<-gsub("T","U",usg$codon)
 usg$codon<-paste0(usg$codon,";",usg$aa)
 usg$dum<-1
