@@ -58,7 +58,6 @@ relevantBed<-relevantBed[order(relevantBed$transcript, relevantBed$start),]
 
 #write.table(relevantBed[,c(1, 12, 2, 10, 13,14)], "considered.transcripts.bed", quote=F, sep="\t", row.names = F, col.names = F)
 
-
 tc<-read.delim("data/reproducible.hdlbp.TCseq.bed", header=F)
 colnames(tc)<-c("transcript_id","tc_start","tc_stop","tc_num1","all_reads1","tc_num2","all_reads2","seq")
 

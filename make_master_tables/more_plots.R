@@ -1,10 +1,9 @@
-library(reshape2)
+# more data exploration plots
 
-# setwd("~/Google Drive/hdlbp/")
-setwd("E:/Google Drive/hdlbp/")
-fin<-read.delim("master_table_hdlbp.txt", header=T)
-# setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/psilac")
-# fin<-read.delim("master_table_hdlbp.txt", header=T)
+library(reshape2)
+library(ggplot2)
+
+fin<-read.delim("data/hdlbp_master_table_with_classes_uniq.txt", header=T)
 
 ##change in membrane localization upon KO
 
@@ -23,7 +22,6 @@ nrow(subset(tot_down, target=="target"))
 
 #write.table(tot_up, "tot_up.txt", quote=F, sep="\t", row.names=F)
 #write.table(tot_down, "tot_down.txt", quote=F, sep="\t", row.names=F)
-
 
 rel<-subset(fin, tpm_cutoff>=10)
 
@@ -191,17 +189,8 @@ nrow(subset(fin, spike_in=="spike_in" & target=="target"))
 nrow(subset(fin, spike_in=="spike_in" & localization=="cytosol"))
 nrow(subset(fin, spike_in=="spike_in" & localization=="membrane"))
 
-
 spike<-subset(fin, spike_in=="spike_in", select=c("Symbol", "gene_id"))
 #write.table(spike, "spike_in_genes.txt", quote=F, sep="\t", row.names=F)
-
-
-
-
-
-
-
-
 
 rel<-subset(fin,tpm_cutoff>=10)
 ggplot(rel, aes(lfc.lfq.h.ko.293, colour=target))+stat_ecdf()
@@ -309,10 +298,6 @@ mel<-melt(rel, measure.vars = colnames(rel)[grepl("log2FoldChange.mem.cyt.",coln
                                                                                                      "Cleavage.site..Signalp.","Low.complexity..Seg."))
 ggplot(mel, aes(variable, log2(value), fill=Transmembrane.helices))+geom_boxplot()+
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-
-#ggplot(mel, aes(variable, log2(value), fill=Cleavage.site..Signalp.))+geom_boxplot()+
-  # theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 
 ggplot(rel, aes(log2FoldChange.mem.cyt.WT, colour=target))+stat_ecdf()

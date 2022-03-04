@@ -20,11 +20,11 @@ Ulrike Zinnall<sup>1</sup><sup>,</sup><sup>3</sup><sup>,</sup><sup>+</sup>, Miha
 
 
 For reproduction of key figures from processed data:
-Run scripts in the figures folder.
+Run scripts in the figures directory. Working directory should be set to project directory.
 
 
-For reproduction of key data tables in the data folder: 
-Run scripts in the make_master_tables folder.
+For reproduction of key data tables in the data directory: 
+Run scripts in the make_master_tables directory.
 
 
 For the quantification of tRNAs from PAR-CLIP data, please see the scripts in the trna directory.
