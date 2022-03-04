@@ -19,12 +19,19 @@ Ulrike Zinnall<sup>1</sup><sup>,</sup><sup>3</sup><sup>,</sup><sup>+</sup>, Miha
 <sup>6</sup>IRI Life Sciences, Institute of Biology, Humboldt-Universität zu Berlin, Germany
 
 
-For reproduction of key figures from processed data:
-Run scripts in the figures directory. Working directory should be set to project directory.
+Please start in the figs directory, which enables easy reproduction of key figures from processed data. Working directory should be set to project directory. This should also be enough to perform further exploratory analysis.
 
 
-For reproduction of key data tables in the data directory: 
-Run scripts in the make_master_tables directory.
+Documentation and reproduction of key tables in the data directory is available in the make_master_tables directory.
 
 
 For the quantification of tRNAs from PAR-CLIP data, please see the scripts in the trna directory.
+
+
+In the geo_processed_data directory we also provide the processed data that are otherwise also available from GEO. Required for some R scripts in the figs directory.
+
+
+In the source_data directory the tables used for source data Excel file are for each panel.
+
+
+In the suppl_tables directory the production of Supplemental Tables is documented.
