@@ -23,8 +23,8 @@ For reproduction of key figures from processed data:
 Run scripts in the figures folder.
 
 
-For reproduction of processed data: 
-Run scripts in the project folder.
+For reproduction of key data tables in the data folder: 
+Run scripts in the make_master_tables folder.
 
 
 For the quantification of tRNAs from PAR-CLIP data, please see the scripts in the trna directory.
