@@ -95,7 +95,9 @@ sd<-subset(regionCounts, !is.na(localization_cat) & tpm_cutoff>=10 & gene_biotyp
 # write.table(sd, "source_data/fig2bc.txt", quote=F, sep="\t", row.names=F, col.names=T)
 
 
-#for the fig2a, get zeros for positional information (this is computationally intensive)
+# for the fig2a, get zeros for positional information (this is 
+# computationally intensive)
+
 seqs<-dat[,c("transcript_id", "l_tr","l_utr5", "l_cds","l_utr3")]
 seqs$id<-paste0(seqs$transcript,"_",seqs$l_tr,"_",seqs$l_utr5, "_", seqs$l_cds,"_", seqs$l_utr3)
 seqs<-subset(seqs, !duplicated(id))
