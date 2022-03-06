@@ -3,9 +3,9 @@
 library(ggplot2)
 library(matrixTests)
 
-fil<-list.files("data/codons_stalling", pattern="txt", full.names = T)
-dat<-lapply(fil, read.delim)
-names(dat)<-gsub("\\..*", "", fil)
+files<-list.files("data/codons_stalling", pattern="txt", full.names = T)
+dat<-lapply(files, read.delim)
+names(dat)<-gsub("\\..*", "", files)
 
 no_norm<-dat[grepl("no_norm",names(dat))]
 norm<-dat[grepl("e_norm",names(dat))]
@@ -151,7 +151,7 @@ sd<-subset(comp, site=="psite"| site=="esite")
 
 
 
-#fig6b
+# fig6b
 library(ggplot2)
 
 fin<-read.delim("geo_processed_data/processed_data_parclip_trna.txt", header=T)

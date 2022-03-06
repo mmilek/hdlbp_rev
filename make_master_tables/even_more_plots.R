@@ -1,4 +1,5 @@
-setwd("~/hdlbp_git/hdlbp-master/")
+library(ggplot2)
+
 
 tc<-read.delim("data/reproducible.hdlbp.TCseq.bed", header=F)
 colnames(tc)<-c("transcript_id","tc_start","tc_stop","tc_num1","all_reads1","tc_num2","all_reads2","seq")
