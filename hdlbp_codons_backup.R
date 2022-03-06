@@ -152,9 +152,7 @@ colnames(ave)<-gsub("rep1_","",colnames(ave))
 ave<-cbind(gene_id=fin$gene_id, ave, fin[,72:ncol(fin)])
 colnames(ave)[2:35]<-gsub("T","U",colnames(ave)[2:35])
 cols<-data.frame(codon=colnames(ave)[2:35], seq=seq(1,length(colnames(ave)[2:35])))
-# setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/all_clip_data/mapping_trans/")
-# setwd("/Volumes/landthaler/pcp/projects/miha/HDLBP/all_clip_data/reclip/mapping_trans/")
-setwd("F:/landthaler/HDLBP/all_clip_data/reclip//mapping_trans/")
+
 cod<-read.delim("data/codon_table.txt")
 codcols<-merge(cols, cod, by="codon")
 codcols$cod_aa<-paste0(codcols$codon,";",codcols$aa2)
@@ -183,24 +181,10 @@ heat$norm_cod_xl<-ifelse(heat$tpm_cutoff==0, NA, heat$value/heat$tpm_cutoff)
 
 
 heat$gene_id<-factor(heat$gene_id, levels=unique(heat$gene_id[order(heat$log2FoldChange.mem.cyt.293, decreasing = T)]), ordered = T)
-ggplot(heat, aes(gene_id, variable))+geom_tile(aes(fill=log2(value)))+
-  scale_fill_continuous(limits=c(0,20),na.value = 'black')+theme(axis.title.x=element_blank(),axis.title.y=element_blank(),
-                                                                 axis.text.x=element_blank(),
-                                                                 axis.ticks.x=element_blank())
+
+#figS6a
 ggplot(heat, aes(gene_id, variable))+geom_tile(aes(fill=log2(value/tpm_cutoff)))+
   scale_fill_continuous(na.value = 'black')+theme(axis.title.x=element_blank(),axis.title.y=element_blank(),
-                                                                 axis.text.x=element_blank(),
-                                                                 axis.ticks.x=element_blank())
-ggplot(heat, aes(gene_id, variable))+geom_tile(aes(fill=log2(value/tpm_cutoff)))+
-  scale_fill_continuous(na.value = 'black')+theme(axis.title.x=element_blank(),axis.title.y=element_blank(),
-                                                  axis.text.x=element_blank(),
-                                                  axis.ticks.x=element_blank())
-ggplot(heat, aes(gene_id, variable))+geom_tile(aes(fill=log2(norm_cod_xl)))+
-  scale_fill_continuous(na.value = "black")+theme(axis.title.x=element_blank(),axis.title.y=element_blank(),
-                                                  axis.text.x=element_blank(),
-                                                  axis.ticks.x=element_blank())
-ggplot(heat, aes(gene_id, variable))+geom_tile(aes(fill=log2(norm_cod_xl)))+
-  scale_fill_continuous()+theme(axis.title.x=element_blank(),axis.title.y=element_blank(),
                                                   axis.text.x=element_blank(),
                                                   axis.ticks.x=element_blank())
 
@@ -231,20 +215,26 @@ ggplot(subset(heat, !is.na(tc_CDS_norm_cat)), aes(variable, log2(value), fill=tc
 ave$dum<-1
 ave$gene_id<-factor(ave$gene_id, levels=unique(ave$gene_id[order(ave$log2FoldChange.mem.cyt.293, decreasing = T)]), ordered = T)
 
+#figS6a
 ggplot(ave, aes(gene_id, dum))+geom_tile(aes(fill=log2FoldChange.mem.cyt.293))+
   theme(axis.title.x=element_blank(),
          axis.text.x=element_blank(),
          axis.ticks.x=element_blank())
+#figS6a
+#total transcript
 ggplot(ave, aes(gene_id, dum))+geom_tile(aes(fill=log2(tc_transcript_norm)))+scale_fill_continuous(na.value = 'black')+
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())
+#CDS only
 ggplot(ave, aes(gene_id, dum))+geom_tile(aes(fill=log2(tc_CDS_norm)))+scale_fill_continuous(na.value = 'black')+
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank())
 usg<-subset(usg, grepl("U", usg$codon))
 usg<-subset(usg, !grepl("Stop", usg$codon))
+
+#figS6a
 ggplot(usg,aes(dum, codon))+geom_tile(aes(fill=codonUsage))
 
 
@@ -263,9 +253,6 @@ ggplot(heat, aes(gene_id, variable))+geom_tile(aes(fill=log2(value/tpm_cutoff)))
                                                                 axis.text.x=element_blank(),
                                                                 axis.ticks.x=element_blank())
 
-# hi<-subset(heat, loc_tar_CDS=="membrane_tc>10.82 & tc<181.46")
-# mid<-subset(heat, loc_tar_CDS=="membrane_tc>2.81 & tc<10.82")
-# lo<-subset(heat, loc_tar_CDS=="membrane_tc<2.81")
 hi<-subset(heat, loc_tar_CDS=="membrane_tc>5.56 & tc<65.26")
 mid<-subset(heat, loc_tar_CDS=="membrane_tc>1.66 & tc<5.56")
 lo<-subset(heat, loc_tar_CDS=="membrane_tc<1.66")
@@ -345,6 +332,7 @@ colnames(rands)[2:ncol(rands)]<-uid$codon_aa
 mel<-cbind(melt(bcods, id.vars = "loc_tar_CDS", variable.name = "bcods", value.name = "freq_bcods"),
            melt(rands, id.vars = "loc_tar_CDS", variable.name = "rands", value.name = "freq_rands"))
 
+mel<-mel[,-4]
 ggplot(mel, aes(freq_bcods, freq_rands))+geom_text(aes(label=bcods), size=3)+geom_abline(slope=1)+facet_grid(~loc_tar_CDS)
 
 mel$diff<-mel$freq_bcods-mel$freq_rands
