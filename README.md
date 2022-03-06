@@ -1,6 +1,6 @@
 # Vigilin/HDLBP analysis scripts
 
-This is a collection of analysis scripts that accompany the publication "HDLBP binds ER-targeted mRNAs by multivalent interactions to promote protein synthesis of transmembrane and secreted proteins." (accepted at Nature Communications, 2022).
+This is a collection of analysis scripts for the publication "HDLBP binds ER-targeted mRNAs by multivalent interactions to promote protein synthesis of transmembrane and secreted proteins." (accepted at Nature Communications, 2022).
 
 ![](images/waves.png)
 
