@@ -86,3 +86,5 @@ ggplot(subset(dat, tpm_cutoff>=10 & tsig_new!="other"& tsig_new!="MitoEncoded" &
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 summary(subset(dat, tpm_cutoff>=10 & tsig_new!="other"& tsig_new!="MitoEncoded" & !is.na(tc_CDS_norm))$tsig_new)
+
+#end of fig1
