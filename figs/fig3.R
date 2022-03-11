@@ -97,7 +97,7 @@ inf<-subset(mas, select=c("gene_id","Symbol",
 
 dat<-merge(dat, inf, by="gene_id")
 
-##7mer crosslinked
+# 7mer crosslinked
 mer<-dat
 
 mer$count<-ifelse(is.na(mer$localization_cat), NA,
@@ -138,7 +138,6 @@ mer$tc_seq_pos7<-toupper(as.character(Biostrings::subseq(sub[as.character(mer$tr
 mer<-melt(mer, measure.vars = colnames(mer)[48:54], id.vars = colnames(mer)[1:33], value.name = "seqs", variable.name = "tc_seq_pos")
 
 countmers<-aggregate(count~seqs+tc_region+localization_cat, sum, data=mer)
-# countmers$seqs<-gsub("T", "U", countmers$seqs)
 countmers$frac_tot<-countmers$count/sum(countmers$count)
 agr<-aggregate(frac_tot~seqs, sum, data=countmers)
 agr<-agr[order(agr$frac_tot, decreasing = T),]
@@ -148,16 +147,16 @@ countmers_plot<-countmers[rows,]
 countmers_plot$seqs<-factor(countmers_plot$seqs, levels=rev(agr))
 countmers_plot$localization_cat<-factor(countmers_plot$localization_cat, levels=c("membrane", "cytosolic"))
 
-#fig3a
+# fig3a
 ggplot(subset(countmers_plot, tc_region!="utr5"), aes(gsub("T","U",seqs), frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
   theme(text = element_text(size=8))+scale_fill_manual(values = c("dodgerblue3", "orange2"))
 
 sd<-subset(countmers_plot, tc_region!="utr5")
 sd$seqs<-gsub("T", "U", sd$seqs)
-#write.table(sd, "source_data/fig3a.txt", quote=F, sep="\t", row.names=F)
+# write.table(sd, "source_data/fig3a.txt", quote=F, sep="\t", row.names=F)
 
 
-#z-scores. due to size limitations we only provide files up to 8-mer.
+# z-scores. due to size limitations we only provide files up to 8-mer.
 
 files<-list.files("data/", pattern="whole", full.names = T)
 zs<-lapply(files, read.delim, header=T)
@@ -204,7 +203,7 @@ ggplot(zs, aes(zscores_CdsCyt_Utr3Cyt, colour=length))+geom_density()+facet_wrap
 ggplot(zs, aes(zscores_CdsMem_CdsCyt, fill=length))+geom_histogram(bins=500)+facet_wrap(~type+length, scales="free_y", ncol=6)+
   geom_vline(xintercept=0, lty=2, colour="grey")+coord_cartesian(xlim=c(-3,10))
 
-#fig3c
+# fig3c
 p<-ggplot(zs, aes(zscores_CdsUtr3Mem_CdsUtr3Cyt, colour=length))+stat_ecdf()+facet_wrap(~type, scales="free")+coord_cartesian(xlim=c(-3,15))
 print(p)
 
@@ -213,13 +212,13 @@ ggplot(sd, aes(zscores_CdsUtr3Mem_CdsUtr3Cyt, colour=length))+stat_ecdf()+facet_
 
 # write.table(sd, "source_data/fig3c.txt", quote=F, sep="\t", row.names=F)
 
-#figS3c top
+# figS3c top
 ggplot(subset(zs, type=="top40"), aes(zscores_CdsMem_CdsCyt, colour=length))+stat_ecdf()+facet_wrap(~type, scales="free")+
   coord_cartesian(xlim=c(-3,20))
-#figS3c bottom
+# figS3c bottom
 ggplot(subset(zs, type=="top40"), aes(zscores_CdsCyt_Utr3Cyt, colour=length))+stat_ecdf()+facet_wrap(~type, scales="free")+
   coord_cartesian(xlim=c(-3,15))
-#figS3d
+# figS3d
 ggplot(subset(zs, type=="top40"), aes(zscores_CdsMem_Utr3Cyt, colour=length))+stat_ecdf()+facet_wrap(~type, scales="free")+
   coord_cartesian(xlim=c(-3,15))
 
@@ -231,131 +230,74 @@ wilcox.test(subset(zs, type=="top40" & length=="4mers", select="zscores_CdsCyt_U
             subset(zs, type=="top40" & length=="7mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
 wilcox.test(subset(zs, type=="top40" & length=="4mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
             subset(zs, type=="top40" & length=="8mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="4mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="9mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="4mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="10mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="4mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="11mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="4mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="12mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
 wilcox.test(subset(zs, type=="top40" & length=="5mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
             subset(zs, type=="top40" & length=="6mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
 wilcox.test(subset(zs, type=="top40" & length=="5mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
             subset(zs, type=="top40" & length=="7mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
 wilcox.test(subset(zs, type=="top40" & length=="5mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
             subset(zs, type=="top40" & length=="8mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="5mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="9mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="5mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="10mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="5mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="11mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="5mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="12mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
 wilcox.test(subset(zs, type=="top40" & length=="6mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
             subset(zs, type=="top40" & length=="7mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
 wilcox.test(subset(zs, type=="top40" & length=="6mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
             subset(zs, type=="top40" & length=="8mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="6mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="9mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="6mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="10mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="6mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="11mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="6mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="12mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
 
 wilcox.test(subset(zs, type=="top40" & length=="7mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
             subset(zs, type=="top40" & length=="8mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="7mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="9mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="7mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="10mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="7mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="11mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="7mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="12mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
+
+#fig3d: p values (incomplete)
+
+# files<-list.files("data/", pattern="pval")
+# ps<-lapply(files, read.delim, header=F)
+# names(ps)<-gsub("\\..*","", gsub("pval_", "", files))
+# kmer<-c(rep(4, 8), rep(5, 7), rep(6, 6), rep(7, 5), rep(8, 4), rep(9, 3), rep(10, 2), rep(11, 1))
+# kmer2<-c(5:12, 6:12, 7:12, 8:12, 9:12, 10:12, 11:12,12)
+# ps<-Map(cbind, ps, kmer=rep(list(kmer),length(ps)))
+# ps<-Map(cbind, ps, kmer2=rep(list(kmer2),length(ps)))
+# ones<-rep(1, length(unique(ps[[1]]$kmer))+1)
+# ones<-data.frame(V1=ones, kmer=4:12, kmer2=4:12)
+# ps<-Map(rbind, ps, kmer2=rep(list(ones),length(ps)))
+# ps<-do.call("rbind", ps)
+# ps$comparison<-gsub("\\..*", "", row.names(ps))
+# colnames(ps)[1]<-"p"
+# ps$comparison<-factor(ps$comparison, levels=c("CdsUtr3Mem_CdsUtr3Cyt", "CdsMem_CdsCyt","CdsMem_Utr3Cyt","CdsCyt_Utr3Cyt", "Utr3Mem_Utr3Cyt" ))
+# ggplot(ps, aes(factor(kmer), factor(kmer2)))+geom_tile(aes(fill=-log10(p)), na.rm = T)+facet_wrap(~comparison, nrow=1)
+# ggplot(ps, aes(factor(kmer2), factor(kmer)))+geom_tile(aes(fill=-log10(p)), na.rm = T)+facet_wrap(~comparison, nrow=1)
 # 
-# wilcox.test(subset(zs, type=="top40" & length=="8mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="9mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="8mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="10mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="8mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="11mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="8mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="12mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
+# p_CdsMem_CdsCyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="freqCds_mem")[,1],
+#                                                     subset(x, !is.na(labs), select="freqCds_cyt")[,1] )$p.value)
+# p_CdsMem_CdsCyt_other<-sapply(zs, function(x) wilcox.test(subset(x, is.na(labs), select="freqCds_mem")[,1],
+#                                                           subset(x, is.na(labs), select="freqCds_cyt")[,1] )$p.value)
+# p_CdsUtr3Mem_CdsUtr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="freqCdsUtr3_mem")[,1],
+#                                                             subset(x, !is.na(labs), select="freqCdsUtr3_cyt")[,1] )$p.value)
+# p_CdsUtr3Mem_CdsUtr3Cyt_other<-sapply(zs, function(x) wilcox.test(subset(x, is.na(labs), select="freqCdsUtr3_mem")[,1],
+#                                                                   subset(x, is.na(labs), select="freqCdsUtr3_cyt")[,1] )$p.value)
 # 
-# wilcox.test(subset(zs, type=="top40" & length=="9mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="10mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="9mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="11mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="9mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="12mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
+# p_CdsMem_Utr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="freqCds_mem")[,1],
+#                                                      subset(x, is.na(labs), select="freqUtr3_cyt")[,1] )$p.value)
+# p_CdsMem_Utr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="diffs_CdsMem_Utr3Cyt")[,1],
+#                                                      subset(x, is.na(labs), select="diffs_CdsMem_Utr3Cyt")[,1] )$p.value)
+# p_CdsUtr3Mem_CdsUtr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="diffs_CdsUtr3Mem_CdsUtr3Cyt")[,1],
+#                                                             subset(x, is.na(labs), select="diffs_CdsUtr3Mem_CdsUtr3Cyt")[,1] )$p.value)
 # 
-# wilcox.test(subset(zs, type=="top40" & length=="10mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="11mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
-# wilcox.test(subset(zs, type=="top40" & length=="10mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="12mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
+# dats<-zs[[7]]
+# ggplot(dats, aes(diffs_CdsMem_CdsCyt, freqCds_mem+freqCds_cyt,colour=labs))+geom_point(shape=1)+geom_text(aes(label=labs), size=3)+theme(legend.position = "none")
+# ggplot(dats, aes(diffs_CdsMem_Utr3Cyt, freqCds_mem+freqUtr3_cyt,colour=labs))+geom_point(shape=1)+geom_text(aes(label=labs), size=3)+theme(legend.position = "none")+coord_cartesian(xlim=c(-0.001,0.001), ylim=c(0,0.001))
 # 
-# wilcox.test(subset(zs, type=="top40" & length=="11mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
-#             subset(zs, type=="top40" & length=="12mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
+# 
+# ggplot(dats, aes(freqCds_mem, freqCds_cyt,colour=labs))+geom_point(shape=1, size=1)+geom_text(aes(label=labs), size=3)+geom_abline()+theme(legend.position = "none")
+# ggplot(dats, aes(freqCds_mem, freqUtr3_cyt,colour=labs))+geom_point(shape=1, size=1)+geom_text(aes(label=labs), size=3)+geom_abline()
+# ggplot(dats, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt,colour=labs))+geom_point(shape=1, size=1)+geom_text(aes(label=labs), size=3)+geom_abline()+theme(legend.position = "none")+coord_cartesian(xlim=c(0,0.0006), ylim=c(0,0.0006))
+# 
+# dats<-zs[[9]]
+# ggplot(dats, aes(diffs_CdsMem_CdsCyt, freqCds_mem+freqCds_cyt,colour=labs))+geom_point(shape=1)+geom_text(aes(label=labs), size=3)+theme(legend.position = "none")
+# ggplot(dats, aes(diffs_CdsMem_Utr3Cyt, freqCds_mem+freqUtr3_cyt,colour=labs))+geom_point(shape=1)+geom_text(aes(label=labs), size=3)+theme(legend.position = "none")+coord_cartesian(xlim=c(-0.001,0.001), ylim=c(0,0.001))
+# 
+# 
+# ggplot(dats, aes(freqCds_mem, freqCds_cyt,colour=labs))+geom_point(shape=1, size=1)+geom_text(aes(label=labs), size=3)+geom_abline()+theme(legend.position = "none")
+# ggplot(dats, aes(freqCds_mem, freqUtr3_cyt,colour=labs))+geom_point(shape=1, size=1)+geom_text(aes(label=labs), size=3)+geom_abline()
 
-#fig3d: p values not done yet
-
-setwd("E:/work//hdlbp/kmers_mem_cyt/")
-files<-list.files(getwd(), pattern="pval")
-ps<-lapply(files, read.delim, header=F)
-names(ps)<-gsub("\\..*","", gsub("pval_", "", files))
-kmer<-c(rep(4, 8), rep(5, 7), rep(6, 6), rep(7, 5), rep(8, 4), rep(9, 3), rep(10, 2), rep(11, 1))
-kmer2<-c(5:12, 6:12, 7:12, 8:12, 9:12, 10:12, 11:12,12)
-ps<-Map(cbind, ps, kmer=rep(list(kmer),length(ps)))
-ps<-Map(cbind, ps, kmer2=rep(list(kmer2),length(ps)))
-ones<-rep(1, length(unique(ps[[1]]$kmer))+1)
-ones<-data.frame(V1=ones, kmer=4:12, kmer2=4:12)
-ps<-Map(rbind, ps, kmer2=rep(list(ones),length(ps)))
-ps<-do.call("rbind", ps)
-ps$comparison<-gsub("\\..*", "", row.names(ps))
-colnames(ps)[1]<-"p"
-ps$comparison<-factor(ps$comparison, levels=c("CdsUtr3Mem_CdsUtr3Cyt", "CdsMem_CdsCyt","CdsMem_Utr3Cyt","CdsCyt_Utr3Cyt", "Utr3Mem_Utr3Cyt" ))
-ggplot(ps, aes(factor(kmer), factor(kmer2)))+geom_tile(aes(fill=-log10(p)), na.rm = T)+facet_wrap(~comparison, nrow=1)
-ggplot(ps, aes(factor(kmer2), factor(kmer)))+geom_tile(aes(fill=-log10(p)), na.rm = T)+facet_wrap(~comparison, nrow=1)
-
-p_CdsMem_CdsCyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="freqCds_mem")[,1],
-                                                    subset(x, !is.na(labs), select="freqCds_cyt")[,1] )$p.value)
-p_CdsMem_CdsCyt_other<-sapply(zs, function(x) wilcox.test(subset(x, is.na(labs), select="freqCds_mem")[,1],
-                                                          subset(x, is.na(labs), select="freqCds_cyt")[,1] )$p.value)
-p_CdsUtr3Mem_CdsUtr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="freqCdsUtr3_mem")[,1],
-                                                            subset(x, !is.na(labs), select="freqCdsUtr3_cyt")[,1] )$p.value)
-p_CdsUtr3Mem_CdsUtr3Cyt_other<-sapply(zs, function(x) wilcox.test(subset(x, is.na(labs), select="freqCdsUtr3_mem")[,1],
-                                                                  subset(x, is.na(labs), select="freqCdsUtr3_cyt")[,1] )$p.value)
-
-p_CdsMem_Utr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="freqCds_mem")[,1],
-                                                     subset(x, is.na(labs), select="freqUtr3_cyt")[,1] )$p.value)
-p_CdsMem_Utr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="diffs_CdsMem_Utr3Cyt")[,1],
-                                                     subset(x, is.na(labs), select="diffs_CdsMem_Utr3Cyt")[,1] )$p.value)
-p_CdsUtr3Mem_CdsUtr3Cyt<-sapply(zs, function(x) wilcox.test(subset(x, !is.na(labs), select="diffs_CdsUtr3Mem_CdsUtr3Cyt")[,1],
-                                                            subset(x, is.na(labs), select="diffs_CdsUtr3Mem_CdsUtr3Cyt")[,1] )$p.value)
-
-dats<-zs[[7]]
-ggplot(dats, aes(diffs_CdsMem_CdsCyt, freqCds_mem+freqCds_cyt,colour=labs))+geom_point(shape=1)+geom_text(aes(label=labs), size=3)+theme(legend.position = "none")
-ggplot(dats, aes(diffs_CdsMem_Utr3Cyt, freqCds_mem+freqUtr3_cyt,colour=labs))+geom_point(shape=1)+geom_text(aes(label=labs), size=3)+theme(legend.position = "none")+coord_cartesian(xlim=c(-0.001,0.001), ylim=c(0,0.001))
-
-
-ggplot(dats, aes(freqCds_mem, freqCds_cyt,colour=labs))+geom_point(shape=1, size=1)+geom_text(aes(label=labs), size=3)+geom_abline()+theme(legend.position = "none")
-ggplot(dats, aes(freqCds_mem, freqUtr3_cyt,colour=labs))+geom_point(shape=1, size=1)+geom_text(aes(label=labs), size=3)+geom_abline()
-ggplot(dats, aes(freqCdsUtr3_mem, freqCdsUtr3_cyt,colour=labs))+geom_point(shape=1, size=1)+geom_text(aes(label=labs), size=3)+geom_abline()+theme(legend.position = "none")+coord_cartesian(xlim=c(0,0.0006), ylim=c(0,0.0006))
-
-dats<-zs[[9]]
-ggplot(dats, aes(diffs_CdsMem_CdsCyt, freqCds_mem+freqCds_cyt,colour=labs))+geom_point(shape=1)+geom_text(aes(label=labs), size=3)+theme(legend.position = "none")
-ggplot(dats, aes(diffs_CdsMem_Utr3Cyt, freqCds_mem+freqUtr3_cyt,colour=labs))+geom_point(shape=1)+geom_text(aes(label=labs), size=3)+theme(legend.position = "none")+coord_cartesian(xlim=c(-0.001,0.001), ylim=c(0,0.001))
-
-
-ggplot(dats, aes(freqCds_mem, freqCds_cyt,colour=labs))+geom_point(shape=1, size=1)+geom_text(aes(label=labs), size=3)+geom_abline()+theme(legend.position = "none")
-ggplot(dats, aes(freqCds_mem, freqUtr3_cyt,colour=labs))+geom_point(shape=1, size=1)+geom_text(aes(label=labs), size=3)+geom_abline()
-
-#fig3b
-##7mer crosslinked with motif
+# fig3b
+# 7mer crosslinked with motif
 mer<-dat
 
 mer$count<-ifelse(is.na(mer$localization_cat), NA,
@@ -372,8 +314,6 @@ agr<-agr[1:5, "seq"]
 rows<-which(countmers$seq %in% agr)
 countmers_plot<-countmers[rows,]
 countmers_plot$seq<-factor(countmers_plot$seq, levels=rev(agr))
-# ggplot(subset(countmers_plot, tc_region!="utr5"), aes(seq, frac_tot, fill=tc_region))+geom_bar(stat="identity", position="dodge",)+coord_flip()+facet_wrap(~localization_cat)+
-#   theme(text = element_text(size=8))
 
 library(ggseqlogo)
 p<-ggplot(subset(countmers_plot, localization_cat=="membrane" & tc_region=="cds"))+geom_logo(gsub("T","U",as.character(countmers_plot$seq)), method="bits", seq_type = "rna")+theme_logo()
@@ -382,8 +322,6 @@ print(p)
 sd<-unique(countmers_plot$seq)
 sd
 
-
-
 #begin multivalency fig3e fig3f
 pfgr<-read.delim("data/h_values_transcriptome_with_annotation_kmer.txt", header=T)
 pfgr$hval<-1
@@ -391,7 +329,6 @@ pfgr$dup_id<-paste0(pfgr$second.X.seqnames,"_", pfgr$second.mcols.norm_tc_num1,
                     "_", pfgr$second.mcols.norm_tc_num2,"_", pfgr$second.mcols.localization_cat,
                     "_", pfgr$second.mcols.tc_region,"_", pfgr$distance,"_",pfgr$kmer_pos,"_",pfgr$kmer,"_",pfgr$kmer)
 pfgr<-subset(pfgr, !duplicated(dup_id))
-# hs<-aggregate(hval~second.X.seqnames+kmer+second.mcols.localization_cat+second.mcols.tc_region, data=pfgr, sum)
 hs<-aggregate(hval~second.X.seqnames+kmer+second.mcols.localization_cat+second.mcols.tc_region, 
               data=subset(pfgr, abs(distance)>4), sum)
 
@@ -416,7 +353,6 @@ max_hs_plot<-max_hs[filter,]
 ggplot(max_hs_plot, aes(kmer,hval, fill=second.mcols.tc_region))+
   geom_bar(stat="identity", position="dodge")+facet_wrap(~second.mcols.localization_cat)+coord_flip()
 
-
 sum_hs_all<-aggregate(hval~kmer, data=hs, sum)
 sum_hs_all<-sum_hs_all[order(sum_hs_all$hval, decreasing = T),]
 sum_hs_all<-sum_hs_all[1:10,]
@@ -425,7 +361,6 @@ sum_hs_plot<-sum_hs[filter,]
 sum_hs_plot$kmer<-factor(sum_hs_plot$kmer, levels=rev(sum_hs_all$kmer))
 ggplot(subset(sum_hs_plot, second.mcols.tc_region!="utr5"), aes(gsub("T","U",kmer),hval, fill=second.mcols.tc_region))+
   geom_bar(stat="identity", position="dodge")+facet_wrap(~second.mcols.localization_cat)+coord_flip()+scale_fill_manual(values=c("dodgerblue4", "orange3"))
-
 
 freq_hs<-aggregate(hval~kmer+second.mcols.localization_cat+second.mcols.tc_region, data=hs, sum)
 freq_hs$freq<-freq_hs$hval/sum(freq_hs$hval)
@@ -437,7 +372,7 @@ freq_hs_plot<-freq_hs[filter,]
 freq_hs_plot$kmer<-factor(freq_hs_plot$kmer, levels=rev(unique(freq_hs_all$kmer)))
 freq_hs_plot$second.mcols.localization_cat<-factor(freq_hs_plot$second.mcols.localization_cat, levels=c("membrane", "cytosolic"))
 
-#figS3f right panel
+# figS3f right panel
 ggplot(subset(freq_hs_plot, second.mcols.tc_region!="utr5"), aes(kmer,freq, fill=second.mcols.tc_region))+
   geom_bar(stat="identity", position="dodge")+facet_wrap(~second.mcols.localization_cat)+coord_flip()+scale_fill_manual(values=c("dodgerblue4", "orange3"))
 sd<-subset(freq_hs_plot, second.mcols.tc_region!="utr5")
@@ -457,11 +392,11 @@ ggplot(subset(hs_plot, second.mcols.tc_region!="utr5"), aes(kmer,log2(hval), fil
 ggplot(subset(hs_plot, second.mcols.tc_region!="utr5"), aes(kmer,log2(hval), fill=second.mcols.localization_cat)) +
   geom_boxplot()+facet_wrap(~second.mcols.tc_region)+coord_flip()+geom_hline(yintercept=3, lty=2, colour="grey")+scale_fill_manual(values=c("dodgerblue3", "orange3"))
 
-
 hs_plot<-subset(hs_plot, select=c("id", "hval"))
 tab<-aggregate(hval~second.X.seqnames, data=hs_plot,sum)
 colnames(tab)[1]<-"transcript"
-#write.table(tab, "hval_perGene.txt", quote=F, sep="\t", row.names=F)
+
+# write.table(tab, "data/hval_perGene.txt", quote=F, sep="\t", row.names=F)
 pfgr$id<-paste0(pfgr$second.X.seqnames, "_", pfgr$kmer)
 pfgr<-pfgr[,-9]
 pfgr<-merge(pfgr, hs_plot, by="id", all.x=T)
@@ -498,10 +433,9 @@ ggplot(sub_pfgr , aes(hval_cat, log2(second.mcols.norm_tc_num1), fill=hval_cat))
 ggplot(sub_pfgr , aes(hval_cat, log2(second.mcols.norm_tc_num2), fill=hval_cat))+geom_violin(scale = "count")+geom_boxplot(width=0.1, outlier.shape = NA) +theme(axis.text.x = element_text(angle = 45, hjust=1))+
   scale_fill_brewer(palette=4)
 
-#fig3e
+# fig3e
 ggplot(sub_pfgr , aes(hval_cat, log2(rowMeans(sub_pfgr[,c("second.mcols.norm_tc_num1","second.mcols.norm_tc_num2")])), fill=hval_cat))+geom_violin(scale = "count")+geom_boxplot(width=0.1, outlier.shape = NA) +theme(axis.text.x = element_text(angle = 45, hjust=1))+
   scale_fill_brewer(palette=4)
-
 
 summary(subset(sub_pfgr, !is.na(log2(rowMeans(sub_pfgr[,c("second.mcols.norm_tc_num1","second.mcols.norm_tc_num2")]))))$hval_cat)
 sd<-subset(sub_pfgr, !is.na(log2(rowMeans(sub_pfgr[,c("second.mcols.norm_tc_num1","second.mcols.norm_tc_num2")]))),
@@ -509,19 +443,14 @@ sd<-subset(sub_pfgr, !is.na(log2(rowMeans(sub_pfgr[,c("second.mcols.norm_tc_num1
                     "second.mcols.localization_cat", "second.mcols.tc_region", "kmer_pos","kmer","hval", "hval_cat"))
 # write.table(sd,"source_data/fig3e.txt", quote=F, sep="\t", row.names=F)
 
-##most crosslinked 4mers
+# most crosslinked 4mers
 
-
-# pfgr<-melt(dfgr, measure.vars = colnames(dfgr)[grepl("pos[0-9]$",colnames(dfgr))],
-# id.vars = c("second.X.seqnames","second.mcols.norm_tc_num1", "second.mcols.norm_tc_num2", "second.mcols.localization_cat", "second.mcols.tc_region", "distance"),
-# value.name = "kmer", variable.name = "kmer_pos")
 pfgr<-read.delim("data/h_values_transcriptome_with_annotation_kmer.txt", header=T)
 pfgr$hval<-1
 pfgr$dup_id<-paste0(pfgr$second.X.seqnames,"_", pfgr$second.mcols.norm_tc_num1,
                     "_", pfgr$second.mcols.norm_tc_num2,"_", pfgr$second.mcols.localization_cat,
                     "_", pfgr$second.mcols.tc_region,"_", pfgr$distance,"_",pfgr$kmer_pos,"_",pfgr$kmer,"_",pfgr$kmer)
 pfgr<-subset(pfgr, !duplicated(dup_id))
-# hs<-aggregate(hval~second.X.seqnames+kmer+second.mcols.localization_cat+second.mcols.tc_region, data=pfgr, sum)
 hs<-aggregate(hval~second.X.seqnames+kmer+second.mcols.localization_cat+second.mcols.tc_region, 
               data=subset(pfgr, abs(distance)>4), sum)
 
@@ -529,8 +458,6 @@ mean_hs<-aggregate(hval~kmer+second.mcols.localization_cat+second.mcols.tc_regio
 max_hs<-aggregate(hval~kmer+second.mcols.localization_cat+second.mcols.tc_region, data=hs, max)
 
 xlinked<-c("TTCT","CTTC","TCTT","TTCC","TCCT","CTCT","TTTC","CTTT","TCTC","TTTT") #most crosslinked kmers
-# xlinked<-unique(freq_hs_plot$kmer)
-# xlinked<-"CTTC"
 
 filter<-which(mean_hs$kmer %in% xlinked)
 mean_hs_plot<-mean_hs[filter,]
@@ -609,8 +536,7 @@ plot$hval_cat<-gsub(".*;","",plot$id)
 plot$hval_cat<-factor(plot$hval_cat, levels=c("hval_hi", "hval_midhi", "hval_midmid", "hval_midlo", "hval_lo"))
 ggplot(plot , aes(hval_cat, log2(tc), fill=hval_cat))+geom_violin(scale = "count")+facet_wrap(~localization_cat+tc_region)
 
-
-#fig3f replicate 1
+# fig3f replicate 1
 ggplot(subset(plot, ((tc_region=="cds" & localization_cat=="membrane") | (tc_region=="utr3" & localization_cat=="cytosolic") )),
        aes(distance, tc, colour=hval_cat))+geom_line()+facet_wrap(~localization_cat+tc_region+hval_cat, scales="free_y", ncol=5)
 
@@ -641,10 +567,83 @@ plot$hval_cat<-gsub(".*;","",plot$id)
 plot$hval_cat<-factor(plot$hval_cat, levels=c("hval_hi", "hval_midhi", "hval_midmid", "hval_midlo", "hval_lo"))
 ggplot(plot , aes(hval_cat, log2(tc), fill=hval_cat))+geom_violin(scale = "count")+facet_wrap(~localization_cat+tc_region)
 
-#fig3f replicate 2
+# fig3f replicate 2
 ggplot(subset(plot, ((tc_region=="cds" & localization_cat=="membrane") | (tc_region=="utr3" & localization_cat=="cytosolic") )),
        aes(distance, tc, colour=hval_cat))+geom_line()+facet_wrap(~localization_cat+tc_region+hval_cat, scales="free_y", ncol=5)
 
 ggplot(subset(plot, tc_region!="utr5"),aes(distance, tc, colour=hval_cat))+geom_line()+facet_wrap(~localization_cat+tc_region+hval_cat, scales="free_y", ncol=5)
 
+# fig3g: Due to size limitations we cannot provide all h values in the repository. 
+# please contact milekm@gmail.com if you require the files below:
 
+cdsMem<-read.delim("../../bulky/cdsMem_hval_window.txt", header=T)
+utr3Mem<-read.delim("../../bulky/utr3Mem_hval_window.txt", header=T)
+cdsCyt<-read.delim("../../bulky/cdsCyt_hval_window.txt", header=T)
+utr3Cyt<-read.delim("../../bulky/utr3Cyt_hval_window.txt", header=T)
+
+cdsMem_bck<-read.delim("../../bulky/bck_cdsMem_hval_window.txt", header=T)
+utr3Mem_bck<-read.delim("../../bulky/bck_utr3Mem_hval_window.txt", header=T)
+cdsCyt_bck<-read.delim("../../bulky/bck_cdsCyt_hval_window.txt", header=T)
+utr3Cyt_bck<-read.delim("../../bulky/bck_utr3Cyt_hval_window.txt", header=T)
+
+cdsMem$region<-"cds"
+cdsMem$loc<-"membrane"
+utr3Mem$region<-"utr3"
+utr3Mem$loc<-"membrane"
+cdsCyt$region<-"cds"
+cdsCyt$loc<-"cytosolic"
+utr3Cyt$region<-"utr3"
+utr3Cyt$loc<-"cytosolic"
+
+cdsMem_bck$region<-"cds_bck"
+cdsMem_bck$loc<-"membrane_bck"
+utr3Mem_bck$region<-"utr3_bck"
+utr3Mem_bck$loc<-"membrane_bck"
+cdsCyt_bck$region<-"cds_bck"
+cdsCyt_bck$loc<-"cytosolic_bck"
+utr3Cyt_bck$region<-"utr3_bck"
+utr3Cyt_bck$loc<-"cytosolic_bck"
+
+hval<-rbind(cdsMem, utr3Mem, cdsCyt, utr3Cyt, cdsMem_bck, cdsCyt_bck, utr3Cyt_bck, utr3Mem_bck)
+hval$region_loc<-paste0(hval$region,"_", hval$loc)
+
+thr<-3
+sub_hval<-subset(hval, hval>=thr)
+tot<-aggregate(hval~region+loc+region_loc, data=sub_hval, sum, na.rm=T)
+sums<-aggregate(hval~transcript+region+loc+region_loc, data=sub_hval, sum, na.rm=T)
+sums$frac_tot<-sums$hval/sum(hval$hval)
+ggplot(sums, aes(frac_tot, colour=region_loc))+geom_density()
+ggplot(sums, aes(frac_tot, colour=loc))+stat_ecdf()
+ggplot(subset(sums, grepl("cds", region_loc)), aes(frac_tot, colour=region_loc))+stat_ecdf()
+ggplot(subset(sums, grepl("utr3", region_loc)), aes(frac_tot, colour=region_loc))+stat_ecdf()
+ggplot(subset(sums, !grepl("bck", region_loc)), aes(frac_tot, colour=region_loc))+stat_ecdf()
+ggplot(subset(sums, !grepl("bck", region_loc)), aes(frac_tot, colour=region_loc))+geom_density()
+
+ggplot(sums, aes(frac_tot, colour=loc))+geom_density()+coord_cartesian(xlim=c(0,0.0002))
+ggplot(sums, aes(frac_tot, colour=loc))+stat_ecdf()
+
+wilcox.test(subset(sums, loc=="membrane", select="frac_tot")[,1],
+            subset(sums, loc=="cytosolic", select="frac_tot")[,1])
+wilcox.test(subset(sums, loc=="membrane_bck", select="frac_tot")[,1],
+            subset(sums, loc=="cytosolic_bck", select="frac_tot")[,1])
+wilcox.test(subset(sums, region_loc=="cds_membrane", select="frac_tot")[,1],
+            subset(sums, region_loc=="cds_cytosolic", select="frac_tot")[,1])
+wilcox.test(subset(sums, region_loc=="cds_bck_membrane_bck", select="frac_tot")[,1],
+            subset(sums, region_loc=="cds_bck_cytosolic_bck", select="frac_tot")[,1])
+
+ggplot(sums, aes(region_loc,frac_tot, colour=region_loc))+geom_boxplot()
+ggplot(sums, aes(loc,log2(frac_tot), colour=loc))+geom_boxplot()
+
+ggplot(subset(sums, grepl("cds", region_loc)), aes(region_loc,frac_tot, colour=region_loc))+geom_boxplot()
+
+avg<-aggregate(hval~transcript+region+loc+region_loc, data=hval, mean, na.rm=T)
+maxs<-aggregate(hval~transcript+region+loc+region_loc, data=hval, max, na.rm=T)
+
+
+library(ggplot2)
+
+#fig3g
+ggplot(subset(avg,grepl("cds",region_loc)), aes(hval, colour=region_loc))+stat_ecdf()
+
+sd<-subset(avg,grepl("cds",region_loc), select=c("transcript", "region", "loc", "hval"))
+# write.table(sd, "source_data/fig3g.txt", quote=F, sep="\t", row.names=F)
