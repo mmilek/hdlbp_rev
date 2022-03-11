@@ -22,6 +22,8 @@ Ulrike Zinnall<sup>1</sup><sup>,</sup><sup>3</sup><sup>,</sup><sup>+</sup>, Miha
 
 **Instructions**
 
+Workflow: Clone the repository with RStudio and open the project file hdlbp.Rproj
+
 Please start in the figs directory, which enables easy reproduction of key figures from processed data. Working directory should be set to project directory. This should also suffice for further exploratory analysis.
 
 
