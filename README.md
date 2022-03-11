@@ -20,6 +20,8 @@ Ulrike Zinnall<sup>1</sup><sup>,</sup><sup>3</sup><sup>,</sup><sup>+</sup>, Miha
 <sup>5</sup>Charite-Universitätsmedizin Berlin, Germany.
 <sup>6</sup>IRI Life Sciences, Institute of Biology, Humboldt-Universität zu Berlin, Germany
 
+[![DOI](https://zenodo.org/badge/333061364.svg)](https://zenodo.org/badge/latestdoi/333061364)
+
 **Instructions**
 
 Workflow: Clone the repository with RStudio and open the project file hdlbp.Rproj
