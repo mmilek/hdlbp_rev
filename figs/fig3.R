@@ -573,7 +573,8 @@ ggplot(subset(plot, ((tc_region=="cds" & localization_cat=="membrane") | (tc_reg
 
 ggplot(subset(plot, tc_region!="utr5"),aes(distance, tc, colour=hval_cat))+geom_line()+facet_wrap(~localization_cat+tc_region+hval_cat, scales="free_y", ncol=5)
 
-# fig3g: Due to size limitations we cannot provide all h values in the repository. 
+# fig3g: Due to size limitations we cannot provide all h values in 
+# the repository. 
 # please contact milekm@gmail.com if you require the files below:
 
 cdsMem<-read.delim("../../bulky/cdsMem_hval_window.txt", header=T)
