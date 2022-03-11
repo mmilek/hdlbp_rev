@@ -521,7 +521,7 @@ wilcox.test(subset(zs, type=="top40" & length=="7mers", select="zscores_CdsCyt_U
 # wilcox.test(subset(zs, type=="top40" & length=="11mers", select="zscores_CdsCyt_Utr3Cyt")[,1], 
 #             subset(zs, type=="top40" & length=="12mers", select="zscores_CdsCyt_Utr3Cyt")[,1])$p.value
 
-#fig3d: p values not done yet
+#fig3d
 
 setwd("E:/work//hdlbp/kmers_mem_cyt/")
 files<-list.files(getwd(), pattern="pval")
